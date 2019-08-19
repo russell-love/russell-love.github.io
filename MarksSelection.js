@@ -146,7 +146,7 @@
         .range([0, width]);
 
     console.log(x);
-    console.log(max(data));
+    console.log(d3.max(data));
 
     var chart = d3.select(".chart")
         .attr("width", width)
