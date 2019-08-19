@@ -155,9 +155,13 @@
 
     var bar = chart.selectAll("g")
         .data(barValues)
-      .enter().append("g")
+        .enter().append("g")
         .attr("transform", function(d, i) { return "translate(0," + i * barHeight + ")"; });
+    
+    var x_axis = d3.axisBottom().scale(x);
 
+    bar.append("g").call(x_axis);
+    
     bar.append("rect")
         .attr("width", x)
         .attr("height", barHeight - 1);
