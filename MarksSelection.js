@@ -136,7 +136,7 @@
     $('#no_data_message').css('display', 'none');
     $('#data_table_wrapper').append(`<svg class="chart"></svg>`);
 
-    var data = getCol(data,2);
+    var barValues = getCol(data,2);
 
     var width = 420,
         barHeight = 20;
