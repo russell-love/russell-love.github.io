@@ -81,8 +81,4 @@
     });
   }
 
-  function loadSelectedMarks (worksheetName) {
-    // For now, just pop up an alert saying that we've selected a sheet
-    alert(`Loading selected marks for ${worksheetName}`);
-  }
 })();
