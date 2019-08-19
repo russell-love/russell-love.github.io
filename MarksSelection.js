@@ -54,7 +54,8 @@
     //const worksheet = getSelectedSheet(worksheetName);
 
     const worksheet = "Sheet 1"
-
+    alert(`Loading selected marks for ${worksheetName}`);
+    
     // Set our title to an appropriate value
     $('#selected_marks_title').text(worksheet.name);
 
