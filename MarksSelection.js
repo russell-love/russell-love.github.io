@@ -137,7 +137,7 @@
     var width = 420,
         barHeight = 20;
 
-    var x = d3.scalelinear()
+    var x = d3.scale.linear()
         .domain([0, d3.max(data)])
         .range([0, width]);
 
