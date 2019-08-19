@@ -58,9 +58,12 @@
       unregisterEventHandlerFunction();
     }
 
-    // Get the worksheet object we want to get the selected marks for
-    const worksheet = getSelectedSheet(worksheetName);
+    const worksheets = tableau.extensions.dashboardContent.dashboard.worksheets;
 
+    var worksheet = worksheets.find(function (sheet) {
+      return sheet.name === "Sheet 1";
+    });
+    
     // Set our title to an appropriate value
     $('#selected_marks_title').text(worksheet.name);
 
