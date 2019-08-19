@@ -137,12 +137,13 @@
     $('#data_table_wrapper').append(`<svg class="chart"></svg>`);
 
     var barValues = getCol(data,2);
-  
+    console.log(barValues);
+
     var width = 420,
         barHeight = 20;
 
     var x = d3.scale.linear()
-        .domain([0, d3.max(data)])
+        .domain([0, d3.max(barValues)])
         .range([0, width]);
 
     console.log(x);
@@ -150,7 +151,7 @@
 
     var chart = d3.select(".chart")
         .attr("width", width)
-        .attr("height", barHeight * data.length);
+        .attr("height", barHeight * barValues.length);
 
     var bar = chart.selectAll("g")
         .data(barValues)
