@@ -129,6 +129,7 @@
 
   function loopData (data, columns) {
     console.log(columns);
+    console.log(data);
   }
 
 })();
