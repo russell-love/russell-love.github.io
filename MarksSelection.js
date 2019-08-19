@@ -136,7 +136,7 @@
     $('#no_data_message').css('display', 'none');
     $('#data_table_wrapper').append(`<svg class="chart"></svg>`);
 
-    var data = [4, 8, 15, 16, 25, 42];
+    var data = getCol(data,2);
 
     var width = 420,
         barHeight = 20;
@@ -164,5 +164,13 @@
         .attr("dy", ".35em")
         .text(function(d) { return d;});
   }
+
+  function getCol(matrix, col){
+       var column = [];
+       for(var i=0; i<data.length; i++){
+          column.push(data[i][col]);
+       }
+       return column;
+    }
 
 })();
