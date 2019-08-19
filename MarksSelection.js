@@ -49,16 +49,17 @@
     $('#choose_sheet_dialog').modal('toggle');
   }
   
+  // This variable will save off the function we can call to unregister listening to marks-selected events
+  let unregisterEventHandlerFunction;
+
   function loadSelectedMarks (worksheetName) {
+    // Remove any existing event listeners
+    if (unregisterEventHandlerFunction) {
+      unregisterEventHandlerFunction();
+    }
+
     // Get the worksheet object we want to get the selected marks for
-    //const worksheet = getSelectedSheet(worksheetName);
-    const worksheets = tableau.extensions.dashboardContent.dashboard.worksheets;
-
-    var worksheet = worksheets.find(function (sheet) {
-      return sheet.name === "Sheet 1";
-    });
-
-    alert(`Loading selected marks for ${worksheetName}`);
+    const worksheet = getSelectedSheet(worksheetName);
 
     // Set our title to an appropriate value
     $('#selected_marks_title').text(worksheet.name);
