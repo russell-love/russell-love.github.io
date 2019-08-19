@@ -52,7 +52,8 @@
   function loadSelectedMarks (worksheetName) {
     // Get the worksheet object we want to get the selected marks for
     //const worksheet = getSelectedSheet(worksheetName);
-
+    const worksheets = tableau.extensions.dashboardContent.dashboard.worksheets;
+    
     var worksheet = worksheets.find(function (sheet) {
       return sheet.name === "Sheet 1";
     });
