@@ -139,7 +139,7 @@
     var barValues = getCol(data,2);
     console.log(barValues);
 
-    var width = 1000,
+    /*var width = 420,
         barHeight = 20;
 
     var x = d3.scale.linear()
@@ -152,7 +152,17 @@
     var chart = d3.select(".chart")
         .attr("width", width)
         .attr("height", barHeight * barValues.length);
+    */
 
+    var width = 420,
+    barHeight = 20;
+
+    var x = d3.scale.linear()
+        .range([0, width]);
+
+    var chart = d3.select(".chart")
+        .attr("width", width);
+    
     var bar = chart.selectAll("g")
         .data(barValues)
       .enter().append("g")
