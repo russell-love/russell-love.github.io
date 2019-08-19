@@ -162,7 +162,9 @@
 
     var chart = d3.select(".chart")
         .attr("width", width);
-    
+
+    x.domain([0, d3.max(barValues, function(d) { return d.value; })]);
+
     var bar = chart.selectAll("g")
         .data(barValues)
       .enter().append("g")
