@@ -133,7 +133,7 @@
     console.log(data);
 
     $('#data_table_wrapper').empty();
-
+    $('#no_data_message').css('display', 'none');
     $('#data_table_wrapper').append(`<svg class="chart"></svg>`);
 
     var data = [4, 8, 15, 16, 23, 42];
