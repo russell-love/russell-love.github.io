@@ -141,14 +141,13 @@
     var width = 420,
         barHeight = 20;
 
-    console.log(width, barHeight);
-
     var x = d3.scale.linear()
         .domain([0, d3.max(data)])
         .range([0, width]);
 
     console.log(x);
-    
+    console.log(max(data));
+
     var chart = d3.select(".chart")
         .attr("width", width)
         .attr("height", barHeight * data.length);
