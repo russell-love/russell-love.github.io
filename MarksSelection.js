@@ -136,7 +136,7 @@
     $('#no_data_message').css('display', 'none');
     $('#data_table_wrapper').append(`<svg class="chart"></svg>`);
 
-    var data = [4, 8, 15, 16, 24, 42];
+    var data = [4, 8, 15, 16, 25, 42];
 
     var width = 420,
         barHeight = 20;
