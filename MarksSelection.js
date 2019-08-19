@@ -53,9 +53,12 @@
     // Get the worksheet object we want to get the selected marks for
     //const worksheet = getSelectedSheet(worksheetName);
 
-    const worksheet = "Sheet 1"
+    var worksheet = worksheets.find(function (sheet) {
+      return sheet.name === "Sheet 1";
+    });
+
     alert(`Loading selected marks for ${worksheetName}`);
-    
+
     // Set our title to an appropriate value
     $('#selected_marks_title').text(worksheet.name);
 
