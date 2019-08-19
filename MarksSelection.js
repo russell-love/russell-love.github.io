@@ -146,14 +146,14 @@
         .range([0, width]);
 
     console.log(x);
-    console.log(d3.max(data));
+    console.log(d3.max(barValues));
 
     var chart = d3.select(".chart")
         .attr("width", width)
         .attr("height", barHeight * data.length);
 
     var bar = chart.selectAll("g")
-        .data(data)
+        .data(barValues)
       .enter().append("g")
         .attr("transform", function(d, i) { return "translate(0," + i * barHeight + ")"; });
 
