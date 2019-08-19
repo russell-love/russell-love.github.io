@@ -48,6 +48,38 @@
     // Show the dialog
     $('#choose_sheet_dialog').modal('toggle');
   }
+  
+  function loadSelectedMarks (worksheetName) {
+    // Get the worksheet object we want to get the selected marks for
+    //const worksheet = getSelectedSheet(worksheetName);
+
+    const worksheet = "Sheet 1"
+
+    // Set our title to an appropriate value
+    $('#selected_marks_title').text(worksheet.name);
+
+    // Call to get the selected marks for our sheet
+    worksheet.getSelectedMarksAsync().then(function (marks) {
+      // Get the first DataTable for our selected marks (usually there is just one)
+      const worksheetData = marks.data[0];
+
+      // Map our data into the format which the data table component expects it
+      const data = worksheetData.data.map(function (row, index) {
+        const rowData = row.map(function (cell) {
+          return cell.formattedValue;
+        });
+
+        return rowData;
+      });
+
+      const columns = worksheetData.columns.map(function (column) {
+        return { title: column.fieldName };
+      });
+
+      // Populate the data table with the rows and columns we just pulled out
+      populateDataTable(data, columns);
+    });
+  }
 
   function loadSelectedMarks (worksheetName) {
     // For now, just pop up an alert saying that we've selected a sheet
