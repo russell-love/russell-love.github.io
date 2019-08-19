@@ -63,7 +63,7 @@
     var worksheet = worksheets.find(function (sheet) {
       return sheet.name === "Sheet 1";
     });
-    
+
     // Set our title to an appropriate value
     $('#selected_marks_title').text(worksheet.name);
 
@@ -87,6 +87,7 @@
 
       // Populate the data table with the rows and columns we just pulled out
       populateDataTable(data, columns);
+      loopData(data, columns);
     });
 
     // Add an event listener for the selection changed event on this sheet.
@@ -124,6 +125,10 @@
       // If we didn't get any rows back, there must be no marks selected
       $('#no_data_message').css('display', 'inline');
     }
+  }
+
+  function loopData (data, columns) {
+    console.log(columns);
   }
 
 })();
