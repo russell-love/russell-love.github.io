@@ -167,8 +167,8 @@
 
   function getCol(matrix, col){
        var column = [];
-       for(var i=0; i<data.length; i++){
-          column.push(data[i][col]);
+       for(var i=0; i<matrix.length; i++){
+          column.push(matrix[i][col]);
        }
        return column;
     }
