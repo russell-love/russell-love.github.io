@@ -88,7 +88,7 @@
       // Populate the data table with the rows and columns we just pulled out
       //populateDataTable(data, columns);
       loopData(data, columns);
-      alert(`Outputting to console: ${worksheetName}`);
+      //alert(`Outputting to console: ${worksheetName}`);
     });
 
     // Add an event listener for the selection changed event on this sheet.
