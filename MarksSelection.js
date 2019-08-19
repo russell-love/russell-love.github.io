@@ -84,7 +84,14 @@
       // Populate the data table with the rows and columns we just pulled out
       populateDataTable(data, columns);
     });
+
+    // Add an event listener for the selection changed event on this sheet.
+    unregisterEventHandlerFunction = worksheet.addEventListener(tableau.TableauEventType.MarkSelectionChanged, function (selectionEvent) {
+      // When the selection changes, reload the data
+      loadSelectedMarks(worksheetName);
+    });
   }
+
 
   function populateDataTable (data, columns) {
     // Do some UI setup here to change the visible section and reinitialize the table
