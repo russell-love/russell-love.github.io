@@ -139,8 +139,7 @@
     var barValues = getCol(data,2);
 
     console.log(barValues);
-    console.log(Math.max(barValues));
-    console.log(barValues.length);
+    console.log(d3.max(barValues));
 
     var width = 420,
         barHeight = 20;
