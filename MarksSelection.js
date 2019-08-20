@@ -152,18 +152,8 @@
     var chart = d3.select(".chart")
         .attr("width", width)
         .attr("height", barHeight * barValues.length);
-
-    // Define the div for the tooltip
-    var div = d3.select("body").append("div") 
-        .attr("class", "tooltip")       
-        .style("opacity", 0);
-
-    // create a tooltip
-    var tooltip = d3.select(".chart")
-      .append("div")
-      .style("position", "absolute")
-      .style("visibility", "hidden")
-      .text("I'm a chart element!");
+    
+    var tooltip = d3.select("body").append("div").attr("class", "toolTip");
 
     //Insert axis
     //chart.append("g").call(x_axis);
@@ -176,18 +166,20 @@
     bar.append("rect")
         .attr("width", x)
         .attr("height", barHeight - 1)
-        .attr("id", "barName");
+        .on("mousemove", function(d){
+            tooltip
+              .style("left", d3.event.pageX - 50 + "px")
+              .style("top", d3.event.pageY - 70 + "px")
+              .style("display", "inline-block")
+              .html(d.value);
+        })
+        .on("mouseout", function(d){ tooltip.style("display", "none");});
     
     bar.append("text")
         .attr("x", function(d) { return x(d) + 3; })
         .attr("y", barHeight / 2)
         .attr("dy", ".35em")
         .text(function(d) { return d;});
-
-    d3.select("#barName")
-        .on("mouseover", function(){return tooltip.style("visibility", "visible");})
-        .on("mousemove", function(){return tooltip.style("top", (event.pageY-10)+"px").style("left",(event.pageX-10)+"px");})
-        .on("mouseout", function(){return tooltip.style("visibility", "hidden");});
 
   }
     
