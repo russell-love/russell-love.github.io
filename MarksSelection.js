@@ -72,6 +72,7 @@
       // Get the first DataTable for our selected marks (usually there is just one)
       const worksheetData = marks.data[0];
       console.log(worksheetData);
+      console.log(typeof worksheetData);
 
       // Map our data into the format which the data table component expects it
       const data = worksheetData.data.map(function (row, index) {
