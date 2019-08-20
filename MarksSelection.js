@@ -71,8 +71,14 @@
     worksheet.getSelectedMarksAsync().then(function (marks) {
       // Get the first DataTable for our selected marks (usually there is just one)
       const worksheetData = marks.data[0];
-      console.log(worksheetData);
-      console.log(typeof worksheetData);
+
+      const mapped = worksheetData.data.map(function(row, index) {
+        const rowData = row.map(function (cell) {return cell.formattedValue;}, function (cell) {return cell.fieldName;});
+
+        return rowData;
+      });
+
+      console.log(mapped);
 
       // Map our data into the format which the data table component expects it
       const data = worksheetData.data.map(function (row, index) {
