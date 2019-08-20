@@ -179,7 +179,7 @@
   function getCol(matrix, col){
        var column = [];
        for(var i=0; i<matrix.length; i++){
-          column.push(matrix[i][col]);
+          column.push(parseInt(matrix[i][col]);
        }
        return column;
     }
