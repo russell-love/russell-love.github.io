@@ -144,7 +144,7 @@
 
     var x = d3.scaleLinear()
         .domain([0, d3.max(barValues)])
-        .range([0, width - 100]);
+        .range([0, width]);
 
     // Add scales to axis
     var x_axis = d3.axisBottom().scale(x);
