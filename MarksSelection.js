@@ -141,7 +141,7 @@
 
     var barValues = getCol(data,2);
 
-    var width = 40,
+    var width = 420,
         barHeight = 20;
 
     var x = d3.scaleLinear()
