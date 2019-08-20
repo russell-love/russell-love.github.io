@@ -76,11 +76,11 @@
         const rowData = row.map(
           function (cell) {
             return cell.formattedValue;
-          });/*, 
+          },
           function (cell) {
             return cell.fieldName;}
           );
-          */
+          
         return rowData;
       });
 
@@ -101,9 +101,7 @@
 
       // Populate the data table with the rows and columns we just pulled out
       //populateDataTable(data, columns);
-      console.log(data);
-      console.log(columns);
-      
+
       loopData(data, columns);
       //alert(`Outputting to console: ${worksheetName}`);
     });
