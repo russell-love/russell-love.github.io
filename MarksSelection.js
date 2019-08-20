@@ -71,7 +71,6 @@
     worksheet.getSelectedMarksAsync().then(function (marks) {
       // Get the first DataTable for our selected marks (usually there is just one)
       const worksheetData = marks.data[0];
-      console.log(worksheetData);
 
       // Map our data into the format which the data table component expects it
       const data = worksheetData.data.map(function (row, index) {
@@ -85,15 +84,6 @@
       const columns = worksheetData.columns.map(function (column) {
         return { title: column.fieldName };
       });
-
-      var mappedData = worksheetData.data.map(function(row,index) {
-        var rowData = row.map(function(cell) {
-          return cell.formattedValue
-        });
-        return rowData;
-      });
-
-      //console.log(mappedData);
 
       // Populate the data table with the rows and columns we just pulled out
       //populateDataTable(data, columns);
@@ -149,7 +139,7 @@
     $('#no_data_message').css('display', 'none');
     $('#data_table_wrapper').append(`<svg class="chart"></svg>`);
 
-    var barValues = getCol(data,1,2);
+    var barValues = getCol(data,2);
 
     var width = 420,
         barHeight = 20;
@@ -195,10 +185,10 @@
 
   }
     
-  function getCol(matrix, col1, col2){
+  function getCol(matrix, col1){
        var column = [];
        for(var i=0; i<matrix.length; i++){
-          column.push([parseInt(matrix[i][col2]), matrix[i][col1]]);
+          column.push([parseInt(matrix[i][col1])]);
        }
 
       column.sort(d3.descending);
@@ -206,8 +196,8 @@
     }
 
   function reduceToObjects(cols,data) {
-    //console.log(cols);
-    //console.log(data);
+    console.log(cols);
+    console.log(data);
 
     var fieldNameMap = $.map(cols, function(col) { return col.title; });
     var dataToReturn = $.map(data, function(d) {
@@ -216,7 +206,7 @@
       }, {});
     });
 
-    //console.log(dataToReturn);
+    console.log(dataToReturn);
     return dataToReturn;
   }
 
