@@ -140,7 +140,8 @@
     $('#data_table_wrapper').append(`<svg class="chart"></svg>`);
 
     var barValues = getCol(data,2);
-
+    console.log(d3.max(barValues));
+    
     var width = 420,
         barHeight = 20;
 
