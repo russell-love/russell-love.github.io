@@ -193,7 +193,6 @@
        }
 
       column.sort(d3.descending);
-      console.log(column);
       return column;
     }
 
@@ -205,7 +204,7 @@
     
     var dataToReturn = $.map(data, function(d) {
       return d.reduce(function(memo, value, idx) {
-        memo[fieldNameMap[idx]] = value.formattedValue; return memo;
+        memo[fieldNameMap[idx]] = value; return memo;
       }, {});
     });
 
