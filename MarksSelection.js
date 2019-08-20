@@ -144,14 +144,10 @@
 
     var x = d3.scaleLinear()
         .domain([0, d3.max(barValues)])
-        .range([0, width]);
-
-    console.log(x);
-    console.log(d3.max(barValues));
+        .range([0, width - 100]);
 
     // Add scales to axis
-    var x_axis = d3.axisBottom()
-                   .scale(x);
+    var x_axis = d3.axisBottom().scale(x);
 
     var chart = d3.select(".chart")
         .attr("width", width)
