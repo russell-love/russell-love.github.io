@@ -196,7 +196,7 @@
 
     var barValues2 = joinDataCols(columns, data);
     mapData(data);
-    
+
     console.log(barValues2);
 
     var width = 420,
@@ -276,7 +276,7 @@
     })
     console.log(mappedData);
 
-    return dataToReturn;
+    return mappedData;
   }
 
 })();
