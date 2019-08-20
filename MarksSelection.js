@@ -186,7 +186,7 @@
   function getCol(matrix, col1, col2){
        var column = [];
        for(var i=0; i<matrix.length; i++){
-          column.push(matrix[i][col1], parseInt(matrix[i][col2]));
+          column.push([matrix[i][col1], parseInt(matrix[i][col2])]);
        }
 
        column.sort(d3.descending);
