@@ -142,7 +142,7 @@
     var width = 420,
         barHeight = 20;
 
-    var x = d3.scale.linear()
+    var x = d3.scalelinear()
         .domain([0, d3.max(barValues)])
         .range([0, width]);
 
@@ -158,7 +158,7 @@
         .enter().append("g")
         .attr("transform", function(d, i) { return "translate(0," + i * barHeight + ")"; });
 
-        // Add scales to axis
+    // Add scales to axis
     var x_axis = d3.axisBottom().scale(scale);
 
     //Append group and insert axis
