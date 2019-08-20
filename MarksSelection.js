@@ -169,7 +169,7 @@
         .attr("x", function(d) { return x(d) - 3; })
         .attr("y", barHeight / 2)
         .attr("dy", ".35em")
-        .text(function(d) { return "Records" + d;});
+        .text(function(d) { return d;});
   }
     
   function getCol(matrix, col){
