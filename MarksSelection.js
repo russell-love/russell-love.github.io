@@ -198,8 +198,8 @@
   function reduceToObjects(cols,data) {
     console.log(cols);
     console.log(data);
-    
-    var fieldNameMap = $.map(cols, function(col) { return col.$impl.fieldName; });
+
+    var fieldNameMap = $.map(cols, function(col) { return col.$impl.title; });
     var dataToReturn = $.map(data, function(d) {
       return d.reduce(function(memo, value, idx) {
         memo[fieldNameMap[idx]] = value.formattedValue; return memo;
