@@ -88,12 +88,12 @@
 
       var mappedData = worksheetData.data.map(function(row,index) {
         var rowData = row.map(function(cell) {
-            return cell.fieldName;
+          return cell.formattedValue
         });
         return rowData;
       });
 
-      console.log(mappedData);
+      //console.log(mappedData);
 
       // Populate the data table with the rows and columns we just pulled out
       //populateDataTable(data, columns);
@@ -206,8 +206,8 @@
     }
 
   function reduceToObjects(cols,data) {
-    console.log(cols);
-    console.log(data);
+    //console.log(cols);
+    //console.log(data);
 
     var fieldNameMap = $.map(cols, function(col) { return col.title; });
     var dataToReturn = $.map(data, function(d) {
