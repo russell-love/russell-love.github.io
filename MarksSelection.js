@@ -228,7 +228,7 @@
               .style("left", d3.event.pageX - 50 + "px")
               .style("top", d3.event.pageY - 70 + "px")
               .style("display", "inline-block")
-              .html(d);
+              .html(d.state);
         })
         .on("mouseout", function(d){ tooltip.style("display", "none");});
     
@@ -236,7 +236,7 @@
         .attr("x", function(d) { return x(d) + 3; })
         .attr("y", barHeight / 2)
         .attr("dy", ".35em")
-        .text(function(d) { return d;});
+        .text(function(d) { return d.recordcount;});
 
   }
     
