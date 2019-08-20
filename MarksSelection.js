@@ -162,6 +162,7 @@
     chart.append("g")
        .call(x_axis);
 
+    /* 
     bar.append("rect")
         .attr("width", x)
         .attr("height", barHeight - 1);
@@ -171,8 +172,9 @@
         .attr("y", barHeight / 2)
         .attr("dy", ".35em")
         .text(function(d) { return d;});
+        */
   }
-
+    
   function getCol(matrix, col){
        var column = [];
        for(var i=0; i<matrix.length; i++){
