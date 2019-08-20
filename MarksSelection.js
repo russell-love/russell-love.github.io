@@ -177,6 +177,9 @@
        for(var i=0; i<matrix.length; i++){
           column.push(parseInt(matrix[i][col]));
        }
+       
+       column.sort(d3.descending);
+
        return column;
     }
 
