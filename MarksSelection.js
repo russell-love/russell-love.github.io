@@ -192,12 +192,10 @@
     $('#no_data_message').css('display', 'none');
     $('#data_table_wrapper').append(`<svg class="chart"></svg>`);
 
-    var barValues = getCol(data,2);
-
-    var barValues2 = joinDataCols(columns, data);
+    var barValues = joinDataCols(columns, data);
     mapData(data);
 
-    console.log(barValues2);
+    console.log(barValues);
 
     var width = 420,
         barHeight = 20;
