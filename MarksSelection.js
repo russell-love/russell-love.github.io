@@ -158,6 +158,8 @@
         .enter().append("g")
         .attr("transform", function(d, i) { return "translate(0," + i * barHeight + ")"; });
 
+    bar.append("g").call(d3.axisBottom(x));
+    
     bar.append("rect")
         .attr("width", x)
         .attr("height", barHeight - 1);
