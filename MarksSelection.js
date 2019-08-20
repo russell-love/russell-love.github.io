@@ -138,14 +138,11 @@
 
     var barValues = getCol(data,2);
 
-    console.log(barValues);
-    console.log(d3.max(barValues));
-
     var width = 420,
         barHeight = 20;
 
     var x = d3.scaleLinear()
-        .domain([0, 250])
+        .domain([0, d3.max(barValues)])
         .range([0, width]);
 
     // Add scales to axis
@@ -158,7 +155,6 @@
     //Append group and insert axis
     chart.append("g").call(x_axis);
 
-    /* 
     var bar = chart.selectAll("g")
         .data(barValues)
         .enter().append("g")
@@ -173,7 +169,6 @@
         .attr("y", barHeight / 2)
         .attr("dy", ".35em")
         .text(function(d) { return d;});
-    */
   }
     
   function getCol(matrix, col){
