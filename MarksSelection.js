@@ -138,12 +138,13 @@
 
     var barValues = getCol(data,2);
     console.log(barValues);
+    console.log(max(barValues));
 
     var width = 420,
         barHeight = 20;
 
     var x = d3.scaleLinear()
-        .domain([0, d3.max(barValues)])
+        .domain([0, 250])
         .range([0, width]);
 
     // Add scales to axis
@@ -161,7 +162,7 @@
         .data(barValues)
         .enter().append("g")
         .attr("transform", function(d, i) { return "translate(0," + i * barHeight + ")"; });
-        
+
     bar.append("rect")
         .attr("width", x)
         .attr("height", barHeight - 1);
