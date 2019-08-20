@@ -71,7 +71,8 @@
     worksheet.getSelectedMarksAsync().then(function (marks) {
       // Get the first DataTable for our selected marks (usually there is just one)
       const worksheetData = marks.data[0];
-
+      console.log(worksheetData);
+      
       // Map our data into the format which the data table component expects it
       const data = worksheetData.data.map(function (row, index) {
         const rowData = row.map(function (cell) {
@@ -137,7 +138,6 @@
     $('#data_table_wrapper').append(`<svg class="chart"></svg>`);
 
     var barValues = getCol(data,1,2);
-    console.log(barValues);
 
     var width = 420,
         barHeight = 20;
