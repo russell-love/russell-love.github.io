@@ -221,8 +221,7 @@
         .attr("transform", function(d, i) { return "translate(0," + i * barHeight + ")"; });
 
     bar.append("rect")
-        .attr("y", d => y(d.state))
-        .attr("width", d => x(d.recordcount))
+        .attr("width", d.recordcount)
         .attr("height", barHeight - 1)
         .on("mousemove", function(d){
             tooltip
