@@ -210,7 +210,7 @@
         .attr("width", width)
         .attr("height", barHeight * barValues.length);
     
-    //var tooltip = d3.select("body").append("div").attr("class", "toolTip");
+    var tooltip = d3.select("body").append("div").attr("class", "toolTip");
 
     //Insert axis
     //chart.append("g").call(x_axis);
@@ -221,7 +221,7 @@
         .attr("transform", function(d, i) { return "translate(0," + i * barHeight + ")"; });
 
     bar.append("rect")
-        .attr("width", d.recordcount)
+        .attr("width", function(d) { return d.recordcount; })
         .attr("height", barHeight - 1)
         .on("mousemove", function(d){
             tooltip
