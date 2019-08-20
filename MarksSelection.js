@@ -195,6 +195,8 @@
     var barValues = getCol(data,2);
 
     var barValues2 = joinDataCols(columns, data);
+    mapData(data);
+    
     console.log(barValues2);
 
     var width = 420,
@@ -259,6 +261,21 @@
         memo[fieldNameMap[idx]] = value; return memo;
       }, {});
     });
+    return dataToReturn;
+  }
+
+  function mapData(data) {
+    var mappedData = data.map(function(d) {
+      return { 
+        country: d[0], 
+        state: d[1],
+        recordcount: d[2],
+        lat: d[3],
+        long: d[4]
+      }
+    })
+    console.log(mappedData);
+
     return dataToReturn;
   }
 
