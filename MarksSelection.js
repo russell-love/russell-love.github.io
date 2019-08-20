@@ -72,7 +72,7 @@
       // Get the first DataTable for our selected marks (usually there is just one)
       const worksheetData = marks.data[0];
       console.log(worksheetData);
-      
+
       // Map our data into the format which the data table component expects it
       const data = worksheetData.data.map(function (row, index) {
         const rowData = row.map(function (cell) {
@@ -88,12 +88,12 @@
 
       var mappedData = worksheetData.data.map(function(row,index) {
         var rowData = row.map(function(cell) {
-
+            return cell.fieldName;
         });
         return rowData;
       });
 
-      console.log(rowData);
+      console.log(mappedData);
 
       // Populate the data table with the rows and columns we just pulled out
       //populateDataTable(data, columns);
