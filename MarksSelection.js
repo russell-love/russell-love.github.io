@@ -141,7 +141,7 @@
 
     var barValues = getCol(data,2);
     console.log(d3.max(barValues));
-    
+
     var width = 420,
         barHeight = 20;
 
@@ -186,10 +186,10 @@
 
   }
     
-  function getCol(matrix, col1){
+  function getCol(matrix, col){
        var column = [];
        for(var i=0; i<matrix.length; i++){
-          column.push([parseInt(matrix[i][col1])]);
+          column.push([parseInt(matrix[i][col])]);
        }
 
       column.sort(d3.descending);
