@@ -153,25 +153,25 @@
         .attr("width", width)
         .attr("height", barHeight * barValues.length);
 
-    var bar = chart.selectAll("g")
-        .data(barValues)
-        .enter().append("g")
-        .attr("transform", function(d, i) { return "translate(0," + i * barHeight + ")"; });
-
     //Append group and insert axis
     chart.append("g").call(x_axis);
 
     /* 
+    var bar = chart.selectAll("g")
+        .data(barValues)
+        .enter().append("g")
+        .attr("transform", function(d, i) { return "translate(0," + i * barHeight + ")"; });
+        
     bar.append("rect")
         .attr("width", x)
         .attr("height", barHeight - 1);
-    */
+    
     bar.append("text")
         .attr("x", function(d) { return x(d) - 3; })
         .attr("y", barHeight / 2)
         .attr("dy", ".35em")
         .text(function(d) { return d;});
-    
+    */
   }
     
   function getCol(matrix, col){
