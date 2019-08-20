@@ -201,7 +201,7 @@
         barHeight = 20;
 
     var x = d3.scaleLinear()
-        .domain([0, d3.max(barValues)+(d3.max(barValues)*0.2)])
+        .domain([0, d3.max(data, d => d.recordcount)])
         .range([0, width]);
 
     // Add scales to axis
@@ -211,7 +211,7 @@
         .attr("width", width)
         .attr("height", barHeight * barValues.length);
     
-    var tooltip = d3.select("body").append("div").attr("class", "toolTip");
+    //var tooltip = d3.select("body").append("div").attr("class", "toolTip");
 
     //Insert axis
     //chart.append("g").call(x_axis);
@@ -222,10 +222,9 @@
         .attr("transform", function(d, i) { return "translate(0," + i * barHeight + ")"; });
 
     bar.append("rect")
-        //.attr("width", x)
-        .attr("width", function(d) {
-          return d.recordcount;
-        })
+        .attr("x", d => x(d.recordcount))
+        .attr("y", d => y(d.state))
+        .attr("width", d => y(0) - y(d.value))
         .attr("height", barHeight - 1)
         .on("mousemove", function(d){
             tooltip
