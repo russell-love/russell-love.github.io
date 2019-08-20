@@ -202,7 +202,7 @@
     var fieldNameMap = $.map(cols, function(col) { return col.title; });
     var dataToReturn = $.map(data, function(d) {
       return d.reduce(function(memo, value, idx) {
-        memo[fieldNameMap[idx]] = value.formattedValue; return memo;
+        memo[fieldNameMap[idx]] = value.value; return memo;
       }, {});
     });
 
