@@ -72,7 +72,7 @@
       // Get the first DataTable for our selected marks (usually there is just one)
       const worksheetData = marks.data[0];
       console.log(worksheetData);
-      
+
       // Map our data into the format which the data table component expects it
       const data = worksheetData.data.map(function (row, index) {
         const rowData = row.map(function (cell) {
@@ -186,7 +186,7 @@
   function getCol(matrix, col1, col2){
        var column = [];
        for(var i=0; i<matrix.length; i++){
-          column.push([matrix[i][col2], parseInt(matrix[i][col1])]);
+          column.push([parseInt(matrix[i][col2]), matrix[i][col1]]);
        }
 
       column.sort(d3.descending);
