@@ -153,10 +153,6 @@
     var x_axis = d3.axisBottom()
                    .scale(x);
 
-    //Append group and insert axis
-    bar.append("g")
-       .call(x_axis);
-
     var chart = d3.select(".chart")
         .attr("width", width)
         .attr("height", barHeight * barValues.length);
@@ -165,6 +161,10 @@
         .data(barValues)
         .enter().append("g")
         .attr("transform", function(d, i) { return "translate(0," + i * barHeight + ")"; });
+
+    //Append group and insert axis
+    bar.append("g")
+       .call(x_axis);
 
     bar.append("rect")
         .attr("width", x)
