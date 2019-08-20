@@ -153,7 +153,19 @@
         .attr("width", width)
         .attr("height", barHeight * barValues.length);
 
-    //Append group and insert axis
+    // Define the div for the tooltip
+    var div = d3.select("body").append("div") 
+        .attr("class", "tooltip")       
+        .style("opacity", 0);
+
+    // create a tooltip
+    var tooltip = d3.select(".chart")
+      .append("div")
+      .style("position", "absolute")
+      .style("visibility", "hidden")
+      .text("I'm a chart element!");
+
+    //Insert axis
     //chart.append("g").call(x_axis);
 
     var bar = chart.selectAll("g")
@@ -163,13 +175,20 @@
 
     bar.append("rect")
         .attr("width", x)
-        .attr("height", barHeight - 1);
+        .attr("height", barHeight - 1)
+        .attr("id", "barName");
     
     bar.append("text")
         .attr("x", function(d) { return x(d) + 3; })
         .attr("y", barHeight / 2)
         .attr("dy", ".35em")
         .text(function(d) { return d;});
+
+    d3.select("barName")
+        .on("mouseover", function(){return tooltip.style("visibility", "visible");})
+        .on("mousemove", function(){return tooltip.style("top", (event.pageY-10)+"px").style("left",(event.pageX-10)+"px");})
+        .on("mouseout", function(){return tooltip.style("visibility", "hidden");});
+
   }
     
   function getCol(matrix, col){
