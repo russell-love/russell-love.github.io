@@ -87,8 +87,6 @@
 
       // Populate the data table with the rows and columns we just pulled out
       //populateDataTable(data, columns);
-      
-      reduceToObjects(columns, data);
 
       loopData(data, columns);
       //alert(`Outputting to console: ${worksheetName}`);
@@ -131,7 +129,7 @@
     }
   }
 
-  function loopData (data, columns) {
+  function loopData2 (data, columns) {
     //console.log(columns);
     //console.log(data);
 
@@ -141,6 +139,63 @@
 
     var barValues = getCol(data,2);
     console.log(d3.max(barValues));
+
+    var width = 420,
+        barHeight = 20;
+
+    var x = d3.scaleLinear()
+        .domain([0, d3.max(barValues)+(d3.max(barValues)*0.2)])
+        .range([0, width]);
+
+    // Add scales to axis
+    var x_axis = d3.axisBottom().scale(x);
+
+    var chart = d3.select(".chart")
+        .attr("width", width)
+        .attr("height", barHeight * barValues.length);
+    
+    var tooltip = d3.select("body").append("div").attr("class", "toolTip");
+
+    //Insert axis
+    //chart.append("g").call(x_axis);
+
+    var bar = chart.selectAll("g")
+        .data(barValues)
+        .enter().append("g")
+        .attr("transform", function(d, i) { return "translate(0," + i * barHeight + ")"; });
+
+    bar.append("rect")
+        .attr("width", x)
+        .attr("height", barHeight - 1)
+        .on("mousemove", function(d){
+            tooltip
+              .style("left", d3.event.pageX - 50 + "px")
+              .style("top", d3.event.pageY - 70 + "px")
+              .style("display", "inline-block")
+              .html(d);
+        })
+        .on("mouseout", function(d){ tooltip.style("display", "none");});
+    
+    bar.append("text")
+        .attr("x", function(d) { return x(d) + 3; })
+        .attr("y", barHeight / 2)
+        .attr("dy", ".35em")
+        .text(function(d) { return d;});
+
+  }
+
+  function loopData (data, columns) {
+    //console.log(columns);
+    //console.log(data);
+
+    $('#data_table_wrapper').empty();
+    $('#no_data_message').css('display', 'none');
+    $('#data_table_wrapper').append(`<svg class="chart"></svg>`);
+
+    var barValues = getCol(data,2);
+
+    var barValues2 = joinDataCols(columns, data);
+    console.log(barValues2);
 
     var width = 420,
         barHeight = 20;
@@ -196,10 +251,7 @@
       return column;
     }
 
-  function reduceToObjects(cols,data) {
-    console.log(cols);
-    console.log(data);
-
+  function joinDataCols(cols,data) {
     var fieldNameMap = $.map(cols, function(col) { return col.title; });
     
     var dataToReturn = $.map(data, function(d) {
@@ -207,8 +259,6 @@
         memo[fieldNameMap[idx]] = value; return memo;
       }, {});
     });
-
-    console.log(dataToReturn);
     return dataToReturn;
   }
 
