@@ -81,14 +81,14 @@
         return rowData;
       });
 
-      reduceToObjects(columns, data);
-      
       const columns = worksheetData.columns.map(function (column) {
         return { title: column.fieldName };
       });
 
       // Populate the data table with the rows and columns we just pulled out
       //populateDataTable(data, columns);
+      
+      reduceToObjects(columns, data);
 
       loopData(data, columns);
       //alert(`Outputting to console: ${worksheetName}`);
