@@ -138,7 +138,7 @@
 
     var barValues = getCol(data,2);
     console.log(barValues);
-    
+
     var width = 420,
         barHeight = 20;
 
@@ -154,7 +154,7 @@
         .attr("height", barHeight * barValues.length);
 
     //Append group and insert axis
-    chart.append("g").call(x_axis);
+    //chart.append("g").call(x_axis);
 
     var bar = chart.selectAll("g")
         .data(barValues)
