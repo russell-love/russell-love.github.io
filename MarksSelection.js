@@ -149,6 +149,14 @@
     console.log(x);
     console.log(d3.max(barValues));
 
+    // Add scales to axis
+    var x_axis = d3.axisBottom()
+                   .scale(x);
+
+    //Append group and insert axis
+    bar.append("g")
+       .call(x_axis);
+
     var chart = d3.select(".chart")
         .attr("width", width)
         .attr("height", barHeight * barValues.length);
