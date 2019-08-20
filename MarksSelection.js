@@ -189,9 +189,9 @@
           column.push([matrix[i][col1], parseInt(matrix[i][col2])]);
        }
 
-       column.sort(d3.descending);
-
-       return column;
+      column.sort(d3.descending);
+      console.log(column[1]);
+      return column;
     }
 
 })();
