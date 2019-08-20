@@ -72,20 +72,6 @@
       // Get the first DataTable for our selected marks (usually there is just one)
       const worksheetData = marks.data[0];
 
-      const mapped = worksheetData.data.map(function(row, index) {
-        const rowData = row.map(
-          function (cell) {
-            return cell.formattedValue;
-          },
-          function (cell) {
-            return cell.fieldName;}
-          );
-          
-        return rowData;
-      });
-
-      console.log(mapped);
-
       // Map our data into the format which the data table component expects it
       const data = worksheetData.data.map(function (row, index) {
         const rowData = row.map(function (cell) {
@@ -95,6 +81,8 @@
         return rowData;
       });
 
+      reduceToObjects(columns, data);
+      
       const columns = worksheetData.columns.map(function (column) {
         return { title: column.fieldName };
       });
@@ -206,5 +194,17 @@
       column.sort(d3.descending);
       return column;
     }
+
+  function reduceToObjects(cols,data) {
+    var fieldNameMap = $.map(cols, function(col) { return col.$impl.$fieldName; });
+    var dataToReturn = $.map(data, function(d) {
+      return d.reduce(function(memo, value, idx) {
+        memo[fieldNameMap[idx]] = value.formattedValue; return memo;
+      }, {});
+    });
+
+    console.log(dataToReturn);
+    return dataToReturn;
+  }
 
 })();
