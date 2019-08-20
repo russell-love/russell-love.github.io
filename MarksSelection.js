@@ -233,7 +233,7 @@
         .on("mouseout", function(d){ tooltip.style("display", "none");});
     
     bar.append("text")
-        .attr("x", function(d) { return x(d) + 3; })
+        .attr("x", function(d) { return x(d.recordcount) + 3; })
         .attr("y", barHeight / 2)
         .attr("dy", ".35em")
         .text(function(d) { return d.recordcount;});
