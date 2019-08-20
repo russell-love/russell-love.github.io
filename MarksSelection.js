@@ -159,7 +159,7 @@
         .attr("transform", function(d, i) { return "translate(0," + i * barHeight + ")"; });
 
     //Append group and insert axis
-    bar.append("g")
+    chart.append("g")
        .call(x_axis);
 
     bar.append("rect")
