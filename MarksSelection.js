@@ -139,7 +139,7 @@
     var barValues = getCol(data,2);
 
     console.log(barValues);
-    console.log(math.max(barValues));
+    console.log(Math.max(barValues));
     console.log(barValues.length);
 
     var width = 420,
