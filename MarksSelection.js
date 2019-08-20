@@ -158,13 +158,6 @@
         .enter().append("g")
         .attr("transform", function(d, i) { return "translate(0," + i * barHeight + ")"; });
 
-    // Add scales to axis
-    var x_axis = d3.axisBottom().scale(scale);
-
-    //Append group and insert axis
-    bar.append("g").call(x_axis);
-
-
     bar.append("rect")
         .attr("width", x)
         .attr("height", barHeight - 1);
