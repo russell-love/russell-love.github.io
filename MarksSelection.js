@@ -137,7 +137,8 @@
     $('#data_table_wrapper').append(`<svg class="chart"></svg>`);
 
     var barValues = getCol(data,2);
-
+    console.log(barValues);
+    
     var width = 420,
         barHeight = 20;
 
