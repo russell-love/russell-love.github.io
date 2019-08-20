@@ -136,7 +136,7 @@
     $('#no_data_message').css('display', 'none');
     $('#data_table_wrapper').append(`<svg class="chart"></svg>`);
 
-    var barValues = getCol(data,2);
+    var barValues = getCol(data,1,2);
     console.log(barValues);
 
     var width = 420,
@@ -183,10 +183,10 @@
 
   }
     
-  function getCol(matrix, col){
+  function getCol(matrix, col1, col2){
        var column = [];
        for(var i=0; i<matrix.length; i++){
-          column.push(parseInt(matrix[i][col]));
+          column.push(matrix[i][col1], parseInt(matrix[i][col2]));
        }
 
        column.sort(d3.descending);
