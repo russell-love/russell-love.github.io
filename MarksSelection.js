@@ -138,7 +138,7 @@
     $('#data_table_wrapper').append(`<svg class="chart"></svg>`);
 
     var barValues = getCol(data,2);
-    console.log(d3.max(barValues));
+    //console.log(d3.max(barValues));
 
     var width = 420,
         barHeight = 20;
@@ -192,10 +192,9 @@
     $('#no_data_message').css('display', 'none');
     $('#data_table_wrapper').append(`<svg class="chart"></svg>`);
 
-    var barValues = joinDataCols(columns, data);
-    mapData(data);
+    var barValues = mapData(data);
 
-    console.log(barValues);
+    //console.log(barValues);
 
     var width = 420,
         barHeight = 20;
