@@ -71,7 +71,8 @@
     worksheet.getSelectedMarksAsync().then(function (marks) {
       // Get the first DataTable for our selected marks (usually there is just one)
       const worksheetData = marks.data[0];
-
+      console.log(worksheetData);
+      
       // Map our data into the format which the data table component expects it
       const data = worksheetData.data.map(function (row, index) {
         const rowData = row.map(function (cell) {
@@ -84,6 +85,15 @@
       const columns = worksheetData.columns.map(function (column) {
         return { title: column.fieldName };
       });
+
+      var mappedData = worksheetData.data.map(function(row,index) {
+        var rowData = row.map(function(cell) {
+
+        });
+        return rowData;
+      });
+
+      console.log(rowData);
 
       // Populate the data table with the rows and columns we just pulled out
       //populateDataTable(data, columns);
@@ -206,7 +216,7 @@
       }, {});
     });
 
-    console.log(dataToReturn);
+    //console.log(dataToReturn);
     return dataToReturn;
   }
 
