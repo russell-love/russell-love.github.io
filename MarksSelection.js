@@ -73,8 +73,14 @@
       const worksheetData = marks.data[0];
 
       const mapped = worksheetData.data.map(function(row, index) {
-        const rowData = row.map(function (cell) {return cell.formattedValue;}, function (cell) {return cell.fieldName;});
-
+        const rowData = row.map(
+          function (cell) {
+            return cell.formattedValue;
+          });/*, 
+          function (cell) {
+            return cell.fieldName;}
+          );
+          */
         return rowData;
       });
 
@@ -138,7 +144,7 @@
 
   function loopData (data, columns) {
     //console.log(columns);
-    console.log(data);
+    //console.log(data);
 
     $('#data_table_wrapper').empty();
     $('#no_data_message').css('display', 'none');
