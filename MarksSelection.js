@@ -130,7 +130,7 @@
 
   function loopData (data, columns) {
     //console.log(columns);
-    //console.log(data);
+    console.log(data);
 
     $('#data_table_wrapper').empty();
     $('#no_data_message').css('display', 'none');
