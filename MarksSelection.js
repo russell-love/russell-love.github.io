@@ -189,10 +189,11 @@
   function getCol(matrix, col){
        var column = [];
        for(var i=0; i<matrix.length; i++){
-          column.push([parseInt(matrix[i][col])]);
+          column.push(parseInt(matrix[i][col]));
        }
 
       column.sort(d3.descending);
+      console.log(column);
       return column;
     }
 
