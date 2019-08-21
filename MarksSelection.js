@@ -247,7 +247,7 @@
         .text(function(d) { return d.recordcount;});
     
     // Add scales to axis
-    var x_axis = d3.axisTop().scale(x);
+    var x_axis = d3.axisBottom(x);
     //Insert axis
     chart.append("g").call(x_axis);
   }
