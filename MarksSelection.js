@@ -205,7 +205,8 @@
     $('#data_table_wrapper').append(`<svg class="chart"></svg>`);
 
     var barValues = mapData(data);
-
+    console.log(barValues);
+    
     var maxValue = Math.max.apply(Math, barValues.map(function(d) { return d.recordcount; }));
     console.log(maxValue);
 
@@ -215,9 +216,6 @@
     var x = d3.scaleLinear()
         .domain([0, maxValue])
         .range([0, width]);
-
-    // Add scales to axis
-    var x_axis = d3.axisBottom().scale(x);
 
     var chart = d3.select(".chart")
         .attr("width", width)
@@ -248,6 +246,8 @@
         .attr("dy", ".35em")
         .text(function(d) { return d.recordcount;});
     
+    // Add scales to axis
+    var x_axis = d3.axisBottom().scale(x);
     //Insert axis
     chart.append("g").call(x_axis);
   }
