@@ -206,11 +206,7 @@
 
     var barValues = mapData(data);
 
-    var maxValue = barValues.map(function(arr){
-      return arr.reduce(function(a, b){
-        return a.recordcount < b.recordcount ? b : a
-      }).recordcount;
-    });
+    var maxValue = Math.max.apply(Math, barValues.map(function(d) { return d.recordcount; }));
 
     console.log(maxValue);
 
