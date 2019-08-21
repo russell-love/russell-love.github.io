@@ -206,7 +206,13 @@
 
     var barValues = mapData(data);
 
-    //console.log(barValues);
+    var maxValue = barValues.map(function(arr){
+      return arr.reduce(function(a, b){
+        return a.recordcount < b.recordcount ? b : a
+      }).value;
+    });
+
+    console.log(maxValue);
 
     var width = 420,
         barHeight = 20;
