@@ -284,7 +284,7 @@
       }
     })
 
-    var mappedData = arry.sort(function(a,b){ return a[2] > b[2] ? 1 : -1; });
+    var mappedData = mappedData.sort(function(a,b){ return a[2] > b[2] ? 1 : -1; });
 
     console.log(mappedData);
 
