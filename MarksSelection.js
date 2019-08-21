@@ -284,9 +284,15 @@
       }
     })
 
-    var mappedData = mappedData.sort(function(a,b){ return a[2] > b[2] ? 1 : -1; });
+    var sortedData = mappedData.sort(function(a, b) {
+      if(a[2] > b[2]) {
+        return 1;
+      } else {
+        return -1;
+      }
+    });
 
-    console.log(mappedData);
+    console.log(sortedData);
 
     return mappedData;
   }
