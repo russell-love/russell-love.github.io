@@ -236,7 +236,7 @@
               .style("left", d3.event.pageX - 50 + "px")
               .style("top", d3.event.pageY - 70 + "px")
               .style("display", "inline-block")
-              .html(d.state);
+              .html(d.state + " " + d.recordcount);
         })
         .on("mouseout", function(d){ tooltip.style("display", "none");});
     
@@ -244,7 +244,7 @@
         .attr("x", function(d) { return d.recordcount; })
         .attr("y", barHeight / 2)
         .attr("dy", ".35em")
-        .text(function(d) { return d.recordcount, d.state;});
+        .text(function(d) { return d.recordcount;});
     
     // Add scales to axis
     var x_axis = d3.axisBottom().scale(x);
