@@ -16,7 +16,7 @@
         showChooseSheetDialog();
       }
 
-      initializeButtons();
+      //initializeButtons();
     });
   });
 
@@ -283,6 +283,11 @@
         long: d[4]
       }
     })
+
+    mappedData.sort(function(a,b) {
+      return a[2] - b[2];
+    })
+
     console.log(mappedData);
 
     return mappedData;
