@@ -206,7 +206,7 @@
 
     var barValues = mapData(data);
     console.log(barValues);
-    
+
     var maxValue = Math.max.apply(Math, barValues.map(function(d) { return d.recordcount; }));
     console.log(maxValue);
 
@@ -244,7 +244,7 @@
         .attr("x", function(d) { return d.recordcount; })
         .attr("y", barHeight / 2)
         .attr("dy", ".35em")
-        .text(function(d) { return d.recordcount;});
+        .text(function(d) { return d.recordcount, d.state;});
     
     // Add scales to axis
     var x_axis = d3.axisBottom().scale(x);
