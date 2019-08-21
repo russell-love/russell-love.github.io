@@ -42,13 +42,16 @@
 
       // Create an event handler for when this button is clicked
       button.click(function () {
-        // Get the worksheet name which was selected
+        // Get the worksheet name and save it to settings.
         const worksheetName = worksheet.name;
-
-        // Close the dialog and show the data table for this worksheet
-        $('#choose_sheet_dialog').modal('toggle');
-        loadSelectedMarks(worksheetName);
+        tableau.extensions.settings.set('sheet', worksheetName);
+        tableau.extensions.settings.saveAsync().then(function () {
+          // Once the save has completed, close the dialog and show the data table for this worksheet
+          $('#choose_sheet_dialog').modal('toggle');
+          loadSelectedMarks(worksheetName);
+        });
       });
+
 
       // Add our button to the list of worksheets to choose from
       $('#choose_sheet_buttons').append(button);
