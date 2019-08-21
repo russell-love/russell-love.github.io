@@ -213,8 +213,7 @@
 
     var x = d3.scaleLinear()
         .domain([0, maxValue])
-        .range([0, width + 50]);
-
+        .range([0, width]);
 
     // Add scales to axis
     var x_axis = d3.axisBottom().scale(x);
