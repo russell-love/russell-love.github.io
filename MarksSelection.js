@@ -208,16 +208,13 @@
 
     var maxValue = Math.max.apply(Math, barValues.map(function(d) { return d.recordcount; }));
 
-    console.log(maxValue);
-
     var width = 420,
         barHeight = 20;
 
     var x = d3.scaleLinear()
-        .domain([0, d3.max(data, d => d.recordcount)])
+        .domain([0, maxValue])
         .range([0, width + 50]);
 
-    console.log(d3.max(barValues, d => d.recordcount));
 
     // Add scales to axis
     var x_axis = d3.axisBottom().scale(x);
