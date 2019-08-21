@@ -6,8 +6,17 @@
   $(document).ready(function () {
     // Tell Tableau we'd like to initialize our extension
     tableau.extensions.initializeAsync().then(function () {
-      // Once the extension is initialized, ask the user to choose a sheet
-      showChooseSheetDialog();
+      // Fetch the saved sheet name from settings. This will be undefined if there isn't one configured yet
+      const savedSheetName = tableau.extensions.settings.get('sheet');
+      if (savedSheetName) {
+        // We have a saved sheet name, show its selected marks
+        loadSelectedMarks(savedSheetName);
+      } else {
+        // If there isn't a sheet saved in settings, show the dialog
+        showChooseSheetDialog();
+      }
+
+      initializeButtons();
     });
   });
 
