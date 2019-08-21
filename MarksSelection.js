@@ -207,7 +207,8 @@
     var barValues = mapData(data);
 
     var maxValue = Math.max.apply(Math, barValues.map(function(d) { return d.recordcount; }));
-
+    console.log(maxValue);
+    
     var width = 420,
         barHeight = 20;
 
