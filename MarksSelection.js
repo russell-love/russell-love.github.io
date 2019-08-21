@@ -284,16 +284,7 @@
       }
     })
 
-    var sortedData = mappedData.sort(function(a, b) {
-      if(a[2] > b[2]) {
-        return 1;
-      } else {
-        return -1;
-      }
-    });
-
-    console.log(sortedData);
-
+    console.log(mappedData.sort());
     return mappedData;
   }
 
