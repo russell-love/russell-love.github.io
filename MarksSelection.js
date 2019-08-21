@@ -286,7 +286,7 @@
     
     // sort by recordcount
     mappedData.sort(function (a, b) {
-      return a.recordcount - b.recordcount;
+      return b.recordcount - a.recordcount;
     });
 
     return mappedData;
