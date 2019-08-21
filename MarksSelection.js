@@ -209,7 +209,7 @@
     var maxValue = barValues.map(function(arr){
       return arr.reduce(function(a, b){
         return a.recordcount < b.recordcount ? b : a
-      }).value;
+      }).recordcount;
     });
 
     console.log(maxValue);
