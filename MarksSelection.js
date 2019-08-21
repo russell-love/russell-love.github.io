@@ -283,8 +283,12 @@
         long: d[4]
       }
     })
+    
+    // sort by recordcount
+    mappedData.sort(function (a, b) {
+      return a.recordcount - b.recordcount;
+    });
 
-    console.log(mappedData.sort());
     return mappedData;
   }
 
