@@ -208,7 +208,7 @@
 
     var maxValue = Math.max.apply(Math, barValues.map(function(d) { return d.recordcount; }));
     console.log(maxValue);
-    
+
     var width = 420,
         barHeight = 20;
 
@@ -224,9 +224,6 @@
         .attr("height", barHeight * barValues.length);
     
     var tooltip = d3.select("body").append("div").attr("class", "toolTip");
-
-    //Insert axis
-    //chart.append("g").call(x_axis);
 
     var bar = chart.selectAll("g")
         .data(barValues)
@@ -250,7 +247,9 @@
         .attr("y", barHeight / 2)
         .attr("dy", ".35em")
         .text(function(d) { return d.recordcount;});
-
+    
+    //Insert axis
+    chart.append("g").call(x_axis);
   }
     
   function getCol(matrix, col){
