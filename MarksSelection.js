@@ -218,7 +218,7 @@
         .range([0, width]);
 
     var chart = d3.select(".chart")
-        .attr("width", width)
+        .attr("width", width + 50)
         .attr("height", barHeight * barValues.length);
     
     var tooltip = d3.select("body").append("div").attr("class", "toolTip");
@@ -241,7 +241,7 @@
         .on("mouseout", function(d){ tooltip.style("display", "none");});
     
     bar.append("text")
-        .attr("x", function(d) { return d.recordcount; })
+        .attr("x", function(d) { return x(d.recordcount); })
         .attr("y", barHeight / 2)
         .attr("dy", ".35em")
         .text(function(d) { return d.recordcount;});
