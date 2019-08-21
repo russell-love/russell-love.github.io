@@ -227,7 +227,7 @@
         .data(barValues)
         .enter().append("g")
         .attr("transform", function(d, i) { return "translate(0," + i * barHeight + ")"; });
-
+    
     bar.append("rect")
         .attr("width", 3 + function(d) { return x(d.recordcount); })
         .attr("height", barHeight - 1)
