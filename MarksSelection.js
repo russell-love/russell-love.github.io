@@ -215,7 +215,8 @@
         .domain([0, d3.max(data, d => d.recordcount)])
         .range([0, width + 50]);
 
-    console.log(d3.max(data, d => d.recordcount));
+    console.log(d3.max(barValues, d => d.recordcount));
+
     // Add scales to axis
     var x_axis = d3.axisBottom().scale(x);
 
