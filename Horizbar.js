@@ -60,9 +60,13 @@
     }
 
     function loadSelectedMarks(worksheetName) {
+
+
         // Get the worksheet object we want to get the selected marks for
         const worksheet = getSelectedSheet(worksheetName);
+        getDataAsync(worksheet).then(showData(data));
 
+/*
         // Set our title to an appropriate value
         $('#selected_marks_title').text(worksheet.name);
 
@@ -89,8 +93,14 @@
             // Populate the data table with the rows and columns we just pulled out
             populateDataTable(data, columns);
         });
+        */
+
     }
-    
+
+    function showData(data) {
+        $('#data_table_wrapper').append(data);
+    }
+
     function populateDataTable(data, columns) {
         // Do some UI setup here to change the visible section and reinitialize the table
         $('#data_table_wrapper').empty();
