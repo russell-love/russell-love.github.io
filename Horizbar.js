@@ -68,13 +68,13 @@
         $('#data_table_wrapper').empty();
         $('#data_table_wrapper').append("Got sheet name");
 
-        /*
-        sheet.getUnderlyingDataAsync(options).then(function (t) {
+        
+        sheet.getUnderlyingDataAsync().then(function (t) {
             var data = t.getData(); 
             $('#data_table_wrapper').empty();
             $('#data_table_wrapper').append("Got underlying Data");                               
         });
-        */
+        
     }
 
 /*
