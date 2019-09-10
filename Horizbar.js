@@ -64,7 +64,7 @@
         $('#data_table_wrapper').append("Starting");
 
         options = {
-            maxRows: 0,
+            maxRows: 10,
             ignoreAliases: false,
             ignoreSelection: true,
             includeAllColumns: false
