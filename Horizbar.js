@@ -65,6 +65,7 @@
 
         // Get the worksheet object we want to get the selected marks for
         const worksheet = getSelectedSheet(worksheetName);
+        $('#data_table_wrapper').empty();
         $('#data_table_wrapper').append(worksheet);
 
         worksheet.getUnderlyingDataAsync().then( function(data) {
