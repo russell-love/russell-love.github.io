@@ -4,6 +4,8 @@
     <default-locale>en_US</default-locale>
     <name resource-id="name"/>
     <description>Horizontal Bar Chart</description>
+    <author name="USERNAME" email="USER@example.com" organization="MyCo" website="https://www.example.com"/>
+       <min-api-version>1.0</min-api-version>
     <source-location>
       <url>https://russell-love.github.io/Horiz_Bar.html</url>
     </source-location>
