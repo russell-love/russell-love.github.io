@@ -63,16 +63,24 @@
         $('#data_table_wrapper').empty();
         $('#data_table_wrapper').append("Starting");
 
-        // Get the worksheet object we want to get the selected marks for
-        const worksheet = getSelectedSheet(worksheetName);
-        $('#data_table_wrapper').empty();
-        $('#data_table_wrapper').append("Got worksheet name");
+        options = {
+            maxRows: 0,
+            ignoreAliases: false,
+            ignoreSelection: true,
+            includeAllColumns: false
+        };
 
-        worksheet.getUnderlyingDataAsync().then(function(marks) {
-            const worksheetData = marks.data[0];
-            $('#data_table_wrapper').append("Got underlying data");
-            $('#data_table_wrapper').append(worksheetData);
+        //sheet = viz.getWorkbook().getActiveSheet();
+        sheet = getSelectedSheet(worksheetName);
+        $('#data_table_wrapper').empty();
+        $('#data_table_wrapper').append("Got sheet name");
+
+        sheet.getUnderlyingDataAsync(options).then(function (t) {
+            var data = t.getData(); 
+            $('#data_table_wrapper').empty();
+            $('#data_table_wrapper').append(data);                               
         });
+
     }
 
 /*
