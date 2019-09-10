@@ -73,7 +73,8 @@
             console.log(t);
             var data = t[0];
             $('#data_table_wrapper').empty();
-            $('#data_table_wrapper').append("Got underlying Data");                               
+            $('#data_table_wrapper').append("Got underlying Data");
+            console.log(data);                               
         });
         
     }
