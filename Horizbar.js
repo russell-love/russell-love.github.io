@@ -68,15 +68,13 @@
         $('#data_table_wrapper').empty();
         $('#data_table_wrapper').append("Got worksheet name");
 
-        worksheet.getUnderlyingDataAsync().then( function(data) {
+        worksheet.getUnderlyingDataAsync().then(function(marks) {
+            const worksheetData = marks.data[0];
+
             $('#data_table_wrapper').empty();
-            $('#data_table_wrapper').append("Starting 2");
-
-            $('#data_table_wrapper').append(data);
-            $('#data_table_wrapper').append("Done");
-        })
-
-
+            $('#data_table_wrapper').append("Got underlying data");
+            $('#data_table_wrapper').append(worksheetData);
+        }
 
 /*
         // Set our title to an appropriate value
@@ -105,8 +103,8 @@
             // Populate the data table with the rows and columns we just pulled out
             populateDataTable(data, columns);
         });
-        */
-
+        
+*/
     }
 
     function showData(data) {
