@@ -87,13 +87,13 @@
             });
 
             // Populate the data table with the rows and columns we just pulled out
-            populateDataTable(data, columns);
+            //populateDataTable(data, columns);
             drawChart(data);
         });
     }
 
     function drawChart(data) {
-        console.log(data);
+        $('#data_table_wrapper').append(data);
 
         /*
         var margin = { left:80, right:20, top:50, bottom:100 };
