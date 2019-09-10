@@ -71,7 +71,7 @@
         
         sheet.getUnderlyingDataAsync().then(function (t) {
             console.log(t);
-            var data = t.Data(); 
+            var data = t;
             $('#data_table_wrapper').empty();
             $('#data_table_wrapper').append("Got underlying Data");                               
         });
