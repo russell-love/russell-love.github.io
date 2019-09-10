@@ -73,7 +73,7 @@
         //sheet = viz.getWorkbook().getActiveSheet();
         sheet = getSelectedSheet(worksheetName);
         $('#data_table_wrapper').empty();
-        $('#data_table_wrapper').append("Got sheet name " & worksheetName);
+        $('#data_table_wrapper').append("Got sheet name " + string(worksheetName));
 
         sheet.getUnderlyingDataAsync(options).then(function (t) {
             var data = t.getData(); 
