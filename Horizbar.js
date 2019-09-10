@@ -66,6 +66,8 @@
         const worksheet = getSelectedSheet(worksheetName);
         getDataAsync(worksheet).then(showData(data));
 
+
+
 /*
         // Set our title to an appropriate value
         $('#selected_marks_title').text(worksheet.name);
@@ -98,7 +100,11 @@
     }
 
     function showData(data) {
+
+        $('#data_table_wrapper').empty();
+        
         $('#data_table_wrapper').append(data);
+        $('#data_table_wrapper').append("Done");
     }
 
     function populateDataTable(data, columns) {
