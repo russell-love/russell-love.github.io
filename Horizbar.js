@@ -71,8 +71,6 @@
             // Get the first DataTable for our selected marks (usually there is just one)
             const worksheetData = marks.data[0];
 
-            drawChart(worksheetData);
-
             // Map our data into the format which the data table component expects it
             const data = worksheetData.data.map(function(row, index) {
                 const rowData = row.map(function(cell) {
@@ -95,7 +93,7 @@
     }
 
     function drawChart(data) {
-        $('#data_table_wrapper').append(data);
+        $('#data_table_wrapper').append(data[0]);
 
         /*
         var margin = { left:80, right:20, top:50, bottom:100 };
