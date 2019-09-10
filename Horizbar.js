@@ -71,7 +71,7 @@
         };
 
         //sheet = viz.getWorkbook().getActiveSheet();
-        sheet = getSelectedSheet(worksheetName);
+        //sheet = getSelectedSheet(worksheetName);
         $('#data_table_wrapper').empty();
         $('#data_table_wrapper').append("Got sheet name");
 
