@@ -71,6 +71,8 @@
             // Get the first DataTable for our selected marks (usually there is just one)
             const worksheetData = marks.data[0];
 
+            drawChart(worksheetData);
+
             // Map our data into the format which the data table component expects it
             const data = worksheetData.data.map(function(row, index) {
                 const rowData = row.map(function(cell) {
@@ -88,7 +90,7 @@
 
             // Populate the data table with the rows and columns we just pulled out
             //populateDataTable(data, columns);
-            drawChart(data);
+            /drawChart(data);
         });
     }
 
