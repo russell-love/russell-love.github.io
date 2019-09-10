@@ -60,11 +60,17 @@
     }
 
     function loadSelectedMarks(worksheetName) {
-
+        $('#data_table_wrapper').empty();
+        $('#data_table_wrapper').append("Starting");
 
         // Get the worksheet object we want to get the selected marks for
         const worksheet = getSelectedSheet(worksheetName);
-        getDataAsync(worksheet).then(showData(data));
+        
+        worksheet.getUnderlyingDataAsync().then( function(data) {
+
+            $('#data_table_wrapper').append(data);
+            $('#data_table_wrapper').append("Done");
+        })
 
 
 
@@ -102,7 +108,7 @@
     function showData(data) {
 
         $('#data_table_wrapper').empty();
-        
+
         $('#data_table_wrapper').append(data);
         $('#data_table_wrapper').append("Done");
     }
