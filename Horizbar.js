@@ -63,13 +63,6 @@
         $('#data_table_wrapper').empty();
         $('#data_table_wrapper').append("Starting");
 
-        options = {
-            maxRows: 10,
-            ignoreAliases: false,
-            ignoreSelection: true,
-            includeAllColumns: false
-        };
-
         //sheet = viz.getWorkbook().getActiveSheet();
         //sheet = getSelectedSheet(worksheetName);
         $('#data_table_wrapper').empty();
