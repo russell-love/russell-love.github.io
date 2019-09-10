@@ -70,11 +70,10 @@
 
         worksheet.getUnderlyingDataAsync().then(function(marks) {
             const worksheetData = marks.data[0];
-
-            $('#data_table_wrapper').empty();
             $('#data_table_wrapper').append("Got underlying data");
             $('#data_table_wrapper').append(worksheetData);
-        }
+        });
+    }
 
 /*
         // Set our title to an appropriate value
@@ -105,7 +104,6 @@
         });
         
 */
-    }
 
     function showData(data) {
 
