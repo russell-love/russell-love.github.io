@@ -113,10 +113,13 @@
 
     function showData_2(t) {
         console.log(t);
-        
+
         var data = t.data;
         var dataCols = t.columns;
-
+        
+        console.log(dataCols);
+        console.log(data);
+        
         var niceData = reduceToObjects(dataCols, data);
     }
 
