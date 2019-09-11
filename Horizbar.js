@@ -108,7 +108,7 @@
 
         sheet.getUnderlyingDataAsync(options).then(function(t){
            showData_2(t);
-           console.log(t.data());
+           console.log(t.data);
         });      
     }
 
