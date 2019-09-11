@@ -122,7 +122,7 @@
         
         var niceData = reduceToObjects(dataCols, data);
 
-        console.log(dataToReturn);
+        console.log(niceData);
     }
 
     //convert to field:values convention
