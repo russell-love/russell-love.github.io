@@ -80,6 +80,9 @@
                 .data()
                 .flatten();
             */
+            var columns = t.getColumns();
+            console.log(columns);
+
             console.log(t.columns());                               
         });
         
