@@ -74,7 +74,7 @@
             //var data = t.data;
             $('#data_table_wrapper').empty();
             $('#data_table_wrapper').append("Got underlying Data");
-            console.log(t.columns([1]);
+            console.log(t.columns([1]));
             /*
             var data = t
                 .columns( [0, 1] )
