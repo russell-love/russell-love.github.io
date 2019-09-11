@@ -87,7 +87,7 @@
         };
 
         sheet.getUnderlyingDataAsync(options).then(function(t){
-               table = t;
+               var table = t;
                console.log(t);
            });
         
