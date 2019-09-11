@@ -89,6 +89,7 @@
         sheet.getUnderlyingDataAsync(options).then(function(t){
                var table = t;
                console.log(t);
+               console.log(JSON.stringify(t.getData()));
            });
         
     }
