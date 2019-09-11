@@ -127,7 +127,7 @@
 
     //convert to field:values convention
     function reduceToObjects(cols,data) {
-      var fieldNameMap = $.map(cols, function(col) { return col.$impl.$fieldName; });
+      var fieldNameMap = $.map(cols, function(col) { return fieldName; });
 
       var dataToReturn = $.map(data, function(d) {
         return d.reduce(function(memo, value, idx) {
