@@ -74,16 +74,15 @@
             //var data = t.data;
             $('#data_table_wrapper').empty();
             $('#data_table_wrapper').append("Got underlying Data");
+            console.log(t.columns([1]);
             /*
             var data = t
                 .columns( [0, 1] )
                 .data()
                 .flatten();
             */
-            var columns = t.getColumns();
-            console.log(columns);
-
-            console.log(t.columns());                               
+            
+                                          
         });
         
     }
