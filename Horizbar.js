@@ -75,10 +75,7 @@
             $('#data_table_wrapper').empty();
             $('#data_table_wrapper').append("Got underlying Data");
 
-            var data = t
-                .columns[0, 1]
-                .data()
-                .flatten();
+            var data = t.flatten();
                            
             console.log(data);               
         });
