@@ -108,9 +108,10 @@
 
         sheet.getUnderlyingDataAsync(options).then(function(t){
            sheetData = t;
+           JSON.stringify(sheetData.getData());
         });
 
-        JSON.stringify(sheetData.getData());
+        
             
 
     }
