@@ -75,9 +75,9 @@
             $('#data_table_wrapper').empty();
             $('#data_table_wrapper').append("Got underlying Data");
 
-            var data = t.flatten();
+            var columnNames = t.columns();
                            
-            console.log(data);               
+            console.log(columnNames);               
         });
         
     }
