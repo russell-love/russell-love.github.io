@@ -112,10 +112,25 @@
     }
 
     function showData_2(t) {
-        console.log(t.data);
-        console.log(t.columns)
+        var data = t.data;
+        var dataCols = t.columns;
+
+        var niceData = reduceToObjects(dataCols, data);
     }
 
+    //convert to field:values convention
+    function reduceToObjects(cols,data) {
+      var fieldNameMap = $.map(cols, function(col) { return col.$impl.$fieldName; });
+      var dataToReturn = $.map(data, function(d) {
+        return d.reduce(function(memo, value, idx) {
+          memo[fieldNameMap[idx]] = value.formattedValue; return memo;
+        }, {});
+      });
+      return dataToReturn;
+      console.log(dataToReturn);
+
+    }
+    
 /*
         // Set our title to an appropriate value
         $('#selected_marks_title').text(worksheet.name);
