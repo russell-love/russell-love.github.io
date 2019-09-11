@@ -109,6 +109,7 @@
 
         sheet.getUnderlyingDataAsync(options).then(function(t){
            sheetData = t;
+           console.log(sheetData);
         });
 
         console.log(sheetData);
