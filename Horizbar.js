@@ -79,7 +79,7 @@
         
          // If the active sheet is not a dashboard, then you can just enter:
          // viz.getWorkbook().getActiveSheet();
-        options = {
+        const options = {
             maxRows: 10, // Max rows to return. Use 0 to return all rows
             ignoreAliases: false,
             ignoreSelection: true,
