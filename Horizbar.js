@@ -94,7 +94,7 @@
            });
         */
 
-        var viz, sheet, table;
+        var viz, sheet, table, options;
 
         sheet = getSelectedSheet(worksheetName);
          // If the active sheet is not a dashboard, then you can just enter:
