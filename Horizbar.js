@@ -1,4 +1,4 @@
-//'use strict';
+'use strict';
 
 // Wrap everything in an anonymous function to avoid polluting the global namespace
 (function() {
@@ -108,9 +108,10 @@
 
         sheet.getUnderlyingDataAsync(options).then(function(t){
            sheetData = t;
-           console.log(sheetData);
-           JSON.stringify(sheetData.getData());
         });
+
+        console.log(sheetData);
+        JSON.stringify(sheetData.getData());
 
         
             
