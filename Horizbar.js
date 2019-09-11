@@ -107,11 +107,11 @@
         };
 
         sheet.getUnderlyingDataAsync(options).then(function(t){
-           showData(t);
+           showData_2(t);
         });      
     }
 
-    function showData(t) {
+    function showData_2(t) {
         console.log(t);
         JSON.stringify(t.getData());
     }
