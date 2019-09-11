@@ -75,7 +75,7 @@
             $('#data_table_wrapper').empty();
             $('#data_table_wrapper').append("Got underlying Data");
 
-            var data = t.data
+            var data = t
                 .columns( [0, 1] )
                 .data()
                 .flatten();
