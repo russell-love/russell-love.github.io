@@ -121,18 +121,21 @@
         console.log(data);
         
         var niceData = reduceToObjects(dataCols, data);
+
+        console.log(dataToReturn);
     }
 
     //convert to field:values convention
     function reduceToObjects(cols,data) {
       var fieldNameMap = $.map(cols, function(col) { return col.$fieldName; });
+
       var dataToReturn = $.map(data, function(d) {
         return d.reduce(function(memo, value, idx) {
           memo[fieldNameMap[idx]] = value.formattedValue; return memo;
         }, {});
       });
       return dataToReturn;
-      console.log(dataToReturn);
+      
 
     }
     
