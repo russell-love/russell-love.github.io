@@ -60,6 +60,7 @@
     }
 
     function loadSelectedMarks(worksheetName) {
+        /*
         $('#data_table_wrapper').empty();
         $('#data_table_wrapper').append("Starting");
 
@@ -91,7 +92,25 @@
                console.log(t);
                console.log(JSON.stringify(t.getData()));
            });
-        
+        */
+
+        var viz, sheet, table;
+
+        sheet = getSelectedSheet(worksheetName);
+         // If the active sheet is not a dashboard, then you can just enter:
+         // viz.getWorkbook().getActiveSheet();
+        options = {
+            maxRows: 10, // Max rows to return. Use 0 to return all rows
+            ignoreAliases: false,
+            ignoreSelection: true,
+            includeAllColumns: false
+        };
+
+        sheet.getUnderlyingDataAsync(options).then(function(t){
+           table = t;
+        });
+            
+
     }
 
 /*
