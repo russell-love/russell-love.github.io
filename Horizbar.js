@@ -95,7 +95,6 @@
         */
 
         var viz, sheet, options;
-        var sheetData;
 
         sheet = getSelectedSheet(worksheetName);
          // If the active sheet is not a dashboard, then you can just enter:
@@ -108,16 +107,13 @@
         };
 
         sheet.getUnderlyingDataAsync(options).then(function(t){
-           sheetData = t;
-           console.log(sheetData);
-        });
+           showData(t);
+        });      
+    }
 
-        console.log(sheetData);
-        JSON.stringify(sheetData.getData());
-
-        
-            
-
+    function showData(t) {
+        console.log(t);
+        JSON.stringify(t.getData());
     }
 
 /*
