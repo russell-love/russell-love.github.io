@@ -154,7 +154,7 @@
             // Clean data
             data.forEach(function(d) {
                 d.Revenue = +d.Revenue;
-                d.key = tParser(d.Month);
+                d.Month = tParser(d.Month);
             });
 
             console.log(data);
