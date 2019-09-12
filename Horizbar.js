@@ -119,7 +119,8 @@
     }
 
     function drawChart(data) {
-
+        $('#no_data_message').css('display', 'none');
+        
         var margin = { left:80, right:20, top:50, bottom:100 };
 
         var width = 600 - margin.left - margin.right,
