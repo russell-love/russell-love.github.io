@@ -126,9 +126,7 @@
 
         var width = 600 - margin.left - margin.right,
             height = 400 - margin.top - margin.bottom;
-            
-        console.log(height);
-        
+
         var g = d3.select("#data_table_wrapper")
             .append("svg")
                 .attr("width", width + margin.left + margin.right)
@@ -172,6 +170,8 @@
                 .domain([0, d3.max(data, function(d) { return d.Revenue })])
                 .range([height, 0]);
 
+            console.log(d3.max(data, function(d) { return d.Revenue }));
+            
             // X Axis
             var xAxisCall = d3.axisBottom(x);
             g.append("g")
