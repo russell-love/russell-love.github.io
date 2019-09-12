@@ -172,7 +172,7 @@
             console.log(revenueByMonth);
 
             // X Scale
-            var x = d3.scaleTime()
+            var x = d3.scaleBand()
                 .domain(data.map(function(d){ return d.MonthDate }))
                 .range([0, width])
                 .padding(0.2);
