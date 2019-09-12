@@ -176,18 +176,19 @@
             // X Scale
             var x = d3.scaleLinear()
                 .domain([0, d3.max(revenueByMonth, function(d) { return d.value.totalRevenue })])
-                .range([height, 0]);
+                .range([width, 0]);
 
 
             // Y Scale
             var y = d3.scaleBand()
                 .domain(revenueByMonth.map(function(d){ return d.key }))
-                .range([0, width])
+                .range([0, height])
                 .padding(0.2);
 
             // X Axis
             var xAxisCall = d3.axisBottom(x)
                 .tickFormat(function(d){ return "$" + d; });
+
             g.append("g")
                 .attr("class", "x axis")
                 .attr("transform", "translate(0," + height +")")
