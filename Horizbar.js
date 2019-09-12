@@ -84,7 +84,7 @@
 
         console.log(t.data[68]);
         console.log(t.columns);
-        
+
         //Set variables to pass to conversion function
         var data = t.data; //Data
         var dataCols = t.columns; //Column names
@@ -154,6 +154,8 @@
             .attr("transform", "rotate(-90)")
             .text("Revenue");
 
+            console.log(data[68]);
+            
             // Clean data
             data.forEach(function(d) {
                 d.Revenue = +d.Revenue;
