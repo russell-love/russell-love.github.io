@@ -162,13 +162,13 @@
             
             // X Scale
             var x = d3.scaleBand()
-                .domain(data.map(function(d){ return d.Month }))
+                .domain(revenueByMonth.map(function(d){ return d.Month }))
                 .range([0, width])
                 .padding(0.2);
 
             // Y Scale
             var y = d3.scaleLinear()
-                .domain([0, d3.max(data, function(d) { return d.Revenue })])
+                .domain([0, d3.max(revenueByMonth, function(d) { return d.Revenue })])
                 .range([height, 0]);
 
             // X Axis
@@ -192,7 +192,7 @@
 
             // Bars
             var rects = g.selectAll("rect")
-                .data(data)
+                .data(revenueByMonth)
                 
             rects.enter()
                 .append("rect")
