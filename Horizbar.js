@@ -83,7 +83,8 @@
     function cleanData(t) {
 
         console.log(t.data[68]);
-
+        console.log(t.columns);
+        
         //Set variables to pass to conversion function
         var data = t.data; //Data
         var dataCols = t.columns; //Column names
