@@ -173,22 +173,22 @@
             });
 
             // X Scale
-            var y = d3.scaleBand()
+            var x = d3.scaleBand()
                 .domain(revenueByMonth.map(function(d){ return d.key }))
                 .range([0, width])
                 .padding(0.2);
 
             // Y Scale
-            var x = d3.scaleLinear()
+            var y = d3.scaleLinear()
                 .domain([0, d3.max(revenueByMonth, function(d) { return d.value.totalRevenue })])
                 .range([height, 0]);
 
             // X Axis
-            var yAxisCall = d3.axisBottom(y);
+            var xAxisCall = d3.axisBottom(x);
             g.append("g")
                 .attr("class", "x axis")
                 .attr("transform", "translate(0," + height +")")
-                .call(yAxisCall)
+                .call(xAxisCall)
             .selectAll("text")
                 .attr("y", "10")
                 .attr("x", "-5")
@@ -200,7 +200,7 @@
                 .tickFormat(function(d){ return "$" + d; });
             g.append("g")
                 .attr("class", "y axis")
-                .call(xAxisCall);
+                .call(yAxisCall);
 
             // Bars
             var rects = g.selectAll("rect")
@@ -208,10 +208,10 @@
                 
             rects.enter()
                 .append("rect")
-                    .attr("x", function(d){ return x(d.value.totalRevenue); }) 
-                    .attr("y", function(d){ return y(d.key) })
-                    .attr("height", function(d){ return height - x(d.value.totalRevenue); })
-                    .attr("width", y.bandwidth)
+                    .attr("y", function(d){ return y(d.value.totalRevenue); }) 
+                    .attr("x", function(d){ return x(d.key) })
+                    .attr("height", function(d){ return height - y(d.value.totalRevenue); })
+                    .attr("width", x.bandwidth)
                     .attr("fill", "grey");
     }
 })();
