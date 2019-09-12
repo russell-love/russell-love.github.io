@@ -149,11 +149,16 @@
             .attr("transform", "rotate(-90)")
             .text("Revenue");
 
+            const tParser = d3.timeParse("%Y-%m-%d")
+
             // Clean data
             data.forEach(function(d) {
                 d.Revenue = +d.Revenue;
+                d.key = tParser(d.key);
             });
 
+            console.log(data);
+            
             var revenueByMonth = d3.nest()
                 .key(function(d) { return d.Month; })
                 .rollup(function(f) {
@@ -168,7 +173,7 @@
             console.log(revenueByMonth);
 
             // X Scale
-            var x = d3.scaleBand()
+            var x = d3.scaleTime()
                 .domain(revenueByMonth.map(function(d){ return d.key }))
                 .range([0, width])
                 .padding(0.2);
