@@ -154,11 +154,11 @@
             // Clean data
             data.forEach(function(d) {
                 d.Revenue = +d.Revenue;
-                d.key = tParser(d.key);
+                d.key = tParser(d.Month);
             });
 
             console.log(data);
-            
+
             var revenueByMonth = d3.nest()
                 .key(function(d) { return d.Month; })
                 .rollup(function(f) {
