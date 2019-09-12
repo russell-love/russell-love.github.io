@@ -82,11 +82,15 @@
 
     function cleanData(t) {
 
+        console.log(t);
+        
         //Set variables to pass to conversion function
         var data = t.data; //Data
         var dataCols = t.columns; //Column names
         
         var niceData = reduceToObjects(dataCols, data); //conversion call
+
+        console.log(data);
 
         drawChart(niceData);
     }
@@ -149,8 +153,6 @@
             .attr("transform", "rotate(-90)")
             .text("Revenue");
 
-            console.log(data);
-            
             // Clean data
             data.forEach(function(d) {
                 d.Revenue = +d.Revenue;
