@@ -138,7 +138,6 @@
             .attr("x", width / 2)
             .attr("font-size", "20px")
             .attr("text-anchor", "middle")
-            .attr("transform", "rotate(-90)")
             .text("Date");
 
         // Y Label
@@ -172,6 +171,11 @@
                 .attr("class", "x axis")
                 .attr("transform", "translate(0," + height +")")
                 .call(xAxisCall);
+            .selectAll("text")
+                .attr("y", "10")
+                .attr("x", "-5")
+                .attr("text-anchor", "end")
+                .attr("transform", "rotate(-40)");
 
             // Y Axis
             var yAxisCall = d3.axisLeft(y)
