@@ -154,7 +154,7 @@
             // Clean data
             data.forEach(function(d) {
                 d.Revenue = +d.Revenue; //Convert to number
-                d.Month = tParser(d.Month) //Convert to date object
+                d.MonthDate = tParser(d.Month) //Convert to date object
             });
 
             console.log(data[0]);
