@@ -166,7 +166,7 @@
                 .entries(data);
 
             console.log(revenueByMonth);
-            console.log(JSON.stringify(revenueByMonth));
+
             // X Scale
             var x = d3.scaleBand()
                 .domain(revenueByMonth.map(function(d){ return d.key }))
@@ -178,7 +178,7 @@
                 .domain([0, d3.max(revenueByMonth, function(d) { return d.value })])
                 .range([height, 0]);
 
-            console.log(d3.max(revenueByMonth, function(d) { return d.value }));
+            console.log(d3.max(revenueByMonth, function(d) { return d.value.totalRevenue }));
 
             // X Axis
             var xAxisCall = d3.axisBottom(x);
