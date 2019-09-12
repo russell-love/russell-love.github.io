@@ -127,6 +127,8 @@
         var width = 600 - margin.left - margin.right,
             height = 400 - margin.top - margin.bottom;
             
+        console.log(height);
+        
         var g = d3.select("#data_table_wrapper")
             .append("svg")
                 .attr("width", width + margin.left + margin.right)
