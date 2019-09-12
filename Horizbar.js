@@ -153,8 +153,8 @@
 
             // Clean data
             data.forEach(function(d) {
-                d.Revenue = +d.Revenue;
-                d.Month = tParser(d.Month)
+                d.Revenue = +d.Revenue; //Convert to number
+                d.Month = tParser(d.Month) //Convert to date object
             });
 
             console.log(data[0]);
@@ -169,6 +169,11 @@
                     }
                 })
                 .entries(data);
+
+            // Clean data
+            revenueByMonth.forEach(function(d) {
+                d.Key = tParser(d.Key)
+            });
 
             console.log(revenueByMonth);
 
