@@ -214,7 +214,7 @@
                 .append("rect")
                     .attr("y", function(d){ return y(d.value.totalRevenue); }) 
                     .attr("x", function(d){ return x(d.key) })
-                    .attr("height", function(d){ return height - y(d.totalRevenue); })
+                    .attr("height", function(d){ return height - y(d.value.totalRevenue); })
                     .attr("width", x.bandwidth)
                     .attr("fill", "grey");
     }
