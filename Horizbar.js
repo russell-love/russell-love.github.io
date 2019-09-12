@@ -162,6 +162,8 @@
             var revenueByMonth = d3.nest()
                 .key(function(d) { return d.Month; })
                 .rollup(function(f) {
+                    console.log(f[0]);
+                    
                     return { 
                         totalRevenue: d3.sum(f, function(g) { return g.Revenue; }), 
                         dataMonth: f.Month 
