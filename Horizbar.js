@@ -210,7 +210,7 @@
             rects.enter()
                 .append("rect")
                     .attr("x", 0) 
-                    .attr("x", function(d){ return x(d.value.totalRevenue); }) 
+                    //.attr("x", function(d){ return x(d.value.totalRevenue); }) 
                     .attr("y", function(d){ return y(d.key) })
                     .attr("height", y.bandwidth)
                     .attr("width", function(d){ return height - x(d.value.totalRevenue); })
