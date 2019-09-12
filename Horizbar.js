@@ -104,7 +104,7 @@
         //Map the column names to the data
         var dataToReturn = $.map(data, function(d) {
             return d.reduce(function(memo, value, idx) {
-            memo[fieldNameMap[idx]] = value.formattedValue; return memo;
+            memo[fieldNameMap[idx]] = value.value; return memo;
             }, {});
         });
 
@@ -155,7 +155,7 @@
             .text("Revenue");
 
             console.log(data[68]);
-            
+
             // Clean data
             data.forEach(function(d) {
                 d.Revenue = +d.Revenue;
