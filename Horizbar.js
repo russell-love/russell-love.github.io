@@ -82,15 +82,15 @@
 
     function cleanData(t) {
 
-        console.log(t);
-        
+        console.log(t.data[68]);
+
         //Set variables to pass to conversion function
         var data = t.data; //Data
         var dataCols = t.columns; //Column names
         
         var niceData = reduceToObjects(dataCols, data); //conversion call
 
-        console.log(data);
+        console.log(data[68]);
 
         drawChart(niceData);
     }
@@ -158,7 +158,7 @@
                 d.Revenue = +d.Revenue;
             });
 
-            console.log(data);
+            console.log(data[68]);
 
             // X Scale
             var x = d3.scaleBand()
