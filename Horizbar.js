@@ -161,7 +161,8 @@
                       totalRevenue: d3.sum(d, function(g) {
                         return g.Revenue;
                       })
-                    };
+                    }
+                })
                 .entries(data);
 
             console.log(revenueByMonth);
