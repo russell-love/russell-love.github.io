@@ -159,8 +159,8 @@
                 .rollup(function(f) {
                     return {
                         month: f.Month,
-                        totalRevenue: d3.sum(d, function(f) {
-                        return f.Revenue;
+                        totalRevenue: d3.sum(f, function(g) {
+                        return g.Revenue;
                       })
                     }
                 })
