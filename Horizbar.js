@@ -173,6 +173,49 @@
             });
 
             // X Scale
+            var x = d3.scaleLinear()
+                .domain([0, d3.max(revenueByMonth, function(d) { return d.value.totalRevenue })])
+                .range([height, 0]);
+
+
+            // Y Scale
+            var y = d3.scaleBand()
+                .domain(revenueByMonth.map(function(d){ return d.key }))
+                .range([0, width])
+                .padding(0.2);
+
+            // X Axis
+            var xAxisCall = d3.axisBottom(x)
+                .tickFormat(function(d){ return "$" + d; });
+            g.append("g")
+                .attr("class", "x axis")
+                .attr("transform", "translate(0," + height +")")
+                .call(xAxisCall)
+            .selectAll("text")
+                .attr("y", "10")
+                .attr("x", "-5")
+                .attr("text-anchor", "end")
+                .attr("transform", "rotate(-40)");
+
+            // Y Axis
+            var yAxisCall = d3.axisLeft(y);
+            g.append("g")
+                .attr("class", "y axis")
+                .call(yAxisCall);
+
+            // Bars
+            var rects = g.selectAll("rect")
+                .data(revenueByMonth)
+                
+            rects.enter()
+                .append("rect")
+                    .attr("x", function(d){ return x(d.value.totalRevenue); }) 
+                    .attr("y", function(d){ return y(d.key) })
+                    .attr("height", function(d){ return height - x(d.value.totalRevenue); })
+                    .attr("width", y.bandwidth)
+                    .attr("fill", "grey");
+/*
+            // X Scale
             var x = d3.scaleBand()
                 .domain(revenueByMonth.map(function(d){ return d.key }))
                 .range([0, width])
@@ -213,5 +256,6 @@
                     .attr("height", function(d){ return height - y(d.value.totalRevenue); })
                     .attr("width", x.bandwidth)
                     .attr("fill", "grey");
+    */
     }
 })();
