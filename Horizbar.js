@@ -157,8 +157,6 @@
                 d.MonthDate = tParser(d.Month) //Convert to date object
             });
 
-            console.log(data[0]);
-
             var revenueByMonth = d3.nest()
                 .key(function(d) { return d.Month; })
                 .rollup(function(f) {
@@ -173,8 +171,6 @@
                 // to get a value that is either negative, positive, or zero.
                 return new Date(b.key) - new Date(a.key);
             });
-
-            console.log(revenueByMonth);
 
             // X Scale
             var x = d3.scaleBand()
