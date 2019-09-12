@@ -175,7 +175,7 @@
 
             // X Scale
             var x = d3.scaleLinear()
-                .domain([0, d3.max(revenueByMonth, function(d) { return d.value.totalRevenue })])
+                .domain([d3.max(revenueByMonth, function(d) { return d.value.totalRevenue }), 0])
                 .range([width, 0]);
 
 
