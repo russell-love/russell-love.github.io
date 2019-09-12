@@ -88,8 +88,6 @@
         
         var niceData = reduceToObjects(dataCols, data); //conversion call
 
-        console.log(niceData);
-
         drawChart(niceData);
     }
 
@@ -141,7 +139,7 @@
             .attr("font-size", "20px")
             .attr("text-anchor", "middle")
             .attr("transform", "rotate(-90)")
-            .text("Month");
+            .text("Date");
 
         // Y Label
         g.append("text")
@@ -157,8 +155,6 @@
                 d.Revenue = +d.Revenue;
             });
 
-            console.log(data);
-
             // X Scale
             var x = d3.scaleBand()
                 .domain(data.map(function(d){ return d.Month }))
@@ -170,8 +166,6 @@
                 .domain([0, d3.max(data, function(d) { return d.Revenue })])
                 .range([height, 0]);
 
-            console.log(d3.max(data, function(d) { return d.Revenue }));
-            
             // X Axis
             var xAxisCall = d3.axisBottom(x);
             g.append("g")
