@@ -138,9 +138,9 @@
         g.append("text")
             .attr("y", height + 50)
             .attr("x", width / 2)
-            .attr("transform", "rotate(-90)")
             .attr("font-size", "20px")
             .attr("text-anchor", "middle")
+            .attr("transform", "rotate(-90)")
             .text("Month");
 
         // Y Label
