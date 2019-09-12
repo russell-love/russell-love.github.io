@@ -138,6 +138,7 @@
         g.append("text")
             .attr("y", height + 50)
             .attr("x", width / 2)
+            .attr("transform", "rotate(-90)")
             .attr("font-size", "20px")
             .attr("text-anchor", "middle")
             .text("Month");
@@ -157,7 +158,7 @@
             });
 
             console.log(data);
-            
+
             // X Scale
             var x = d3.scaleBand()
                 .domain(data.map(function(d){ return d.Month }))
