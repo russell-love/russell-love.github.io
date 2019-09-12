@@ -158,7 +158,6 @@
                 .key(function(d) { return d.Month; })
                 .rollup(function(f) {
                     return {
-                        month: f.Month,
                         totalRevenue: d3.sum(f, function(g) {
                         return g.Revenue;
                       })
@@ -170,13 +169,13 @@
 
             // X Scale
             var x = d3.scaleBand()
-                .domain(data.map(function(d){ return d.Month }))
+                .domain(revenueByMonth.map(function(d){ return d.key }))
                 .range([0, width])
                 .padding(0.2);
 
             // Y Scale
             var y = d3.scaleLinear()
-                .domain([0, d3.max(data, function(d) { return d.Revenue })])
+                .domain([0, d3.max(revenueByMonth, function(d) { return d.totalRevenue })])
                 .range([height, 0]);
 
             // X Axis
@@ -200,13 +199,13 @@
 
             // Bars
             var rects = g.selectAll("rect")
-                .data(data)
+                .data(revenueByMonth)
                 
             rects.enter()
                 .append("rect")
-                    .attr("y", function(d){ return y(d.Revenue); })
-                    .attr("x", function(d){ return x(d.Month) })
-                    .attr("height", function(d){ return height - y(d.Revenue); })
+                    .attr("y", function(d){ return y(d.totalRevenue); })
+                    .attr("x", function(d){ return x(d.key) })
+                    .attr("height", function(d){ return height - y(d.totalRevenue); })
                     .attr("width", x.bandwidth)
                     .attr("fill", "grey");
     }
