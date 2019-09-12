@@ -123,8 +123,8 @@
 
         var margin = { left:80, right:20, top:50, bottom:100 };
 
-        var width = 600 - margin.left - margin.right,
-            height = 400 - margin.top - margin.bottom;
+        var width = 800 - margin.left - margin.right,
+            height = 800 - margin.top - margin.bottom;
 
         var g = d3.select("#data_table_wrapper")
             .append("svg")
