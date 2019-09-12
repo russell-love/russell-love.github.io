@@ -154,6 +154,8 @@
                 d.Revenue = +d.Revenue;
             });
 
+            console.log(data);
+            
             // X Scale
             var x = d3.scaleBand()
                 .domain(data.map(function(d){ return d.Month }))
