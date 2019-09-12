@@ -163,7 +163,7 @@
                 .key(function(d) { return d.Month; })
                 .rollup(function(f) {
                     return { 
-                        totalRevenue: d3.sum(f, function(g) { return g.Revenue; }) 
+                        totalRevenue: d3.sum(f, function(g) { return g.Revenue; }), 
                         dataMonth: f.Month 
                     }
                 })
