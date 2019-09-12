@@ -81,14 +81,10 @@
     }
 
     function cleanData(t) {
-        console.log(t);
 
         //Set variables to pass to conversion function
         var data = t.data; //Data
         var dataCols = t.columns; //Column names
-        
-        console.log(dataCols);
-        console.log(data);
         
         var niceData = reduceToObjects(dataCols, data); //conversion call
 
