@@ -163,6 +163,7 @@
                 .key(function(d) { return d.Month; })
                 .rollup(function(f) {
                     return {
+                        month: tParser(d.Month),
                         totalRevenue: d3.sum(f, function(g) {
                         return g.Revenue;
                       })
@@ -170,10 +171,6 @@
                 })
                 .entries(data);
 
-            // Clean data
-            revenueByMonth.forEach(function(d) {
-                d.Key = tParser(d.Key)
-            });
 
             console.log(revenueByMonth);
 
