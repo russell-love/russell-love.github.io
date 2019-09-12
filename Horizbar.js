@@ -178,6 +178,8 @@
                 .domain([0, d3.max(revenueByMonth, function(d) { return d.value })])
                 .range([height, 0]);
 
+            console.log(d3.max(revenueByMonth, function(d) { return d.value }));
+
             // X Axis
             var xAxisCall = d3.axisBottom(x);
             g.append("g")
