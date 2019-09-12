@@ -175,10 +175,8 @@
 
             // Y Scale
             var y = d3.scaleLinear()
-                .domain([0, d3.max(revenueByMonth, function(d) { return d.value })])
+                .domain([0, d3.max(revenueByMonth, function(d) { return d.value.totalRevenue })])
                 .range([height, 0]);
-
-            console.log(d3.max(revenueByMonth, function(d) { return d.value.totalRevenue }));
 
             // X Axis
             var xAxisCall = d3.axisBottom(x);
@@ -205,9 +203,9 @@
                 
             rects.enter()
                 .append("rect")
-                    .attr("y", function(d){ return y(d.value); })
+                    .attr("y", function(d){ return y(d.value.totalRevenue); })
                     .attr("x", function(d){ return x(d.key) })
-                    .attr("height", function(d){ return height - y(d.value); })
+                    .attr("height", function(d){ return height - y(d.value.totalRevenue); })
                     .attr("width", x.bandwidth)
                     .attr("fill", "grey");
     }
