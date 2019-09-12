@@ -168,6 +168,11 @@
                 })
                 .entries(data);
 
+            revenueByMonth.sort(function(a,b){
+                // Turn your strings into dates, and then subtract them
+                // to get a value that is either negative, positive, or zero.
+                return new Date(b.MonthDate) - new Date(a.MonthDate);
+            });
 
             console.log(revenueByMonth);
 
@@ -207,7 +212,7 @@
                 
             rects.enter()
                 .append("rect")
-                    .attr("y", function(d){ return y(d.Revenue); })
+                    .attr("y", function(d){ return y(d.Revenue); }) 
                     .attr("x", function(d){ return x(d.Month) })
                     .attr("height", function(d){ return height - y(d.Revenue); })
                     .attr("width", x.bandwidth)
