@@ -166,7 +166,7 @@
                 .entries(data);
 
             console.log(revenueByMonth);
-
+            console.log(JSON.stringify(revenueByMonth));
             // X Scale
             var x = d3.scaleBand()
                 .domain(revenueByMonth.map(function(d){ return d.key }))
