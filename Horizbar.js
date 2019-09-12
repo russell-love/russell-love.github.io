@@ -173,7 +173,7 @@
 
             // X Scale
             var x = d3.scaleBand()
-                .domain(data.map(function(d){ return d.MonthDate }))
+                .domain(data.map(function(d){ return d.Month }))
                 .range([0, width])
                 .padding(0.2);
 
@@ -208,7 +208,7 @@
             rects.enter()
                 .append("rect")
                     .attr("y", function(d){ return y(d.Revenue); })
-                    .attr("x", function(d){ return x(d.MonthDate) })
+                    .attr("x", function(d){ return x(d.Month) })
                     .attr("height", function(d){ return height - y(d.Revenue); })
                     .attr("width", x.bandwidth)
                     .attr("fill", "grey");
