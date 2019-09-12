@@ -170,7 +170,7 @@
             g.append("g")
                 .attr("class", "x axis")
                 .attr("transform", "translate(0," + height +")")
-                .call(xAxisCall);
+                .call(xAxisCall)
             .selectAll("text")
                 .attr("y", "10")
                 .attr("x", "-5")
