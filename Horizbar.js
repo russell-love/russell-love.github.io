@@ -154,13 +154,12 @@
             // Clean data
             data.forEach(function(d) {
                 d.Revenue = +d.Revenue;
-                d.Month = tParser(d.Month);
             });
 
             console.log(data);
 
             var revenueByMonth = d3.nest()
-                .key(function(d) { return d.Month; })
+                .key(function(d) { return tParser(d.Month); })
                 .rollup(function(f) {
                     return {
                         totalRevenue: d3.sum(f, function(g) {
