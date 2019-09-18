@@ -99,7 +99,7 @@
     function drawChart(data) {
         $('#no_data_message').css('display', 'none');
 
-        var margin = { left:40, right:5, top:5, bottom:50 };
+        var margin = { left:20, right:5, top:5, bottom:50 };
 
         var width = (objWidth - margin.left - margin.right)*0.95,
             height = (objHeight - margin.top - margin.bottom)*0.95;
