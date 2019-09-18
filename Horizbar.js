@@ -22,7 +22,8 @@
         const dashboardName = tableau.extensions.dashboardContent.dashboard.name;
 
         console.log(tableau.extensions.dashboardContent.dashboard);
-
+        
+        let dashboard = tableau.extensions.dashboardContent.dashboard;
         let object = tableau.extensions.dashboardContent.dashboard;
             dashboard.objects.forEach(function (object) {
                 // do something with the objects..
