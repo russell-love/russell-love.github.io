@@ -197,6 +197,7 @@
                     .attr("width", function(d){ return x(d.value.totalRevenue); })
                     .attr("fill", "purple");
 
+            var formattedLabelText = d3.format("$.2s");
             g.selectAll(".text")          
                 .data(revenueByMonth)
                 .enter()
@@ -205,6 +206,6 @@
                     .attr("x", 50)
                     .attr("y", function(d){ return y(tParser(d.key)) })
                     .attr("dy", ".75em")
-                    .text(function(d){ return d.value.totalRevenue });
+                    .text(function(d){ return formattedLabelText(d.value.totalRevenue); });
     }       
 })();
