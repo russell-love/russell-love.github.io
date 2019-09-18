@@ -203,9 +203,9 @@
                 .enter()
                     .append("text")
                     .attr("class","label")
-                    .attr("x", 50)
+                    .attr("x", 5)
                     .attr("y", function(d){ return y(tParser(d.key)) })
-                    .attr("dy", ".75em")
+                    .attr("dy", ".5em")
                     .text(function(d){ return formattedLabelText(d.value.totalRevenue); });
     }       
 })();
