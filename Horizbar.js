@@ -161,7 +161,7 @@
 
 
             // Y Scale
-            var y = d3.scaleBand()
+            var y = d3.scaleTime()
                 .domain(revenueByMonth.map(function(d){ return d.key }))
                 .range([0, height])
                 .padding(0.2);
