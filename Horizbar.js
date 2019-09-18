@@ -25,7 +25,13 @@
         $('#choose_sheet_title').text(dashboardName);
 
         console.log(tableau.extensions.dashboardContent.dashboard.size);
-        console.log(tableau.extensions.dashboardContent.dashboard.name("HorizBarTest").size);
+        let dashboard = tableau.extensions.dashboardContent.dashboard;
+            dashboard.worksheets.forEach(function (worksheet) {
+                // do something with the worksheets..
+                console.log("The worksheet name is " + worksheet.name)
+            });
+   
+        console.log(tableau.extensions.dashboardContent.dashboard.name);
 
         // The first step in choosing a sheet will be asking Tableau what sheets are available
         const worksheets = tableau.extensions.dashboardContent.dashboard.worksheets;
