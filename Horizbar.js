@@ -205,7 +205,7 @@
                     .attr("class","label")
                     .attr("x", 30)
                     .attr("y", function(d){ return y(tParser(d.key)) })
-                    .attr("dy", "2.0em")
+                    .attr("dy", "3.0em")
                     .text(function(d){ return formattedLabelText(d.value.totalRevenue); });
     }       
 })();
