@@ -18,7 +18,7 @@
   </dashboard-extension>
   <resources>
     <resource id="name">
-      <text locale="en_US">Tutorial - Part 1</text>
+      <text locale="en_US">HorizBarTest</text>
     </resource>
   </resources>
 </manifest>
