@@ -159,17 +159,12 @@
                 .domain([0, d3.max(revenueByMonth, function(d) { return d.value.totalRevenue })])
                 .range([0, width]);
 
-            var y = d3.scaleOrdinal()
-                .domain(revenueByMonth.map(function(d) {
-                    return d.key;
-                }))
-                .rangeRoundBands([0, height], 0.1);
-/*
             // Y Scale
-            var y = d3.scaleTime()
+            var y = d3.scaleBand()
                 .domain(revenueByMonth.map(function(d){ return d.key }))
-                .range([0, height]);
-*/
+                .range([0, height])
+                .padding(0.2);
+
             // X Axis
             var xAxisCall = d3.axisBottom(x)
                 .tickFormat(function(d){ return "$" + d; });
