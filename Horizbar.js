@@ -13,6 +13,8 @@
         });
     });
 
+    var objHeight;
+    var objWidth;
     /**
      * Shows the choose sheet UI. Once a sheet is selected, the data table for the sheet is shown
      */
@@ -37,8 +39,11 @@
                 // do something with the objects..
                 //console.log("The object name is " + object.name)
                 if (object.name == "HorizBarTest") {
-                    console.log("Width :" + object.size.width);
-                    console.log("Height :" + object.size.height);
+                    console.log("Width : " + object.size.width);
+                    console.log("Height : " + object.size.height);
+
+                    objWidth = object.size.width;
+                    objHeight = object.size.height;
                 }
             });
 
@@ -141,8 +146,11 @@
 
         var margin = { left:80, right:20, top:50, bottom:100 };
 
-        var width = 800 - margin.left - margin.right,
-            height = 800 - margin.top - margin.bottom;
+        var width = objWidth - margin.left - margin.right,
+            height = objHeight - margin.top - margin.bottom;
+            
+        //var width = 800 - margin.left - margin.right,
+            //height = 800 - margin.top - margin.bottom;
 
         var g = d3.select("#data_table_wrapper")
             .append("svg")
