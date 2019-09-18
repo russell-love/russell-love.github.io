@@ -167,7 +167,7 @@
             // X Axis
             var xAxisCall = d3.axisBottom(x)
                 //.tickFormat(function(d){ return "$" + d; });
-                .tickFormat(d3.format("s"));
+                .tickFormat(d3.format(".0s"));
 
             g.append("g")
                 .attr("class", "x axis")
