@@ -99,7 +99,7 @@
     function drawChart(data) {
         $('#no_data_message').css('display', 'none');
 
-        var margin = { left:40, right:5, top:5, bottom:50 };
+        var margin = { left:40, right:5, top:5, bottom:30 };
 
         var width = (objWidth - margin.left - margin.right)*0.95,
             height = (objHeight - margin.top - margin.bottom)*0.98;
@@ -176,8 +176,8 @@
             .selectAll("text")
                 .attr("y", "10")
                 .attr("x", "-5")
-                .attr("text-anchor", "end")
-                .attr("transform", "rotate(-40)");
+                .attr("text-anchor", "end");
+                //.attr("transform", "rotate(-40)");
 
             // Y Axis
             var yAxisCall = d3.axisLeft(y)
