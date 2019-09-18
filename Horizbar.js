@@ -195,7 +195,7 @@
             rects.enter()
                 .append("rect")
                     .attr("x", 0) 
-                    .attr("y", function(d){ return y(d.key) })
+                    .attr("y", function(d){ return y(tParser(d.key)) })
                     .attr("height", y.bandwidth)
                     .attr("width", function(d){ return x(d.value.totalRevenue); })
                     .attr("fill", "grey");
