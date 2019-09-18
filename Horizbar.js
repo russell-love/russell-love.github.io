@@ -146,9 +146,9 @@
 
         var margin = { left:80, right:20, top:50, bottom:100 };
 
-        var width = objWidth - margin.left - margin.right,
-            height = objHeight - margin.top - margin.bottom;
-            
+        var width = (objWidth - margin.left - margin.right) * 0.9,
+            height = (objHeight - margin.top - margin.bottom) * 0.9;
+
         //var width = 800 - margin.left - margin.right,
             //height = 800 - margin.top - margin.bottom;
 
