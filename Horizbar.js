@@ -176,8 +176,7 @@
             .selectAll("text")
                 .attr("y", "10")
                 .attr("x", "-5")
-                .attr("text-anchor", "end");
-                //.attr("transform", "rotate(-40)");
+                .attr("text-anchor", "middle");
 
             // Y Axis
             var yAxisCall = d3.axisLeft(y)
