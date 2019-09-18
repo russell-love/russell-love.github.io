@@ -44,72 +44,6 @@
         //$('#choose_sheet_dialog').modal('toggle');
         loadSelectedMarks(worksheetName);
     }
-    /**
-     * Shows the choose sheet UI. Once a sheet is selected, the data table for the sheet is shown
-     */
-    function showChooseSheetDialog() {
-        // Clear out the existing list of sheets
-        $('#choose_sheet_buttons').empty();
-
-        // Set the dashboard's name in the title
-        const dashboardName = tableau.extensions.dashboardContent.dashboard.name;
-        $('#choose_sheet_title').text(dashboardName);
-
-        console.log(tableau.extensions.dashboardContent.dashboard);
-
-        let dashboard = tableau.extensions.dashboardContent.dashboard;
-            dashboard.worksheets.forEach(function (worksheet) {
-                // do something with the worksheets..
-                console.log("The worksheet name is " + worksheet.name)
-            });
-
-        let object = tableau.extensions.dashboardContent.dashboard;
-            dashboard.objects.forEach(function (object) {
-                // do something with the objects..
-                //console.log("The object name is " + object.name)
-                if (object.name == "HorizBarTest") {
-                    console.log("Width : " + object.size.width);
-                    console.log("Height : " + object.size.height);
-
-                    objWidth = object.size.width;
-                    objHeight = object.size.height;
-                }
-            });
-
-        // The first step in choosing a sheet will be asking Tableau what sheets are available
-        const worksheets = tableau.extensions.dashboardContent.dashboard.worksheets;
-
-        // Next, we loop through all of these worksheets add add buttons for each one
-        worksheets.forEach(function(worksheet) {
-            // Declare our new button which contains the sheet name
-            const button = createButton(worksheet.name);
-
-            // Create an event handler for when this button is clicked
-            button.click(function() {
-                // Get the worksheet name which was selected
-                const worksheetName = worksheet.name;
-
-                // Close the dialog and show the data table for this worksheet
-                $('#choose_sheet_dialog').modal('toggle');
-                loadSelectedMarks(worksheetName);
-            });
-
-            // Add our button to the list of worksheets to choose from
-            $('#choose_sheet_buttons').append(button);
-        });
-
-        // Show the dialog
-        $('#choose_sheet_dialog').modal('toggle');
-    }
-
-    function createButton(buttonTitle) {
-        const button =
-            $(`<button type='button' class='btn btn-default btn-block'>
-      ${buttonTitle}
-    </button>`);
-
-        return button;
-    }
 
     function loadSelectedMarks(worksheetName) {
         //Setup variables
@@ -157,17 +91,6 @@
 
         return dataToReturn;
       
-    }
-    
-    function initializeButtons() {
-        $('#show_choose_sheet_button').click(showChooseSheetDialog);
-    }
-
-    function getSelectedSheet(worksheetName) {
-        // Go through all the worksheets in the dashboard and find the one we want
-        return tableau.extensions.dashboardContent.dashboard.worksheets.find(function(sheet) {
-            return sheet.name === worksheetName;
-        });
     }
 
     function drawChart(data) {
