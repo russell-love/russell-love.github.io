@@ -197,7 +197,7 @@
                     .attr("width", function(d){ return x(d.value.totalRevenue); })
                     .attr("fill", "purple");
 
-            svg.selectAll(".text")          
+            g.selectAll(".text")          
                 .data(revenueByMonth)
                 .enter()
                     .append("text")
