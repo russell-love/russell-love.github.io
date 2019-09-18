@@ -50,7 +50,7 @@
         var viz, sheet, options;
 
         //Set the desired sheet to the selected sheet
-        sheet = worksheetName;
+        sheet = getSelectedSheet(worksheetName);
 
         //Set options for the getUnderlyingData call
         options = {
@@ -91,6 +91,13 @@
 
         return dataToReturn;
       
+    }
+
+    function getSelectedSheet(worksheetName) {
+        // Go through all the worksheets in the dashboard and find the one we want
+        return tableau.extensions.dashboardContent.dashboard.worksheets.find(function(sheet) {
+            return sheet.name === worksheetName;
+        });
     }
 
     function drawChart(data) {
