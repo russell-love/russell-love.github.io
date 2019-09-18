@@ -22,7 +22,7 @@
         const dashboardName = tableau.extensions.dashboardContent.dashboard.name;
 
         console.log(tableau.extensions.dashboardContent.dashboard);
-        
+
         let dashboard = tableau.extensions.dashboardContent.dashboard;
         let object = tableau.extensions.dashboardContent.dashboard;
             dashboard.objects.forEach(function (object) {
@@ -40,8 +40,8 @@
         // Get the worksheet
         const worksheetName = "REVENUE (2)";
 
-        // Close the dialog and show the data table for this worksheet
-        $('#choose_sheet_dialog').modal('toggle');
+        //Show the viz 
+        //$('#choose_sheet_dialog').modal('toggle');
         loadSelectedMarks(worksheetName);
     }
     /**
