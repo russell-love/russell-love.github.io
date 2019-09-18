@@ -159,12 +159,17 @@
                 .domain([0, d3.max(revenueByMonth, function(d) { return d.value.totalRevenue })])
                 .range([0, width]);
 
-
+            var y = d3.scale.ordinal()
+                .domain(revenueByMonth.map(function(d) {
+                    return d.key;
+                }))
+                .rangeRoundBands([0, height], 0.1);
+/*
             // Y Scale
             var y = d3.scaleTime()
                 .domain(revenueByMonth.map(function(d){ return d.key }))
                 .range([0, height]);
-
+*/
             // X Axis
             var xAxisCall = d3.axisBottom(x)
                 .tickFormat(function(d){ return "$" + d; });
