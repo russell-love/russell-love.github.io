@@ -161,10 +161,10 @@
 
 
             // Y Scale
-            var y = d3.scaleTime()
+            var y = d3.scaleBand()
                 .domain(revenueByMonth.map(function(d){ return d.key }))
-                .range([0, height]);
-                //.padding(0.2);
+                .range([0, height])
+                .padding(0.2);
 
             // X Axis
             var xAxisCall = d3.axisBottom(x)
@@ -182,7 +182,7 @@
 
             // Y Axis
             var yAxisCall = d3.axisLeft(y)
-                .tickFormat(d3.timeFormat("%Y-%m-%d"));
+                .tickFormat(d3.format("%m-%d"));
 
             g.append("g")
                 .attr("class", "y axis")
