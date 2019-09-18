@@ -165,6 +165,7 @@
                 .range([0, height])
                 .padding(0.2);
 
+
             // X Axis
             var xAxisCall = d3.axisBottom(x)
                 .tickFormat(function(d){ return "$" + d; });
@@ -181,7 +182,8 @@
 
             // Y Axis
             var yAxisCall = d3.axisLeft(y)
-                .tickFormat(d3.timeFormat("%m-%d"));
+                .tickFormat(d3.timeFormat("%m-%d"))
+                .tickValues(y.domain().filter(function(d,i){ return !(i%4)}));
 
             g.append("g")
                 .attr("class", "y axis")
