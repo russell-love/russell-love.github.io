@@ -196,8 +196,7 @@
                     .attr("y", function(d){ return y(tParser(d.key)) })
                     .attr("height", y.bandwidth)
                     .attr("width", function(d){ return x(d.value.totalRevenue); })
-                    .attr("fill", "purple")
-                    .attr("stroke", "black");
+                    .attr("fill", "purple");
 
 
     }
