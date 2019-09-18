@@ -161,6 +161,109 @@
 
 
             // Y Scale
+            var y = d3.scaleTime()
+                .domain(revenueByMonth.map(function(d){ return d.key }))
+                .range([0, height])
+                .padding(0.2);
+
+            // X Axis
+            var xAxisCall = d3.axisBottom(x)
+                .tickFormat(function(d){ return "$" + d; });
+
+            g.append("g")
+                .attr("class", "x axis")
+                .attr("transform", "translate(0," + height +")")
+                .call(xAxisCall)
+            .selectAll("text")
+                .attr("y", "10")
+                .attr("x", "-5")
+                .attr("text-anchor", "end")
+                .attr("transform", "rotate(-40)");
+
+            // Y Axis
+            var yAxisCall = d3.axisLeft(y)
+                .tickFormat(d3.format("%m-%d"));
+
+            g.append("g")
+                .attr("class", "y axis")
+                .call(yAxisCall);
+
+            // Bars
+            var rects = g.selectAll("rect")
+                .data(revenueByMonth)
+                
+            rects.enter()
+                .append("rect")
+                    .attr("x", 0) 
+                    .attr("y", function(d){ return y(d.key) })
+                    .attr("height", y.bandwidth)
+                    .attr("width", function(d){ return x(d.value.totalRevenue); })
+                    .attr("fill", "grey");
+/*
+    $('#no_data_message').css('display', 'none');
+
+        var margin = { left:80, right:20, top:50, bottom:100 };
+
+        var width = (objWidth - margin.left - margin.right) * 0.9,
+            height = (objHeight - margin.top - margin.bottom) * 0.9;
+
+        //var width = 800 - margin.left - margin.right,
+            //height = 800 - margin.top - margin.bottom;
+
+        var g = d3.select("#data_table_wrapper")
+            .append("svg")
+                .attr("width", width + margin.left + margin.right)
+                .attr("height", height + margin.top + margin.bottom)
+            .append("g")
+                .attr("transform", "translate(" + margin.left + ", " + margin.top + ")");
+
+        // X Label
+        g.append("text")
+            .attr("y", height + 50)
+            .attr("x", width / 2)
+            .attr("font-size", "20px")
+            .attr("text-anchor", "middle")
+            .text("Date");
+
+        // Y Label
+        g.append("text")
+            .attr("y", -60)
+            .attr("x", -(height / 2))
+            .attr("font-size", "20px")
+            .attr("text-anchor", "middle")
+            .attr("transform", "rotate(-90)")
+            .text("Revenue");
+
+            const tParser = d3.timeParse("%Y-%m-%d")
+
+            // Clean data
+            data.forEach(function(d) {
+                d.Revenue = +d.Revenue; //Convert to number
+                d.MonthDate = tParser(d.Month) //Convert to date object
+            });
+
+            var revenueByMonth = d3.nest()
+                .key(function(d) { return d.Month; })
+                .rollup(function(f) {
+                    return { 
+                        totalRevenue: d3.sum(f, function(g) { return g.Revenue; }), 
+                    }
+                })
+                .entries(data);
+
+            revenueByMonth.sort(function(a,b){
+                // Turn your strings into dates, and then subtract them
+                // to get a value that is either negative, positive, or zero.
+                return new Date(b.key) - new Date(a.key);
+            });
+
+            // X Scale
+            var x = d3.scaleLinear()
+                .domain([0, d3.max(revenueByMonth, function(d) { return d.value.totalRevenue })])
+                .range([0, width]);
+
+
+            // Y Scale
             var y = d3.scaleBand()
                 .domain(revenueByMonth.map(function(d){ return d.key }))
                 .range([0, height])
@@ -199,5 +302,6 @@
                     .attr("height", y.bandwidth)
                     .attr("width", function(d){ return x(d.value.totalRevenue); })
                     .attr("fill", "grey");
+                    */
     }
 })();
