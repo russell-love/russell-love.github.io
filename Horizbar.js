@@ -6,11 +6,7 @@
     $(document).ready(function() {
         // Tell Tableau we'd like to initialize our extension
         tableau.extensions.initializeAsync().then(function() {
-            // Once the extension is initialized, ask the user to choose a sheet
-            //showChooseSheetDialog();
-
-            //initializeButtons();
-
+            // Once the extension is initialized
             getContainerSize();
         });
     });
@@ -185,7 +181,9 @@
                 .attr("transform", "rotate(-40)");
 
             // Y Axis
-            var yAxisCall = d3.axisLeft(y);
+            var yAxisCall = d3.axisLeft(y)
+                .tickFormat(d3.format("%m-%d"));
+
             g.append("g")
                 .attr("class", "y axis")
                 .call(yAxisCall);
