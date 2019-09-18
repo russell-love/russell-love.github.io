@@ -108,7 +108,7 @@
             .append("svg")
                 .attr("width", width + margin.left + margin.right)
                 .attr("height", height + margin.top + margin.bottom)
-                .attr("style", "outline: thin solid red;")   //This will do the job
+                //.attr("style", "outline: thin solid red;")   //Outline
             .append("g")
                 .attr("transform", "translate(" + margin.left + ", " + margin.top + ")");
 /*
