@@ -176,7 +176,8 @@
             .selectAll("text")
                 .attr("y", "10")
                 .attr("x", "-5")
-                .attr("text-anchor", "end");
+                .attr("text-anchor", "middle");
+                //.attr("text-anchor", "end");
                 //.attr("transform", "rotate(-40)");
 
             // Y Axis
