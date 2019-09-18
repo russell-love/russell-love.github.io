@@ -202,7 +202,7 @@
                 .enter()
                     .append("text")
                     .attr("class","label")
-                    .attr("x", 50)
+                    .attr("x", 60)
                     .attr("y", function(d){ return y(tParser(d.key)) })
                     .attr("dy", ".75em")
                     .text(function(d){ return x(d.value.totalRevenue); });
