@@ -50,7 +50,7 @@
         var viz, sheet, options;
 
         //Set the desired sheet to the selected sheet
-        sheet = getSelectedSheet(worksheetName);
+        sheet = worksheetName;
 
         //Set options for the getUnderlyingData call
         options = {
