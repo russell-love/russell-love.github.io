@@ -7,9 +7,11 @@
         // Tell Tableau we'd like to initialize our extension
         tableau.extensions.initializeAsync().then(function() {
             // Once the extension is initialized, ask the user to choose a sheet
-            showChooseSheetDialog();
+            //showChooseSheetDialog();
 
-            initializeButtons();
+            //initializeButtons();
+
+            getContainerSize();
         });
     });
 
