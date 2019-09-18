@@ -164,6 +164,19 @@
                 .padding(0.2);
 
 
+            // Bars
+            var rects = g.selectAll("rect")
+                .data(revenueByMonth)
+                
+            rects.enter()
+                .append("rect")
+                    .attr("x", 0) 
+                    .attr("y", function(d){ return y(tParser(d.key)) })
+                    .attr("height", y.bandwidth)
+                    .attr("width", function(d){ return x(d.value.totalRevenue); })
+                    .attr("fill", "purple")
+                    .attr("stroke", "black");
+
             // X Axis
             var xAxisCall = d3.axisBottom(x)
                 //.tickFormat(function(d){ return "$" + d; });
@@ -187,17 +200,5 @@
                 .attr("class", "y axis")
                 .call(yAxisCall);
 
-            // Bars
-            var rects = g.selectAll("rect")
-                .data(revenueByMonth)
-                
-            rects.enter()
-                .append("rect")
-                    .attr("x", 0) 
-                    .attr("y", function(d){ return y(tParser(d.key)) })
-                    .attr("height", y.bandwidth)
-                    .attr("width", function(d){ return x(d.value.totalRevenue); })
-                    .attr("fill", "purple")
-                    .attr("stroke", "black");
     }
 })();
