@@ -159,7 +159,7 @@
                 .domain([0, d3.max(revenueByMonth, function(d) { return d.value.totalRevenue })])
                 .range([0, width]);
 
-            var y = d3.scale.ordinal()
+            var y = d3.scaleOrdinal()
                 .domain(revenueByMonth.map(function(d) {
                     return d.key;
                 }))
