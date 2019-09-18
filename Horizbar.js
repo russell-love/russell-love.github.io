@@ -25,11 +25,17 @@
         $('#choose_sheet_title').text(dashboardName);
 
         console.log(tableau.extensions.dashboardContent.dashboard);
-        
+
         let dashboard = tableau.extensions.dashboardContent.dashboard;
             dashboard.worksheets.forEach(function (worksheet) {
                 // do something with the worksheets..
                 console.log("The worksheet name is " + worksheet.name)
+            });
+
+        let object = tableau.extensions.dashboardContent.dashboard;
+            dashboard.objects.forEach(function (worksheet) {
+                // do something with the objects..
+                console.log("The object name is " + object.name)
             });
 
         // The first step in choosing a sheet will be asking Tableau what sheets are available
