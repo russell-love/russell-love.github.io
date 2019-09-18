@@ -175,7 +175,7 @@
                 .call(xAxisCall)
             .selectAll("text")
                 .attr("y", "10")
-                .attr("x", "-5")
+                //.attr("x", "-5")
                 .attr("text-anchor", "middle");
 
             // Y Axis
