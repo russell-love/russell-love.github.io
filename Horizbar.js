@@ -194,7 +194,7 @@
                     .attr("x", 0) 
                     .attr("y", function(d){ return y(tParser(d.key)) })
                     .attr("height", y.bandwidth)
-                    .attr("width", function(d){ return d.value.totalRevenue; })
+                    .attr("width", function(d){ return x(d.value.totalRevenue); })
                     .attr("fill", "purple");
 
             g.selectAll(".text")          
@@ -202,7 +202,7 @@
                 .enter()
                     .append("text")
                     .attr("class","label")
-                    .attr("x", 60)
+                    .attr("x", 50)
                     .attr("y", function(d){ return y(tParser(d.key)) })
                     .attr("dy", ".75em")
                     .text(function(d){ return d.value.totalRevenue });
