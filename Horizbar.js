@@ -24,6 +24,8 @@
         const dashboardName = tableau.extensions.dashboardContent.dashboard.name;
         $('#choose_sheet_title').text(dashboardName);
 
+        console.log(tableau.extensions.dashboardContent.dashboard.size);
+        
         // The first step in choosing a sheet will be asking Tableau what sheets are available
         const worksheets = tableau.extensions.dashboardContent.dashboard.worksheets;
 
