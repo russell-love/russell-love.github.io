@@ -37,7 +37,8 @@
                 // do something with the objects..
                 //console.log("The object name is " + object.name)
                 if (object.name == "HorizBarTest") {
-                    console.log(object.size);
+                    console.log("Width :" + object.size.width);
+                    console.log("Height :" + object.size.height);
                 }
             });
 
