@@ -10,3 +10,10 @@ div.DTS div.dataTables_scrollBody {
 .sheet_name {
     font-weight: bold;
 }
+
+svg text.label {
+  fill:white;
+  font: 15px;  
+  font-weight: 400;
+  text-anchor: middle;
+}

@@ -166,8 +166,7 @@
             // X Axis
             var xAxisCall = d3.axisBottom(x)
                 //.tickFormat(function(d){ return "$" + d; });
-                .tickFormat(d3.format("$.2s"))
-                .ticks(7);
+                .tickFormat(d3.format("$.2s"));
 
             g.append("g")
                 .attr("class", "x axis")
@@ -198,6 +197,14 @@
                     .attr("width", function(d){ return x(d.value.totalRevenue); })
                     .attr("fill", "purple");
 
-
-    }
+            svg.selectAll(".text")          
+                .data(revenueByMonth)
+                .enter()
+                    .append("text")
+                    .attr("class","label")
+                    .attr("x", 0)
+                    .attr("y", function(d){ return y(tParser(d.key)) })
+                    .attr("dy", ".75em")
+                    .text(function(d) { return d.value.totalRevenue; });
+    }       
 })();
