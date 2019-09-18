@@ -33,7 +33,7 @@
             });
 
         let object = tableau.extensions.dashboardContent.dashboard;
-            dashboard.objects.forEach(function (worksheet) {
+            dashboard.objects.forEach(function (object) {
                 // do something with the objects..
                 console.log("The object name is " + object.name)
             });
