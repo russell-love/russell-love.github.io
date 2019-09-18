@@ -15,6 +15,32 @@
 
     var objHeight;
     var objWidth;
+
+    function getContainerSize() {
+        const dashboardName = tableau.extensions.dashboardContent.dashboard.name;
+
+        console.log(tableau.extensions.dashboardContent.dashboard);
+
+        let object = tableau.extensions.dashboardContent.dashboard;
+            dashboard.objects.forEach(function (object) {
+                // do something with the objects..
+                //console.log("The object name is " + object.name)
+                if (object.name == "HorizBarTest") {
+                    console.log("Width : " + object.size.width);
+                    console.log("Height : " + object.size.height);
+
+                    objWidth = object.size.width;
+                    objHeight = object.size.height;
+                }
+            });
+
+        // Get the worksheet
+        const worksheetName = "REVENUE (2)";
+
+        // Close the dialog and show the data table for this worksheet
+        $('#choose_sheet_dialog').modal('toggle');
+        loadSelectedMarks(worksheetName);
+    }
     /**
      * Shows the choose sheet UI. Once a sheet is selected, the data table for the sheet is shown
      */
@@ -242,48 +268,5 @@
                     .attr("height", y.bandwidth)
                     .attr("width", function(d){ return x(d.value.totalRevenue); })
                     .attr("fill", "grey");
-/*
-            // X Scale
-            var x = d3.scaleBand()
-                .domain(revenueByMonth.map(function(d){ return d.key }))
-                .range([0, width])
-                .padding(0.2);
-
-            // Y Scale
-            var y = d3.scaleLinear()
-                .domain([0, d3.max(revenueByMonth, function(d) { return d.value.totalRevenue })])
-                .range([height, 0]);
-
-            // X Axis
-            var xAxisCall = d3.axisBottom(x);
-            g.append("g")
-                .attr("class", "x axis")
-                .attr("transform", "translate(0," + height +")")
-                .call(xAxisCall)
-            .selectAll("text")
-                .attr("y", "10")
-                .attr("x", "-5")
-                .attr("text-anchor", "end")
-                .attr("transform", "rotate(-40)");
-
-            // Y Axis
-            var yAxisCall = d3.axisLeft(y)
-                .tickFormat(function(d){ return "$" + d; });
-            g.append("g")
-                .attr("class", "y axis")
-                .call(yAxisCall);
-
-            // Bars
-            var rects = g.selectAll("rect")
-                .data(revenueByMonth)
-                
-            rects.enter()
-                .append("rect")
-                    .attr("y", function(d){ return y(d.value.totalRevenue); }) 
-                    .attr("x", function(d){ return x(d.key) })
-                    .attr("height", function(d){ return height - y(d.value.totalRevenue); })
-                    .attr("width", x.bandwidth)
-                    .attr("fill", "grey");
-    */
     }
 })();
