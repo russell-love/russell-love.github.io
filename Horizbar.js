@@ -205,6 +205,6 @@
                     .attr("x", 0)
                     .attr("y", function(d){ return y(tParser(d.key)) })
                     .attr("dy", ".75em")
-                    .text(function(d) { return d.value.totalRevenue; });
+                    .text(function(d){ return x(d.value.totalRevenue); });
     }       
 })();
