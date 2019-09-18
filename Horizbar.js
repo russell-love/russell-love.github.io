@@ -182,7 +182,7 @@
 
             // Y Axis
             var yAxisCall = d3.axisLeft(y)
-                .tickFormat(d3.timeFormat("%m-%d"));
+                .tickFormat(d3.timeFormat("%Y-%m-%d"));
 
             g.append("g")
                 .attr("class", "y axis")
