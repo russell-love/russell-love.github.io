@@ -197,7 +197,7 @@
                     .attr("width", function(d){ return x(d.value.totalRevenue); })
                     .attr("fill", "purple");
 
-            var formattedLabelText = d3.format("$.2s");
+            var formattedLabelText = d3.format("$,");
             g.selectAll(".text")          
                 .data(revenueByMonth)
                 .enter()
