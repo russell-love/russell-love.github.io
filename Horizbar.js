@@ -35,7 +35,10 @@
         let object = tableau.extensions.dashboardContent.dashboard;
             dashboard.objects.forEach(function (object) {
                 // do something with the objects..
-                console.log("The object name is " + object.name)
+                //console.log("The object name is " + object.name)
+                if (object.name = "HorizBarTest") {
+                    console.log(object.size);
+                }
             });
 
         // The first step in choosing a sheet will be asking Tableau what sheets are available
