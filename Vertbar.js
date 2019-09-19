@@ -176,7 +176,7 @@
             rects.enter()
                 .append("rect")
                     .attr("y", function(d){ return y(d.value.totalSuccessful); }) 
-                    .attr("x", function(d){ return y(tParser(d.key)) })
+                    .attr("x", function(d){ return x(tParser(d.key)) })
                     .attr("width", x.bandwidth)
                     .attr("height", function(d){ return y(d.value.totalSuccessful); })
                     .attr("fill", "purple");
@@ -188,7 +188,7 @@
                     .append("text")
                     .attr("class","label")
                     .attr("y", 30)
-                    .attr("x", function(d){ return y(tParser(d.key)) })
+                    .attr("x", function(d){ return x(tParser(d.key)) })
                     .attr("dx", "3.0em")
                     .text(function(d){ return formattedLabelText(d.value.totalSuccessful); });
 
