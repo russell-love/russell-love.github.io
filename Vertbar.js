@@ -101,8 +101,8 @@
 
         var margin = { left:40, right:15, top:5, bottom:30 };
 
-        var width = (objWidth - margin.left - margin.right)*0.95,
-            height = (objHeight - margin.top - margin.bottom)*0.98;
+        var width = (objWidth - margin.left - margin.right)*0.98,
+            height = (objHeight - margin.top - margin.bottom)*0.95;
 
         var g = d3.select("#data_table_wrapper")
             .append("svg")
@@ -154,7 +154,7 @@
 
             // X Scale
             var y = d3.scaleLinear()
-                .domain([0, d3.max(revenueByMonth, function(d) { return d.value.totalRevenue })])
+                .domain([d3.max(revenueByMonth, function(d) { return d.value.totalRevenue }),0])
                 .range([0, height]);
 
             // Y Scale
@@ -192,7 +192,7 @@
                 .append("rect")
                     .attr("y", 0) 
                     .attr("x", function(d){ return y(tParser(d.key)) })
-                    .attr("width", y.bandwidth)
+                    .attr("width", x.bandwidth)
                     .attr("height", function(d){ return x(d.value.totalRevenue); })
                     .attr("fill", "purple");
 
