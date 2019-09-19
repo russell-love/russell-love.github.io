@@ -144,8 +144,6 @@
                 .domain([d3.max(successfulByMonth, function(d) { return d.value.totalSuccessful }),0])
                 .range([0, height]);
 
-            console.log(d3.max(successfulByMonth, function(d) { return d.value.totalSuccessful }));
-
             // X Scale
             var x = d3.scaleBand()
                 .domain(successfulByMonth.map(function(d){ return tParser(d.key) }))
@@ -162,7 +160,6 @@
                 .call(xAxisCall)
             .selectAll("text")
                 .attr("y", "10")
-                //.attr("x", "-5")
                 .attr("text-anchor", "middle");
 
             // Y Axis
@@ -175,7 +172,7 @@
 
             // Bars
             var rects = g.selectAll("rect")
-                .data(successfulByMonth)
+                .data(successfulByMonth);
                 
             rects.enter()
                 .append("rect")
@@ -184,7 +181,7 @@
                     .attr("width", x.bandwidth)
                     .attr("height", function(d){ return y(d.value.totalSuccessful); })
                     .attr("fill", "purple");
-            /*
+
             var formattedLabelText = d3.format("$,.0f");
             g.selectAll(".text")          
                 .data(successfulByMonth)
@@ -195,6 +192,6 @@
                     .attr("x", function(d){ return y(tParser(d.key)) })
                     .attr("dx", "3.0em")
                     .text(function(d){ return formattedLabelText(d.value.totalSuccessful); });
-            */
+
     }       
 })();
