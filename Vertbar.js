@@ -115,23 +115,23 @@
             const tParser = d3.timeParse("%Y-%m-%d")
 
             console.log(data);
-            
+
             // Clean data
             data.forEach(function(d) {
-                d.Revenue = +d.Revenue; //Convert to number
+                d.Successful = +d.Successful; //Convert to number
                 d.MonthDate = tParser(d.Month) //Convert to date object
             });
 
-            var revenueByMonth = d3.nest()
+            var successfulByMonth = d3.nest()
                 .key(function(d) { return d.Month; })
                 .rollup(function(f) {
                     return { 
-                        totalRevenue: d3.sum(f, function(g) { return g.Revenue; }), 
+                        totalSuccessful: d3.sum(f, function(g) { return g.Successful; }), 
                     }
                 })
                 .entries(data);
 
-            revenueByMonth.sort(function(a,b){
+            successfulByMonth.sort(function(a,b){
                 // Turn your strings into dates, and then subtract them
                 // to get a value that is either negative, positive, or zero.
                 return new Date(b.key) - new Date(a.key);
@@ -139,14 +139,14 @@
 
             // Y Scale
             var y = d3.scaleLinear()
-                .domain([d3.max(revenueByMonth, function(d) { return d.value.totalRevenue }),0])
+                .domain([d3.max(successfulByMonth, function(d) { return d.value.totalSuccessful }),0])
                 .range([0, height]);
 
-            console.log(d3.max(revenueByMonth, function(d) { return d.value.totalRevenue }));
+            console.log(d3.max(successfulByMonth, function(d) { return d.value.totalSuccessful }));
 
             // X Scale
             var x = d3.scaleBand()
-                .domain(revenueByMonth.map(function(d){ return tParser(d.key) }))
+                .domain(successfulByMonth.map(function(d){ return tParser(d.key) }))
                 .range([0, width])
                 .padding(0.2);
 
@@ -180,18 +180,18 @@
                     .attr("y", 0) 
                     .attr("x", function(d){ return y(tParser(d.key)) })
                     .attr("width", x.bandwidth)
-                    .attr("height", function(d){ return y(d.value.totalRevenue); })
+                    .attr("height", function(d){ return y(d.value.totalSuccessful); })
                     .attr("fill", "purple");
 
             var formattedLabelText = d3.format("$,.0f");
             g.selectAll(".text")          
-                .data(revenueByMonth)
+                .data(successfulByMonth)
                 .enter()
                     .append("text")
                     .attr("class","label")
                     .attr("y", 30)
                     .attr("x", function(d){ return y(tParser(d.key)) })
                     .attr("dx", "3.0em")
-                    .text(function(d){ return formattedLabelText(d.value.totalRevenue); });
+                    .text(function(d){ return formattedLabelText(d.value.totalSuccessful); });
     }       
 })();
