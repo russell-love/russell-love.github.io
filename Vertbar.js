@@ -111,24 +111,7 @@
                 //.attr("style", "outline: thin solid red;")   //Outline
             .append("g")
                 .attr("transform", "translate(" + margin.left + ", " + margin.top + ")");
-/*
-        // X Label
-        g.append("text")
-            .attr("y", height + 50)
-            .attr("x", width / 2)
-            .attr("font-size", "20px")
-            .attr("text-anchor", "middle")
-            .text("Date");
 
-        // Y Label
-        g.append("text")
-            .attr("y", -60)
-            .attr("x", -(height / 2))
-            .attr("font-size", "20px")
-            .attr("text-anchor", "middle")
-            .attr("transform", "rotate(-90)")
-            .text("Revenue");
-*/
             const tParser = d3.timeParse("%Y-%m-%d")
 
             // Clean data
@@ -152,12 +135,14 @@
                 return new Date(b.key) - new Date(a.key);
             });
 
-            // X Scale
+            // Y Scale
             var y = d3.scaleLinear()
                 .domain([d3.max(revenueByMonth, function(d) { return d.value.totalRevenue }),0])
                 .range([0, height]);
 
-            // Y Scale
+            console.log(d3.max(revenueByMonth, function(d) { return d.value.totalRevenue }));
+            
+            // X Scale
             var x = d3.scaleBand()
                 .domain(revenueByMonth.map(function(d){ return tParser(d.key) }))
                 .range([0, width])
