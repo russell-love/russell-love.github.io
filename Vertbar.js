@@ -97,7 +97,6 @@
     }
 
     function drawChart(data) {
-        $('#no_data_message').css('display', 'none');
 
         var margin = { left:40, right:15, top:5, bottom:30 };
 
@@ -176,7 +175,7 @@
                 
             rects.enter()
                 .append("rect")
-                    .attr("y", 0) 
+                    .attr("y", function(d){ return y(d.value.totalSuccessful); }) 
                     .attr("x", function(d){ return y(tParser(d.key)) })
                     .attr("width", x.bandwidth)
                     .attr("height", function(d){ return y(d.value.totalSuccessful); })
