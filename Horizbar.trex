@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest manifest-version="0.1" xmlns="http://www.tableau.com/xml/extension_manifest">
-  <dashboard-extension id="com.tableau.extensions.dashboard.tutorial.part.1" extension-version="0.1.0">
+  <dashboard-extension id="sample.horizontal.bar" extension-version="0.1.0">
     <default-locale>en_US</default-locale>
     <name resource-id="name"/>
     <description>Demonstrates getting the selected marks and responding to user input</description>
-    <author name="projectfrelard" email="projectfrelard@tableau.com" organization="tableau" website="https://www.tableau.com"/>
+    <author name="samplename" email="sampleemail@tableau.com" organization="tableau" website="https://www.tableau.com"/>
     <min-api-version>0.6</min-api-version>
     <source-location>
       <url>https://russell-love.github.io/Horizbar.html</url>
