@@ -9,9 +9,7 @@
     <source-location>
       <url>https://russell-love.github.io/Vertbar.html</url>
     </source-location>
-    <icon>
-       (a Base64-encoded icon)
-       </icon>
+   <icon>iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEwAACxMBAJqcGAAAAlhJREFUOI2Nkt9vy1EYh5/</icon>
     <permissions>
       <permission>full data</permission>
     </permissions>
