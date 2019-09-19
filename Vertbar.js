@@ -138,7 +138,7 @@
             });
 
             console.log(successfulByMonth);
-            
+
             // Y Scale
             var y = d3.scaleLinear()
                 .domain([d3.max(successfulByMonth, function(d) { return d.value.totalSuccessful }),0])
@@ -184,7 +184,7 @@
                     .attr("width", x.bandwidth)
                     .attr("height", function(d){ return y(d.value.totalSuccessful); })
                     .attr("fill", "purple");
-
+            /*
             var formattedLabelText = d3.format("$,.0f");
             g.selectAll(".text")          
                 .data(successfulByMonth)
@@ -195,5 +195,6 @@
                     .attr("x", function(d){ return y(tParser(d.key)) })
                     .attr("dx", "3.0em")
                     .text(function(d){ return formattedLabelText(d.value.totalSuccessful); });
+            */
     }       
 })();
