@@ -137,6 +137,8 @@
                 return new Date(a.key) - new Date(b.key);
             });
 
+            console.log(successfulByMonth);
+            
             // Y Scale
             var y = d3.scaleLinear()
                 .domain([d3.max(successfulByMonth, function(d) { return d.value.totalSuccessful }),0])
