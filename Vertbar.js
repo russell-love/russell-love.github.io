@@ -173,7 +173,7 @@
 
             // Bars
             var rects = g.selectAll("rect")
-                .data(revenueByMonth)
+                .data(successfulByMonth)
                 
             rects.enter()
                 .append("rect")
