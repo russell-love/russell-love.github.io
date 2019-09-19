@@ -7,7 +7,7 @@
     <author name="samplename" email="sampleemail@tableau.com" organization="tableau" website="https://www.tableau.com"/>
     <min-api-version>0.6</min-api-version>
     <source-location>
-      <url>https://russell-love.github.io/Horizbar.html</url>
+      <url>https://russell-love.github.io/Vertbar.html</url>
     </source-location>
     <icon>
        (a Base64-encoded icon)
@@ -18,7 +18,7 @@
   </dashboard-extension>
   <resources>
     <resource id="name">
-      <text locale="en_US">HorizBarTest</text>
+      <text locale="en_US">VertBarTest</text>
     </resource>
   </resources>
 </manifest>
