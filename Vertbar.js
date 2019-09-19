@@ -114,6 +114,8 @@
 
             const tParser = d3.timeParse("%Y-%m-%d")
 
+            console.log(data);
+            
             // Clean data
             data.forEach(function(d) {
                 d.Revenue = +d.Revenue; //Convert to number
@@ -141,7 +143,7 @@
                 .range([0, height]);
 
             console.log(d3.max(revenueByMonth, function(d) { return d.value.totalRevenue }));
-            
+
             // X Scale
             var x = d3.scaleBand()
                 .domain(revenueByMonth.map(function(d){ return tParser(d.key) }))
@@ -178,7 +180,7 @@
                     .attr("y", 0) 
                     .attr("x", function(d){ return y(tParser(d.key)) })
                     .attr("width", x.bandwidth)
-                    .attr("height", function(d){ return x(d.value.totalRevenue); })
+                    .attr("height", function(d){ return y(d.value.totalRevenue); })
                     .attr("fill", "purple");
 
             var formattedLabelText = d3.format("$,.0f");
