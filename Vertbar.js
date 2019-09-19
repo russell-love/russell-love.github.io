@@ -178,7 +178,7 @@
                     .attr("y", function(d){ return y(d.value.totalSuccessful); }) 
                     .attr("x", function(d){ return x(tParser(d.key)) })
                     .attr("width", x.bandwidth)
-                    .attr("height", function(d){ return y(d.value.totalSuccessful); })
+                    .attr("height", function(d){ return height - y(d.value.totalSuccessful); })
                     .attr("fill", "purple");
 
             var formattedLabelText = d3.format("$,.0f");
