@@ -153,20 +153,19 @@
             });
 
             // X Scale
-            var x = d3.scaleLinear()
+            var y = d3.scaleLinear()
                 .domain([0, d3.max(revenueByMonth, function(d) { return d.value.totalRevenue })])
-                .range([0, width]);
+                .range([0, height]);
 
             // Y Scale
-            var y = d3.scaleBand()
+            var x = d3.scaleBand()
                 .domain(revenueByMonth.map(function(d){ return tParser(d.key) }))
-                .range([0, height])
+                .range([0, width])
                 .padding(0.2);
 
             // X Axis
             var xAxisCall = d3.axisBottom(x)
-                //.tickFormat(function(d){ return "$" + d; });
-                .tickFormat(d3.format("$.2s"));
+                .tickFormat(d3.timeFormat("%m-%d"));
 
             g.append("g")
                 .attr("class", "x axis")
@@ -179,7 +178,7 @@
 
             // Y Axis
             var yAxisCall = d3.axisLeft(y)
-                .tickFormat(d3.timeFormat("%m-%d"))
+                .tickFormat(d3.format("$.2s"));
 
             g.append("g")
                 .attr("class", "y axis")
@@ -191,10 +190,10 @@
                 
             rects.enter()
                 .append("rect")
-                    .attr("x", 0) 
-                    .attr("y", function(d){ return y(tParser(d.key)) })
-                    .attr("height", y.bandwidth)
-                    .attr("width", function(d){ return x(d.value.totalRevenue); })
+                    .attr("y", 0) 
+                    .attr("x", function(d){ return y(tParser(d.key)) })
+                    .attr("width", y.bandwidth)
+                    .attr("height", function(d){ return x(d.value.totalRevenue); })
                     .attr("fill", "purple");
 
             var formattedLabelText = d3.format("$,.0f");
@@ -203,9 +202,9 @@
                 .enter()
                     .append("text")
                     .attr("class","label")
-                    .attr("x", 30)
-                    .attr("y", function(d){ return y(tParser(d.key)) })
-                    .attr("dy", "3.0em")
+                    .attr("y", 30)
+                    .attr("x", function(d){ return y(tParser(d.key)) })
+                    .attr("dx", "3.0em")
                     .text(function(d){ return formattedLabelText(d.value.totalRevenue); });
     }       
 })();
