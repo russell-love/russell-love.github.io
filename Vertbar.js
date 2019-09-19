@@ -24,7 +24,7 @@
             dashboard.objects.forEach(function (object) {
                 // do something with the objects..
                 //console.log("The object name is " + object.name)
-                if (object.name == "HorizBarTest") {
+                if (object.name == "VertBarTest") {
                     console.log("Width : " + object.size.width);
                     console.log("Height : " + object.size.height);
 
