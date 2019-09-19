@@ -134,7 +134,7 @@
             successfulByMonth.sort(function(a,b){
                 // Turn your strings into dates, and then subtract them
                 // to get a value that is either negative, positive, or zero.
-                return new Date(b.key) - new Date(a.key);
+                return new Date(a.key) - new Date(b.key);
             });
 
             // Y Scale
