@@ -203,7 +203,7 @@
 
             var line = d3.line()
                 .x(function(d){ return x(tParser(d.key)) }) // set the x values for the line generator
-                .y(function(d){ return height - y(d.value.totalSuccessful); }) // set the y values for the line generator 
+                .y(function(d){ return height - y(d.value.successRate); }) // set the y values for the line generator 
                 .curve(d3.curveMonotoneX) // apply smoothing to the line
 
             console.log(line);
