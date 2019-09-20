@@ -186,10 +186,6 @@
             var yAxisCall = d3.axisLeft(y)
                 .tickFormat(d3.format("$.2s"));
 
-            // Y2 Axis
-            var yAxisCall2 = d3.axisRight(y2);
-
-
             g.append("g")
                 .attr("class", "y axis")
                 .call(yAxisCall);
