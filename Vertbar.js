@@ -187,7 +187,7 @@
                 .enter()
                     .append("text")
                     .attr("class","label")
-                    .attr("y", function(d){ return height - y(d.value.totalSuccessful); })
+                    .attr("y", function(d){ return y(d.value.totalSuccessful); })
                     .attr("x", function(d){ return x(tParser(d.key)) })
                     .attr("dx", "3.0em")
                     .text(function(d){ return formattedLabelText(d.value.totalSuccessful); });
