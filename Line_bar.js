@@ -125,7 +125,7 @@
                 .key(function(d) { return d.Month; })
                 .rollup(function(f){
                     return {
-                        successRate: (d3.sum(f, function(g) {return g.Successful; }) / d3.sum(f, function(g) { return g.Attempted; }))
+                        successRate: (d3.sum(f, function(g) {return g.Successful; }) / d3.sum(f, function(g) { return g.Attempted; }) * 100)
                     }
                 })
                 .entries(data);
