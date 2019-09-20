@@ -155,7 +155,7 @@
 
             // Y2 Scale
             var y2 = d3.scaleLinear()
-                .domain(1,0)
+                .domain(0,1)
                 .range([0, height]);
 
             // X Scale
