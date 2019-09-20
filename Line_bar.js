@@ -126,7 +126,7 @@
                 .rollup(function(f){
                     return {
                         successful: d3.sum(f, function(g) {return g.Successful; }),
-                        attempted: d3.sum(f function(g) { return g.Attempted; })
+                        attempted: d3.sum(f, function(g) { return g.Attempted; })
                     }
                 })
 
