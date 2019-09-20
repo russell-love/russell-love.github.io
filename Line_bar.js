@@ -168,7 +168,7 @@
             var x = d3.scaleBand()
                 .domain(successfulByMonth.map(function(d){ return tParser(d.key) }))
                 .range([0, width])
-                .padding(0.2);
+                .padding(0.15);
 
             // X Axis
             var xAxisCall = d3.axisBottom(x)
@@ -205,7 +205,7 @@
                     .attr("x", function(d){ return x(tParser(d.key)) })
                     .attr("width", x.bandwidth)
                     .attr("height", function(d){ return height - y(d.value.totalSuccessful); })
-                    .attr("fill", "purple");
+                    .attr("fill", "blue");
 
             var formattedLabelText = d3.format("$,.0f");
             g.selectAll(".text")          
