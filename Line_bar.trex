@@ -18,7 +18,7 @@
   </dashboard-extension>
   <resources>
     <resource id="name">
-      <text locale="en_US">VertBarTest</text>
+      <text locale="en_US">LineBarTest</text>
     </resource>
   </resources>
 </manifest>
