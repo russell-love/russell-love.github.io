@@ -159,8 +159,7 @@
 
             // Y2 Scale
             var y2 = d3.scaleLinear()
-                .domain(1.0 ,0)
-                //.domain(1.1 ,0)
+                .domain([d3.max(successPercByMonth, function(d) { return d.value.successRate }) + 1 ,0])
                 .range([0, height]);
 
             console.log(d3.max(successPercByMonth, function(d) { return d.value.successRate }));
