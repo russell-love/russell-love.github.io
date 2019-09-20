@@ -222,9 +222,8 @@
                 .curve(d3.curveMonotoneX) // apply smoothing to the line
 
             g.append("path")
-                .datum(successPercByMonth) // 10. Binds data to the line 
                 .attr("class", "line") // Assign a class for styling 
-                .attr("d", line); // 11. Calls the line generator 
+                .attr("d", line(successPercByMonth)); // 11. Calls the line generator 
 
     }       
 })();
