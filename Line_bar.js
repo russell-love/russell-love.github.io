@@ -161,7 +161,8 @@
 
             // Y2 Scale
             var y2 = d3.scaleLinear()
-                .domain([d3.max(successPercByMonth, function(d) { return d.value.successRate }),0])
+                //.domain([d3.max(successPercByMonth, function(d) { return d.value.successRate }),0])
+                .domain(1,0)
                 .range([0, height]);
 
             console.log(d3.max(successPercByMonth, function(d) { return d.value.successRate }));
@@ -232,8 +233,9 @@
                 .y(function(d) { return y2(d.value.successRate) })
                 )
 
-            g.append("circle") // Uses the enter().append() method
-                .attr("class", "dot") // Assign a class for styling
+            g.append("circle")
+                .datum(successPercByMonth)
+                .attr("class", "dot")
                 .attr("cx", function(d, i) { return x(tParser(d.key)) + x.bandwidth() / 2; })
                 .attr("cy", function(d) { return y2(d.value.successRate) })
                 .attr("r", 5);
