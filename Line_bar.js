@@ -98,7 +98,7 @@
 
     function drawChart(data) {
 
-        var margin = { left:40, right:15, top:20, bottom:30 };
+        var margin = { left:40, right:5, top:20, bottom:30 };
 
         var width = (objWidth - margin.left - margin.right)*0.95,
             height = (objHeight - margin.top - margin.bottom)*0.93;
