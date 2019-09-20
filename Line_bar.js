@@ -234,7 +234,6 @@
                 )
 
             g.append("circle")
-                .datum(successPercByMonth)
                 .attr("class", "dot")
                 .attr("cx", function(d, i) { return x(tParser(d.key)) + x.bandwidth() / 2; })
                 .attr("cy", function(d) { return y2(d.value.successRate) })
