@@ -192,7 +192,7 @@
                 .attr("class", "y axis")
                 .attr("transform", "translate(" + width + " ,0)")   
                 .call(yAxisCall2);
-
+/*
             // Bars
             var rects = g.selectAll("rect")
                 .data(successfulByMonth);
@@ -215,7 +215,7 @@
                     .attr("x", function(d){ return x(tParser(d.key)) })
                     .attr("dx", "3.0em")
                     .text(function(d){ return formattedLabelText(d.value.totalSuccessful); });
-
+*/
             var line = d3.line()
                 .x(function(d){ return x(tParser(d.key)) }) // set the x values for the line generator
                 .y(function(d){ return y2(d.value.successRate); }) // set the y values for the line generator 
