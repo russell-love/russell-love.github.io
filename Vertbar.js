@@ -98,7 +98,7 @@
 
     function drawChart(data) {
 
-        var margin = { left:40, right:15, top:15, bottom:30 };
+        var margin = { left:40, right:15, top:20, bottom:30 };
 
         var width = (objWidth - margin.left - margin.right)*0.95,
             height = (objHeight - margin.top - margin.bottom)*0.93;
@@ -187,7 +187,7 @@
                 .enter()
                     .append("text")
                     .attr("class","label")
-                    .attr("y", function(d){ return y(d.value.totalSuccessful) - 10; })
+                    .attr("y", function(d){ return y(d.value.totalSuccessful) - 5; })
                     .attr("x", function(d){ return x(tParser(d.key)) })
                     .attr("dx", "3.0em")
                     .text(function(d){ return formattedLabelText(d.value.totalSuccessful); });
