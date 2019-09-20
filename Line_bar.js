@@ -164,6 +164,8 @@
                 .domain([d3.max(successPercByMonth, function(d) { return d.value.successRate }),0])
                 .range([0, height]);
 
+            console.log(d3.max(successPercByMonth, function(d) { return d.value.successRate }));
+
             // X Scale
             var x = d3.scaleBand()
                 .domain(successfulByMonth.map(function(d){ return tParser(d.key) }))
