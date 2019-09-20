@@ -233,7 +233,7 @@
                 
             rects2.enter()
                 .append("rect")
-                    .attr("y", function(d){ return y(d.value.successRate); }) 
+                    .attr("y", function(d){ return y2(d.value.successRate); }) 
                     .attr("x", function(d){ return x(tParser(d.key)) })
                     .attr("width", x.bandwidth)
                     .attr("height", function(d){ return height - y2(d.value.successRate); })
