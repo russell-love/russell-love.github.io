@@ -198,11 +198,11 @@
                 .attr("class", "y axis")
                 .attr("transform", "translate(" + width + " ,0)")   
                 .call(yAxisCall2);
-
+*/   
             // Bars
             var rects = g.selectAll("rect")
                 .data(successfulByMonth);
-*/                
+             
             rects.enter()
                 .append("rect")
                     .attr("y", function(d){ return y(d.value.totalSuccessful); }) 
