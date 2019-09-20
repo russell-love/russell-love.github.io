@@ -234,6 +234,13 @@
                     .attr("fill", "orange")
                     .attr("r", 3.5);
 
+            g.append("g").selectAll("text")
+                .data(data)
+                    .enter().append("text")
+                    .attr("x", function(d, i) { return x(tParser(d.key)) + x.bandwidth() / 2; })
+                    .attr("y", function(d) { return y2(d.value.successRate) })
+                    .attr("fill", "red")
+                    .text(function(d) { return d.value.successRate });
 
     }       
 })();
