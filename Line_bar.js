@@ -231,18 +231,11 @@
                 .x(function(d) { return x(tParser(d.key)) + x.bandwidth() / 2; })
                 .y(function(d) { return y2(d.value.successRate) })
                 )
-/*
-            // Bars
-            var rects2 = g.selectAll("rect")
-                .data(successPercByMonth);
-                
-            rects2.enter()
-                .append("rect")
-                    .attr("y", function(d){ return y2(d.value.successRate); }) 
-                    .attr("x", function(d){ return x(tParser(d.key)) })
-                    .attr("width", x.bandwidth)
-                    .attr("height", function(d){ return height - y2(d.value.successRate); })
-                    .attr("fill", "purple");
-*/
+
+            g.append("circle") // Uses the enter().append() method
+                .attr("class", "dot") // Assign a class for styling
+                .attr("cx", function(d, i) { return x(tParser(d.key)) + x.bandwidth() / 2; })
+                .attr("cy", function(d) { return y2(d.value.successRate) })
+                .attr("r", 5);
     }       
 })();
