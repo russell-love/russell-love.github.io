@@ -220,10 +220,9 @@
                 .x(function(d){ return x(tParser(d.key)) }) // set the x values for the line generator
                 .y(function(d){ return y2(d.value.successRate); }); // set the y values for the line generator 
 
-/*
             g.append("path")
+                .datum(successPercByMonth) // 10. Binds data to the line 
                 .attr("class", "line") // Assign a class for styling 
                 .attr("d", line); // 11. Calls the line generator 
-*/
     }       
 })();
