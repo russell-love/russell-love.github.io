@@ -235,7 +235,7 @@
                     .attr("r", 3.5);
 
             g.append("g").selectAll("text")
-                .data(data)
+                .data(successPercByMonth)
                     .enter().append("text")
                     .attr("x", function(d, i) { return x(tParser(d.key)) + x.bandwidth() / 2; })
                     .attr("y", function(d) { return y2(d.value.successRate) })
