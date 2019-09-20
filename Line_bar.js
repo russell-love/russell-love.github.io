@@ -187,18 +187,18 @@
                 .tickFormat(d3.format("$.2s"));
 
             // Y2 Axis
-            var yAxisCall2 = d3.axisRight(y2);
+            //var yAxisCall2 = d3.axisRight(y2);
 
 
             g.append("g")
                 .attr("class", "y axis")
                 .call(yAxisCall);
-
+/*
             g.append("g")
                 .attr("class", "y axis")
                 .attr("transform", "translate(" + width + " ,0)")   
                 .call(yAxisCall2);
-/*
+
             // Bars
             var rects = g.selectAll("rect")
                 .data(successfulByMonth);
@@ -228,6 +228,7 @@
               .attr("fill", "none")
               .attr("stroke", "steelblue")
               .attr("stroke-width", 1.5)
+              .attr("")
               .attr("d", d3.line()
                 .x(function(d) { return x(tParser(d.key)) })
                 .y(function(d) { return y2(d.value.successRate) })
