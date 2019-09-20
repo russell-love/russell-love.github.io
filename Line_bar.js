@@ -205,7 +205,7 @@
                     .attr("x", function(d){ return x(tParser(d.key)) })
                     .attr("width", x.bandwidth)
                     .attr("height", function(d){ return height - y(d.value.totalSuccessful); })
-                    .attr("fill", "blue");
+                    .attr("fill", "lightskyblue");
 
             var formattedLabelText = d3.format("$,.0f");
             g.selectAll(".text")          
