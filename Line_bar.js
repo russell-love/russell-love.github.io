@@ -161,8 +161,8 @@
 
             // Y2 Scale
             var y2 = d3.scaleLinear()
-                .domain([d3.max(successPercByMonth, function(d) { return d.value.successRate }),0])
-                //.domain(1,0)
+                //.domain([d3.max(successPercByMonth, function(d) { return d.value.successRate }),0])
+                .domain(1.1 ,0)
                 .range([0, height]);
 
             console.log(d3.max(successPercByMonth, function(d) { return d.value.successRate }));
@@ -192,12 +192,7 @@
             g.append("g")
                 .attr("class", "y axis")
                 .call(yAxisCall);
-/*
-            g.append("g")
-                .attr("class", "y axis")
-                .attr("transform", "translate(" + width + " ,0)")   
-                .call(yAxisCall2);
-*/   
+
             // Bars
             var rects = g.selectAll("rect")
                 .data(successfulByMonth);
