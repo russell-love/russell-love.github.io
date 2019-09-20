@@ -230,7 +230,7 @@
               .attr("stroke-width", 1.5)
               //.attr("")
               .attr("d", d3.line()
-                .x(function(d) { return x(tParser(d.key)) })
+                .x(function(d) { return x(tParser(d.key)) + x.bandwidth() / 2; })
                 .y(function(d) { return y2(d.value.successRate) })
                 )
 /*
