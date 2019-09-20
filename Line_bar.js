@@ -129,6 +129,7 @@
                         attempted: d3.sum(f, function(g) { return g.Attempted; })
                     }
                 })
+                .entries(data);
 
             var successfulByMonth = d3.nest()
                 .key(function(d) { return d.Month; })
