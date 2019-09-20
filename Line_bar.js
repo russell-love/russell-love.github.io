@@ -145,7 +145,7 @@
                 return new Date(a.key) - new Date(b.key);
             });
 
-            console.log(successfulByMonth);
+            console.log(successPercByMonth);
 
             // Y Scale
             var y = d3.scaleLinear()
