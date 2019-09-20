@@ -125,8 +125,6 @@
                 .key(function(d) { return d.Month; })
                 .rollup(function(f){
                     return {
-                        successful: d3.sum(f, function(g) {return g.Successful; }),
-                        attempted: d3.sum(f, function(g) { return g.Attempted; }),
                         successRate: (d3.sum(f, function(g) {return g.Successful; }) / d3.sum(f, function(g) { return g.Attempted; }))
                     }
                 })
@@ -202,6 +200,16 @@
                     .attr("x", function(d){ return x(tParser(d.key)) })
                     .attr("dx", "3.0em")
                     .text(function(d){ return formattedLabelText(d.value.totalSuccessful); });
+
+            var line = d3.line()
+                .x(function(d){ return x(tParser(d.key)) }) // set the x values for the line generator
+                .y(function(d){ return height - y(d.value.totalSuccessful); }) // set the y values for the line generator 
+                .curve(d3.curveMonotoneX) // apply smoothing to the line
+
+            svg.append("path")
+                .datum(successPercByMonth) // 10. Binds data to the line 
+                .attr("class", "line") // Assign a class for styling 
+                .attr("d", line); // 11. Calls the line generator 
 
     }       
 })();
