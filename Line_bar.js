@@ -202,7 +202,7 @@
             // Bars
             var rects = g.selectAll("rect")
                 .data(successfulByMonth);
-                
+*/                
             rects.enter()
                 .append("rect")
                     .attr("y", function(d){ return y(d.value.totalSuccessful); }) 
@@ -221,7 +221,7 @@
                     .attr("x", function(d){ return x(tParser(d.key)) })
                     .attr("dx", "3.0em")
                     .text(function(d){ return formattedLabelText(d.value.totalSuccessful); });
-*/
+
             // Add the line
             g.append("path")
               .datum(successPercByMonth)
