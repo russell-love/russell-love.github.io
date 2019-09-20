@@ -168,7 +168,7 @@
             var x = d3.scaleBand()
                 .domain(successfulByMonth.map(function(d){ return tParser(d.key) }))
                 .range([0, width])
-                .padding(0.15);
+                .padding(0.25);
 
             // X Axis
             var xAxisCall = d3.axisBottom(x)
