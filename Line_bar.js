@@ -206,6 +206,8 @@
                 .y(function(d){ return height - y(d.value.totalSuccessful); }) // set the y values for the line generator 
                 .curve(d3.curveMonotoneX) // apply smoothing to the line
 
+            console.log(line);
+            
             g.append("path")
                 .datum(successPercByMonth) // 10. Binds data to the line 
                 .attr("class", "line") // Assign a class for styling 
