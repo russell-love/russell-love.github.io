@@ -228,7 +228,7 @@
               .attr("fill", "none")
               .attr("stroke", "steelblue")
               .attr("stroke-width", 1.5)
-              .attr("")
+              //.attr("")
               .attr("d", d3.line()
                 .x(function(d) { return x(tParser(d.key)) })
                 .y(function(d) { return y2(d.value.successRate) })
