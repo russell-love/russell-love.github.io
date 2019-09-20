@@ -152,6 +152,12 @@
                 .domain([d3.max(successfulByMonth, function(d) { return d.value.totalSuccessful }),0])
                 .range([0, height]);
 
+
+            // Y2 Scale
+            var y2 = d3.scaleLinear()
+                .domain(1,0)
+                .range([0, height]);
+
             // X Scale
             var x = d3.scaleBand()
                 .domain(successfulByMonth.map(function(d){ return tParser(d.key) }))
@@ -174,9 +180,17 @@
             var yAxisCall = d3.axisLeft(y)
                 .tickFormat(d3.format("$.2s"));
 
+            // Y2 Axis
+            var yAxisCall2 = d3.axisRight(y2);
+
+
             g.append("g")
                 .attr("class", "y axis")
                 .call(yAxisCall);
+
+            g.append("g")
+                .attr("class", "y axis")
+                .call(yAxisCall2);
 
             // Bars
             var rects = g.selectAll("rect")
