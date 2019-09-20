@@ -121,6 +121,15 @@
                 d.MonthDate = tParser(d.Month) //Convert to date object
             });
 
+            var successPercByMonth = d3.nest()
+                .key(function(d) { return d.Month; })
+                .rollup(function(f){
+                    return {
+                        successful: d3.sum(f, function(g) {return g.Successful; }),
+                        attempted: d3.sum(f function(g) { return g.Attempted; })
+                    }
+                })
+
             var successfulByMonth = d3.nest()
                 .key(function(d) { return d.Month; })
                 .rollup(function(f) {
