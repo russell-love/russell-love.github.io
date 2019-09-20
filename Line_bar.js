@@ -151,8 +151,6 @@
                 return new Date(a.key) - new Date(b.key);
             });
 
-            console.log(successPercByMonth);
-
             // Y Scale
             var y = d3.scaleLinear()
                 .domain([d3.max(successfulByMonth, function(d) { return d.value.totalSuccessful }),0])
@@ -161,7 +159,7 @@
 
             // Y2 Scale
             var y2 = d3.scaleLinear()
-                .domain([d3.max(successPercByMonth, function(d) { return d.value.successRate }),0])
+                .domain([d3.max(successPercByMonth, function(d) { return d.value.successRate }) +1 ,0])
                 //.domain(1.1 ,0)
                 .range([0, height]);
 
