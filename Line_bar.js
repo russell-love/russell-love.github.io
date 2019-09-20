@@ -215,7 +215,7 @@
                     .attr("x", function(d){ return x(tParser(d.key)) })
                     .attr("dx", "3.0em")
                     .text(function(d){ return formattedLabelText(d.value.totalSuccessful); });
-
+*/
             // Add the line
             g.append("path")
               .datum(successPercByMonth)
@@ -226,7 +226,7 @@
                 .x(function(d) { return x(tParser(d.key)) })
                 .y(function(d) { return y2(d.value.successRate) })
                 )
-*/
+/*
             // Bars
             var rects2 = g.selectAll("rect")
                 .data(successPercByMonth);
@@ -238,6 +238,6 @@
                     .attr("width", x.bandwidth)
                     .attr("height", function(d){ return height - y2(d.value.successRate); })
                     .attr("fill", "purple");
-
+*/
     }       
 })();
