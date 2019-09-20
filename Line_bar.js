@@ -215,7 +215,7 @@
                     .attr("x", function(d){ return x(tParser(d.key)) })
                     .attr("dx", "3.0em")
                     .text(function(d){ return formattedLabelText(d.value.totalSuccessful); });
-*/
+
             var line = d3.line()
                 .x(function(d){ return x(tParser(d.key)) }) // set the x values for the line generator
                 .y(function(d){ return y2(d.value.successRate); }) // set the y values for the line generator 
@@ -224,6 +224,6 @@
             g.append("path")
                 .attr("class", "line") // Assign a class for styling 
                 .attr("d", line); // 11. Calls the line generator 
-
+*/
     }       
 })();
