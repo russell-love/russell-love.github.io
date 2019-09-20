@@ -239,7 +239,7 @@
                     .attr("cx", function(d, i) { return x(tParser(d.key)) + x.bandwidth() / 2; })
                     .attr("cy", function(d) { return y2(d.value.successRate) })
                     .attr("fill", "orange")
-                    .attr("r", 5);
+                    .attr("r", 3.5);
 
 
     }       
