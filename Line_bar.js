@@ -232,13 +232,14 @@
                 .x(function(d) { return x(tParser(d.key)) + x.bandwidth() / 2; })
                 .y(function(d) { return y2(d.value.successRate) })
                 )
-            g.selectAll("path")
+
+            g.selectAll("dot")
                 .data(successPercByMonth)
                 .enter().append("circle")
-                    .attr("class", "dot")
                     .attr("cx", function(d, i) { return x(tParser(d.key)) + x.bandwidth() / 2; })
                     .attr("cy", function(d) { return y2(d.value.successRate) })
                     .attr("r", 5);
+
 
     }       
 })();
