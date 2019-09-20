@@ -223,7 +223,7 @@
               .attr("stroke", "steelblue")
               .attr("stroke-width", 1.5)
               .attr("d", d3.line()
-                .x(function(d) { return x(d.key) })
+                .x(function(d) { return x(tParser(d.key)) })
                 .y(function(d) { return y2(d.value.successRate) })
                 )
     }       
