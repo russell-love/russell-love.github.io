@@ -223,7 +223,7 @@
 
             g.append("path")
                 .attr("class", "line") // Assign a class for styling 
-                .attr("d", line(successPercByMonth)); // 11. Calls the line generator 
+                .attr("d", line); // 11. Calls the line generator 
 
     }       
 })();
