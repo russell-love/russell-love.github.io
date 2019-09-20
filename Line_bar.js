@@ -190,6 +190,7 @@
 
             g.append("g")
                 .attr("class", "y axis")
+                .attr("transform", "translate(" + width + " ,0)")   
                 .call(yAxisCall2);
 
             // Bars
