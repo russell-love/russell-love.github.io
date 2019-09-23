@@ -127,25 +127,23 @@
                 .entries(data);
 
         console.log(successfulByNetwork);
-        
+
 
         // Create dummy data
-        var datatest = {a: 9, b: 20, c:30, d:8, e:12}
-
-        console.log(datatest);
+        //var datatest = {a: 9, b: 20, c:30, d:8, e:12}
 
         // set the color scale
         var color = d3.scaleOrdinal()
-          .domain(datatest)
+          .domain(successfulByNetwork)
           .range(d3.schemeSet2);
 
-        console.log(color(datatest));
+        console.log(color(successfulByNetwork));
 
         // Compute the position of each group on the pie:
         var pie = d3.pie()
-          .value(function(d) {return d.value; })
+          .value(function(d) {return d.value.totalSuccessful; })
         
-        var data_ready = pie(d3.entries(datatest))
+        var data_ready = pie(d3.entries(successfulByNetwork))
 
         // Build the pie chart: Basically, each part of the pie is a path that we build using the arc function.
         g.selectAll('whatever')
