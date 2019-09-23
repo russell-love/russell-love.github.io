@@ -131,8 +131,7 @@
         var data_ready = pie(d3.entries(datatest))
 
         // Build the pie chart: Basically, each part of the pie is a path that we build using the arc function.
-        svg
-          .selectAll('whatever')
+        g.selectAll('whatever')
           .data(data_ready)
           .enter()
           .append('path')
