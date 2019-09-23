@@ -111,86 +111,39 @@
             .append("g")
                 .attr("transform", "translate(" + margin.left + ", " + margin.top + ")");
 
-            const tParser = d3.timeParse("%Y-%m-%d")
+        
+        // The radius of the pieplot is half the width or half the height (smallest one). I subtract a bit of margin.
+        var radius = Math.min(width, height) / 2 - 40
 
-            console.log(data);
 
-            // Clean data
-            data.forEach(function(d) {
-                d.Successful = +d.Successful; //Convert to number
-                d.MonthDate = tParser(d.Month) //Convert to date object
-            });
+        // Create dummy data
+        var datatest = {a: 9, b: 20, c:30, d:8, e:12}
 
-            var successfulByMonth = d3.nest()
-                .key(function(d) { return d.Month; })
-                .rollup(function(f) {
-                    return { 
-                        totalSuccessful: d3.sum(f, function(g) { return g.Successful; }), 
-                    }
-                })
-                .entries(data);
+        // set the color scale
+        var color = d3.scaleOrdinal()
+          .domain(data)
+          .range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56"])
 
-            successfulByMonth.sort(function(a,b){
-                // Turn your strings into dates, and then subtract them
-                // to get a value that is either negative, positive, or zero.
-                return new Date(a.key) - new Date(b.key);
-            });
+        // Compute the position of each group on the pie:
+        var pie = d3.pie()
+          .value(function(d) {return d.value; })
+        
+        var data_ready = pie(d3.entries(datatest))
 
-            console.log(successfulByMonth);
-
-            // Y Scale
-            var y = d3.scaleLinear()
-                .domain([d3.max(successfulByMonth, function(d) { return d.value.totalSuccessful }),0])
-                .range([0, height]);
-
-            // X Scale
-            var x = d3.scaleBand()
-                .domain(successfulByMonth.map(function(d){ return tParser(d.key) }))
-                .range([0, width])
-                .padding(0.2);
-
-            // X Axis
-            var xAxisCall = d3.axisBottom(x)
-                .tickFormat(d3.timeFormat("%m-%d"));
-
-            g.append("g")
-                .attr("class", "x axis")
-                .attr("transform", "translate(0," + height +")")
-                .call(xAxisCall)
-            .selectAll("text")
-                .attr("y", "10")
-                .attr("text-anchor", "middle");
-
-            // Y Axis
-            var yAxisCall = d3.axisLeft(y)
-                .tickFormat(d3.format("$.2s"));
-
-            g.append("g")
-                .attr("class", "y axis")
-                .call(yAxisCall);
-
-            // Bars
-            var rects = g.selectAll("rect")
-                .data(successfulByMonth);
-                
-            rects.enter()
-                .append("rect")
-                    .attr("y", function(d){ return y(d.value.totalSuccessful); }) 
-                    .attr("x", function(d){ return x(tParser(d.key)) })
-                    .attr("width", x.bandwidth)
-                    .attr("height", function(d){ return height - y(d.value.totalSuccessful); })
-                    .attr("fill", "purple");
-
-            var formattedLabelText = d3.format("$,.0f");
-            g.selectAll(".text")          
-                .data(successfulByMonth)
-                .enter()
-                    .append("text")
-                    .attr("class","label")
-                    .attr("y", function(d){ return y(d.value.totalSuccessful) - 5; })
-                    .attr("x", function(d){ return x(tParser(d.key)) })
-                    .attr("dx", "3.0em")
-                    .text(function(d){ return formattedLabelText(d.value.totalSuccessful); });
+        // Build the pie chart: Basically, each part of the pie is a path that we build using the arc function.
+        svg
+          .selectAll('whatever')
+          .data(data_ready)
+          .enter()
+          .append('path')
+          .attr('d', d3.arc()
+            .innerRadius(0)
+            .outerRadius(radius)
+          )
+          .attr('fill', function(d){ return(color(d.datatest.key)) })
+          .attr("stroke", "black")
+          .style("stroke-width", "2px")
+          .style("opacity", 0.7)
 
     }       
 })();
