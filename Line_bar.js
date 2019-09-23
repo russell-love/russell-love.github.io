@@ -239,10 +239,14 @@
             g.append("g").selectAll("text")
                 .data(successPercByMonth)
                     .enter().append("text")
-                    .attr("x", function(d, i) { return x(tParser(d.key)) + (x.bandwidth() / 2) - 10; })
-                    .attr("y", function(d) { return y2(d.value.successRate) - 10; })
-                    .attr("fill", "black")
-                    .text(function(d) { return formattedLabelPerc(d.value.successRate / 100); });
+                        .attr("x", function(d, i) { return x(tParser(d.key)) + (x.bandwidth() / 2) - 10; })
+                        .attr("y", function(d) { return y2(d.value.successRate) - 10; })
+                        .attr("fill", "black")
+                        .text(function(d) { return formattedLabelPerc(d.value.successRate / 100); });
+                    .insert("rect", "text")
+                        .attr("width")
+                        .attr("height")
+                        .style("fill", "yellow");
 
     }       
 })();
