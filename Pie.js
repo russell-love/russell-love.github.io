@@ -143,7 +143,7 @@
             .innerRadius(0)
             .outerRadius(radius)
           )
-          .attr('fill', function(d){ return(color(d.datatest)) })
+          .attr('fill', function(d, i){ return(color(i)) })
           .attr("stroke", "black")
           .style("stroke-width", "2px")
           .style("opacity", 0.7)
