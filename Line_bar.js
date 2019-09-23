@@ -242,7 +242,7 @@
                     .attr("x", function(d, i) { return x(tParser(d.key)) + (x.bandwidth() / 2) - 10; })
                     .attr("y", function(d) { return y2(d.value.successRate) - 25; })
                     .attr("width", 30)
-                    .attr("height", 30)
+                    .attr("height", 25)
                     .attr("fill", "grey")
                     .attr("opacity", 0.5);
 
