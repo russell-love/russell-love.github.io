@@ -126,11 +126,13 @@
                 })
                 .entries(data);
 
+        console.log(successfulByNetwork);
+
         var dataArray = [];
             for (var key in successfulByNetwork) {
               dataArray.push({
-                name: key,
-                value: successfulByNetwork[key]
+                name: successfulByNetwork[key],
+                value: successfulByNetwork.value.totalSuccessful;
               })
             };
             console.log(dataArray);
