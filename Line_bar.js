@@ -240,9 +240,9 @@
                 .data(successPercByMonth)
                 .enter().append("rect")
                     .attr("x", function(d, i) { return x(tParser(d.key)) + (x.bandwidth() / 2) - 10; })
-                    .attr("y", function(d) { return y2(d.value.successRate) - 20; })
-                    .attr("width", 20)
-                    .attr("height", 20)
+                    .attr("y", function(d) { return y2(d.value.successRate) - 25; })
+                    .attr("width", 30)
+                    .attr("height", 30)
                     .attr("fill", "grey");
 
             g.append("g").selectAll("text")
