@@ -244,14 +244,5 @@
                     .attr("fill", "black")
                     .text(function(d) { return formattedLabelPerc(d.value.successRate / 100); });
 
-            g.append("g").selectAll("text")
-                    .enter().append("rect")
-                    .attr("x", function(d, i) { return x(tParser(d.key)) + (x.bandwidth() / 2) - 10; })
-                    .attr("y", function(d) { return y2(d.value.successRate) - 10; })
-                    .attr("width", 20)
-                    .attr("height", 10)
-                    .attr("fill", "grey");
-
-
     }       
 })();
