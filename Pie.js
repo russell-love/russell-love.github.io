@@ -107,13 +107,13 @@
             .append("svg")
                 .attr("width", width + margin.left + margin.right)
                 .attr("height", height + margin.top + margin.bottom)
-                .attr("style", "outline: thin solid red;")   //Outline
+                //.attr("style", "outline: thin solid red;")   //Outline
             .append("g")
                 .attr("transform", "translate(" + (width / 2) + ", " + (height / 2) + ")");
 
         
         // The radius of the pieplot is half the width or half the height (smallest one). I subtract a bit of margin.
-        var radius = Math.min(width, height) / 2 - 40
+        var radius = Math.min(width, height) / 2
 
 
         // Create dummy data
