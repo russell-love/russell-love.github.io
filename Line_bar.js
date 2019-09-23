@@ -242,11 +242,7 @@
                         .attr("x", function(d, i) { return x(tParser(d.key)) + (x.bandwidth() / 2) - 10; })
                         .attr("y", function(d) { return y2(d.value.successRate) - 10; })
                         .attr("fill", "black")
-                        .text(function(d) { return formattedLabelPerc(d.value.successRate / 100); })
-                    .insert("rect", "text")
-                        .attr("width",20)
-                        .attr("height",20)
-                        .style("fill", "yellow");
+                        .text(function(d) { return formattedLabelPerc(d.value.successRate / 100); });
 
     }       
 })();
