@@ -241,7 +241,7 @@
                 .enter().append("rect")
                     .attr("x", function(d, i) { return x(tParser(d.key)) + (x.bandwidth() / 2) - 15; })
                     .attr("y", function(d) { return y2(d.value.successRate) - 25; })
-                    .attr("width", 30)
+                    .attr("width", 35)
                     .attr("height", 20)
                     .attr("fill", "#ebede6")
                     .attr("opacity", 0.5);
