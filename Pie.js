@@ -126,6 +126,8 @@
           .domain(datatest)
           .range(d3.schemeSet2);
 
+        console.log(color(datatest));
+        
         // Compute the position of each group on the pie:
         var pie = d3.pie()
           .value(function(d) {return d.value; })
