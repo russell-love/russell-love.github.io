@@ -244,8 +244,8 @@
                         .attr("fill", "black")
                         .text(function(d) { return formattedLabelPerc(d.value.successRate / 100); })
                     .insert("rect", "text")
-                        .attr("width")
-                        .attr("height")
+                        .attr("width",20)
+                        .attr("height",20)
                         .style("fill", "yellow");
 
     }       
