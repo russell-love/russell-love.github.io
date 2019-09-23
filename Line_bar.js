@@ -239,8 +239,8 @@
             g.append("g").selectAll("text")
                 .data(successPercByMonth)
                     .enter().append("text")
-                    .attr("x", function(d, i) { return x(tParser(d.key)) + x.bandwidth() / 2; })
-                    .attr("y", function(d) { return y2(d.value.successRate) })
+                    .attr("x", function(d, i) { return x(tParser(d.key)) + (x.bandwidth() / 2) - 5; })
+                    .attr("y", function(d) { return y2(d.value.successRate) +5; })
                     .attr("fill", "black")
                     .text(function(d) { return formattedLabelPerc(d.value.successRate / 100); });
 
