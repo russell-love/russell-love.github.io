@@ -138,7 +138,6 @@
                     value: successfulByNetwork[totalSuccessful]
               })
             };
-            console.log(dataArray);
 
         // Create dummy data
         //var datatest = {a: 9, b: 20, c:30, d:8, e:12}
