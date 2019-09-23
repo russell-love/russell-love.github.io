@@ -235,7 +235,7 @@
                     .attr("cy", function(d) { return y2(d.value.successRate) })
                     .attr("fill", "orange")
                     .attr("r", 3.5);
-
+/*
             g.append("g").selectAll("text")
                 .data(successPercByMonth)
                     .enter().append("text")
@@ -243,6 +243,14 @@
                         .attr("y", function(d) { return y2(d.value.successRate) - 10; })
                         .attr("fill", "black")
                         .text(function(d) { return formattedLabelPerc(d.value.successRate / 100); });
+*/
+            g.append("g").selectAll("rect")
+                .enter().append("rect")
+                    .attr("x", function(d, i) { return x(tParser(d.key)) + (x.bandwidth() / 2) - 10; })
+                    .attr("y", function(d) { return y2(d.value.successRate) - 10; })
+                    .attr("width", 20)
+                    .attr("height", 20)
+                    .attr("fill", "black");
 
     }       
 })();
