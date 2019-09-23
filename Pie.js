@@ -121,7 +121,7 @@
 
         // set the color scale
         var color = d3.scaleOrdinal()
-          .domain(data)
+          .domain(datatest)
           .range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56"])
 
         // Compute the position of each group on the pie:
