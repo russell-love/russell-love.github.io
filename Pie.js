@@ -141,7 +141,7 @@
 
         // Compute the position of each group on the pie:
         var pie = d3.pie()
-          .value(function(d) {return d.value.totalSuccessful; })
+          .value(function(d) {return d.value; })
         
         var data_ready = pie(d3.entries(successfulByNetwork))
 
