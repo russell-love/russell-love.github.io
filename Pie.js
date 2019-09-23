@@ -132,11 +132,11 @@
             for (var key in successfulByNetwork) {
 
                 dataArray.push({
-                    name: successfulByNetwork[key],
+                    name: successfulByNetwork[key].key,
                     value: successfulByNetwork[key].value.totalSuccessful
               })
             console.log(dataArray);
-            
+
             };
 
         // Create dummy data
