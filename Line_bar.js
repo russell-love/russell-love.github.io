@@ -245,6 +245,7 @@
                         .text(function(d) { return formattedLabelPerc(d.value.successRate / 100); });
 */
             g.append("g").selectAll("rect")
+                .data(successPercByMonth)
                 .enter().append("rect")
                     .attr("x", function(d, i) { return x(tParser(d.key)) + (x.bandwidth() / 2) - 10; })
                     .attr("y", function(d) { return y2(d.value.successRate) - 10; })
