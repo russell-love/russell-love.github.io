@@ -109,7 +109,7 @@
                 .attr("height", height + margin.top + margin.bottom)
                 .attr("style", "outline: thin solid red;")   //Outline
             .append("g")
-                .attr("transform", "translate(" + margin.left + ", " + margin.top + ")");
+                .attr("transform", "translate(" + (width / 2) + ", " + margin.top + ")");
 
         
         // The radius of the pieplot is half the width or half the height (smallest one). I subtract a bit of margin.
