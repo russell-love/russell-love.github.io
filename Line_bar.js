@@ -244,7 +244,7 @@
                     .attr("width", 35)
                     .attr("height", 20)
                     .attr("fill", "#ebede6")
-                    .attr("opacity", 0.5);
+                    .attr("opacity", 0.7);
 
             g.append("g").selectAll("text")
                 .data(successPercByMonth)
