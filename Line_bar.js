@@ -243,7 +243,7 @@
                     .attr("y", function(d) { return y2(d.value.successRate) - 25; })
                     .attr("width", 30)
                     .attr("height", 20)
-                    .attr("fill", "grey")
+                    .attr("fill", "#ebede6")
                     .attr("opacity", 0.5);
 
             g.append("g").selectAll("text")
