@@ -120,7 +120,7 @@
         var datatest = {a: 9, b: 20, c:30, d:8, e:12}
 
         console.log(datatest);
-        
+
         // set the color scale
         var color = d3.scaleOrdinal()
           .domain(datatest)
@@ -141,7 +141,7 @@
             .innerRadius(0)
             .outerRadius(radius)
           )
-          .attr('fill', function(d){ return(color(d.datatest.key)) })
+          .attr('fill', function(d){ return(color(d.data.key)) })
           .attr("stroke", "black")
           .style("stroke-width", "2px")
           .style("opacity", 0.7)
