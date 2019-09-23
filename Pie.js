@@ -126,8 +126,14 @@
                 })
                 .entries(data);
 
-        console.log(successfulByNetwork);
-
+        var dataArray = [];
+            for (var key in successfulByNetwork) {
+              dataArray.push({
+                name: key,
+                value: successfulByNetwork[key]
+              })
+            };
+            console.log(dataArray);
 
         // Create dummy data
         //var datatest = {a: 9, b: 20, c:30, d:8, e:12}
@@ -141,7 +147,7 @@
 
         // Compute the position of each group on the pie:
         var pie = d3.pie()
-          .value(function(d) {return d.value; })
+          .value(function(d) {return d.value.totalSuccessful; })
         
         var data_ready = pie(d3.entries(successfulByNetwork))
 
