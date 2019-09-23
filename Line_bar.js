@@ -204,6 +204,8 @@
                     .attr("fill", "lightskyblue");
 
             var formattedLabelText = d3.format("$,.0f");
+            var formattedLabelPerc = d3.format(".0%");
+
             g.selectAll(".text")          
                 .data(successfulByMonth)
                 .enter()
@@ -239,8 +241,8 @@
                     .enter().append("text")
                     .attr("x", function(d, i) { return x(tParser(d.key)) + x.bandwidth() / 2; })
                     .attr("y", function(d) { return y2(d.value.successRate) })
-                    .attr("fill", "red")
-                    .text(function(d) { return d.value.successRate });
+                    .attr("fill", "black")
+                    .text(function(d) { return formattedLabelPerc(d.value.successRate); });
 
     }       
 })();
