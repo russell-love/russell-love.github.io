@@ -103,6 +103,8 @@
         var width = (objWidth - margin.left - margin.right)*0.95,
             height = (objHeight - margin.top - margin.bottom)*0.93;
 
+        console.log(data);
+        
         var g = d3.select("#data_table_wrapper")
             .append("svg")
                 .attr("width", width + margin.left + margin.right)
@@ -114,6 +116,15 @@
         
         // The radius of the pieplot is half the width or half the height (smallest one). I subtract a bit of margin.
         var radius = Math.min(width, height) / 2 - margin.left
+
+        var successfulByNetwork = d3.nest()
+                .key(function(d) { return d.Network; })
+                .rollup(function(f) {
+                    return { 
+                        totalSuccessful: d3.sum(f, function(g) { return g.Successful; }), 
+                    }
+                })
+                .entries(data);
 
 
         // Create dummy data
