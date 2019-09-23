@@ -104,7 +104,7 @@
             height = (objHeight - margin.top - margin.bottom)*0.93;
 
         console.log(data);
-        
+
         var g = d3.select("#data_table_wrapper")
             .append("svg")
                 .attr("width", width + margin.left + margin.right)
@@ -126,6 +126,8 @@
                 })
                 .entries(data);
 
+        console.log(successfulByNetwork);
+        
 
         // Create dummy data
         var datatest = {a: 9, b: 20, c:30, d:8, e:12}
