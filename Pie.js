@@ -127,7 +127,7 @@
           .range(d3.schemeSet2);
 
         console.log(color(datatest));
-        
+
         // Compute the position of each group on the pie:
         var pie = d3.pie()
           .value(function(d) {return d.value; })
@@ -143,7 +143,7 @@
             .innerRadius(0)
             .outerRadius(radius)
           )
-          .attr('fill', function(d){ return(color(d.datatest.key)) })
+          .attr('fill', function(d){ return(color(d.datatest)) })
           .attr("stroke", "black")
           .style("stroke-width", "2px")
           .style("opacity", 0.7)
