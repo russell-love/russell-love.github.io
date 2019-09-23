@@ -130,8 +130,9 @@
 
         var dataArray = [];
             for (var key in successfulByNetwork) {
-                console.log(key)
-                
+                console.log(successfulByNetwork[key])
+                console.log(successfulByNetwork[key][value])
+
                 dataArray.push({
                     name: successfulByNetwork[key],
                     value: successfulByNetwork[totalSuccessful]
