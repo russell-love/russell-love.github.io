@@ -146,27 +146,23 @@
           .domain(dataArray)
           .range(d3.schemeSet2);
 
-        // Compute the position of each group on the pie:
-        var pie = d3.pie()
-          .value(function(d) {return d.value; })
+        var pie = d3.pie().value(function(d) { 
+                return d.value; 
+            });
         
-        var data_ready = pie(d3.entries(successfulByNetwork))
+        var data_ready = pie(d3.entries(dataArray))
 
         console.log(data_ready);
 
-        // Build the pie chart: Basically, each part of the pie is a path that we build using the arc function.
-        g.selectAll('whatever')
-          .data(data_ready)
-          .enter()
-          .append('path')
-          .attr('d', d3.arc()
-            .innerRadius(0)
-            .outerRadius(radius)
-          )
-          .attr('fill', function(d){ return(color(d.name)) })
-          .attr("stroke", "black")
-          .style("stroke-width", "2px")
-          .style("opacity", 0.7)
+        var arc = g.selectAll(".arc")
+                       .data(pie(dataArray))
+                       .enter().append("g")
+                       .attr("class", "arc");
+
+            arc.append("path")
+               .attr("d", path)
+               .attr("fill", function(d) { return color(d.data.name); });
+        
 
     }       
 })();
