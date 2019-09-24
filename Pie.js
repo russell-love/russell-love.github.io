@@ -138,7 +138,7 @@
             };
 
         console.log(dataArray);
-        
+
         var path = d3.arc()
                      .outerRadius(radius - 10)
                      .innerRadius(0);
@@ -156,7 +156,7 @@
         console.log(data_ready);
 
         var arc = g.selectAll(".arc")
-                       .data(pie(data_ready))
+                       .data(data_ready)
                        .enter().append("g")
                        .attr("class", "arc");
 
