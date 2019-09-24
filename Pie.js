@@ -33,7 +33,7 @@
             var p_actual_value = p_value.value;
             var p_formatted_value = p_value.formattedValue;
             
-            //console.log('Parameter ' + p_name + ' has the value ' + p_formatted_value);
+            console.log('Parameter ' + p_name + ' has the value ' + p_formatted_value);
             viewBy = p_actual_value;
         });
 
@@ -160,8 +160,6 @@
                 // execute default code block
         }
         
-
-
         var dataArray = [];
             for (var key in successfulBy) {
 
