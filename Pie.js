@@ -28,7 +28,6 @@
         $('#data_table_wrapper').empty();
 
         parameterChangeEvent.getParameterAsync().then(function (param) {
-            console.log(param);
             var p_name = param.name;
             var p_value = param.currentValue;
             var p_actual_value = p_value.value;
@@ -43,17 +42,11 @@
     function getContainerSize() {
         const dashboardName = tableau.extensions.dashboardContent.dashboard.name;
 
-        console.log(tableau.extensions.dashboardContent.dashboard);
-
         let dashboard = tableau.extensions.dashboardContent.dashboard;
         let object = tableau.extensions.dashboardContent.dashboard;
             dashboard.objects.forEach(function (object) {
                 // do something with the objects..
-                //console.log("The object name is " + object.name)
                 if (object.name == "PieTest") {
-                    console.log("Width : " + object.size.width);
-                    console.log("Height : " + object.size.height);
-
                     objWidth = object.size.width;
                     objHeight = object.size.height;
                 }
