@@ -12,7 +12,7 @@
                     p.addEventListener(tableau.TableauEventType.ParameterChanged, onParameterChange);
                 });
             });
-            
+
             // Once the extension is initialized
             getContainerSize();
         });
@@ -25,6 +25,7 @@
     var viewBy;
 
     function onParameterChange() {
+        $('#data_table_wrapper').empty();
         getContainerSize();
     }
 
