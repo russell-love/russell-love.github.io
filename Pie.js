@@ -65,7 +65,7 @@
                 // In this case, p is an array of Parameter objects
                 for(var i=0;i<p.length;i++){
                     // You can find the methods for the Parameter object in the Reference Guide
-                    //p_name = p[i].name;
+                    var p_name = p[i].name;
                     //p_value = p[i].currentValue(); // This is DataValue object
                     var p_actual_value = p.value; // DataValue has value and formattedValue fields (not methods)
                     var p_formatted_value = p.formattedValue;
