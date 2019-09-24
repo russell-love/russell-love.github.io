@@ -126,8 +126,6 @@
                 })
                 .entries(data);
 
-        console.log(successfulByNetwork);
-
         var dataArray = [];
             for (var key in successfulByNetwork) {
 
