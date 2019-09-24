@@ -29,6 +29,12 @@
 
         parameterChangeEvent.getParameterAsync().then(function (param) {
             console.log(param);
+            var p_name = param.name;
+            var p_value = param.currentValue;
+            var p_actual_value = p_value.value;
+            var p_formatted_value = p_value.formattedValue;
+            
+            console.log('Parameter ' + p_name + ' has the value ' + p_formatted_value);
         });
 
         getContainerSize();
