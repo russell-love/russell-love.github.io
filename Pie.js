@@ -59,7 +59,7 @@
             includeAllColumns: false
         };
         
-        workbook.getParametersAsync().then (
+        sheet.getParametersAsync().then (
             function(p) {
                 console.log(p); // I do this just to confirm what comes back.
                 // In this case, p is an array of Parameter objects
@@ -72,7 +72,7 @@
                     console.log('Parameter ' + p_name + ' has the value ' + p_formatted_value);
                 }
             });
-        
+
         //getUnderlyingData call
         sheet.getUnderlyingDataAsync(options).then(function(t){
            cleanData(t); //Call the cleanData function (maps and converts)
