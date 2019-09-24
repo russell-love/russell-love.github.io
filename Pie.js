@@ -144,7 +144,8 @@
         var radius = Math.min(width, height) / 2 - margin.left
 
         var arc = d3.arc()
-            .outerRadius(radius);
+            .outerRadius(radius)
+            .innerRadius(0);
 
         var pie = d3.pie()
             .value(function(d) { return d.value; });
