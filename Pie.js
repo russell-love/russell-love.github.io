@@ -145,7 +145,7 @@
           .domain(dataArray)
           .range(d3.schemeSet2);
 
-        var pie = d3.layout.pie();
+        var pie = d3.pie();
 
         var arc = g.selectAll(".arc")
                        .data(pie(dataArray))
