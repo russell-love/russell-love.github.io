@@ -160,5 +160,14 @@
             .attr("fill", function(d, i) { return color(i); } )
             .attr("d", arc);
 
+        arcs.append("text")
+                .attr("transform", function(d) {
+                    d.innerRadius = 0;
+                    d.outerRadius = radius;
+                    return "translate(" + arc.centroid(d) + ")";
+            })
+            .attr("text-anchor", "middle")
+            .text(function(d, i) { return dataArray[i].name; });
+
         }       
 })();
