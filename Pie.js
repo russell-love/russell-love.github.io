@@ -160,7 +160,7 @@
             .innerRadius(0)
             .outerRadius(radius)
           )
-          .attr('fill', function(d){ return(color(d.key)) })
+          .attr('fill', function(d){ return(color(d.name)) })
           .attr("stroke", "black")
           .style("stroke-width", "2px")
           .style("opacity", 0.7)
