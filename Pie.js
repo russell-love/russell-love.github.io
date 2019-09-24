@@ -138,10 +138,10 @@
             };
 
 
-        // Create dummy data
-        //var datatest = {a: 9, b: 20, c:30, d:8, e:12}
-
-        // set the color scale
+        var path = d3.arc()
+                     .outerRadius(radius - 10)
+                     .innerRadius(0);
+                     
         var color = d3.scaleOrdinal()
           .domain(dataArray)
           .range(d3.schemeSet2);
