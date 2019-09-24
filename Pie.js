@@ -4,13 +4,15 @@
 (function() {
     // Use the jQuery document ready signal to know when everything has been initialized
     $(document).ready(function() {
-        tableau.extensions.dashboardContent.dashboard.getParametersAsync().then(function (parameters) {
-            parameters.forEach(function (p) {
-                p.addEventListener(tableau.TableauEventType.ParameterChanged, onParameterChange);
-            });
-        });
         // Tell Tableau we'd like to initialize our extension
         tableau.extensions.initializeAsync().then(function() {
+
+            tableau.extensions.dashboardContent.dashboard.getParametersAsync().then(function (parameters) {
+                parameters.forEach(function (p) {
+                    p.addEventListener(tableau.TableauEventType.ParameterChanged, onParameterChange);
+                });
+            });
+            
             // Once the extension is initialized
             getContainerSize();
         });
