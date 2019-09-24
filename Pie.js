@@ -63,7 +63,7 @@
             function(p) {
                 console.log(p); // I do this just to confirm what comes back.
                 // In this case, p is an array of Parameter objects
-                for(i=0;i<p.length;i++){
+                for(var i=0;i<p.length;i++){
                     // You can find the methods for the Parameter object in the Reference Guide
                     p_name = p[i].getName();
                     p_value = p[i].getCurrentValue(); // This is DataValue object
