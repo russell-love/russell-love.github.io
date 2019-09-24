@@ -67,8 +67,8 @@
                     // You can find the methods for the Parameter object in the Reference Guide
                     //p_name = p[i].name;
                     //p_value = p[i].currentValue(); // This is DataValue object
-                    p_actual_value = p.value; // DataValue has value and formattedValue fields (not methods)
-                    p_formatted_value = p.formattedValue;
+                    var p_actual_value = p.value; // DataValue has value and formattedValue fields (not methods)
+                    var p_formatted_value = p.formattedValue;
                     console.log('Parameter ' + p_name + ' has the value ' + p_formatted_value);
                 }
             });
