@@ -144,6 +144,8 @@
 
         var data_ready = pie(d3.entries(dataArray))
 
+        console.log(data_ready);
+        
         var color = d3.scaleOrdinal()
             .domain(dataArray)
             .range(d3.schemeSet2);
