@@ -138,7 +138,9 @@
         // The radius of the pieplot is half the width or half the height (smallest one). I subtract a bit of margin.
         var radius = Math.min(width, height) / 2 - margin.left
 
-        var successfulBy = d3.nest()
+        switch (viewBy) {
+            case "Network":
+                var successfulBy = d3.nest()
                 .key(function(d) { return d.Network; })
                 .rollup(function(f) {
                     return { 
@@ -146,6 +148,21 @@
                     }
                 })
                 .entries(data);
+            break;
+            case "Brand":
+                var successfulBy = d3.nest()
+                .key(function(d) { return d.Brand; })
+                .rollup(function(f) {
+                    return { 
+                        totalSuccessful: d3.sum(f, function(g) { return g.Successful; }), 
+                    }
+                })
+                .entries(data);
+            break;
+            default:
+                // execute default code block
+        }
+        
 
 
         var dataArray = [];
