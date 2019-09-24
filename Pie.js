@@ -75,15 +75,6 @@
             });
 
 
-/*
-        paramObjs.forEach(function(object) {
-            if (object.name =="Success_ViewBy") {
-                console.log(object.currentValue.value);
-            }
-        });
-*/
-        console.log(paramObjs);
-
         //getUnderlyingData call
         sheet.getUnderlyingDataAsync(options).then(function(t){
            cleanData(t); //Call the cleanData function (maps and converts)
