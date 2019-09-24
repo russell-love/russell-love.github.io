@@ -151,7 +151,7 @@
         console.log(fixedData);
 
         var color = d3.scaleOrdinal()
-            .domain(dataArray)
+            .domain(fixedData)
             .range(d3.schemeSet2);
 
 
@@ -160,7 +160,7 @@
             .outerRadius(radius)
 
         g.selectAll('mySlices')
-            .data(data_ready)
+            .data(fixedData)
             .enter()
                 .append('path')
                 .attr('d', arcGenerator)
