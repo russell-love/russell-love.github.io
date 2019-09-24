@@ -4,6 +4,11 @@
 (function() {
     // Use the jQuery document ready signal to know when everything has been initialized
     $(document).ready(function() {
+        tableau.extensions.dashboardContent.dashboard.getParametersAsync().then(function (parameters) {
+            parameters.forEach(function (p) {
+                p.addEventListener(tableau.TableauEventType.ParameterChanged, onParameterChange);
+        });
+
         // Tell Tableau we'd like to initialize our extension
         tableau.extensions.initializeAsync().then(function() {
             // Once the extension is initialized
@@ -17,6 +22,10 @@
 
     var viewBy;
 
+    function onParameterChange() {
+        getContainerSize();
+    }
+    
     function getContainerSize() {
         const dashboardName = tableau.extensions.dashboardContent.dashboard.name;
 
