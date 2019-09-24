@@ -145,16 +145,10 @@
           .domain(dataArray)
           .range(d3.schemeSet2);
 
-        var pie = d3.pie().value(function(d) { 
-                return d.value; 
-            });
-        
-        var data_ready = pie(d3.entries(dataArray))
-
-        console.log(data_ready);
+        var pie = d3.layout.pie();
 
         var arc = g.selectAll(".arc")
-                       .data(data_ready)
+                       .data(pie(dataArray))
                        .enter().append("g")
                        .attr("class", "arc");
 
