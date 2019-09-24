@@ -144,16 +144,14 @@
 
         // set the color scale
         var color = d3.scaleOrdinal()
-          .domain(successfulByNetwork)
+          .domain(dataArray)
           .range(d3.schemeSet2);
-
-        console.log(color(successfulByNetwork));
 
         // Compute the position of each group on the pie:
         var pie = d3.pie()
           .value(function(d) {return d.value; })
         
-        var data_ready = pie(d3.entries(successfulByNetwork))
+        var data_ready = pie(d3.entries(dataArray))
 
         // Build the pie chart: Basically, each part of the pie is a path that we build using the arc function.
         g.selectAll('whatever')
