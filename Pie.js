@@ -74,7 +74,6 @@
                 }
             });
 
-        console.log(paramObjs);
 
 /*
         paramObjs.forEach(function(object) {
