@@ -60,6 +60,12 @@
         
         var paramObjs = sheet.getParametersAsync();
 
+        paramObjs.forEach(function(object)) {
+            if (object.name =="Success_ViewBy") {
+                console.log(object.currentValue.value);
+            }
+        }
+        
         console.log(paramObjs);
 
         //getUnderlyingData call
