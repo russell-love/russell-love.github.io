@@ -138,7 +138,7 @@
         console.log(dataArray);
         var data = {a: 9, b: 20, c:30, d:8, e:12}
         console.log(data);
-        
+
         // Create dummy data
         //var datatest = {a: 9, b: 20, c:30, d:8, e:12}
 
@@ -153,6 +153,8 @@
         
         var data_ready = pie(d3.entries(dataArray))
 
+        console.log(data_ready);
+        
         // Build the pie chart: Basically, each part of the pie is a path that we build using the arc function.
         g.selectAll('whatever')
           .data(data_ready)
