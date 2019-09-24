@@ -58,10 +58,24 @@
             includeAllColumns: false
         };
         
-        var paramObjs = sheet.getParametersAsync();
+        sheet.getParametersAsync(
+            // this is an anonymous function, but you could also have a named function
+            // p represents whatever is returned from the Tableau Server. Check the reference
+            function(p){
+                console.log(p); // I do this just to confirm what comes back.
+                // In this case, p is an array of Parameter objects
+                for(i=0;i<p.length;i++){
+                    // You can find the methods for the Parameter object in the Reference Guide
+                    p_name = p[i].getName();
+                    p_value = p[i].getCurrentValue(); // This is DataValue object
+                    p_actual_value = p_value.value; // DataValue has value and formattedValue fields (not methods)
+                    p_formatted_value = p_value.formattedValue;
+                    console.log('Parameter ' + p_name + ' has the value ' + p_formatted_value);
+                }
+            });
 
         console.log(paramObjs);
-        
+
 /*
         paramObjs.forEach(function(object) {
             if (object.name =="Success_ViewBy") {
