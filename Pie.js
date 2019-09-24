@@ -49,6 +49,7 @@
 
         //Set the desired sheet to the selected sheet
         sheet = getSelectedSheet(worksheetName);
+        workbook = viz.getWorkbook();
 
         //Set options for the getUnderlyingData call
         options = {
@@ -58,7 +59,7 @@
             includeAllColumns: false
         };
         
-        sheet.getParametersAsync(
+        workbook.getParametersAsync(
             // this is an anonymous function, but you could also have a named function
             // p represents whatever is returned from the Tableau Server. Check the reference
             function(p){
@@ -73,7 +74,6 @@
                     console.log('Parameter ' + p_name + ' has the value ' + p_formatted_value);
                 }
             });
-
 
         //getUnderlyingData call
         sheet.getUnderlyingDataAsync(options).then(function(t){
