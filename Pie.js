@@ -126,8 +126,6 @@
                 })
                 .entries(data);
 
-        console.log(successfulByNetwork);
-
         var dataArray = [];
             for (var key in successfulByNetwork) {
 
@@ -162,7 +160,7 @@
             .innerRadius(0)
             .outerRadius(radius)
           )
-          .attr('fill', function(d, i){ return(color(i)) })
+          .attr('fill', function(d){ return(color(d.data_ready.key)) })
           .attr("stroke", "black")
           .style("stroke-width", "2px")
           .style("opacity", 0.7)
