@@ -33,11 +33,6 @@
                     objWidth = object.size.width;
                     objHeight = object.size.height;
                 }
-
-                if (object.name == "Success_ViewBy") {
-                    console.log(object.value);
-
-                }
             });
 
         // Get the worksheet
@@ -62,6 +57,10 @@
             ignoreSelection: true,
             includeAllColumns: false
         };
+        
+        paramObjs = sheet.getParametersAsync();
+
+        console.log(paramObjs);
 
         //getUnderlyingData call
         sheet.getUnderlyingDataAsync(options).then(function(t){
