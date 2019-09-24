@@ -146,7 +146,7 @@
         var arc = d3.arc()
             .outerRadius(radius);
 
-        var pie = d3.layout.pie()
+        var pie = d3.pie()
             .value(function(d) { return d.value; });
 
         var arcs = vis.selectAll("g.slice")
