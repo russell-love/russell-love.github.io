@@ -33,7 +33,8 @@
             var p_actual_value = p_value.value;
             var p_formatted_value = p_value.formattedValue;
             
-            console.log('Parameter ' + p_name + ' has the value ' + p_formatted_value);
+            //console.log('Parameter ' + p_name + ' has the value ' + p_formatted_value);
+            viewBy = p_actual_value;
         });
 
         getContainerSize();
@@ -75,24 +76,6 @@
             includeAllColumns: false
         };
         
-        //Identify what dimension to use as the pie
-        sheet.getParametersAsync().then (
-            function(p) {
-                console.log(p); // I do this just to confirm what comes back.
-                // In this case, p is an array of Parameter objects
-                for(var i=0;i<p.length;i++){
-                    var p_name = p[i].name;
-                    var p_value = p[i].currentValue; // This is DataValue object
-                    var p_actual_value = p_value.value;
-                    var p_formatted_value = p_value.formattedValue;
-                    //console.log('Parameter ' + p_name + ' has the value ' + p_formatted_value);
-
-                    if (p_name == "Success_ViewBy"){
-                        viewBy = p_actual_value;
-                    }
-                }
-            });
-
         //getUnderlyingData call
         sheet.getUnderlyingDataAsync(options).then(function(t){
            cleanData(t); //Call the cleanData function (maps and converts)
