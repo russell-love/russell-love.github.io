@@ -9,6 +9,7 @@
             // Once the extension is initialized
             getContainerSize();
         });
+
     });
 
     var objHeight;
@@ -49,7 +50,6 @@
 
         //Set the desired sheet to the selected sheet
         sheet = getSelectedSheet(worksheetName);
-        workbook = viz.getWorkbook();
 
         //Set options for the getUnderlyingData call
         options = {
@@ -59,10 +59,8 @@
             includeAllColumns: false
         };
         
-        workbook.getParametersAsync(
-            // this is an anonymous function, but you could also have a named function
-            // p represents whatever is returned from the Tableau Server. Check the reference
-            function(p){
+        workbook.getParametersAsync().then (
+            function(p) {
                 console.log(p); // I do this just to confirm what comes back.
                 // In this case, p is an array of Parameter objects
                 for(i=0;i<p.length;i++){
@@ -74,7 +72,7 @@
                     console.log('Parameter ' + p_name + ' has the value ' + p_formatted_value);
                 }
             });
-
+        
         //getUnderlyingData call
         sheet.getUnderlyingDataAsync(options).then(function(t){
            cleanData(t); //Call the cleanData function (maps and converts)
