@@ -148,7 +148,7 @@
             return d3.entries(d);
         });
 
-        console.log(fixed_data);
+        console.log(fixedData);
 
         var color = d3.scaleOrdinal()
             .domain(dataArray)
