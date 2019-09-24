@@ -24,8 +24,13 @@
 
     var viewBy;
 
-    function onParameterChange() {
+    function onParameterChange(parameterChangeEvent) {
         $('#data_table_wrapper').empty();
+
+        parameterChangeEvent.getParameterAsync().then(function (param) {
+            console.log(param);
+        });
+
         getContainerSize();
     }
 
