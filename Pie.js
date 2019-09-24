@@ -167,7 +167,7 @@
                     return "translate(" + arc.centroid(d) + ")";
             })
             .attr("text-anchor", "middle")
-            .text(function(d, i) { return dataArray[i].name; });
+            .text(function(d, i) { return dataArray[i].value; });
 
         }       
 })();
