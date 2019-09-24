@@ -149,7 +149,7 @@
         var pie = d3.pie()
             .value(function(d) { return d.value; });
 
-        var arcs = vis.selectAll("g.slice")
+        var arcs = g.selectAll("g.slice")
             .data(pie)
             .enter()
                 .append("g")
