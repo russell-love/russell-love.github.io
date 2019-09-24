@@ -137,8 +137,27 @@
 
         console.log(dataArray);
         
+        var color = d3.scaleOrdinal()
+            .domain(dataArray)
+            .range(d3.schemeSet2);
+
         var radius = Math.min(width, height) / 2 - margin.left
 
+        var arc = d3.svg.arc()
+            .outerRadius(radius);
 
-    }       
+        var pie = d3.layout.pie()
+            .value(function(d) { return d.value; });
+
+        var arcs = vis.selectAll("g.slice")
+            .data(pie)
+            .enter()
+                .append("g")
+                .attr("class", "slice");
+
+        arcs.append("path")
+            .attr("fill", function(d, i) { return color(i); } )
+            .attr("d", arc);
+            
+        }       
 })();
