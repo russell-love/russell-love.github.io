@@ -150,7 +150,7 @@
             .value(function(d) { return d.value; });
 
         var arcs = g.selectAll("g.slice")
-            .data(pie)
+            .data(pie(dataArray))
             .enter()
                 .append("g")
                 .attr("class", "slice");
