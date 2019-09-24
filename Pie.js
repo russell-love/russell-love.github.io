@@ -143,7 +143,7 @@
 
         var radius = Math.min(width, height) / 2 - margin.left
 
-        var arc = d3.svg.arc()
+        var arc = d3.arc()
             .outerRadius(radius);
 
         var pie = d3.layout.pie()
@@ -158,6 +158,6 @@
         arcs.append("path")
             .attr("fill", function(d, i) { return color(i); } )
             .attr("d", arc);
-            
+
         }       
 })();
