@@ -14,6 +14,8 @@
     var objHeight;
     var objWidth;
 
+    var viewBy;
+
     function getContainerSize() {
         const dashboardName = tableau.extensions.dashboardContent.dashboard.name;
 
@@ -30,6 +32,11 @@
 
                     objWidth = object.size.width;
                     objHeight = object.size.height;
+                }
+
+                if (object.name == "Success_ViewBy") {
+                    console.log(object.value);
+
                 }
             });
 
