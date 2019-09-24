@@ -136,7 +136,9 @@
             };
 
         console.log(dataArray);
-
+        var data = {a: 9, b: 20, c:30, d:8, e:12}
+        console.log(data);
+        
         // Create dummy data
         //var datatest = {a: 9, b: 20, c:30, d:8, e:12}
 
