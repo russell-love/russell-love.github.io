@@ -59,17 +59,21 @@
             includeAllColumns: false
         };
         
+        //Identify what dimension to use as the pie
         sheet.getParametersAsync().then (
             function(p) {
                 console.log(p); // I do this just to confirm what comes back.
                 // In this case, p is an array of Parameter objects
                 for(var i=0;i<p.length;i++){
-                    // You can find the methods for the Parameter object in the Reference Guide
                     var p_name = p[i].name;
                     var p_value = p[i].currentValue; // This is DataValue object
                     var p_actual_value = p_value.value;
                     var p_formatted_value = p_value.formattedValue;
                     console.log('Parameter ' + p_name + ' has the value ' + p_formatted_value);
+
+                    if (p_name == "Success_ViewBy"){
+                        viewBy = p_actual_value;
+                    }
                 }
             });
 
@@ -134,7 +138,7 @@
         // The radius of the pieplot is half the width or half the height (smallest one). I subtract a bit of margin.
         var radius = Math.min(width, height) / 2 - margin.left
 
-        var successfulByNetwork = d3.nest()
+        var successfulBy = d3.nest()
                 .key(function(d) { return d.Network; })
                 .rollup(function(f) {
                     return { 
@@ -143,12 +147,13 @@
                 })
                 .entries(data);
 
+
         var dataArray = [];
-            for (var key in successfulByNetwork) {
+            for (var key in successfulBy) {
 
                 dataArray.push({
-                    name: successfulByNetwork[key].key,
-                    value: successfulByNetwork[key].value.totalSuccessful
+                    name: successfulBy[key].key,
+                    value: successfulBy[key].value.totalSuccessful
               })
             };
 
