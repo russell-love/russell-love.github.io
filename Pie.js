@@ -58,7 +58,7 @@
             includeAllColumns: false
         };
         
-        paramObjs = sheet.getParametersAsync();
+        var paramObjs = sheet.getParametersAsync();
 
         console.log(paramObjs);
 
