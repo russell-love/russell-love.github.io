@@ -149,7 +149,7 @@
         var pie = d3.pie()
           .value(function(d) {return d.value; })
         
-        var data_ready = pie(d3.entries(dataArray))
+        var data_ready = pie(d3.entries(successfulByNetwork))
 
         console.log(data_ready);
 
