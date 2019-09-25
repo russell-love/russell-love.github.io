@@ -150,6 +150,7 @@
         var radius = Math.min(width, height) / 2 - margin.left
 
         var table = d3.csvParse(data);
+        console.log(table);
         
         var root = d3.stratify()
             .id(function(d) { return d.Brand; })
