@@ -150,8 +150,8 @@
         var radius = Math.min(width, height) / 2 - margin.left
 
         var root = d3.stratify()
-            .id(function(d) { return d.Network; })
-            .parentId(function(d) { return d.Brand; })
+            .id(function(d) { return d.Brand; })
+            .parentId(function(d) { return d.Network; })
             (data);
 
 
