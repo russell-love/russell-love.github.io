@@ -13,7 +13,7 @@
                 });
             });
 
-            tableau.extensions.dashboardContent.dashboard.getFiltersAsync().then(function (filters) {
+            tableau.extensions.dashboardContent.dashboard.worksheets.getFiltersAsync().then(function (filters) {
                 filters.forEach(function (f) {
                     f.addEventListener(tableau.TableaEventType.FilterChanged, onFilterChange);
                 });
