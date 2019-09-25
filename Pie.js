@@ -13,17 +13,30 @@
                 });
             });
 
-            // Once the extension is initialized
+            tableau.extensions.dashboardContent.dashboard.getFiltersAsync().then(function (filters) {
+                filters.forEach(function (f) {
+                    f.addEventListener(tableau.TableaEventType.FilterChanged, onFilterChange);
+                });
+            });
+
             getContainerSize();
         });
 
     });
+
+    
 
     var objHeight;
     var objWidth;
 
     var viewBy;
 
+    function onFilterChange(filterChangeEvent) {
+        filterChangeEvent.getFilterAsync().then(function (fil) {
+            console.log(fil);
+        };
+    }
+    
     function onParameterChange(parameterChangeEvent) {
         $('#data_table_wrapper').empty();
 
