@@ -18,8 +18,8 @@
 
             // Then loop through each worksheet and get its filters, save promise for later.
             dashboard.worksheets.forEach(function (worksheet) {
-                worksheet.getFiltersAsync().then( function (filters) {
-                    filters.addEventListener(tableau.TableauEventType.FilterChanged, onFilterChange)
+                worksheet.getFiltersAsync().then( function (f) {
+                    f.addEventListener(tableau.TableauEventType.FilterChanged, onFilterChange)
                 });
             });
 
