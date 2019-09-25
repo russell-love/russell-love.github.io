@@ -13,22 +13,11 @@
                 });
             });
 
-            // To get filter info, first get the dashboard.
-            const dashboard = tableau.extensions.dashboardContent.dashboard;
-
-            // Then loop through each worksheet and get its filters, save promise for later.
-            dashboard.worksheets.forEach(function (worksheet) {
+            tableau.extensions.dashboardContent.dashboard.worksheets.forEach(function (worksheet) {
                 console.log(worksheet);
                 worksheet.getFiltersAsync();
-
                 worksheet.addEventListener(tableau.TableauEventType.FilterChanged, onFilterChange);
-                
-                /*
-                worksheet.getFiltersAsync().then( function (f) {
-                    console.log(f);
-                    f.addEventListener(tableau.TableauEventType.FilterChanged, onFilterChange)
-                });
-                */
+
             });
 
             getContainerSize();
@@ -45,7 +34,7 @@
 
     function onFilterChange(filterChangeEvent) {
         filterChangeEvent.getFilterAsync().then(function (fil) {
-            console.log(fil);
+            getContainerSize();
         });
     }
 
