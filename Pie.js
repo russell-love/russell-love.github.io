@@ -34,6 +34,7 @@
 
     function onFilterChange(filterChangeEvent) {
         filterChangeEvent.getFilterAsync().then(function (fil) {
+            $('#data_table_wrapper').empty();
             getContainerSize();
         });
     }
