@@ -34,9 +34,9 @@
     function onFilterChange(filterChangeEvent) {
         filterChangeEvent.getFilterAsync().then(function (fil) {
             console.log(fil);
-        };
+        });
     }
-    
+
     function onParameterChange(parameterChangeEvent) {
         $('#data_table_wrapper').empty();
 
