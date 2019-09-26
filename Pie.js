@@ -132,6 +132,8 @@
 
     function drawChart(data) {
 
+        console.log(data);
+        
         var margin = { left:40, right:15, top:20, bottom:30 };
 
         var width = (objWidth - margin.left - margin.right)*0.95,
@@ -148,15 +150,15 @@
         
         // The radius of the pieplot is half the width or half the height (smallest one). I subtract a bit of margin.
         var radius = Math.min(width, height) / 2 - margin.left
-
+/*
         var table = d3.csvParse(data);
         console.log(table);
-        
+
         var root = d3.stratify()
             .id(function(d) { return d.Brand; })
             .parentId(function(d) { return d.Network; })
             (table);
-
+*/
 
         switch (viewBy) {
             case "Network":
