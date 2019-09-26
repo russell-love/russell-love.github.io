@@ -158,6 +158,8 @@
 
         rollupData = d3.rollup(data, reduceFn, groupingFns);
 
+        console.log(rollupData);
+        
         switch (viewBy) {
             case "Network":
                 var successfulBy = d3.nest()
