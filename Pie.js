@@ -151,15 +151,6 @@
         // The radius of the pieplot is half the width or half the height (smallest one). I subtract a bit of margin.
         var radius = Math.min(width, height) / 2 - margin.left
 
-
-        reduceFn = data => d3.sum(data, d => d[“Attempted”] + d[“Successful”]);
-
-        var groupingFns = [d => d.Network, d => d.Brand];
-
-        rollupData = d3.rollup(data, reduceFn, groupingFns);
-
-        console.log(rollupData);
-        
         switch (viewBy) {
             case "Network":
                 var successfulBy = d3.nest()
