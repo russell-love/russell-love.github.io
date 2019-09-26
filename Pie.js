@@ -147,7 +147,7 @@
             .append("g")
                 .attr("transform", "translate(" + (width / 2 + margin.left) + ", " + (height / 2) + ")");
 
-        var rolled = d3.hierarchy([null, d3.rollups(data, v => d3.sum(v, d => d["Attempted"] + d["Successful"]), d => d.Network, d => d.Brand)], ([, value]) => value)
+        var rolled = d3.hierarchy([null, d3.rollups(data, v => d3.sum(v, d => d["Successful"]), d => d.Network, d => d.Brand)], ([, value]) => value)
             .sum(([, value]) => value)
             .sort((a, b) => b.value - a.value)
 
