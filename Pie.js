@@ -151,7 +151,7 @@
         // The radius of the pieplot is half the width or half the height (smallest one). I subtract a bit of margin.
         var radius = Math.min(width, height) / 2 - margin.left
 
-        var groupedData = d3.group(data, d => d.Network, d => d.Brand);
+        var groupedData = d3.group(data, d => d.Network);
 
         console.log(groupedData);
 
