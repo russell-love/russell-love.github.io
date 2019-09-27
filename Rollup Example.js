@@ -61,7 +61,7 @@
         let object = tableau.extensions.dashboardContent.dashboard;
             dashboard.objects.forEach(function (object) {
                 // do something with the objects..
-                if (object.name == "PieTest") {
+                if (object.name == "RollupTest") {
                     objWidth = object.size.width;
                     objHeight = object.size.height;
                 }
@@ -132,7 +132,7 @@
 
     function drawChart(data) {
         console.log("Drawchart");
-        
+
         console.log(data);
 
         var margin = { left:40, right:15, top:20, bottom:30 };
