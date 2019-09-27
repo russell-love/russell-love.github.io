@@ -131,7 +131,8 @@
     }
 
     function drawChart(data) {
-
+        console.log("Drawchart");
+        
         console.log(data);
 
         var margin = { left:40, right:15, top:20, bottom:30 };
@@ -147,82 +148,6 @@
             .append("g")
                 .attr("transform", "translate(" + (width / 2 + margin.left) + ", " + (height / 2) + ")");
 
-        var rolled = d3.hierarchy([null, d3.rollups(data, v => d3.sum(v, d => d["Successful"]), d => d.Network, d => d.Brand)], ([, value]) => value)
-            .sum(([, value]) => value)
-            .sort((a, b) => b.value - a.value)
 
-        console.log(rolled);
-
-        // The radius of the pieplot is half the width or half the height (smallest one). I subtract a bit of margin.
-        var radius = Math.min(width, height) / 2 - margin.left
-
-        switch (viewBy) {
-            case "Network":
-                var successfulBy = d3.nest()
-                .key(function(d) { return d.Network; })
-                .rollup(function(f) {
-                    return { 
-                        totalSuccessful: d3.sum(f, function(g) { return g.Successful; }), 
-                    }
-                })
-                .entries(data);
-            break;
-            case "Brand":
-                var successfulBy = d3.nest()
-                .key(function(d) { return d.Brand; })
-                .rollup(function(f) {
-                    return { 
-                        totalSuccessful: d3.sum(f, function(g) { return g.Successful; }), 
-                    }
-                })
-                .entries(data);
-            break;
-            default:
-                // execute default code block
-        }
-        
-        var dataArray = [];
-            for (var key in successfulBy) {
-
-                dataArray.push({
-                    name: successfulBy[key].key,
-                    value: successfulBy[key].value.totalSuccessful
-              })
-            };
-
-        console.log(dataArray);
-        
-        var color = d3.scaleOrdinal()
-            .domain(dataArray)
-            .range(d3.schemeSet2);
-
-        var radius = Math.min(width, height) / 2 - margin.left
-
-        var arc = d3.arc()
-            .outerRadius(radius)
-            .innerRadius(0);
-
-        var pie = d3.pie()
-            .value(function(d) { return d.value; });
-
-        var arcs = g.selectAll("g.slice")
-            .data(pie(dataArray))
-            .enter()
-                .append("g")
-                .attr("class", "slice");
-
-        arcs.append("path")
-            .attr("fill", function(d, i) { return color(i); } )
-            .attr("d", arc);
-
-        arcs.append("text")
-                .attr("transform", function(d) {
-                    d.innerRadius = 0;
-                    d.outerRadius = radius;
-                    return "translate(" + arc.centroid(d) + ")";
-            })
-            .attr("text-anchor", "middle")
-            .text(function(d, i) { return dataArray[i].value; });
-
-        }       
+    }       
 })();
