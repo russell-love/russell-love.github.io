@@ -152,7 +152,7 @@
 
         console.log(rollupData);
 
-        function childrenAccessorFn = ([ key, value ]) => value.size && Array.from(value)
+        let childrenAccessorFn = ([ key, value ]) => value.size && Array.from(value)
 
         hierarchyData = d3.hierarchy([null, rollupData], childrenAccessorFn)
             .sum(([key, value]) => value)
