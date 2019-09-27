@@ -150,8 +150,15 @@
 
         var rollupData = d3.rollups(data, v => d3.sum(v, d => d["Successful"]), d => d.Network, d => d.Brand);
 
-
         console.log(rollupData);
+
+        function childrenAccessorFn = ([ key, value ]) => value.size && Array.from(value)
+
+        hierarchyData = d3.hierarchy([null, rollupData], childrenAccessorFn)
+            .sum(([key, value]) => value)
+            .sort((a, b) => b.value — a.value)
+
+        console.log(hierarchyData);
 
     }       
 })();
