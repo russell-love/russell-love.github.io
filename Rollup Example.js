@@ -151,12 +151,42 @@
         var rollupData = d3.rollups(data, v => d3.sum(v, d => d["Successful"]), d => d.Network, d => d.Brand);
 
         console.log(rollupData);
-
+/*
         var root = d3.hierarchy([null, rollupData], ([, value]) => value)
             .sum(([, value]) => value)
             .sort((a, b) => b.value - a.value)
 
         console.log(root);
+*/
+        // Variables
+
+        var radius = Math.min(width, height) / 2;
+        var color = d3.scaleOrdinal(d3.schemeCategory20b);
+
+        // Data strucure
+        var partition = d3.partition()
+            .size([2 * Math.PI, radius]);
+
+        // Find data root
+        var root = d3.hierarchy(rollupData)
+            .sum(function (d) { return d.Successful});
+
+        // Size arcs
+        partition(root);
+        var arc = d3.arc()
+            .startAngle(function (d) { return d.x0 })
+            .endAngle(function (d) { return d.x1 })
+            .innerRadius(function (d) { return d.y0 })
+            .outerRadius(function (d) { return d.y1 });
+
+        // Put it all together
+        g.selectAll('path')
+            .data(root.descendants())
+            .enter().append('path')
+            .attr("display", function (d) { return d.depth ? null : "none"; })
+            .attr("d", arc)
+            .style('stroke', '#fff');
+            
 
     }       
 })();
