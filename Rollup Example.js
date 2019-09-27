@@ -148,10 +148,8 @@
             .append("g")
                 .attr("transform", "translate(" + (width / 2 + margin.left) + ", " + (height / 2) + ")");
 
-        reduceFn = data => d3.sum(data, d => d[Successful]);
-        groupingFns = [d => d.Network, d => d.Brand];
+        rollupData = d3.rollups(data, v => d3.sum(v, d => d["Successful"]), d => d.Network, d => d.Brand);
 
-        rollupData = d3.rollup(data, reduceFn, groupingFns);
 
         console.log(rollupData);
 
