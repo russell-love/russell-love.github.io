@@ -148,7 +148,7 @@
             .append("g")
                 .attr("transform", "translate(" + (width / 2 + margin.left) + ", " + (height / 2) + ")");
 
-        rollupData = d3.rollups(data, v => d3.sum(v, d => d["Successful"]), d => d.Network, d => d.Brand);
+        var rollupData = d3.rollups(data, v => d3.sum(v, d => d["Successful"]), d => d.Network, d => d.Brand);
 
 
         console.log(rollupData);
