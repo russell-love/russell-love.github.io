@@ -151,13 +151,13 @@
         var rollupData = d3.rollups(data, v => d3.sum(v, d => d["Successful"]), d => d.Network, d => d.Brand);
 
         console.log(rollupData);
-/*
+
         var root = d3.hierarchy([null, rollupData], ([, value]) => value)
             .sum(([, value]) => value)
             .sort((a, b) => b.value - a.value)
 
         console.log(root);
-*/
+
         // Variables
 
         var radius = Math.min(width, height) / 2;
@@ -166,10 +166,6 @@
         // Data strucure
         var partition = d3.partition()
             .size([2 * Math.PI, radius]);
-
-        // Find data root
-        var root = d3.hierarchy(rollupData)
-            .sum(function (d) { return d.Successful});
 
         // Size arcs
         partition(root);
