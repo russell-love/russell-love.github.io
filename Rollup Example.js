@@ -152,13 +152,11 @@
 
         console.log(rollupData);
 
-        let childrenAccessorFn = ([ key, value ]) => value.size && Array.from(value)
+        root = d3.hierarchy([null, rollupData], ([, value]) => value)
+            .sum(([, value]) => value)
+            .sort((a, b) => b.value - a.value)
 
-        hierarchyData = d3.hierarchy([null, rollupData], childrenAccessorFn)
-            .sum(([key, value]) => value)
-            .sort((a, b) => b.value — a.value)
-
-        console.log(hierarchyData);
+        console.log(root);
 
     }       
 })();
