@@ -151,7 +151,7 @@
         reduceFn = data => d3.sum(data, d => d[Successful]);
         groupingFns = [d => d.Network, d => d.Brand];
 
-        rollupData = d3.rollup(data, reduceFn, …groupingFns);
+        rollupData = d3.rollup(data, reduceFn, groupingFns);
 
         console.log(rollupData);
 
