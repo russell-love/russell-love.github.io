@@ -212,13 +212,7 @@
                                     .brighter();
 
                 // Create the scale
-                colors = d3.scale.linear()
-                        .interpolate(d3.interpolateHcl)
-                        .range([
-                            startColor.toString(),
-                            endColor.toString()
-                        ])
-                        .domain([0,d.children.length+1]);
+                colors = d3.scaleOrdinal(d3.schemeCategory10);
 
             }
 
