@@ -184,6 +184,6 @@
             .style('stroke', '#fff')
             .style("fill", function (d) { return color((d.children ? d : d.parent).data.name); });
             
-        console.log(root.decendants());
+        console.log(root.decendants);
     }       
 })();
