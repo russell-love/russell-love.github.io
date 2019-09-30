@@ -150,7 +150,7 @@
 
         var rollupData = d3.rollups(data, v => d3.sum(v, d => d["Successful"]), d => d.Network, d => d.Brand);
 
-        var rollupData2 = json.stringify(rollupData);
+        var rollupData2 = JSON.stringify(rollupData);
 
         console.log(rollupData2);
 
