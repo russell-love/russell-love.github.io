@@ -200,17 +200,6 @@
 
             } else if (d.children) {
 
-                // Since this isn't the root node,
-                // we construct the scale from the
-                // node's assigned color. Our scale
-                // will range from darker than the
-                // node's color to brigher than the
-                // node's color.
-                var startColor = d3.hcl(d.color)
-                                    .darker(),
-                    endColor   = d3.hcl(d.color)
-                                    .brighter();
-
                 // Create the scale
                 colors = d3.scaleOrdinal(d3.schemeDark2);
 
