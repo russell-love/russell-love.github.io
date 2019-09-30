@@ -181,7 +181,7 @@
                     .attr("display", function (d) { return d.depth ? null : "none"; })
                     .attr("d", arc)
                     .style('stroke', '#fff')
-                    .style("fill", function (d) { return color((d.children ? d : d.parent).data.name); });
+                    .style("fill", function (d) { return color((d.children.data[0] ? d : d.parent.data[0]).data[0]); });
 
         const nodes = root.descendants();
 
