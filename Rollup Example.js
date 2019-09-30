@@ -192,8 +192,7 @@
                 // [0, ... 9] to ensure that
                 // we can predictably generate
                 // correct individual colors.
-                colors = d3.scale.category10()
-                    .domain(d3.range(0,10));
+                colors = d3.scaleOrdinal(d3.schemeCategory10);
 
                 // White for the root node
                 // itself.
