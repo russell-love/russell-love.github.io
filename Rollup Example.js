@@ -154,7 +154,7 @@
 
         console.log(rollupData2);
 
-        var root = d3.hierarchy([null, rollupData], ([, value]) => value)
+        var root = d3.hierarchy([null, rollupData2], ([, value]) => value)
             .sum(([, value]) => value)
             .sort((a, b) => b.value - a.value)
 
