@@ -202,9 +202,7 @@
                 // we use a mapped version.
                 d.children.map(function(child, i) {
                         return {value: child.value, idx: i};
-                    }).sort(function(a,b) {
-                            return b.value - a.value
-                        }).forEach(function(child, i) {
+                    }).forEach(function(child, i) {
                             d.children[child.idx].color = colors(i);
                 });
             }
