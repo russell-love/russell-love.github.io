@@ -212,7 +212,7 @@
                                     .brighter();
 
                 // Create the scale
-                colors = d3.scaleOrdinal(d3.schemeCategory20);
+                colors = d3.scaleOrdinal(d3.schemeDark2);
 
             }
 
