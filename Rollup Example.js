@@ -183,7 +183,8 @@
                     .style('stroke', '#fff')
                     .style("fill", function (d) { return color((d.children ? d : d.parent).data.name); });
 
+        const nodes = root.descendants();
 
-        console.log(root.descentants());
+        console.log(nodes);
     }       
 })();
