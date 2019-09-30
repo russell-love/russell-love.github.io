@@ -204,7 +204,7 @@
                 colors = d3.scaleOrdinal(d3.schemeDark2);
 
             }
-/*
+
             if (d.children) {
 
                 // Now distribute those colors to
@@ -221,7 +221,7 @@
                     d.children[child.idx].color = colors(i);
                 });
             }
-*/
+
             return d.color;
         };
 
