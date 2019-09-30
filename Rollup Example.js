@@ -177,30 +177,19 @@
             // Normally we'll distribute the colors
             // in the scale to child nodes.
             var colors;
+            colors = d3.scaleOrdinal(d3.schemeCategory10);
 
+            /*
             // The root node is special since
             // we have to seed it with our
             // desired palette.
             if (!d.parent) {
-
-                // Create a categorical color
-                // scale to use both for the
-                // root node's immediate
-                // children. We're using the
-                // 10-color predefined scale,
-                // so set the domain to be
-                // [0, ... 9] to ensure that
-                // we can predictably generate
-                // correct individual colors.
                 colors = d3.scaleOrdinal(d3.schemeCategory10);
 
-                // White for the root node
-                // itself.
+                // White for the root node itself
                 d.color = "#fff";
 
             } else if (d.children) {
-
-                // Create the scale
                 colors = d3.scaleOrdinal(d3.schemeDark2);
 
             }
@@ -221,7 +210,7 @@
                             d.children[child.idx].color = colors(i);
                 });
             }
-
+            */
             return d.color;
         };
 
