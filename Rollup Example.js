@@ -134,7 +134,6 @@
         console.log("Drawchart");
 
         console.log(data);
-        var rollupData2 = JSON.stringify(data);
 
         var margin = { left:40, right:15, top:20, bottom:30 };
 
@@ -151,9 +150,6 @@
 
         var rollupData = d3.rollups(data, v => d3.sum(v, d => d["Successful"]), d => d.Network, d => d.Brand);
 
-
-
-        console.log(rollupData2);
 
         var root = d3.hierarchy([null, rollupData], ([, value]) => value)
             .sum(([, value]) => value)
@@ -187,5 +183,7 @@
                     .style('stroke', '#fff')
                     .style("fill", function (d) { return color((d.children ? d : d.parent).data.name); });
 
+
+        console.log(root.descentants());
     }       
 })();
