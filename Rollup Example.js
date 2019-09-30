@@ -160,7 +160,7 @@
         // Variables
 
         var radius = Math.min(width, height) / 2;
-        var color = d3.scaleOrdinal(d3.schemeCategory20b);
+        //var color = d3.scaleOrdinal(d3.schemeCategory20b);
 
         // Define a function that returns the color
         // for a data point. The input parameter
@@ -214,11 +214,11 @@
                 // JavaScript sorts arrays in place,
                 // we use a mapped version.
                 d.children.map(function(child, i) {
-                    return {value: child.value, idx: i};
-                }).sort(function(a,b) {
-                    return b.value - a.value
-                }).forEach(function(child, i) {
-                    d.children[child.idx].color = colors(i);
+                        return {value: child.value, idx: i};
+                    }).sort(function(a,b) {
+                            return b.value - a.value
+                        }).forEach(function(child, i) {
+                            d.children[child.idx].color = colors(i);
                 });
             }
 
