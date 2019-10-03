@@ -210,6 +210,10 @@
             return d.color;
         };
 
+        
+        var myColor = d3.scaleOrdinal().domain(root)
+            .range(d3.schemeDark2);
+
            
 
         // Data strucure
@@ -230,9 +234,9 @@
                 .enter().append('path')
                     .attr("display", function (d) { return d.depth ? null : "none"; })
                     .attr("d", arc)
-                    .style('stroke', '#fff')
-                    .style("fill", function (d) { return colorband((d.children ? d : d.parent).name)});
-                    //.style("fill", color);
+                    .style("stroke", '#fff')
+                    .style("fill", function(d){return myColor(d)});
+                    //.style("fill", color2);
 
     }       
 })();
