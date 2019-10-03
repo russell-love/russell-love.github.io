@@ -246,6 +246,6 @@
                     return `rotate(${x - 90}) translate(${y},0) rotate(${x < 180 ? 0 : 180})`;
                 })
                 .attr("dy", "0.35em")
-                .text(d => d.data.name);
+                .text(d => d.data[0]);
             }       
 })();
