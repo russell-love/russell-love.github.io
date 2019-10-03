@@ -208,8 +208,23 @@
             
             return d.color;
         };
+
+        var color2a = d3.scaleOrdinal(d3.quantize(d3.interpolateRainbow, root.children.length + 1))
+
+        var color2 = function(d) {
+            var colors;
+
+            if (d.parent) {
+                return color2(d.data[0])
+            }
+
+            if (d.children) {
+                return color2(d.data[0][0])
+            }
+
+        };
            
-        var color2 = d3.scaleOrdinal(d3.quantize(d3.interpolateRainbow, root.children.length + 1))
+        
 
         // Data strucure
         var partition = d3.partition()
@@ -230,9 +245,9 @@
                     .attr("display", function (d) { return d.depth ? null : "none"; })
                     .attr("d", arc)
                     .style("stroke", '#fff')
-                    .style("fill", d => { return color2(d.data[0]); });
+                    //.style("fill", d => { return color2(d.data[0]); });
                     //.style("fill", d => { while (d.depth > 1) d = d.parent; return color2(d.data[0]); });
-                    //.style("fill", color2);
+                    .style("fill", color2);
 
     }       
 })();
