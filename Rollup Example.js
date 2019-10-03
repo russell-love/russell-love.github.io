@@ -208,13 +208,8 @@
             
             return d.color;
         };
-
-        
-        var myColor = d3.scaleOrdinal()
-            .domain(rollupData)
-            .range(d3.schemeDark2);
-
            
+        color2 = d3.scaleOrdinal(d3.quantize(d3.interpolateRainbow, data.children.length + 1))
 
         // Data strucure
         var partition = d3.partition()
@@ -235,7 +230,7 @@
                     .attr("display", function (d) { return d.depth ? null : "none"; })
                     .attr("d", arc)
                     .style("stroke", '#fff')
-                    .style("fill", function(d){return myColor(d)});
+                    .style("fill", d => { while (d.depth > 1) d = d.parent; return color2(d.data.name); });
                     //.style("fill", color2);
 
     }       
