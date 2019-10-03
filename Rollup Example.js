@@ -235,7 +235,7 @@
                     //.style("fill", color2);
                     .append("text")
                         .attr("text-anchor", "middle")
-                        .text(function(d, i) { return d.data[i].value; });
+                        .text(function(d, i) { return d.data[0]; });
 
     }       
 })();
