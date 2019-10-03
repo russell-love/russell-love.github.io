@@ -211,7 +211,7 @@
         };
 
         
-        var myColor = d3.scaleOrdinal().domain(root)
+        var myColor = d3.scaleOrdinal().domain(root.descendants())
             .range(d3.schemeDark2);
 
            
