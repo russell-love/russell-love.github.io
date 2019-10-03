@@ -209,7 +209,7 @@
             return d.color;
         };
            
-        color2 = d3.scaleOrdinal(d3.quantize(d3.interpolateRainbow, data.children.length + 1))
+        color2 = d3.scaleOrdinal(d3.quantize(d3.interpolateRainbow, root.children.length + 1))
 
         // Data strucure
         var partition = d3.partition()
