@@ -160,7 +160,7 @@
         // Variables
 
         var radius = Math.min(width, height) / 2;
-        //var color = d3.scaleOrdinal(d3.schemeCategory20b);
+        var colorband = d3.scaleOrdinal(d3.schemeCategory20b);
 
         // Define a function that returns the color
         // for a data point. The input parameter
@@ -231,7 +231,8 @@
                     .attr("display", function (d) { return d.depth ? null : "none"; })
                     .attr("d", arc)
                     .style('stroke', '#fff')
-                    .style("fill", color);
+                    .style("fill", function (d) { return colorband((d.children ? d : d.parent).name)});
+                    //.style("fill", color);
 
     }       
 })();
