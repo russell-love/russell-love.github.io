@@ -234,6 +234,18 @@
                     //.style("fill", d => { while (d.depth > 1) d = d.parent; return color2(d.data[0]); });
                     //.style("fill", color2);
 
-
-    }       
+        g.append("g")
+            .attr("pointer-events", "none")
+            .attr("text-anchor", "middle")
+            .selectAll("text")
+            .data(root.descendants().filter(d => d.depth && (d.y0 + d.y1) / 2 * (d.x1 - d.x0) > 10))
+            .enter().append("text")
+                .attr("transform", function(d) {
+                const x = (d.x0 + d.x1) / 2 * 180 / Math.PI;
+                const y = (d.y0 + d.y1) / 2;
+                    return `rotate(${x - 90}) translate(${y},0) rotate(${x < 180 ? 0 : 180})`;
+                })
+                .attr("dy", "0.35em")
+                .text(d => d.data.name);
+            }       
 })();
