@@ -233,6 +233,9 @@
                     .style("fill", d => { return color2(d.data[0]); });
                     //.style("fill", d => { while (d.depth > 1) d = d.parent; return color2(d.data[0]); });
                     //.style("fill", color2);
+                    .append("text")
+                        .attr("text-anchor", "middle")
+                        .text(function(d, i) { return d.data[i].value; });
 
     }       
 })();
