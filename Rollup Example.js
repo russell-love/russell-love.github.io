@@ -160,7 +160,6 @@
         // Variables
 
         var radius = Math.min(width, height) / 2;
-        var colorband = d3.scaleOrdinal(d3.schemeCategory20b);
 
         // Define a function that returns the color
         // for a data point. The input parameter
@@ -211,7 +210,8 @@
         };
 
         
-        var myColor = d3.scaleOrdinal().domain(root.descendants())
+        var myColor = d3.scaleOrdinal()
+            .domain(rollupData)
             .range(d3.schemeDark2);
 
            
