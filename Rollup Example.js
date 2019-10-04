@@ -230,8 +230,8 @@
                     .attr("display", function (d) { return d.depth ? null : "none"; })
                     .attr("d", arc)
                     .style("stroke", '#fff')
-                    .style("fill", d => { return color2(d.data[0]); });
-                    //.style("fill", d => { while (d.depth > 1) d = d.parent; return color2(d.data[0]); });
+                    //.style("fill", d => { return color2(d.data[0]); });
+                    .style("fill", d => { while (d.depth > 1) d = d.parent; return color2(d.data[0]); });
                     //.style("fill", color2);
 
         g.append("g")
