@@ -60,7 +60,7 @@ schedule_data AS (
   SELECT advertiser As advertiser_sch,
   house_id As houseid_sch,
   break_code As breakcode,
-  prgsvcid,
+  prgsvcid_,
   created,
   channel,
   title,
