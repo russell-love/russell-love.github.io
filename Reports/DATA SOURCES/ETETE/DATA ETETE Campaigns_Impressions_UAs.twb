@@ -1,0 +1,2450 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20192.20.0313.1709                               -->
+<workbook original-version='18.1' source-build='2019.2.10 (20192.20.0313.1709)' source-platform='mac' version='18.1' xml:base='http://3.214.178.93' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <SheetIdentifierTracking ignorable='true' predowngraded='true' />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <repository-location id='CampaignDashboard' path='/t/staging/workbooks' revision='3.5' site='staging' />
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+    <color-palette custom='true' name='Nielsen Pri_Sec' type='regular'>
+      <color>#00aeef</color>
+      <color>#ffffff</color>
+      <color>#000000</color>
+      <color>#b21dac</color>
+      <color>#8dc63f</color>
+      <color>#ffb100</color>
+      <color>#dd0014</color>
+    </color-palette>
+  </preferences>
+  <style>
+    <style-rule element='all'>
+      <format attr='font-family' value='Archivo Narrow' />
+    </style-rule>
+  </style>
+  <datasources>
+    <datasource hasconnection='false' inline='true' name='Parameters' version='18.1'>
+      <aliases enabled='yes' />
+      <column caption='Show %' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Yes&quot;'>
+        <calculation class='tableau' formula='&quot;Yes&quot;' />
+        <members>
+          <member value='&quot;Yes&quot;' />
+          <member value='&quot;No&quot;' />
+        </members>
+      </column>
+      <column caption='Success_ViewBy' datatype='string' name='[Parameter 2]' param-domain-type='list' role='measure' type='nominal' value='&quot;None&quot;'>
+        <calculation class='tableau' formula='&quot;None&quot;' />
+        <members>
+          <member value='&quot;None&quot;' />
+          <member value='&quot;Duration&quot;' />
+          <member value='&quot;Network&quot;' />
+        </members>
+      </column>
+      <column alias='1st' caption='Quartile Filter Parameter' datatype='string' name='[Parameter 3]' param-domain-type='list' role='measure' type='nominal' value='&quot;2&quot;'>
+        <calculation class='tableau' formula='&quot;2&quot;' />
+        <aliases>
+          <alias key='&quot;2&quot;' value='1st' />
+          <alias key='&quot;3&quot;' value='2nd' />
+          <alias key='&quot;4&quot;' value='3rd' />
+          <alias key='&quot;5&quot;' value='4th' />
+        </aliases>
+        <members>
+          <member alias='1st' value='&quot;2&quot;' />
+          <member alias='2nd' value='&quot;3&quot;' />
+          <member alias='3rd' value='&quot;4&quot;' />
+          <member alias='4th' value='&quot;5&quot;' />
+        </members>
+      </column>
+      <column caption='Days' datatype='integer' name='[Parameter 6]' param-domain-type='range' role='measure' type='quantitative' value='14'>
+        <calculation class='tableau' formula='14' />
+        <range granularity='1' max='100' min='1' />
+      </column>
+      <column caption='Campaigns' datatype='string' name='[Show % (copy)]' param-domain-type='list' role='measure' type='nominal' value='&quot;Active Campaigns&quot;'>
+        <calculation class='tableau' formula='&quot;Active Campaigns&quot;' />
+        <members>
+          <member value='&quot;All Campaigns&quot;' />
+          <member value='&quot;Active Campaigns&quot;' />
+        </members>
+      </column>
+      <column caption='Reach_ViewBy' datatype='string' name='[Success_ViewBy (copy 2)]' param-domain-type='list' role='measure' type='nominal' value='&quot;-&quot;'>
+        <calculation class='tableau' formula='&quot;-&quot;' />
+        <members>
+          <member value='&quot;-&quot;' />
+          <member value='&quot;Brand&quot;' />
+          <member value='&quot;Duration&quot;' />
+          <member value='&quot;Network&quot;' />
+        </members>
+      </column>
+      <column caption='Revenue_ViewBy' datatype='string' name='[Success_ViewBy (copy)]' param-domain-type='list' role='measure' type='nominal' value='&quot;-&quot;'>
+        <calculation class='tableau' formula='&quot;-&quot;' />
+        <members>
+          <member value='&quot;-&quot;' />
+          <member value='&quot;Brand&quot;' />
+          <member value='&quot;Duration&quot;' />
+          <member value='&quot;Network&quot;' />
+        </members>
+      </column>
+    </datasource>
+    <datasource caption='Campaigns_impressions_underlyings' inline='true' name='federated.17mhphb142d8t41bbsn9r0k3hl0r (copy)' version='18.1'>
+      <repository-location id='ETETECampaigns_impressions_underlyings' path='datasources' revision='1.8' />
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='Athena.eu-west-2.amazonaws.com' name='athena.10oh6p8026y22k145gagk09d6duv (copy)'>
+            <connection class='athena' dbname='AwsDataCatalog' one-time-sql='' port='443' schema='etete' server='Athena.us-west-2.amazonaws.com' server-oauth='' server-userid='7' username='AKIA5B6W7CQTYFE2HQZK' warehouse='s3://data-reporting-sources-us-west/athena_temp/' workgroup-auth-mode='prompt'>
+              <connection-customization class='athena' enabled='false' version='18.1'>
+                <vendor name='athena' />
+                <driver name='athena' />
+                <customizations>
+                  <customization name='CAP_AUTH_DB_IMPERSONATE' value='no' />
+                  <customization name='CAP_AUTH_KERBEROS_IMPERSONATE' value='no' />
+                  <customization name='CAP_CONNECT_STORED_PROCEDURE' value='no' />
+                  <customization name='CAP_CREATE_TEMP_TABLES' value='no' />
+                  <customization name='CAP_DATASERVER_MAGIC_NUMBER' value='no' />
+                  <customization name='CAP_DEFERS_CONNECTION_VERIFICATION' value='no' />
+                  <customization name='CAP_DISABLE_EXTRACT_TABLE_INDEXING' value='no' />
+                  <customization name='CAP_EQUIJOINS_ONLY' value='no' />
+                  <customization name='CAP_FAST_METADATA' value='yes' />
+                  <customization name='CAP_GREENPLUM_TRUST_METADATA_CONTAINSNULL' value='no' />
+                  <customization name='CAP_HIVE_FIX_METADATA_NAMES' value='no' />
+                  <customization name='CAP_INDEX_TEMP_TABLES' value='no' />
+                  <customization name='CAP_INSERT_TEMP_EXEC_STORED_PROCEDURE' value='no' />
+                  <customization name='CAP_LOCAL_ALIASES_CASE_INSENSITIVE' value='no' />
+                  <customization name='CAP_ODBC_ALWAYS_THROW_CONNECT_ERRORS' value='no' />
+                  <customization name='CAP_ODBC_BIND_FORCE_DATETIME_AS_CHAR' value='no' />
+                  <customization name='CAP_ODBC_BIND_FORCE_DATE_AS_CHAR' value='no' />
+                  <customization name='CAP_ODBC_BIND_FORCE_MAX_STRING_BUFFERS' value='no' />
+                  <customization name='CAP_ODBC_BIND_FORCE_MEDIUM_STRING_BUFFERS' value='no' />
+                  <customization name='CAP_ODBC_BIND_FORCE_SIGNED' value='no' />
+                  <customization name='CAP_ODBC_BIND_FORCE_SMALL_STRING_BUFFERS' value='no' />
+                  <customization name='CAP_ODBC_BIND_SUPPRESS_INT64' value='no' />
+                  <customization name='CAP_ODBC_BIND_SUPPRESS_PREFERRED_TYPES' value='no' />
+                  <customization name='CAP_ODBC_BIND_SUPPRESS_WIDE_CHAR' value='no' />
+                  <customization name='CAP_ODBC_CURSOR_DYNAMIC' value='no' />
+                  <customization name='CAP_ODBC_CURSOR_FORWARD_ONLY' value='no' />
+                  <customization name='CAP_ODBC_CURSOR_KEYSET_DRIVEN' value='no' />
+                  <customization name='CAP_ODBC_CURSOR_STATIC' value='no' />
+                  <customization name='CAP_ODBC_DRIVER_HIVE_ASSUME_LATEST' value='no' />
+                  <customization name='CAP_ODBC_ERROR_IGNORE_FALSE_ALARM' value='no' />
+                  <customization name='CAP_ODBC_FETCH_BUFFERS_RESIZABLE' value='no' />
+                  <customization name='CAP_ODBC_FETCH_BUFFERS_SIZE_MASSIVE' value='no' />
+                  <customization name='CAP_ODBC_FETCH_CONTINUE_ON_ERROR' value='no' />
+                  <customization name='CAP_ODBC_FORCE_SINGLE_ROW_BINDING' value='no' />
+                  <customization name='CAP_ODBC_METADATA_STRING_LENGTH_UNKNOWN' value='no' />
+                  <customization name='CAP_ODBC_METADATA_SUPPRESS_SQLCOLUMNS_API' value='no' />
+                  <customization name='CAP_ODBC_METADATA_SUPPRESS_SQLFOREIGNKEYS_API' value='no' />
+                  <customization name='CAP_ODBC_METADATA_SUPPRESS_SQLPRIMARYKEYS_API' value='no' />
+                  <customization name='CAP_ODBC_METADATA_SUPPRESS_SQLSTATISTICS_API' value='no' />
+                  <customization name='CAP_ODBC_QUERY_USE_PREPARE_PARAMETER_MARKER' value='no' />
+                  <customization name='CAP_ODBC_REBIND_SKIP_UNBIND' value='no' />
+                  <customization name='CAP_ODBC_TRIM_VARCHAR_PADDING' value='no' />
+                  <customization name='CAP_ODBC_UNBIND_AUTO' value='no' />
+                  <customization name='CAP_ODBC_UNBIND_BATCH' value='no' />
+                  <customization name='CAP_ODBC_UNBIND_EACH' value='no' />
+                  <customization name='CAP_ODBC_USE_NATIVE_PROTOCOL' value='no' />
+                  <customization name='CAP_PADDED_SEMANTICS_NCHAR_NVARCHAR' value='no' />
+                  <customization name='CAP_QUERY_ALLOW_JOIN_REORDER' value='yes' />
+                  <customization name='CAP_QUERY_ALLOW_PARTIAL_AGGREGATION' value='yes' />
+                  <customization name='CAP_QUERY_ALWAYS_USE_AQ_CACHE' value='no' />
+                  <customization name='CAP_QUERY_AVOID_EXPRESSION_INLINING' value='no' />
+                  <customization name='CAP_QUERY_BLENDING_ALWAYS_USE_LOCAL_MAPPING_TABLES' value='no' />
+                  <customization name='CAP_QUERY_BLENDING_PREFER_LOCAL_MAPPING_TABLES' value='yes' />
+                  <customization name='CAP_QUERY_BLENDING_REMOTE_MAPPING_TABLES' value='yes' />
+                  <customization name='CAP_QUERY_BOOLEXPR_TO_INTEXPR' value='no' />
+                  <customization name='CAP_QUERY_BOOL_IDENTIFIER_TO_LOGICAL' value='no' />
+                  <customization name='CAP_QUERY_EMPTY_DOMAIN_TOP' value='no' />
+                  <customization name='CAP_QUERY_FORCE_AGGREGATE_MEASURES' value='no' />
+                  <customization name='CAP_QUERY_GROUP_BY_ALIAS' value='no' />
+                  <customization name='CAP_QUERY_GROUP_BY_DEGREE' value='no' />
+                  <customization name='CAP_QUERY_HAVING_REQUIRES_GROUP_BY' value='no' />
+                  <customization name='CAP_QUERY_HAVING_UNSUPPORTED' value='no' />
+                  <customization name='CAP_QUERY_JOIN_ACROSS_SCHEMAS' value='yes' />
+                  <customization name='CAP_QUERY_JOIN_ASSUME_CONSTRAINED' value='no' />
+                  <customization name='CAP_QUERY_JOIN_PUSH_DOWN_CONDITION_EXPRESSIONS' value='no' />
+                  <customization name='CAP_QUERY_JOIN_REQUIRES_SCOPE' value='no' />
+                  <customization name='CAP_QUERY_JOIN_REQUIRES_SUBQUERY' value='no' />
+                  <customization name='CAP_QUERY_NULL_REQUIRES_CAST' value='yes' />
+                  <customization name='CAP_QUERY_RECOMPILE_FAILED_QUERY' value='no' />
+                  <customization name='CAP_QUERY_SELECT_ALIASES_SORTED' value='no' />
+                  <customization name='CAP_QUERY_SORT_BY' value='yes' />
+                  <customization name='CAP_QUERY_SORT_BY_DEGREE' value='yes' />
+                  <customization name='CAP_QUERY_SUBQUERIES' value='yes' />
+                  <customization name='CAP_QUERY_SUBQUERIES_WITH_TOP' value='yes' />
+                  <customization name='CAP_QUERY_SUBQUERY_QUERY_CONTEXT' value='yes' />
+                  <customization name='CAP_QUERY_SUPPORTS_LODJOINS' value='yes' />
+                  <customization name='CAP_QUERY_SUPPORT_ANALYTIC_FUNCTIONS' value='no' />
+                  <customization name='CAP_QUERY_SUPPORT_EMPTY_GROUPBY' value='no' />
+                  <customization name='CAP_QUERY_SUPPRESS_CHECK_DOMAIN_LITERALS_THRESHOLD' value='no' />
+                  <customization name='CAP_QUERY_SUPPRESS_NULL_CHECK_QUERIES' value='no' />
+                  <customization name='CAP_QUERY_TIME_REQUIRES_CAST' value='no' />
+                  <customization name='CAP_QUERY_TOPSTYLE_LIMIT' value='no' />
+                  <customization name='CAP_QUERY_TOPSTYLE_ROWNUM' value='no' />
+                  <customization name='CAP_QUERY_TOPSTYLE_TOP' value='no' />
+                  <customization name='CAP_QUERY_TOP_0_METADATA' value='yes' />
+                  <customization name='CAP_QUERY_TOP_N' value='yes' />
+                  <customization name='CAP_QUERY_USE_DOMAIN_RANGES_OPTIMIZATION' value='yes' />
+                  <customization name='CAP_QUERY_USE_QUERY_FUSION' value='yes' />
+                  <customization name='CAP_QUERY_WHERE_FALSE_METADATA' value='no' />
+                  <customization name='CAP_RELDATEFILT_CASTTODATE' value='no' />
+                  <customization name='CAP_SELECT_INTO' value='no' />
+                  <customization name='CAP_SELECT_TOP_INTO' value='no' />
+                  <customization name='CAP_STORED_PROCEDURE_PREFER_TEMP_TABLE' value='no' />
+                  <customization name='CAP_STORED_PROCEDURE_REPAIR_TEMP_TABLE_STRINGS' value='no' />
+                  <customization name='CAP_STORED_PROCEDURE_TEMP_TABLE_FROM_BUFFER' value='no' />
+                  <customization name='CAP_STORED_PROCEDURE_TEMP_TABLE_FROM_NEW_PROTOCOL' value='no' />
+                  <customization name='CAP_SUPPRESS_CONNECTION_POOLING' value='no' />
+                  <customization name='CAP_SUPPRESS_DISCOVERY_QUERIES' value='no' />
+                  <customization name='CAP_SUPPRESS_GET_SERVER_TIME' value='yes' />
+                  <customization name='CAP_SUPPRESS_QUICK_FILTER_ACCELERATION_VIEWS' value='no' />
+                  <customization name='CAP_SUPPRESS_TEMP_TABLE_CHECKS' value='no' />
+                </customizations>
+              </connection-customization>
+            </connection>
+          </named-connection>
+          <named-connection caption='days_csv' name='textscan.08df2900sq2s5e1cnwfgm1gj285w (copy)'>
+            <connection class='textscan' directory='/Users/loru9001/Documents/My Tableau Repository/Datasources' filename='days_csv.csv' password='' server='' workgroup-auth-mode='as-is' />
+          </named-connection>
+        </named-connections>
+        <relation join='left' type='join'>
+          <clause type='join'>
+            <expression op='='>
+              <expression op='[impressions].[uniqueEvent_id]' />
+              <expression op='[quartiles].[uniqueEvent_id]' />
+            </expression>
+          </clause>
+          <relation join='left' type='join'>
+            <clause type='join'>
+              <expression op='='>
+                <expression op='[campaigns].[organizationid]' />
+                <expression op='[tableau_users].[organisationid]' />
+              </expression>
+            </clause>
+            <relation join='left' type='join'>
+              <clause type='join'>
+                <expression op='='>
+                  <expression op='[impressions].[uaid]' />
+                  <expression op='[underlyingads].[uaid]' />
+                </expression>
+              </clause>
+              <relation join='left' type='join'>
+                <clause type='join'>
+                  <expression op='='>
+                    <expression op='[impressions].[networkid]' />
+                    <expression op='str([api_orgs].[network id])' />
+                  </expression>
+                </clause>
+                <relation join='full' type='join'>
+                  <clause type='join'>
+                    <expression op='='>
+                      <expression op='DATE([impressions].[ingested])' />
+                      <expression op='TODAY()-[days_csv.csv].[days]' />
+                    </expression>
+                  </clause>
+                  <relation join='left' type='join'>
+                    <clause type='join'>
+                      <expression op='='>
+                        <expression op='[campaigns].[campaignid]' />
+                        <expression op='[impressions].[campaignid]' />
+                      </expression>
+                    </clause>
+                    <relation connection='athena.10oh6p8026y22k145gagk09d6duv (copy)' name='campaigns' type='text'>WITH currentFile As (SELECT MAX(DISTINCT CONCAT(partition_0,partition_1,partition_2)) As partition1 FROM &quot;etete&quot;.&quot;campaigns&quot;),&#10; &#10;allFiles As (&#10;SELECT *, &#10;CONCAT(partition_0,partition_1,partition_2) As partition2 FROM &quot;etete&quot;.&quot;campaigns&quot;)&#10; &#10;SELECT *&#10;FROM allFiles JOIN currentFile&#10;ON partition1 = partition2</relation>
+                    <relation connection='athena.10oh6p8026y22k145gagk09d6duv (copy)' name='impressions' type='text'>SELECT &#10;sudid, type, ingested, acrid, adtechclientversion, campaign_event_id, firmwareversion, model, &#10;platformid, networkid, scheduledtime, uaid, campaignid, &apos;Blocked&apos; as quartile, reason, &#10;category, CONCAT(sudid,&apos;_&apos;, scheduledtime) as uniqueEvent_id&#10;FROM &quot;etete&quot;.&quot;blocked&quot;&#10;&#10;UNION ALL &#10;&#10;SELECT &#10;sudid, type, ingested, acrid, adtechclientversion, campaign_event_id, firmwareversion, model, &#10;platformid, networkid, scheduledtime, uaid, campaignid, quartile, &apos;Paid&apos; as reason, &#10;&apos;Paid&apos; as category, CONCAT(sudid,&apos;_&apos;, scheduledtime) as uniqueEvent_id&#10;FROM &quot;etete&quot;.&quot;paid&quot;</relation>
+                  </relation>
+                  <relation connection='textscan.08df2900sq2s5e1cnwfgm1gj285w (copy)' name='days_csv.csv' table='[days_csv#csv]' type='table'>
+                    <columns character-set='UTF-8' header='yes' locale='en_GB' separator=','>
+                      <column datatype='integer' name='days' ordinal='0' />
+                      <column datatype='integer' name='join' ordinal='1' />
+                    </columns>
+                  </relation>
+                </relation>
+                <relation connection='athena.10oh6p8026y22k145gagk09d6duv (copy)' name='api_orgs' table='[etete].[api_orgs]' type='table' />
+              </relation>
+              <relation connection='athena.10oh6p8026y22k145gagk09d6duv (copy)' name='underlyingads' type='text'>WITH currentFile As (SELECT MAX(DISTINCT CONCAT(partition_0,partition_1,partition_2)) As partition1 FROM &quot;etete&quot;.&quot;underlyingads&quot;),&#10; &#10;allFiles As (SELECT *, CONCAT(partition_0,partition_1,partition_2) As partition2 FROM &quot;etete&quot;.&quot;underlyingads&quot;)&#10; &#10;SELECT *&#10;FROM allFiles JOIN currentFile&#10;ON partition1 = partition2</relation>
+            </relation>
+            <relation connection='athena.10oh6p8026y22k145gagk09d6duv (copy)' name='tableau_users' table='[etete].[tableau_users]' type='table' />
+          </relation>
+          <relation connection='athena.10oh6p8026y22k145gagk09d6duv (copy)' name='quartiles' type='text'>WITH allquartiles AS&#10;(SELECT sudid, quartile, scheduledtime, ingested, CONCAT(sudid,&apos;_&apos;, scheduledtime) as uniqueEvent&#10;FROM &quot;etete&quot;.&quot;quartile&quot;),&#10;&#10;uniqueEvents AS &#10;(SELECT DISTINCT CONCAT(sudid,&apos;_&apos;, scheduledtime) as uniqueEvent FROM allquartiles)&#10;&#10;SELECT allquartiles.uniqueEvent As uniqueEvent_id, COUNT(allquartiles.uniqueEvent) As quartileCount FROM uniqueEvents&#10;LEFT JOIN allquartiles on allquartiles.uniqueEvent = uniqueEvents.uniqueEvent&#10;&#10;GROUP BY allquartiles.uniqueEvent</relation>
+        </relation>
+        <cols>
+          <map key='[__index_level_0__]' value='[underlyingads].[__index_level_0__]' />
+          <map key='[__v (custom_sql_query)]' value='[underlyingads].[__v]' />
+          <map key='[__v]' value='[campaigns].[__v]' />
+          <map key='[_id]' value='[underlyingads].[_id]' />
+          <map key='[acrid (custom_sql_query)]' value='[underlyingads].[acrid]' />
+          <map key='[acrid]' value='[impressions].[acrid]' />
+          <map key='[active (custom_sql_query)]' value='[underlyingads].[active]' />
+          <map key='[active]' value='[campaigns].[active]' />
+          <map key='[adtechclientversion]' value='[impressions].[adtechclientversion]' />
+          <map key='[adtype]' value='[underlyingads].[adtype]' />
+          <map key='[advertiser (custom_sql_query)]' value='[underlyingads].[advertiser]' />
+          <map key='[agency]' value='[campaigns].[agency]' />
+          <map key='[allnetworksinorgflag]' value='[campaigns].[allnetworksinorgflag]' />
+          <map key='[brand]' value='[underlyingads].[brand]' />
+          <map key='[budget]' value='[campaigns].[budget]' />
+          <map key='[budgetspent]' value='[campaigns].[budgetspent]' />
+          <map key='[campaign_event_id]' value='[impressions].[campaign_event_id]' />
+          <map key='[campaignid (impressions)]' value='[impressions].[campaignid]' />
+          <map key='[campaignid]' value='[campaigns].[campaignid]' />
+          <map key='[category (custom_sql_query)]' value='[underlyingads].[category]' />
+          <map key='[category]' value='[impressions].[category]' />
+          <map key='[channel_users]' value='[tableau_users].[channel_users]' />
+          <map key='[cpm (custom_sql_query)]' value='[underlyingads].[cpm]' />
+          <map key='[cpm]' value='[campaigns].[cpm]' />
+          <map key='[createdby]' value='[campaigns].[createdby]' />
+          <map key='[createdbytimestamp]' value='[campaigns].[createdbytimestamp]' />
+          <map key='[creativedurationinmilliseconds]' value='[campaigns].[creativedurationinmilliseconds]' />
+          <map key='[creativedurationinseconds]' value='[campaigns].[creativedurationinseconds]' />
+          <map key='[creativeuploaddetails]' value='[campaigns].[creativeuploaddetails]' />
+          <map key='[creativeurl]' value='[campaigns].[creativeurl]' />
+          <map key='[days]' value='[days_csv.csv].[days]' />
+          <map key='[document index (generated)]' value='[api_orgs].[document index (generated)]' />
+          <map key='[durationinmilliseconds]' value='[underlyingads].[durationinmilliseconds]' />
+          <map key='[durationinseconds]' value='[underlyingads].[durationinseconds]' />
+          <map key='[enddatetime]' value='[campaigns].[enddatetime]' />
+          <map key='[failuredetails]' value='[underlyingads].[failuredetails]' />
+          <map key='[firmwareversion]' value='[impressions].[firmwareversion]' />
+          <map key='[houseid]' value='[underlyingads].[houseid]' />
+          <map key='[ingested]' value='[impressions].[ingested]' />
+          <map key='[isci]' value='[underlyingads].[isci]' />
+          <map key='[join]' value='[days_csv.csv].[join]' />
+          <map key='[lastupdated]' value='[campaigns].[lastupdated]' />
+          <map key='[model]' value='[impressions].[model]' />
+          <map key='[name (api_orgs)]' value='[api_orgs].[name]' />
+          <map key='[name (networks)]' value='[api_orgs].[name (networks)]' />
+          <map key='[name]' value='[campaigns].[name]' />
+          <map key='[network id]' value='[api_orgs].[network id]' />
+          <map key='[networkid (tableau_users)]' value='[tableau_users].[networkid]' />
+          <map key='[networkid]' value='[impressions].[networkid]' />
+          <map key='[networks (custom_sql_query)]' value='[underlyingads].[networks]' />
+          <map key='[networks index (generated)]' value='[api_orgs].[networks index (generated)]' />
+          <map key='[networks]' value='[campaigns].[networks]' />
+          <map key='[number of records]' value='[api_orgs].[number of records]' />
+          <map key='[organisationid]' value='[tableau_users].[organisationid]' />
+          <map key='[organization id]' value='[api_orgs].[organization id]' />
+          <map key='[organizationid (custom_sql_query)]' value='[underlyingads].[organizationid]' />
+          <map key='[organizationid]' value='[campaigns].[organizationid]' />
+          <map key='[originalfilename]' value='[underlyingads].[originalfilename]' />
+          <map key='[originatoremail]' value='[underlyingads].[originatoremail]' />
+          <map key='[pacing]' value='[campaigns].[pacing]' />
+          <map key='[partition1 (custom_sql_query)]' value='[underlyingads].[partition1]' />
+          <map key='[partition1]' value='[campaigns].[partition1]' />
+          <map key='[partition2 (custom_sql_query)]' value='[underlyingads].[partition2]' />
+          <map key='[partition2]' value='[campaigns].[partition2]' />
+          <map key='[partition_0 (custom_sql_query)]' value='[underlyingads].[partition_0]' />
+          <map key='[partition_0]' value='[campaigns].[partition_0]' />
+          <map key='[partition_1 (custom_sql_query)]' value='[underlyingads].[partition_1]' />
+          <map key='[partition_1]' value='[campaigns].[partition_1]' />
+          <map key='[partition_2 (custom_sql_query)]' value='[underlyingads].[partition_2]' />
+          <map key='[partition_2]' value='[campaigns].[partition_2]' />
+          <map key='[platformid]' value='[impressions].[platformid]' />
+          <map key='[product]' value='[underlyingads].[product]' />
+          <map key='[quartileCount]' value='[quartiles].[quartileCount]' />
+          <map key='[quartile]' value='[impressions].[quartile]' />
+          <map key='[reason]' value='[impressions].[reason]' />
+          <map key='[records per response json]' value='[api_orgs].[records per response json]' />
+          <map key='[s3path]' value='[underlyingads].[s3path]' />
+          <map key='[scheduledtime]' value='[impressions].[scheduledtime]' />
+          <map key='[segmentid]' value='[campaigns].[segmentid]' />
+          <map key='[startdatetime]' value='[campaigns].[startdatetime]' />
+          <map key='[status]' value='[underlyingads].[status]' />
+          <map key='[submittedforindexingby]' value='[underlyingads].[submittedforindexingby]' />
+          <map key='[submittedforindexingtimestamp]' value='[underlyingads].[submittedforindexingtimestamp]' />
+          <map key='[sudid]' value='[impressions].[sudid]' />
+          <map key='[tempfilename]' value='[underlyingads].[tempfilename]' />
+          <map key='[type]' value='[impressions].[type]' />
+          <map key='[uaid (custom_sql_query)]' value='[underlyingads].[uaid]' />
+          <map key='[uaid]' value='[impressions].[uaid]' />
+          <map key='[uniqueEvent_id (custom_sql_query)]' value='[quartiles].[uniqueEvent_id]' />
+          <map key='[uniqueEvent_id]' value='[impressions].[uniqueEvent_id]' />
+          <map key='[updatedby]' value='[campaigns].[updatedby]' />
+          <map key='[uploadtimestamp]' value='[underlyingads].[uploadtimestamp]' />
+          <map key='[usernames]' value='[tableau_users].[usernames]' />
+          <map key='[videolocation]' value='[underlyingads].[videolocation]' />
+        </cols>
+        <refresh increment-key='' incremental-updates='false' />
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>networks</remote-name>
+            <remote-type>1</remote-type>
+            <local-name>[networks]</local-name>
+            <parent-name>[campaigns]</parent-name>
+            <remote-alias>networks</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>4294967292</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[name]</local-name>
+            <parent-name>[campaigns]</parent-name>
+            <remote-alias>name</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>active</remote-name>
+            <remote-type>11</remote-type>
+            <local-name>[active]</local-name>
+            <parent-name>[campaigns]</parent-name>
+            <remote-alias>active</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>boolean</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>creativeurl</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[creativeurl]</local-name>
+            <parent-name>[campaigns]</parent-name>
+            <remote-alias>creativeurl</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>creativedurationinmilliseconds</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[creativedurationinmilliseconds]</local-name>
+            <parent-name>[campaigns]</parent-name>
+            <remote-alias>creativedurationinmilliseconds</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>53</precision>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>creativedurationinseconds</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[creativedurationinseconds]</local-name>
+            <parent-name>[campaigns]</parent-name>
+            <remote-alias>creativedurationinseconds</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>19</precision>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>creativeuploaddetails</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[creativeuploaddetails]</local-name>
+            <parent-name>[campaigns]</parent-name>
+            <remote-alias>creativeuploaddetails</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>createdby</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[createdby]</local-name>
+            <parent-name>[campaigns]</parent-name>
+            <remote-alias>createdby</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>createdbytimestamp</remote-name>
+            <remote-type>135</remote-type>
+            <local-name>[createdbytimestamp]</local-name>
+            <parent-name>[campaigns]</parent-name>
+            <remote-alias>createdbytimestamp</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>organizationid</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[organizationid]</local-name>
+            <parent-name>[campaigns]</parent-name>
+            <remote-alias>organizationid</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>budget</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[budget]</local-name>
+            <parent-name>[campaigns]</parent-name>
+            <remote-alias>budget</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>19</precision>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>cpm</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[cpm]</local-name>
+            <parent-name>[campaigns]</parent-name>
+            <remote-alias>cpm</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>53</precision>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>startdatetime</remote-name>
+            <remote-type>135</remote-type>
+            <local-name>[startdatetime]</local-name>
+            <parent-name>[campaigns]</parent-name>
+            <remote-alias>startdatetime</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>enddatetime</remote-name>
+            <remote-type>135</remote-type>
+            <local-name>[enddatetime]</local-name>
+            <parent-name>[campaigns]</parent-name>
+            <remote-alias>enddatetime</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>pacing</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[pacing]</local-name>
+            <parent-name>[campaigns]</parent-name>
+            <remote-alias>pacing</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>allnetworksinorgflag</remote-name>
+            <remote-type>11</remote-type>
+            <local-name>[allnetworksinorgflag]</local-name>
+            <parent-name>[campaigns]</parent-name>
+            <remote-alias>allnetworksinorgflag</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>boolean</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>campaignid</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[campaignid]</local-name>
+            <parent-name>[campaigns]</parent-name>
+            <remote-alias>campaignid</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>lastupdated</remote-name>
+            <remote-type>135</remote-type>
+            <local-name>[lastupdated]</local-name>
+            <parent-name>[campaigns]</parent-name>
+            <remote-alias>lastupdated</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>__v</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[__v]</local-name>
+            <parent-name>[campaigns]</parent-name>
+            <remote-alias>__v</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>19</precision>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>budgetspent</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[budgetspent]</local-name>
+            <parent-name>[campaigns]</parent-name>
+            <remote-alias>budgetspent</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>53</precision>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>updatedby</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[updatedby]</local-name>
+            <parent-name>[campaigns]</parent-name>
+            <remote-alias>updatedby</remote-alias>
+            <ordinal>21</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>segmentid</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[segmentid]</local-name>
+            <parent-name>[campaigns]</parent-name>
+            <remote-alias>segmentid</remote-alias>
+            <ordinal>22</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>agency</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[agency]</local-name>
+            <parent-name>[campaigns]</parent-name>
+            <remote-alias>agency</remote-alias>
+            <ordinal>23</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>partition_0</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[partition_0]</local-name>
+            <parent-name>[campaigns]</parent-name>
+            <remote-alias>partition_0</remote-alias>
+            <ordinal>24</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>partition_1</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[partition_1]</local-name>
+            <parent-name>[campaigns]</parent-name>
+            <remote-alias>partition_1</remote-alias>
+            <ordinal>25</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>partition_2</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[partition_2]</local-name>
+            <parent-name>[campaigns]</parent-name>
+            <remote-alias>partition_2</remote-alias>
+            <ordinal>26</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>partition2</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[partition2]</local-name>
+            <parent-name>[campaigns]</parent-name>
+            <remote-alias>partition2</remote-alias>
+            <ordinal>27</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>partition1</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[partition1]</local-name>
+            <parent-name>[campaigns]</parent-name>
+            <remote-alias>partition1</remote-alias>
+            <ordinal>28</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>sudid</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[sudid]</local-name>
+            <parent-name>[impressions]</parent-name>
+            <remote-alias>sudid</remote-alias>
+            <ordinal>30</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>type</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[type]</local-name>
+            <parent-name>[impressions]</parent-name>
+            <remote-alias>type</remote-alias>
+            <ordinal>31</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ingested</remote-name>
+            <remote-type>135</remote-type>
+            <local-name>[ingested]</local-name>
+            <parent-name>[impressions]</parent-name>
+            <remote-alias>ingested</remote-alias>
+            <ordinal>32</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>acrid</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[acrid]</local-name>
+            <parent-name>[impressions]</parent-name>
+            <remote-alias>acrid</remote-alias>
+            <ordinal>33</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>adtechclientversion</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[adtechclientversion]</local-name>
+            <parent-name>[impressions]</parent-name>
+            <remote-alias>adtechclientversion</remote-alias>
+            <ordinal>34</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>campaign_event_id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[campaign_event_id]</local-name>
+            <parent-name>[impressions]</parent-name>
+            <remote-alias>campaign_event_id</remote-alias>
+            <ordinal>35</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>firmwareversion</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[firmwareversion]</local-name>
+            <parent-name>[impressions]</parent-name>
+            <remote-alias>firmwareversion</remote-alias>
+            <ordinal>36</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>model</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[model]</local-name>
+            <parent-name>[impressions]</parent-name>
+            <remote-alias>model</remote-alias>
+            <ordinal>37</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>platformid</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[platformid]</local-name>
+            <parent-name>[impressions]</parent-name>
+            <remote-alias>platformid</remote-alias>
+            <ordinal>38</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>networkid</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[networkid]</local-name>
+            <parent-name>[impressions]</parent-name>
+            <remote-alias>networkid</remote-alias>
+            <ordinal>39</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>scheduledtime</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[scheduledtime]</local-name>
+            <parent-name>[impressions]</parent-name>
+            <remote-alias>scheduledtime</remote-alias>
+            <ordinal>40</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>uaid</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[uaid]</local-name>
+            <parent-name>[impressions]</parent-name>
+            <remote-alias>uaid</remote-alias>
+            <ordinal>41</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>campaignid</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[campaignid (impressions)]</local-name>
+            <parent-name>[impressions]</parent-name>
+            <remote-alias>campaignid</remote-alias>
+            <ordinal>42</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>quartile</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[quartile]</local-name>
+            <parent-name>[impressions]</parent-name>
+            <remote-alias>quartile</remote-alias>
+            <ordinal>43</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>reason</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[reason]</local-name>
+            <parent-name>[impressions]</parent-name>
+            <remote-alias>reason</remote-alias>
+            <ordinal>44</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>category</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[category]</local-name>
+            <parent-name>[impressions]</parent-name>
+            <remote-alias>category</remote-alias>
+            <ordinal>45</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>uniqueEvent_id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[uniqueEvent_id]</local-name>
+            <parent-name>[impressions]</parent-name>
+            <remote-alias>uniqueEvent_id</remote-alias>
+            <ordinal>46</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[days_csv.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;£&quot;</attribute>
+              <attribute datatype='string' name='debit-close-char'>&quot;&quot;</attribute>
+              <attribute datatype='string' name='debit-open-char'>&quot;&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>days</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[days]</local-name>
+            <parent-name>[days_csv.csv]</parent-name>
+            <remote-alias>days</remote-alias>
+            <ordinal>47</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>join</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[join]</local-name>
+            <parent-name>[days_csv.csv]</parent-name>
+            <remote-alias>join</remote-alias>
+            <ordinal>48</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>document index (generated)</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[document index (generated)]</local-name>
+            <parent-name>[api_orgs]</parent-name>
+            <remote-alias>document index (generated)</remote-alias>
+            <ordinal>50</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>19</precision>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>records per response json</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[records per response json]</local-name>
+            <parent-name>[api_orgs]</parent-name>
+            <remote-alias>records per response json</remote-alias>
+            <ordinal>51</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>19</precision>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>number of records</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[number of records]</local-name>
+            <parent-name>[api_orgs]</parent-name>
+            <remote-alias>number of records</remote-alias>
+            <ordinal>52</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>19</precision>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>name (networks)</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[name (networks)]</local-name>
+            <parent-name>[api_orgs]</parent-name>
+            <remote-alias>name (networks)</remote-alias>
+            <ordinal>53</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[name (api_orgs)]</local-name>
+            <parent-name>[api_orgs]</parent-name>
+            <remote-alias>name</remote-alias>
+            <ordinal>54</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>network id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[network id]</local-name>
+            <parent-name>[api_orgs]</parent-name>
+            <remote-alias>network id</remote-alias>
+            <ordinal>55</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>19</precision>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>networks index (generated)</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[networks index (generated)]</local-name>
+            <parent-name>[api_orgs]</parent-name>
+            <remote-alias>networks index (generated)</remote-alias>
+            <ordinal>56</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>19</precision>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>organization id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[organization id]</local-name>
+            <parent-name>[api_orgs]</parent-name>
+            <remote-alias>organization id</remote-alias>
+            <ordinal>57</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>__index_level_0__</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[__index_level_0__]</local-name>
+            <parent-name>[underlyingads]</parent-name>
+            <remote-alias>__index_level_0__</remote-alias>
+            <ordinal>59</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>_id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[_id]</local-name>
+            <parent-name>[underlyingads]</parent-name>
+            <remote-alias>_id</remote-alias>
+            <ordinal>60</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>originatoremail</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[originatoremail]</local-name>
+            <parent-name>[underlyingads]</parent-name>
+            <remote-alias>originatoremail</remote-alias>
+            <ordinal>61</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>organizationid</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[organizationid (custom_sql_query)]</local-name>
+            <parent-name>[underlyingads]</parent-name>
+            <remote-alias>organizationid</remote-alias>
+            <ordinal>62</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>networks</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[networks (custom_sql_query)]</local-name>
+            <parent-name>[underlyingads]</parent-name>
+            <remote-alias>networks</remote-alias>
+            <ordinal>63</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>status</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[status]</local-name>
+            <parent-name>[underlyingads]</parent-name>
+            <remote-alias>status</remote-alias>
+            <ordinal>64</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>originalfilename</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[originalfilename]</local-name>
+            <parent-name>[underlyingads]</parent-name>
+            <remote-alias>originalfilename</remote-alias>
+            <ordinal>65</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>tempfilename</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[tempfilename]</local-name>
+            <parent-name>[underlyingads]</parent-name>
+            <remote-alias>tempfilename</remote-alias>
+            <ordinal>66</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>uploadtimestamp</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[uploadtimestamp]</local-name>
+            <parent-name>[underlyingads]</parent-name>
+            <remote-alias>uploadtimestamp</remote-alias>
+            <ordinal>67</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>uaid</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[uaid (custom_sql_query)]</local-name>
+            <parent-name>[underlyingads]</parent-name>
+            <remote-alias>uaid</remote-alias>
+            <ordinal>68</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>active</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[active (custom_sql_query)]</local-name>
+            <parent-name>[underlyingads]</parent-name>
+            <remote-alias>active</remote-alias>
+            <ordinal>69</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>__v</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[__v (custom_sql_query)]</local-name>
+            <parent-name>[underlyingads]</parent-name>
+            <remote-alias>__v</remote-alias>
+            <ordinal>70</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>durationinmilliseconds</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[durationinmilliseconds]</local-name>
+            <parent-name>[underlyingads]</parent-name>
+            <remote-alias>durationinmilliseconds</remote-alias>
+            <ordinal>71</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>s3path</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[s3path]</local-name>
+            <parent-name>[underlyingads]</parent-name>
+            <remote-alias>s3path</remote-alias>
+            <ordinal>72</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>videolocation</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[videolocation]</local-name>
+            <parent-name>[underlyingads]</parent-name>
+            <remote-alias>videolocation</remote-alias>
+            <ordinal>73</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>adtype</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[adtype]</local-name>
+            <parent-name>[underlyingads]</parent-name>
+            <remote-alias>adtype</remote-alias>
+            <ordinal>74</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>brand</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[brand]</local-name>
+            <parent-name>[underlyingads]</parent-name>
+            <remote-alias>brand</remote-alias>
+            <ordinal>75</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>category</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[category (custom_sql_query)]</local-name>
+            <parent-name>[underlyingads]</parent-name>
+            <remote-alias>category</remote-alias>
+            <ordinal>76</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>houseid</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[houseid]</local-name>
+            <parent-name>[underlyingads]</parent-name>
+            <remote-alias>houseid</remote-alias>
+            <ordinal>77</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>product</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[product]</local-name>
+            <parent-name>[underlyingads]</parent-name>
+            <remote-alias>product</remote-alias>
+            <ordinal>78</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>submittedforindexingby</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[submittedforindexingby]</local-name>
+            <parent-name>[underlyingads]</parent-name>
+            <remote-alias>submittedforindexingby</remote-alias>
+            <ordinal>79</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>submittedforindexingtimestamp</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[submittedforindexingtimestamp]</local-name>
+            <parent-name>[underlyingads]</parent-name>
+            <remote-alias>submittedforindexingtimestamp</remote-alias>
+            <ordinal>80</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>acrid</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[acrid (custom_sql_query)]</local-name>
+            <parent-name>[underlyingads]</parent-name>
+            <remote-alias>acrid</remote-alias>
+            <ordinal>81</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>isci</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[isci]</local-name>
+            <parent-name>[underlyingads]</parent-name>
+            <remote-alias>isci</remote-alias>
+            <ordinal>82</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>advertiser</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[advertiser (custom_sql_query)]</local-name>
+            <parent-name>[underlyingads]</parent-name>
+            <remote-alias>advertiser</remote-alias>
+            <ordinal>83</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>cpm</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[cpm (custom_sql_query)]</local-name>
+            <parent-name>[underlyingads]</parent-name>
+            <remote-alias>cpm</remote-alias>
+            <ordinal>84</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>failuredetails</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[failuredetails]</local-name>
+            <parent-name>[underlyingads]</parent-name>
+            <remote-alias>failuredetails</remote-alias>
+            <ordinal>85</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>durationinseconds</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[durationinseconds]</local-name>
+            <parent-name>[underlyingads]</parent-name>
+            <remote-alias>durationinseconds</remote-alias>
+            <ordinal>86</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>partition_0</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[partition_0 (custom_sql_query)]</local-name>
+            <parent-name>[underlyingads]</parent-name>
+            <remote-alias>partition_0</remote-alias>
+            <ordinal>87</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>partition_1</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[partition_1 (custom_sql_query)]</local-name>
+            <parent-name>[underlyingads]</parent-name>
+            <remote-alias>partition_1</remote-alias>
+            <ordinal>88</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>partition_2</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[partition_2 (custom_sql_query)]</local-name>
+            <parent-name>[underlyingads]</parent-name>
+            <remote-alias>partition_2</remote-alias>
+            <ordinal>89</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>partition2</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[partition2 (custom_sql_query)]</local-name>
+            <parent-name>[underlyingads]</parent-name>
+            <remote-alias>partition2</remote-alias>
+            <ordinal>90</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>partition1</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[partition1 (custom_sql_query)]</local-name>
+            <parent-name>[underlyingads]</parent-name>
+            <remote-alias>partition1</remote-alias>
+            <ordinal>91</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>channel_users</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[channel_users]</local-name>
+            <parent-name>[tableau_users]</parent-name>
+            <remote-alias>channel_users</remote-alias>
+            <ordinal>93</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>networkid</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[networkid (tableau_users)]</local-name>
+            <parent-name>[tableau_users]</parent-name>
+            <remote-alias>networkid</remote-alias>
+            <ordinal>94</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>organisationid</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[organisationid]</local-name>
+            <parent-name>[tableau_users]</parent-name>
+            <remote-alias>organisationid</remote-alias>
+            <ordinal>95</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>usernames</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[usernames]</local-name>
+            <parent-name>[tableau_users]</parent-name>
+            <remote-alias>usernames</remote-alias>
+            <ordinal>96</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>uniqueEvent_id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[uniqueEvent_id (custom_sql_query)]</local-name>
+            <parent-name>[quartiles]</parent-name>
+            <remote-alias>uniqueEvent_id</remote-alias>
+            <ordinal>98</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>quartileCount</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[quartileCount]</local-name>
+            <parent-name>[quartiles]</parent-name>
+            <remote-alias>quartileCount</remote-alias>
+            <ordinal>99</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>19</precision>
+            <contains-null>true</contains-null>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='2_Quartile' datatype='boolean' name='[1_Quartile (copy)]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='IF [quartileCount] &gt;= 2 THEN TRUE ELSE FALSE END' />
+      </column>
+      <column caption='3_Quartile' datatype='boolean' name='[2_Quartile (copy)]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='IF [quartileCount] &gt;= 3 THEN TRUE ELSE FALSE END' />
+      </column>
+      <column caption='4_Quartile' datatype='boolean' name='[3_Quartile (copy)]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='IF [quartileCount] &gt;= 4 THEN TRUE ELSE FALSE END' />
+      </column>
+      <column caption='5_Quartile' datatype='boolean' name='[4_Quartile (copy)]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='IF [quartileCount] &gt;= 5 THEN TRUE ELSE FALSE END' />
+      </column>
+      <column caption='Budget % (live)' datatype='real' name='[Budget % (copy)]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='[Calculation1]/SUM([Calculation_1360650060253442048])'>
+          <table-calc ordering-type='Rows' />
+        </calculation>
+      </column>
+      <column caption='Revenue' datatype='real' name='[CPM_Float (copy)]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='IF [reason]= &quot;Paid&quot; THEN [Calculation_2493375734965600260]/1000 ELSE 0 END' />
+      </column>
+      <column caption='Running Total' datatype='real' name='[Calculation1]' role='measure' type='ordinal'>
+        <calculation class='tableau' formula='RUNNING_SUM(SUM([Revenue (copy)]))'>
+          <table-calc ordering-type='Rows' />
+        </calculation>
+      </column>
+      <column aggregation='Sum' caption='Budget ($)' datatype='real' name='[Calculation_1360650060253442048]' role='dimension' type='ordinal'>
+        <calculation class='tableau' formula='FLOAT([budget])' />
+      </column>
+      <column caption='CPM ' datatype='real' name='[Calculation_2493375734965600260]' role='dimension' type='ordinal'>
+        <calculation class='tableau' formula='FLOAT([cpm])' />
+      </column>
+      <column caption='Brand (fixed)' datatype='string' name='[Calculation_2493375735229894662]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='IF [brand]=&quot;nan&quot; or ISNULL([brand]) THEN &quot;N/A&quot; ELSE [brand] END' />
+      </column>
+      <column caption='Campaign ID' datatype='string' name='[Calculation_2493375735231516679]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='IF ISNULL([campaignid]) THEN &quot;N/A&quot; ELSE [campaignid] END' />
+      </column>
+      <column caption='Advertiser (Underlying) (Fixed)' datatype='string' name='[Calculation_2493375735237632008]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='IF ISNULL([advertiser (custom_sql_query)]) OR [advertiser (custom_sql_query)]=&quot;nan&quot; THEN &quot;N/A&quot; ELSE [advertiser (custom_sql_query)] END' />
+      </column>
+      <column caption='Datefield' datatype='date' name='[Calculation_3067092114061488134]' role='dimension' type='ordinal'>
+        <calculation class='tableau' formula='TODAY()-[days]' />
+      </column>
+      <column caption='Duration (s)' datatype='string' name='[Calculation_4154078097493397504]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='IF ISNULL(ROUND((INT([durationinmilliseconds]) /1000),0)) THEN &quot;N/A&quot; ELSE STR(ROUND((INT([durationinmilliseconds]) /1000),0)) END' />
+      </column>
+      <column caption='Unique_sudid_count' datatype='integer' name='[Calculation_4154078097497292801]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='COUNTD([sudid])' />
+      </column>
+      <column caption='Device Conversion (%)' datatype='real' name='[Calculation_4154078097499631618]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='[Unique_sudid_count (copy)] / [Calculation_4154078097497292801]' />
+      </column>
+      <column caption='Impressions per Device' datatype='real' name='[Calculation_4154078097500807172]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='SUM([Calculation_769834082770624514]) / [Calculation_4154078097497292801]' />
+      </column>
+      <column caption='Single_Filter_Campaign' datatype='integer' name='[Calculation_4298545130041163776]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='{EXCLUDE [Calculation_2493375735231516679], [Calculation_1360650060253442048], [Calculation_2493375734965600260], [DATE_startdatetime (copy)], [DATE_startdatetime (copy 2)] : COUNTD([Calculation_2493375735231516679])}' />
+      </column>
+      <column caption='Campaign Duration' datatype='integer' name='[Calculation_4298545130046033921]' role='measure' type='ordinal'>
+        <calculation class='tableau' formula='DATEDIFF(&apos;day&apos;, [DATE_startdatetime (copy)],[DATE_startdatetime (copy 2)])' />
+      </column>
+      <column caption='1' datatype='integer' name='[Calculation_4298545130048192514]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column caption='1_Quartile' datatype='boolean' name='[Calculation_4667769931063357441]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='IF [quartileCount] &gt;= 1 THEN TRUE ELSE FALSE END' />
+      </column>
+      <column caption='Quartile Filter Field' datatype='string' name='[Calculation_4667769931073466371]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='[Parameters].[Parameter 3]' />
+      </column>
+      <column caption='quartileCount_Null' datatype='integer' name='[Calculation_4667769931108016132]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='IF ISNULL([quartileCount]) THEN 0 ELSE [quartileCount] END' />
+      </column>
+      <column caption='Paid_Count' datatype='integer' name='[Calculation_769834082770624514]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='IF [reason]= &quot;Paid&quot; THEN 1 ELSE 0 END' />
+      </column>
+      <column caption='Conversion (%)' datatype='real' name='[Calculation_769834082771816451]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='SUM([Calculation_769834082770624514])/SUM([Paid_Count (copy)] + [Calculation_769834082770624514])' />
+      </column>
+      <column caption='Campaign Duration (remaining)' datatype='integer' name='[Campaign Duration (copy)]' role='measure' type='ordinal'>
+        <calculation class='tableau' formula='IF DATEDIFF(&apos;day&apos;, TODAY(),[DATE_startdatetime (copy 2)]) &lt; 0 THEN 0 ELSE DATEDIFF(&apos;day&apos;, TODAY(),[DATE_startdatetime (copy 2)]) END' />
+      </column>
+      <column caption='End Date/Time' datatype='datetime' name='[DATE_startdatetime (copy 2)]' role='dimension' type='ordinal'>
+        <calculation class='tableau' formula='[enddatetime]' />
+      </column>
+      <column caption='Start Date/Time' datatype='datetime' name='[DATE_startdatetime (copy)]' role='dimension' type='ordinal'>
+        <calculation class='tableau' formula='[startdatetime]' />
+      </column>
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column caption='Blocked_Count' datatype='integer' name='[Paid_Count (copy)]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='IF [reason]&lt;&gt; &quot;Paid&quot; THEN 1 ELSE 0 END' />
+      </column>
+      <column caption='Quartile Filter' datatype='boolean' name='[Quartile Filter Field (copy)]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='IF &#10;[Calculation_4667769931108016132] &gt;= INT([Parameters].[Parameter 3]) THEN TRUE &#10;ELSEIF [Calculation_4667769931108016132]=0 THEN NULL&#10;ELSE FALSE END' />
+      </column>
+      <column caption='Cost' datatype='real' name='[Revenue (copy)]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='[CPM_Float (copy)]' />
+      </column>
+      <column caption='Unique_sudid_success_count' datatype='integer' name='[Unique_sudid_count (copy)]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='COUNTD(IF quartile &lt;&gt; &quot;Blocked&quot; THEN [sudid] ELSE NULL END)' />
+      </column>
+      <column caption='__Index_Level_0__' datatype='integer' name='[__index_level_0__]' role='measure' type='quantitative' />
+      <column caption='_Id' datatype='string' name='[_id]' role='dimension' type='nominal' />
+      <column caption='Adtype' datatype='string' name='[adtype]' role='dimension' type='nominal' />
+      <column caption='Brand' datatype='string' name='[brand]' role='dimension' type='nominal' />
+      <column caption='Days' datatype='integer' name='[days]' role='measure' type='quantitative' />
+      <column caption='Document Index (Generated)' datatype='integer' name='[document index (generated)]' role='measure' type='quantitative' />
+      <column caption='Durationinmilliseconds' datatype='string' name='[durationinmilliseconds]' role='dimension' type='nominal' />
+      <column caption='Durationinseconds' datatype='string' name='[durationinseconds]' role='dimension' type='nominal' />
+      <column caption='Failuredetails' datatype='string' name='[failuredetails]' role='dimension' type='nominal' />
+      <column caption='Houseid' datatype='string' name='[houseid]' role='dimension' type='nominal' />
+      <column datatype='datetime' name='[ingested]' role='dimension' type='ordinal' />
+      <column caption='Isci' datatype='string' name='[isci]' role='dimension' type='nominal' />
+      <column caption='Join' datatype='integer' name='[join]' role='measure' type='quantitative' />
+      <column caption='Name (Api Orgs)' datatype='string' name='[name (api_orgs)]' role='dimension' type='nominal' />
+      <column caption='Name (Networks)' datatype='string' name='[name (networks)]' role='dimension' type='nominal' />
+      <column caption='Network Id' datatype='integer' name='[network id]' role='dimension' type='ordinal' />
+      <column caption='Networkid (Tableau Users)' datatype='string' default-role='measure' default-type='ordinal' name='[networkid (tableau_users)]' role='dimension' type='nominal' />
+      <column caption='Networks Index (Generated)' datatype='integer' name='[networks index (generated)]' role='measure' type='quantitative' />
+      <column caption='Number Of Records' datatype='integer' name='[number of records]' role='measure' type='quantitative' />
+      <column caption='Organization Id' datatype='string' name='[organization id]' role='dimension' type='nominal' />
+      <column caption='Originalfilename' datatype='string' name='[originalfilename]' role='dimension' type='nominal' />
+      <column caption='Originatoremail' datatype='string' name='[originatoremail]' role='dimension' type='nominal' />
+      <column caption='Product' datatype='string' name='[product]' role='dimension' type='nominal' />
+      <column caption='Records Per Response Json' datatype='integer' name='[records per response json]' role='measure' type='quantitative' />
+      <column caption='S3Path' datatype='string' name='[s3path]' role='dimension' type='nominal' />
+      <column caption='Status' datatype='string' name='[status]' role='dimension' type='nominal' />
+      <column caption='Submittedforindexingby' datatype='string' name='[submittedforindexingby]' role='dimension' type='nominal' />
+      <column caption='Submittedforindexingtimestamp' datatype='string' name='[submittedforindexingtimestamp]' role='dimension' type='nominal' />
+      <column caption='Tempfilename' datatype='string' name='[tempfilename]' role='dimension' type='nominal' />
+      <column caption='Uploadtimestamp' datatype='string' name='[uploadtimestamp]' role='dimension' type='nominal' />
+      <column caption='Usernames' datatype='string' name='[usernames]' role='dimension' type='nominal' />
+      <column caption='Videolocation' datatype='string' name='[videolocation]' role='dimension' type='nominal' />
+      <column-instance column='[Calculation_2493375735231516679]' derivation='None' name='[none:Calculation_2493375735231516679:nk]' pivot='key' type='nominal' />
+      <column-instance column='[Calculation_769834082770624514]' derivation='Sum' name='[sum:Calculation_769834082770624514:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Calculation_769834082771816451]' derivation='Sum' name='[sum:Calculation_769834082771816451:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Paid_Count (copy)]' derivation='Sum' name='[sum:Paid_Count (copy):qk]' pivot='key' type='quantitative' />
+      <column-instance column='[ingested]' derivation='Day-Trunc' name='[tdy:ingested:ok]' pivot='key' type='ordinal' />
+      <column-instance column='[Calculation1]' derivation='User' name='[usr:Calculation1:qk]' pivot='key' type='quantitative'>
+        <table-calc ordering-type='Rows' />
+      </column-instance>
+      <column-instance column='[Calculation_4154078097497292801]' derivation='User' name='[usr:Calculation_4154078097497292801:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Calculation_4154078097499631618]' derivation='User' name='[usr:Calculation_4154078097499631618:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Calculation_769834082771816451]' derivation='User' name='[usr:Calculation_769834082771816451:qk]' pivot='key' type='quantitative' />
+      <group caption='Tooltip (Campaign ID,DAY(ingested))' hidden='true' name='[Tooltip (Campaign ID,DAY(ingested))]' name-style='unqualified' user:auto-column='sheet_link' user:ui-vit-column='true'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[Calculation_2493375735231516679]' />
+          <groupfilter function='level-members' level='[tdy:ingested:ok]' />
+        </groupfilter>
+      </group>
+      <group auto-hidden='true' caption='Tooltip (DAY(ingested))' hidden='true' name='[Tooltip (DAY(ingested))]' name-style='unqualified' user:auto-column='sheet_link' user:ui-vit-column='true'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[tdy:ingested:ok]' />
+        </groupfilter>
+      </group>
+      <group auto-hidden='true' caption='Tooltip (Success_ViewBy)' hidden='true' name='[Tooltip (Success_ViewBy)]' name-style='unqualified' user:auto-column='sheet_link' user:ui-vit-column='true'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[Calculation_2493375735227269125]' />
+        </groupfilter>
+      </group>
+      <layout dim-ordering='alphabetic' dim-percentage='0.54602' measure-ordering='alphabetic' measure-percentage='0.272388' parameter-percentage='0.181592' show-structure='true' user-set-layout='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:Calculation_2493375735231516679:nk]&#10;[:Measure Names]' palette='cyclic_10_0' type='palette'>
+            <map to='#1ba3c6'>
+              <multibucket>
+                <bucket>&quot;CA00000010&quot;</bucket>
+                <bucket>&quot;[federated.17mhphb142d8t41bbsn9r0k3hl0r (copy)].[usr:Calculation1:qk]&quot;</bucket>
+              </multibucket>
+            </map>
+            <map to='#4f7cba'>
+              <multibucket>
+                <bucket>&quot;N/A&quot;</bucket>
+                <bucket>&quot;[federated.17mhphb142d8t41bbsn9r0k3hl0r (copy)].[usr:Calculation1:qk]&quot;</bucket>
+              </multibucket>
+            </map>
+            <map to='#bcbd22'>
+              <multibucket>
+                <bucket>&quot;CA00000011&quot;</bucket>
+                <bucket>&quot;[federated.17mhphb142d8t41bbsn9r0k3hl0r (copy)].[usr:Calculation1:qk]&quot;</bucket>
+              </multibucket>
+            </map>
+            <map to='#f43c63'>
+              <multibucket>
+                <bucket>&quot;CA00000012&quot;</bucket>
+                <bucket>&quot;[federated.17mhphb142d8t41bbsn9r0k3hl0r (copy)].[usr:Calculation1:qk]&quot;</bucket>
+              </multibucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[:Measure Names]' type='palette'>
+            <map to='#00aeef'>
+              <bucket>&quot;[federated.17mhphb142d8t41bbsn9r0k3hl0r (copy)].[sum:Calculation_769834082770624514:qk]&quot;</bucket>
+            </map>
+            <map to='#21572b'>
+              <bucket>&quot;[federated.17mhphb142d8t41bbsn9r0k3hl0r (copy)].[usr:Calculation_4154078097499631618:qk]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.17mhphb142d8t41bbsn9r0k3hl0r (copy)].[sum:Calculation_769834082771816451:qk]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.17mhphb142d8t41bbsn9r0k3hl0r (copy)].[sum:Paid_Count (copy):qk]&quot;</bucket>
+            </map>
+            <map to='#8dc63f'>
+              <bucket>&quot;[federated.17mhphb142d8t41bbsn9r0k3hl0r (copy)].[usr:Calculation_4154078097497292801:qk]&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;[federated.17mhphb142d8t41bbsn9r0k3hl0r (copy)]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.17mhphb142d8t41bbsn9r0k3hl0r (copy)].[usr:Calculation_769834082771816451:qk]&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:Calculation_2493375735231516679:nk]' palette='Nielsen Pri_Sec' type='palette'>
+            <map to='#000000'>
+              <bucket>&quot;CA00000012&quot;</bucket>
+            </map>
+            <map to='#00aeef'>
+              <bucket>&quot;CA00000010&quot;</bucket>
+            </map>
+            <map to='#b21dac'>
+              <bucket>&quot;CA00000011&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United Kingdom&quot;' />
+      </semantic-values>
+      <date-options start-of-week='monday' />
+      <datasource-dependencies datasource='Parameters'>
+        <column alias='1st' caption='Quartile Filter Parameter' datatype='string' name='[Parameter 3]' param-domain-type='list' role='measure' type='nominal' value='&quot;2&quot;'>
+          <calculation class='tableau' formula='&quot;2&quot;' />
+          <aliases>
+            <alias key='&quot;2&quot;' value='1st' />
+            <alias key='&quot;3&quot;' value='2nd' />
+            <alias key='&quot;4&quot;' value='3rd' />
+            <alias key='&quot;5&quot;' value='4th' />
+          </aliases>
+        </column>
+      </datasource-dependencies>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Sheet 25'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Campaigns_impressions_underlyings' name='federated.17mhphb142d8t41bbsn9r0k3hl0r (copy)' />
+          </datasources>
+          <datasource-dependencies datasource='federated.17mhphb142d8t41bbsn9r0k3hl0r (copy)'>
+            <column-instance column='[organisationid]' derivation='None' name='[none:organisationid:nk]' pivot='key' type='nominal' />
+            <column-instance column='[organizationid]' derivation='None' name='[none:organizationid:nk]' pivot='key' type='nominal' />
+            <column-instance column='[usernames]' derivation='None' name='[none:usernames:nk]' pivot='key' type='nominal' />
+            <column datatype='string' name='[organisationid]' role='dimension' type='nominal' />
+            <column datatype='string' name='[organizationid]' role='dimension' type='nominal' />
+            <column caption='Usernames' datatype='string' name='[usernames]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='header'>
+            <format attr='width' field='[federated.17mhphb142d8t41bbsn9r0k3hl0r (copy)].[none:usernames:nk]' value='212' />
+            <format attr='width' field='[federated.17mhphb142d8t41bbsn9r0k3hl0r (copy)].[none:organisationid:nk]' value='240' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>([federated.17mhphb142d8t41bbsn9r0k3hl0r (copy)].[none:organizationid:nk] / ([federated.17mhphb142d8t41bbsn9r0k3hl0r (copy)].[none:organisationid:nk] / [federated.17mhphb142d8t41bbsn9r0k3hl0r (copy)].[none:usernames:nk]))</rows>
+        <cols />
+      </table>
+      <simple-id uuid='{02984F31-9E62-4BBE-A470-13E1AAB6D26C}' />
+    </worksheet>
+  </worksheets>
+  <windows source-height='30'>
+    <window class='worksheet' maximized='true' name='Sheet 25'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.17mhphb142d8t41bbsn9r0k3hl0r (copy)].[none:Calculation_2493375734965600260:ok]</field>
+            <field>[federated.17mhphb142d8t41bbsn9r0k3hl0r (copy)].[none:campaignid:nk]</field>
+            <field>[federated.17mhphb142d8t41bbsn9r0k3hl0r (copy)].[none:organisationid:nk]</field>
+            <field>[federated.17mhphb142d8t41bbsn9r0k3hl0r (copy)].[none:organizationid:nk]</field>
+            <field>[federated.17mhphb142d8t41bbsn9r0k3hl0r (copy)].[none:partition_0:nk]</field>
+            <field>[federated.17mhphb142d8t41bbsn9r0k3hl0r (copy)].[none:partition_1:nk]</field>
+            <field>[federated.17mhphb142d8t41bbsn9r0k3hl0r (copy)].[none:partition_2:nk]</field>
+            <field>[federated.17mhphb142d8t41bbsn9r0k3hl0r (copy)].[none:usernames:nk]</field>
+            <field>[federated.17mhphb142d8t41bbsn9r0k3hl0r].[none:Name (Networks):nk]</field>
+            <field>[federated.17mhphb142d8t41bbsn9r0k3hl0r].[none:Name:nk]</field>
+            <field>[federated.17mhphb142d8t41bbsn9r0k3hl0r].[none:Network Id:ok]</field>
+            <field>[federated.17mhphb142d8t41bbsn9r0k3hl0r].[none:channel_users:nk]</field>
+            <field>[federated.17mhphb142d8t41bbsn9r0k3hl0r].[none:name (api_orgs):nk]</field>
+            <field>[federated.17mhphb142d8t41bbsn9r0k3hl0r].[none:name (networks):nk]</field>
+            <field>[federated.17mhphb142d8t41bbsn9r0k3hl0r].[none:network id:ok]</field>
+            <field>[federated.17mhphb142d8t41bbsn9r0k3hl0r].[none:organization id:nk]</field>
+            <field>[federated.17mhphb142d8t41bbsn9r0k3hl0r].[none:usernames:nk]</field>
+            <field>[federated.17mhphb142d8t41bbsn9r0k3hl0r].[sum:network id:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{AB5B3AF5-8B74-46B9-BC4F-F28DDB6C262D}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='288' name='Sheet 25' width='384'>
+      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
+      v/TSSwB0794dgDfeeAOAWWaZBYCpp54aCAsgCIKgsrS5BeBKdP311wPFCnHUqFEAHHvssQD8
+      /PPPAOy2224AbLbZZuP9/m233QYk5T/bbLMB8MwzzwDw4IMPAmlH87Bhw2q+/9VXX9XcT6Xi
+      dc4444ya7++5557jLY/12HDDDcf7ObnxxhsBWHrppYHmK7gHHngAgAsvvBBI9dp7770B2Gij
+      jQC44IILAPjkk08AWGyxxWo+X9QOjfZvER988AEA++yzDwA333xzk5+76667ALjkkkuApIzX
+      Wmutmu9/9NFHAJx00kkAvPvuuwAsuuiiAJx88skADB48GIBbbrmlyfv94Q//0U62qxZmPWyf
+      hx9+GEhK7bzzzgNgzjnnHO/363HttdcCSRHvscceNe+3dPw8+eSTQOuPa2l0fg8aNAiAp59+
+      GkiW3rnnngukdiw7v9sa55Xjy/rklrTzdPXVVwdgwQUXLHV92++qq64CkgUwcuRIAHr37g2E
+      BRAEQVB52twCaBRXwlNOOQVIPr8jjjgCKLYAcvTBqux8rYLKGT58OAArrbQSkJSkSksl0rNn
+      TwAeffTRmu9/8803APTv3x+AXr16NVTe1uLiiy8GksLVx7r99tsDsP766wNJofi6S5cuAFx+
+      +eVAcTu0NirmVVZZBUiKV4tF5aSiOueccwCYe+65a+qx+eabA3DHHXcAsMQSSwBw9tlnA7D7
+      7rsD8NRTTwFw6KGHAnDQQQfVlOf2228HUn2LlP97770HwLPPPgsky+iGG24A4MorrwTgqKOO
+      Gu916mH77L///kCygHbZZZdmXS9nmWWWASbcuC47v7UE7R8twVtvvRWAq6++GoADDjgAKD+/
+      2wvLpTLfYost2qUcYQEEQRBUlHazAPQpb7vttgB8++23AJx11lkAzD777AC8/PLLQPKB6Xs1
+      i8KsAb+vT9ssFX3//lWx6Xszu2TnnXduspz6KDfZZJOa/+szVtktt9xywLjZC8Yg/L6KVaV9
+      yCGH1JR/1113BWC99daruc5DDz0EJMXq/VVO9bJdbGcV2zzzzFPzvlkj999/PwBPPPEEkLII
+      9KWXbQeVdVH/zjvvvE2WN0eFa//85S9/AWCDDTaouY++YGMWZoVYP7Nk9GnvtddeAPzxj/+Z
+      Aj169Kipp/3p+3LTTTcByWddhPczFvI///M/ACy//PI115N7770XgNNPPx2A+eabD4ADDzwQ
+      SO1mfxrT0Lf//PPPN1mO5o4f51vZcS1XXHEFkJR5bqlZr7Lz2/FlVpqfsx7ep9H53V5oWZtt
+      t8YaawDQuXPnJj//1ltvAWk89evXD0jZdvfddx8Affv2bagcYQEEQRBUlHazAMwW0Wf5+OOP
+      A8lXffDBBwNJwblSqhhOPPFEICkXfcPdunUDYLvttgNSNoE+5EZRuc4444w1//f122+/3eT3
+      VC4jRowA4LLLLqt5f+jQoQAssMACQFLK9SyAjz/+uOZ7xxxzDJCyUMx2yVER6XM0e0cFpZJU
+      oang9emuuOKKAFxzzTU19ZZ67VDUvyrPeqjczNKxXPl9OnXqBKT+V/mrjL777jsgWT7TTDNN
+      Tb3F11oSOfr83YfgOCui3v3++c9/1vy1X0499VQAjjvuOCDV15iBsQmznlZeeWUARo8eDaR9
+      EDnNHT85RePadleRX3TRRTX30efv/cvOb9svH3/2h/P094KxDseR7TlgwIAmP292z9dff13z
+      f/tDS7hRwgIIgiCoKO1mAZg/vvjiiwNJgerDV7m58qvwjA3keeEvvvgikHxj+kr1GTYXYwkq
+      OfG17+fcc889QPL9uhNT9LHvt99+AMw111xAyrpQGcoKK6wApPovu+yyQKq3ClklKTPMMAOQ
+      smLOPPNMIPl0VRQqX32vKmstiEbboWz/5tkZU001FZD61bxyLZYc/2/+twpYC8MsJz9nPvyQ
+      IUOAtHNZ37u+/5zrrrsOGDdbo54CU7kutdRSQFL21uvOO+8EUmzCLBf7wf7Wt5/HCrQI3M/w
+      /fffN1luaen4mWSSSYDicW0Mxfcd11rg1qPR+e04MX9dfF1vHk7sGMsyprT22mu36f3DAgiC
+      IKgo7WYB5DsSPaNC5Wu2hFko5q+rOMwP1rfp97xOvfs0ir66XGH4ut4ZMu5AXGeddZp8X59l
+      Xl59nzn12ssdjjvssAOQsovEfGh9ypdeeimQshDcKajyrkej7VDUv/qi3bEoxmzMMnEH7Rdf
+      fAGkHbRaLrlFok/amId56uJ+AL+vYnWHpONN9L2aXeM4FGMdue9W367K1rx2szXWXXddIPnu
+      VcQzzzxzzXW03MwCMg/eeWDWiBaE5c8tgpaOH7Poisa1/atPf80116x533HS6PzWMs0t46J5
+      OLFjfY25ua+hrc42arcFIA9m+FpXgQ1jx+eHXBn8cYD4vdwU97pOpEbxvgYldSn5OjeBdUEY
+      NDz88MObvK6uFcvnBHPC5RMnby/rab3PP/98YNwgpj8opt+5sUnTuU+fPk3WI6fRdijqX4Pe
+      msCiq8EFwDRZ8Yfy6KOPBtJGKtNXPfrAIGSexulGMF1TbmQzOJlv7PKHv2vXrkD64RL/7wYv
+      8XNuBPNQQvvBtD7bzR+w/AdOF4k/vLbP559/DqT0RhcqhYULj7R0/JQd117PH7SBAwcCybX0
+      3HPP1dS77Pz287ajOP7y7//ecEF1Q2DRfBSFTnMJF1AQBEFFaTcLQGWkYjH9y3Q9lYTK2KCp
+      Sl6T140gfs/jbw1CqRiaeyiZwTGvu9pqq9W8zjdeqLRUZPVWcoPU1muhhRYCUnBy4403rvn8
+      Cy+8ACQl5v3dwGSwrR4qSa/jhilN8HyDWE6j7VDUv9NPP33N3xxN4RyDZB6iJh5ip6tF15CK
+      VuVscFZXjEdbOE5yl5Eumtw1IwbT3diUY5DXND8Vu/fLD2nTwvn000+B5GJyI5TBQo+4EF1Z
+      jh+PgjjhhBOAlo8fLYaica3ry7Rh62993SDmhrSy89tx4ve1KKyH47NRbF+D+Yssssh4/z+h
+      0BKyX/ND67RwckvO+jeXsACCIAgqSrtZAK7Ypunp0zRdTtyyv++++wJJeWyzzTZA8rVuvfXW
+      QFI+Ksh8w47BMT9vUNF0QNMOTZv705/+VHNdN7SoSEynE4OV9bZ0ixvVrJ8+azfk5GmPKlcV
+      goqh7CFibtlXIasodtxxR6A46KRFUtQO+ojL9m9Lsd9effVVIKXV5nhcsEcwuEFt0003BZLy
+      zC3Fsv1ZD337Whrez/7UkrE/DcY6vqWl7dbS8VO2HUwqULk7bpy3BrOl7PzWQvG6BvP1gdu/
+      jc5vr6+FrMWkxZb/f0JjuqwWqphW7Tx1I12R5V5EWABBEAQVpcNv9faOtxH6oPXV1jte18+5
+      otdL+yp7vUbR52iWRnMVYY7lNJ2tKJtBn7ppm/U2SNVDH67t2Gj7NNoOE6o/WorD3nq48W1C
+      o6L87wM56vSfSlaFmmcfNZeWjp8Jdb+y81vsN9vRGE9VcGNcS+dTWABBEAQVpd0tgCAIgqB9
+      CAsgCIKgosQCEARBUFFiAQiCIKgosQAEQRBUlFgAgiAIKkosAEEQBBUlFoAgCIKKEgtAEARB
+      RYkFIAiCoKK0+DRQHykXBEEQ/L4ICyAIgqCixFlAQRAEFSUsgCAIgooSC0AQBEFFiQUgCIKg
+      osQCEARBUFFiAQiCIKgoLd4H0ChffvklAGPGjAFgySWXLPU9nynrM0Mnm2yyCVC65vPKK68A
+      MN100wEw66yzNvR9n3H61ltvAdCjR48mP+ezUxt9Ruz9998PwGqrrQY0/izY119/HUjPIJ1j
+      jjlq3rdffGbwpJNOWvN+S9snx3b46aefgOJnKbcWzR2/RViPomfh+jnH/4R+pm9r8/HHHwPw
+      7LPPArD22msD8Mc//uenqOz4bq/+n9hxHr700ksAdO/eHYA33ngDgFlmmQX4/z2Tuq0LGARB
+      EEwctLkF4Ep0/fXXA8UK6uGHHwbgpJNOAmCSSSYBYIcddgBg8803B2D11VcH4LvvvmvyOius
+      sAIA55xzTqlyqixWXnnlJt9fdtllATj//PMBuPHGGwFYeumlgcYV7nvvvQfAJZdcAiQL4KOP
+      PgLg+OOPB+Crr74CYN555wVg8ODBQLESPO644wC45557gMYtqNtuuw1Iyt+/DzzwAAAXXnhh
+      Tfn23ntvADbaaCOg5e2Tc+211wLw448/ArDHHnvUvP/tt98C8MQTT9SUf/75568p35NPPgnA
+      nnvuOd77HXvssQDMMMMMQPnxWw/71XH97rvvArDooosCcPLJJwOpX8877zwA7rvvPgDGjh0L
+      wMUXXwzAnHPO2axytJRG593OO+8MQL9+/Wo+d8oppwDpZAEtoaOOOgqAbt261Xy+qP9t11tu
+      uaXJctmujl8t2wnNJ598AqR5O2jQIACmnHLKms85n2zfBRdcsNT1f/75ZwCuuuoqIFkAI0eO
+      BKB3795AWABBEASVp80tgEa56KKLADjjjDMA6NKlC5AUxGabbQbAnXfe2eT3DzroIAA22WST
+      hu77ww8/AEkxXn755TXvd+jQoaHrNZc77rgDSMp5l112AWDXXXcF4PnnnwdazxfdKCpQFauW
+      xfbbbw/A+uuvP0Huq2W4//77A8lysn1effVVICk8ffddu3atuc4yyywDwKOPPlrz/2+++QaA
+      /v37A9CrVy8AXnjhhVYpv/26xBJLAHD22WcDsPvuuwPw1FNPAWn8GcO56aabABgyZAiQLLqd
+      dtqpVcrVKGXnnQcO2A/bbLMNkCxfYwJaVtbz1ltvBeCQQw6puX5R/x966KE15ZDbb78dgKef
+      fhpoO+WfowWnMt9iiy3apRxhAQRBEFSUdrMA9BVvu+22QPLZnnXWWQDMPPPMALz99ttA8oHp
+      u3Pl9n2VkqgsPv30UyBlv8i9994LwOmnnw7AfPPNB8CBBx4IpFiDvrKyPvOHHnoISIpOn64+
+      TrNj9AGq4PSV5ugLNeYg+kTNrilrAVgOlfFuu+0GwJZbbgkkhaaPXEso9/3bfyrleeaZp+Y+
+      ZmXYP1K2ferh/fShG0vQEhLby7/6jL/44ouazzme8v41ZqCCzX20RePXGE09jD3stddeQMqC
+      MfYzatSomvra35ZXy8WYgDjeBw4cCMCbb74JwIYbbgiMG+vQsr777rsBWGCBBQA45phjAJh+
+      +unHW4+83erNuyuuuAJI2XzG7lTwWvTWz/qqkKVs/9ue/hUtC2M67YWejEceeQSANdZYA4DO
+      nTs3+XmzAx03tpfZaI6Dvn37NlSOsACCIAgqSrtZAGYD6bt7/PHHgeRTPuCAA4CkQPIslxln
+      nBFIiiBHxTdgwICa75unfuqppwIpO0alesMNNwBJMalYzCrwOmYzWA4xz3no0KFAUlIq7tln
+      n72mvsYWVI45+kpFBasSsPxlUWGYVaICtb62mwpsu+22A5KlsMoqqwDJAtOXabvaPvaL+xuk
+      qH3WWmut8Zb/rrvuAlJ21ujRo4HkY24pv/zyCwAjRowA4LLLLmvyc0XjV4umHtNMMw0w7vj1
+      teNOS8PPX3nllUBStvvuu2/N91W4WsRmjzkP9DXbL/rChw0bBsC5554LpHbOx18R9eadsTpj
+      eo6/mWaaqeZztr+xBWNf0tz+t57eL88qamu07C2H4812yzG75+uvv675v+3lOGmUsACCIAgq
+      SrtZALPNNhsAiy++OJB8rLnvWR98jorIPGAxH1lfc5498MEHHwBJYel715eogvL+r732GpB8
+      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
+      SnbQoEEAPP3000BSEOeeey4Ac889NwAjRoyouW7OkUceCcDMM88MwPXXXw9MfBbAjTfeCMDS
+      Sy8NFFsAxx13HAD33HMPUF9RffHFFwCceOKJAHz44YcALLbYYgAcffTRQHkL4tprrwWSZbbH
+      HnvUvK9lsPLKKzf5/WWXXRaA888/v9T9tCifeeYZAB588EEg7YQfNmxYqev8X6HseN90001b
+      5X75vNfie+KJJ2ren3/++YE07+Xhhx8G4KSTTgJgkkkmAWCHHXYAYPPNN2+VchbxySefAOl3
+      xt+XKaecsuZz/o6tvvrqACy44IKlrv/zzz8DcNVVVwHJAhg5ciQAvXv3BsICCIIgqDy/Owug
+      HhdffDEAJ598MpCU6Pbbbw/A+uuvD8Add9wBJIW7yy67ALDrrrsC8PzzzwMw44wzAvDUU08B
+      cPPNNwNw6623AnD11VcDcNRRRwHwww8/1FxvwIABNeUzFvHkk0+2qJ6/V4wVzDPPPACcddZZ
+      AOy5555A8lkuvvjipa6nott///0BuOSSS4DU/vaHivDyyy+v+X6jMZyxY8cCcMstt9S81gKp
+      GmXH+4Ti1VdfBZLlb2yta9euTX7+oosuAuCMM84AoEuXLgD069cPgM022wwob7RmyjIAACAA
+      SURBVIG2FMePynyLLbZok/vmhAUQBEFQUdrcAtCXqg/s73//OwDrrrsuAPvssw8A3333HZB8
+      eSqO3PevD/+bb74BksIUfYVvv/02kLJ49AFLt27dgJQFM8000wCw8MILA0kZLLrookCyAMTy
+      mT1TlF1gubfddlsAvv32WyApY2MSXlcfuT7npZZaCkgWT8eOHcd7P9tZJSS294orrljz/4ce
+      egiAs88+G0j1PuWUU4BxFZ7/V5HttttuAGy55ZZAateePXsCSYHb7i+//DJQbAHYz8ZyjFFo
+      uYntpq+zqD/uvfdeAE4//XQA5ptvPgAOPPBAIPWHPtvPPvsMgJ133nm8162HSvTuu+8GYIEF
+      FgDgmGOOAWD66advqFyN9u8VV1wBpHGsD9p5udBCC423/I2O97L1VckXzXvnr3+NCRlrEi00
+      57++dOezWUW+r8U4odECeeSRRwBYY401AOjcuXOTn3/rrbeA5EHQcjGb8L777gOgb9++DZUj
+      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
+      9OphVohKoOjz5gcXfU7foNlFKtd66Fstyi8uWz+7yZhBc7MWVDB+39iGf1VC4v1UmEXnpefX
+      z/E++jLr+Zhbm7L9odI3a6e5zywuQl+yf/PspPy+Zcs1ofu3HkXt22h9G533ZdGC9/ehXlbb
+      xE7Z360iwgIIgiCoKO1uAQRBEATtQ1gAQRAEFSUWgCAIgooSC0AQBEFFiQUgCIKgosQCEARB
+      UFFiAQiCIKgosQAEQRBUlFgAgiAIKkosAEEQBBWlxaeB1ntGbBAEQTBxExZAEARBRYmzgIIg
+      CCpKWABBEAQVJRaAIAiCihILQBAEQUWJBSAIgqCixAIQBEFQUVq8D6C18Jm7b731FgA9evSo
+      ed9nmvpM0ckmm6zmfZ/1+cgjjwCw8MILAzDrrLPWfO6HH34A6j8LdNSoUUB6ZugyyyzTaFXa
+      hC+//BKAMWPGALDkkkuW+p71sj0nnXTSCVC65uMzan1GbMeOHdvkvh9//DEAzz77LABrr702
+      MO4zdOX+++8HYLXVVgPKP0u33jNwf29MbPV46KGHAFhuueUA+O6774DG50d74TOfP/zwQwAW
+      WGCBmvedr87ffN7aHy+++CIAc801FwAzzDBDzef8nXRehQUQBEFQUSYaC+C9994D4JJLLgGS
+      BaAiP/bYYwH4+eefAdhtt90A2GyzzQC44IILAPjkk08AWGyxxQD46quvaj7vSjrbbLMBcMYZ
+      ZwDwyiuvAHDUUUcBMHjwYABGjBgBwPHHH99kuY888kgANt1000ar3CLeeOMNAK6//nqgWOE8
+      8MADAFx44YVAape9994bgI022qih+z/55JMA7LnnnuP9nP224YYblrru7rvvXvO9bt26Net+
+      a665JgArr7xyk59bdtllATj//PMB2HnnnQHo169fqXIed9xxANxzzz3AuBZpzimnnAKknfOT
+      Tz45kMab9SzL6quvDiSlm7PCCisAcM4554z3OmXH9yabbALAySefDMDjjz8OJAvpwAMPBGDF
+      FVcsV4FWZtCgQQBcd911QOPzo7359NNPAbjtttuAZAG8+eabAFx22WVAUvrO11VWWQWAv/3t
+      b0Ca1/POOy+QLOozzzwTSL9/WgZhAQRBEFSUicYCqIeKVQWlcjriiCOAZAGo/Ndff30AunTp
+      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
+      UFFafBqo56sHQRAEvy/CAgiCIKgocRZQEARBRQkLIAiCoKLEAhAEQVBRYgEIgiCoKLEABEEQ
+      VJRYAIIgCCpKi/cBtBY+q/ett94CoEePHuP9/EMPPQTAcsstB4z7zNCyz65t6bM2W4rPiPUZ
+      rB06dGjT+08oivqn7LNQ62H/+gzbss/iLWrnes+sLSpHS5+RXPY6E+qZzK01DsuWz/lmO086
+      6aTNul896v2ejB07FoBHHnkEgIUXXhiAWWedtVXv3yg+q/fDDz8EYIEFFhjv559//nkAFllk
+      EWDccervWtH4DQsgCIKgokw0FsB7770HwCWXXAIUWwCDBg0C4LrrrgPgiy++AOD4448H4Kuv
+      vgJg3nnnBWDw4MEA/OEP/1nzHn74YQBOOukkACaZZBIAdthhBwA233zzFtWnCMv/9NNPA2nF
+      PvfccwGYe+65ARgxYgSQ6pVz5JFHArDppps2+b4K65lnngHgwQcfBNIO7mHDhtV8fvTo0QA8
+      9thjANx4440ADBw4EEiKqYi8f1Q4u+22W025ZpttNgDOOOMMIPVDEddeey2QlOsee+wx3nIU
+      tfN9990HwF/+8pea8m255ZbAuOPhlFNOAVI7qpyPOuooALp16zbe8jteTzzxRCApv8UWWwyA
+      o48+Gkjj9fzzzwdS/2nxHH744UAa56uvvjoA3333XZP3XWGFFQA455xzgPLtU4/333+/ph4f
+      fPABAHPOOSeQ5l2nTp0AeOCBBwC48MILgTRP9957bwA22mijZtUjp97vyQUXXADAJ598AqT2
+      bm8+/fRTAG677Tag2AK45pprgDROtLwuv/xyILXbLLPMAsAuu+wCJMvuhRdeAMICCIIgqCwT
+      jQXQUu644w4All56aSCteLvuuiuQfGZLLrkkABdddBGQlGeXLl0A6NevHwCbbbYZkBRYa6FC
+      euqppwC4+eabAbj11lsBuPrqq4GkJPWVW58BAwbUXK/Id6rP85Zbbql5rXLOUQm//fbbAHzz
+      zTfFlSrB8OHDAVhppZUA2GeffYCk3FWgxgyK0ILbf//9gaT0bKdG21nlryKebrrpANh2220B
+      6NOnDwBjxowB4NlnnwXg+uuvB+Cmm26quf4hhxwy3vLff//9AMwzzzwAnHXWWQDsueeeALz0
+      0ktAspDuvfdeIFlkf/vb34DUrwceeCAAd955Z5P3O+iggwDYZJNNgMbbpx4qzgUXXBCAiy++
+      GEj114Ldbrvtat4/+eSTgRRz23777QFYf/31G6pHo6j8vY/z/vfOk08+CSTLYYMNNgDgz3/+
+      M5BiIfPPPz+Q5mNYAEEQBBWl3SwAfYP33HMPkHx6Ofo89UF3794dSL5K0Qe77LLL1vxfX+wr
+      r7wCpBVShatyUelPMcUUNe9PPfXUQFI03377LZAsi/XWWw9IPjzL+eabbwKw4YYbAknZqRz1
+      pXvfRRddFEjKS7QAVKSNZilZH5XtZ599BsDOO+/c5Od32mmnmtfGROpRtn9GjRoFjKvcrLft
+      UmQBaJF89NFHQMre0MKTsu2sRbTUUksByZcuxgI+//xzAL788ksgWYpe13E2cuTI8ZZfHI89
+      e/YEkm/W67z88stAGm9aCsZI/Nztt99ec918fOgLd3yuttpqNd8rOw7roUXUv3//mnrMPvvs
+      QMrS0tdv/1kfMabhvMtjKPXqIUW/J2+88QYATzzxBJAsLH3na621VnFlWxF9+MbmzObJcVxf
+      ddVVAMw333xAyqISs67yGN0cc8wBpPYzNuP8CQsgCIKgorS5BfDqq68C8PjjjwPJh6gPNOfM
+      M88EUrbL119/DaRsAtlmm21qXptloW/suOOOA1J0fPrppwfG9fHPOOOMQFIqN9xwA5AsB33C
+      uQWgD1gfm1k7+uy32GKLmut6H5lpppmApPhEC0Dlc8ABBwBJKRurKMr3nVCU7R/rldfb1yq/
+      Iu666y4AVl55ZSBlLeWH2pZt544dOwLj+uxVilqWfs+/Wgy//PILkHzWxqCKWGihhYAUC1B5
+      e1+ze/RRv/baawC88847NfcrysoyW8px6HhvdBzW44QTTgBSlo/94LzT8tUS1eLSssrLY/5+
+      2XqU/T3R4lhiiSUA6NWrFwArrrhiqXq2FipxLcDDDjsMSL8zOf7f3x1/v5577rmaz6255po1
+      r21P28cYi7G/aaaZBggLIAiCoLK0uWx88cUXgeQr1iflimx0Wp+hPutVVlkFgJ9//hlIPu0c
+      82hVJmadqJRUUPr2c1wZXSn1Fe63334AzDXXXAAss8wyQFIsRt1VQl5fH5z50l43v7+vVfxi
+      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
+      va0U4AAAAABJRU5ErkJggg==
+    </thumbnail>
+  </thumbnails>
+</workbook>

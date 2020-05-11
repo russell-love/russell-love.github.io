@@ -1,0 +1,3711 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20192.20.0313.1709                               -->
+<workbook original-version='18.1' source-build='2019.2.10 (20192.20.0313.1709)' source-platform='mac' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <SheetIdentifierTracking ignorable='true' predowngraded='true' />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource hasconnection='false' inline='true' name='Parameters' version='18.1'>
+      <aliases enabled='yes' />
+      <column caption='Publish Empty' datatype='boolean' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='false'>
+        <calculation class='tableau' formula='false' />
+        <members>
+          <member value='true' />
+          <member value='false' />
+        </members>
+      </column>
+    </datasource>
+    <datasource caption='ETETE Avails_Impressions' inline='true' name='ETETE Avails_Impressions (local copy)' version='18.1'>
+      <repository-location id='ETETEAvails_Impressions' path='datasources' revision='1.8' />
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='Athena.eu-west-2.amazonaws.com' name='athena.1efxplm02wcg5d17gcrmp00mgiee'>
+            <connection class='athena' dbname='AwsDataCatalog' one-time-sql='' port='443' schema='etete' server='Athena.us-west-2.amazonaws.com' server-oauth='' server-userid='7' username='AKIA5B6W7CQTYFE2HQZK' warehouse='s3://data-reporting-sources-us-west/athena_temp/' workgroup-auth-mode='prompt'>
+              <connection-customization class='athena' enabled='false' version='18.1'>
+                <vendor name='athena' />
+                <driver name='athena' />
+                <customizations>
+                  <customization name='CAP_AUTH_DB_IMPERSONATE' value='no' />
+                  <customization name='CAP_AUTH_KERBEROS_IMPERSONATE' value='no' />
+                  <customization name='CAP_CONNECT_STORED_PROCEDURE' value='no' />
+                  <customization name='CAP_CREATE_TEMP_TABLES' value='no' />
+                  <customization name='CAP_DATASERVER_MAGIC_NUMBER' value='no' />
+                  <customization name='CAP_DEFERS_CONNECTION_VERIFICATION' value='no' />
+                  <customization name='CAP_DISABLE_EXTRACT_TABLE_INDEXING' value='no' />
+                  <customization name='CAP_EQUIJOINS_ONLY' value='no' />
+                  <customization name='CAP_FAST_METADATA' value='yes' />
+                  <customization name='CAP_GREENPLUM_TRUST_METADATA_CONTAINSNULL' value='no' />
+                  <customization name='CAP_HIVE_FIX_METADATA_NAMES' value='no' />
+                  <customization name='CAP_INDEX_TEMP_TABLES' value='no' />
+                  <customization name='CAP_INSERT_TEMP_EXEC_STORED_PROCEDURE' value='no' />
+                  <customization name='CAP_LOCAL_ALIASES_CASE_INSENSITIVE' value='no' />
+                  <customization name='CAP_ODBC_ALWAYS_THROW_CONNECT_ERRORS' value='no' />
+                  <customization name='CAP_ODBC_BIND_FORCE_DATETIME_AS_CHAR' value='no' />
+                  <customization name='CAP_ODBC_BIND_FORCE_DATE_AS_CHAR' value='no' />
+                  <customization name='CAP_ODBC_BIND_FORCE_MAX_STRING_BUFFERS' value='no' />
+                  <customization name='CAP_ODBC_BIND_FORCE_MEDIUM_STRING_BUFFERS' value='no' />
+                  <customization name='CAP_ODBC_BIND_FORCE_SIGNED' value='no' />
+                  <customization name='CAP_ODBC_BIND_FORCE_SMALL_STRING_BUFFERS' value='no' />
+                  <customization name='CAP_ODBC_BIND_SUPPRESS_INT64' value='no' />
+                  <customization name='CAP_ODBC_BIND_SUPPRESS_PREFERRED_TYPES' value='no' />
+                  <customization name='CAP_ODBC_BIND_SUPPRESS_WIDE_CHAR' value='no' />
+                  <customization name='CAP_ODBC_CURSOR_DYNAMIC' value='no' />
+                  <customization name='CAP_ODBC_CURSOR_FORWARD_ONLY' value='no' />
+                  <customization name='CAP_ODBC_CURSOR_KEYSET_DRIVEN' value='no' />
+                  <customization name='CAP_ODBC_CURSOR_STATIC' value='no' />
+                  <customization name='CAP_ODBC_DRIVER_HIVE_ASSUME_LATEST' value='no' />
+                  <customization name='CAP_ODBC_ERROR_IGNORE_FALSE_ALARM' value='no' />
+                  <customization name='CAP_ODBC_FETCH_BUFFERS_RESIZABLE' value='no' />
+                  <customization name='CAP_ODBC_FETCH_BUFFERS_SIZE_MASSIVE' value='no' />
+                  <customization name='CAP_ODBC_FETCH_CONTINUE_ON_ERROR' value='no' />
+                  <customization name='CAP_ODBC_FORCE_SINGLE_ROW_BINDING' value='no' />
+                  <customization name='CAP_ODBC_METADATA_STRING_LENGTH_UNKNOWN' value='no' />
+                  <customization name='CAP_ODBC_METADATA_SUPPRESS_SQLCOLUMNS_API' value='no' />
+                  <customization name='CAP_ODBC_METADATA_SUPPRESS_SQLFOREIGNKEYS_API' value='no' />
+                  <customization name='CAP_ODBC_METADATA_SUPPRESS_SQLPRIMARYKEYS_API' value='no' />
+                  <customization name='CAP_ODBC_METADATA_SUPPRESS_SQLSTATISTICS_API' value='no' />
+                  <customization name='CAP_ODBC_QUERY_USE_PREPARE_PARAMETER_MARKER' value='no' />
+                  <customization name='CAP_ODBC_REBIND_SKIP_UNBIND' value='no' />
+                  <customization name='CAP_ODBC_TRIM_VARCHAR_PADDING' value='no' />
+                  <customization name='CAP_ODBC_UNBIND_AUTO' value='no' />
+                  <customization name='CAP_ODBC_UNBIND_BATCH' value='no' />
+                  <customization name='CAP_ODBC_UNBIND_EACH' value='no' />
+                  <customization name='CAP_ODBC_USE_NATIVE_PROTOCOL' value='no' />
+                  <customization name='CAP_PADDED_SEMANTICS_NCHAR_NVARCHAR' value='no' />
+                  <customization name='CAP_QUERY_ALLOW_JOIN_REORDER' value='yes' />
+                  <customization name='CAP_QUERY_ALLOW_PARTIAL_AGGREGATION' value='yes' />
+                  <customization name='CAP_QUERY_ALWAYS_USE_AQ_CACHE' value='no' />
+                  <customization name='CAP_QUERY_AVOID_EXPRESSION_INLINING' value='no' />
+                  <customization name='CAP_QUERY_BLENDING_ALWAYS_USE_LOCAL_MAPPING_TABLES' value='no' />
+                  <customization name='CAP_QUERY_BLENDING_PREFER_LOCAL_MAPPING_TABLES' value='yes' />
+                  <customization name='CAP_QUERY_BLENDING_REMOTE_MAPPING_TABLES' value='yes' />
+                  <customization name='CAP_QUERY_BOOLEXPR_TO_INTEXPR' value='no' />
+                  <customization name='CAP_QUERY_BOOL_IDENTIFIER_TO_LOGICAL' value='no' />
+                  <customization name='CAP_QUERY_EMPTY_DOMAIN_TOP' value='no' />
+                  <customization name='CAP_QUERY_FORCE_AGGREGATE_MEASURES' value='no' />
+                  <customization name='CAP_QUERY_GROUP_BY_ALIAS' value='no' />
+                  <customization name='CAP_QUERY_GROUP_BY_DEGREE' value='no' />
+                  <customization name='CAP_QUERY_HAVING_REQUIRES_GROUP_BY' value='no' />
+                  <customization name='CAP_QUERY_HAVING_UNSUPPORTED' value='no' />
+                  <customization name='CAP_QUERY_JOIN_ACROSS_SCHEMAS' value='yes' />
+                  <customization name='CAP_QUERY_JOIN_ASSUME_CONSTRAINED' value='no' />
+                  <customization name='CAP_QUERY_JOIN_PUSH_DOWN_CONDITION_EXPRESSIONS' value='no' />
+                  <customization name='CAP_QUERY_JOIN_REQUIRES_SCOPE' value='no' />
+                  <customization name='CAP_QUERY_JOIN_REQUIRES_SUBQUERY' value='no' />
+                  <customization name='CAP_QUERY_NULL_REQUIRES_CAST' value='yes' />
+                  <customization name='CAP_QUERY_RECOMPILE_FAILED_QUERY' value='no' />
+                  <customization name='CAP_QUERY_SELECT_ALIASES_SORTED' value='no' />
+                  <customization name='CAP_QUERY_SORT_BY' value='yes' />
+                  <customization name='CAP_QUERY_SORT_BY_DEGREE' value='yes' />
+                  <customization name='CAP_QUERY_SUBQUERIES' value='yes' />
+                  <customization name='CAP_QUERY_SUBQUERIES_WITH_TOP' value='yes' />
+                  <customization name='CAP_QUERY_SUBQUERY_QUERY_CONTEXT' value='yes' />
+                  <customization name='CAP_QUERY_SUPPORTS_LODJOINS' value='yes' />
+                  <customization name='CAP_QUERY_SUPPORT_ANALYTIC_FUNCTIONS' value='no' />
+                  <customization name='CAP_QUERY_SUPPORT_EMPTY_GROUPBY' value='no' />
+                  <customization name='CAP_QUERY_SUPPRESS_CHECK_DOMAIN_LITERALS_THRESHOLD' value='no' />
+                  <customization name='CAP_QUERY_SUPPRESS_NULL_CHECK_QUERIES' value='no' />
+                  <customization name='CAP_QUERY_TIME_REQUIRES_CAST' value='no' />
+                  <customization name='CAP_QUERY_TOPSTYLE_LIMIT' value='no' />
+                  <customization name='CAP_QUERY_TOPSTYLE_ROWNUM' value='no' />
+                  <customization name='CAP_QUERY_TOPSTYLE_TOP' value='no' />
+                  <customization name='CAP_QUERY_TOP_0_METADATA' value='yes' />
+                  <customization name='CAP_QUERY_TOP_N' value='yes' />
+                  <customization name='CAP_QUERY_USE_DOMAIN_RANGES_OPTIMIZATION' value='yes' />
+                  <customization name='CAP_QUERY_USE_QUERY_FUSION' value='yes' />
+                  <customization name='CAP_QUERY_WHERE_FALSE_METADATA' value='no' />
+                  <customization name='CAP_RELDATEFILT_CASTTODATE' value='no' />
+                  <customization name='CAP_SELECT_INTO' value='no' />
+                  <customization name='CAP_SELECT_TOP_INTO' value='no' />
+                  <customization name='CAP_STORED_PROCEDURE_PREFER_TEMP_TABLE' value='no' />
+                  <customization name='CAP_STORED_PROCEDURE_REPAIR_TEMP_TABLE_STRINGS' value='no' />
+                  <customization name='CAP_STORED_PROCEDURE_TEMP_TABLE_FROM_BUFFER' value='no' />
+                  <customization name='CAP_STORED_PROCEDURE_TEMP_TABLE_FROM_NEW_PROTOCOL' value='no' />
+                  <customization name='CAP_SUPPRESS_CONNECTION_POOLING' value='no' />
+                  <customization name='CAP_SUPPRESS_DISCOVERY_QUERIES' value='no' />
+                  <customization name='CAP_SUPPRESS_GET_SERVER_TIME' value='yes' />
+                  <customization name='CAP_SUPPRESS_QUICK_FILTER_ACCELERATION_VIEWS' value='no' />
+                  <customization name='CAP_SUPPRESS_TEMP_TABLE_CHECKS' value='no' />
+                </customizations>
+              </connection-customization>
+            </connection>
+          </named-connection>
+        </named-connections>
+        <relation join='left' type='join'>
+          <clause type='join'>
+            <expression op='='>
+              <expression op='[avails_impressions].[channel]' />
+              <expression op='[tableau_users].[channel_users]' />
+            </expression>
+          </clause>
+          <relation join='left' type='join'>
+            <clause type='join'>
+              <expression op='='>
+                <expression op='[avails_impressions].[prgsvcid]' />
+                <expression op='STR([api_orgs].[network id])' />
+              </expression>
+            </clause>
+            <relation join='left' type='join'>
+              <clause type='join'>
+                <expression op='AND'>
+                  <expression op='='>
+                    <expression op='[avails_impressions].[houseid]' />
+                    <expression op='[underlyingads].[houseid]' />
+                  </expression>
+                  <expression op='='>
+                    <expression op='[avails_impressions].[industryid]' />
+                    <expression op='[underlyingads].[isci]' />
+                  </expression>
+                </expression>
+              </clause>
+              <relation join='left' type='join'>
+                <clause type='join'>
+                  <expression op='='>
+                    <expression op='[avails_impressions].[campaignid]' />
+                    <expression op='[campaigns].[campaignid]' />
+                  </expression>
+                </clause>
+                <relation connection='athena.1efxplm02wcg5d17gcrmp00mgiee' name='avails_impressions' type='text'>WITH schedule_data AS (SELECT *, CONCAT(substr(starttime,1,length(starttime)-4),&apos;Z&apos;) As starttime_formatted FROM &quot;etete&quot;.&quot;etete&quot;),&#10;&#10;impressions AS (&#10;SELECT &#10;sudid, type, ingested, acrid, adtechclientversion, campaign_event_id, firmwareversion, model, &#10;platformid, networkid, scheduledtime, uaid, campaignid, quartile, &apos;Paid&apos; as reason, &#10;&apos;Paid&apos; as category, CONCAT(sudid,&apos;_&apos;, scheduledtime) as uniqueEvent_id&#10;FROM &quot;etete&quot;.&quot;paid&quot;&#10;&#10;UNION ALL &#10;&#10;SELECT &#10;sudid, type, ingested, acrid, adtechclientversion, campaign_event_id, firmwareversion, model, &#10;platformid, networkid, scheduledtime, uaid, campaignid, &apos;Blocked&apos; as quartile, reason, &#10;category, CONCAT(sudid,&apos;_&apos;, scheduledtime) as uniqueEvent_id&#10;FROM &quot;etete&quot;.&quot;blocked&quot;&#10;)&#10;&#10;SELECT * FROM schedule_data &#10;LEFT JOIN impressions ON impressions.networkid = schedule_data.prgsvcid AND schedule_data.starttime_formatted = impressions.scheduledtime</relation>
+                <relation connection='athena.1efxplm02wcg5d17gcrmp00mgiee' name='campaigns' type='text'>WITH currentFile As (SELECT MAX(DISTINCT CONCAT(partition_0,partition_1,partition_2)) As partition1 FROM &quot;etete&quot;.&quot;campaigns&quot;),&#10; &#10;allFiles As (SELECT *, CONCAT(partition_0,partition_1,partition_2) As partition2 FROM &quot;etete&quot;.&quot;campaigns&quot;)&#10; &#10;SELECT *&#10;FROM allFiles JOIN currentFile&#10;ON partition1 = partition2</relation>
+              </relation>
+              <relation connection='athena.1efxplm02wcg5d17gcrmp00mgiee' name='underlyingads' type='text'>WITH currentFile As (SELECT MAX(DISTINCT CONCAT(partition_0,partition_1,partition_2)) As partition1 FROM &quot;etete&quot;.&quot;underlyingads&quot;),&#10; &#10;allFiles As (SELECT *, CONCAT(partition_0,partition_1,partition_2) As partition2 FROM &quot;etete&quot;.&quot;underlyingads&quot;)&#10; &#10;SELECT *&#10;FROM allFiles JOIN currentFile&#10;ON partition1 = partition2</relation>
+            </relation>
+            <relation connection='athena.1efxplm02wcg5d17gcrmp00mgiee' name='api_orgs' table='[etete].[api_orgs]' type='table' />
+          </relation>
+          <relation connection='athena.1efxplm02wcg5d17gcrmp00mgiee' name='tableau_users' table='[etete].[tableau_users]' type='table' />
+        </relation>
+        <cols>
+          <map key='[__index_level_0__]' value='[underlyingads].[__index_level_0__]' />
+          <map key='[__v (custom_sql_query)]' value='[underlyingads].[__v]' />
+          <map key='[__v]' value='[campaigns].[__v]' />
+          <map key='[_id (custom_sql_query)]' value='[underlyingads].[_id]' />
+          <map key='[acrid (custom_sql_query)]' value='[underlyingads].[acrid]' />
+          <map key='[acrid]' value='[avails_impressions].[acrid]' />
+          <map key='[active (custom_sql_query)]' value='[underlyingads].[active]' />
+          <map key='[active]' value='[campaigns].[active]' />
+          <map key='[adtechclientversion]' value='[avails_impressions].[adtechclientversion]' />
+          <map key='[adtype]' value='[underlyingads].[adtype]' />
+          <map key='[advertiser (custom_sql_query) #1]' value='[underlyingads].[advertiser]' />
+          <map key='[advertiser (custom_sql_query)]' value='[campaigns].[advertiser]' />
+          <map key='[advertiser]' value='[avails_impressions].[advertiser]' />
+          <map key='[agency]' value='[campaigns].[agency]' />
+          <map key='[allnetworksinorgflag]' value='[campaigns].[allnetworksinorgflag]' />
+          <map key='[brand (custom_sql_query)]' value='[underlyingads].[brand]' />
+          <map key='[brand]' value='[avails_impressions].[brand]' />
+          <map key='[breakcode]' value='[avails_impressions].[breakcode]' />
+          <map key='[budget]' value='[campaigns].[budget]' />
+          <map key='[budgetspent]' value='[campaigns].[budgetspent]' />
+          <map key='[campaign_event_id]' value='[avails_impressions].[campaign_event_id]' />
+          <map key='[campaignid (custom_sql_query)]' value='[campaigns].[campaignid]' />
+          <map key='[campaignid]' value='[avails_impressions].[campaignid]' />
+          <map key='[category (custom_sql_query)]' value='[underlyingads].[category]' />
+          <map key='[category]' value='[avails_impressions].[category]' />
+          <map key='[channel]' value='[avails_impressions].[channel]' />
+          <map key='[channel_users]' value='[tableau_users].[channel_users]' />
+          <map key='[checksum]' value='[avails_impressions].[checksum]' />
+          <map key='[coverable]' value='[avails_impressions].[coverable]' />
+          <map key='[cpm (custom_sql_query)]' value='[underlyingads].[cpm]' />
+          <map key='[cpm]' value='[campaigns].[cpm]' />
+          <map key='[created]' value='[avails_impressions].[created]' />
+          <map key='[createdby]' value='[campaigns].[createdby]' />
+          <map key='[createdbytimestamp]' value='[campaigns].[createdbytimestamp]' />
+          <map key='[creativedurationinmilliseconds]' value='[campaigns].[creativedurationinmilliseconds]' />
+          <map key='[creativedurationinseconds]' value='[campaigns].[creativedurationinseconds]' />
+          <map key='[creativeuploaddetails]' value='[campaigns].[creativeuploaddetails]' />
+          <map key='[creativeurl]' value='[campaigns].[creativeurl]' />
+          <map key='[document index (generated)]' value='[api_orgs].[document index (generated)]' />
+          <map key='[duration]' value='[avails_impressions].[duration]' />
+          <map key='[durationinmilliseconds]' value='[underlyingads].[durationinmilliseconds]' />
+          <map key='[durationinseconds]' value='[underlyingads].[durationinseconds]' />
+          <map key='[enddatetime]' value='[campaigns].[enddatetime]' />
+          <map key='[endtime]' value='[avails_impressions].[endtime]' />
+          <map key='[failuredetails]' value='[underlyingads].[failuredetails]' />
+          <map key='[firmwareversion]' value='[avails_impressions].[firmwareversion]' />
+          <map key='[houseid (custom_sql_query)]' value='[underlyingads].[houseid]' />
+          <map key='[houseid]' value='[avails_impressions].[houseid]' />
+          <map key='[industryid]' value='[avails_impressions].[industryid]' />
+          <map key='[ingested]' value='[avails_impressions].[ingested]' />
+          <map key='[isci]' value='[underlyingads].[isci]' />
+          <map key='[lastupdated]' value='[campaigns].[lastupdated]' />
+          <map key='[logscheduleid]' value='[avails_impressions].[logscheduleid]' />
+          <map key='[model]' value='[avails_impressions].[model]' />
+          <map key='[name (api_orgs1)]' value='[api_orgs].[name]' />
+          <map key='[name (networks)]' value='[api_orgs].[name (networks)]' />
+          <map key='[name]' value='[campaigns].[name]' />
+          <map key='[network id]' value='[api_orgs].[network id]' />
+          <map key='[networkid (tableau_users1)]' value='[tableau_users].[networkid]' />
+          <map key='[networkid]' value='[avails_impressions].[networkid]' />
+          <map key='[networks (campaigns)]' value='[campaigns].[networks]' />
+          <map key='[networks index (generated)]' value='[api_orgs].[networks index (generated)]' />
+          <map key='[networks]' value='[underlyingads].[networks]' />
+          <map key='[number of records]' value='[api_orgs].[number of records]' />
+          <map key='[orderid]' value='[avails_impressions].[orderid]' />
+          <map key='[organization id]' value='[api_orgs].[organization id]' />
+          <map key='[organizationid (custom_sql_query)]' value='[underlyingads].[organizationid]' />
+          <map key='[organizationid]' value='[campaigns].[organizationid]' />
+          <map key='[originalfilename]' value='[underlyingads].[originalfilename]' />
+          <map key='[originatoremail]' value='[underlyingads].[originatoremail]' />
+          <map key='[pacing]' value='[campaigns].[pacing]' />
+          <map key='[partition1 (custom_sql_query)]' value='[underlyingads].[partition1]' />
+          <map key='[partition1]' value='[campaigns].[partition1]' />
+          <map key='[partition2 (custom_sql_query)]' value='[underlyingads].[partition2]' />
+          <map key='[partition2]' value='[campaigns].[partition2]' />
+          <map key='[partition_0 (custom_sql_query)]' value='[underlyingads].[partition_0]' />
+          <map key='[partition_0]' value='[campaigns].[partition_0]' />
+          <map key='[partition_1 (custom_sql_query)]' value='[underlyingads].[partition_1]' />
+          <map key='[partition_1]' value='[campaigns].[partition_1]' />
+          <map key='[partition_2 (custom_sql_query)]' value='[underlyingads].[partition_2]' />
+          <map key='[partition_2]' value='[campaigns].[partition_2]' />
+          <map key='[platformid]' value='[avails_impressions].[platformid]' />
+          <map key='[prgsvcid]' value='[avails_impressions].[prgsvcid]' />
+          <map key='[product]' value='[underlyingads].[product]' />
+          <map key='[quartile]' value='[avails_impressions].[quartile]' />
+          <map key='[reason]' value='[avails_impressions].[reason]' />
+          <map key='[recordid]' value='[avails_impressions].[recordid]' />
+          <map key='[records per response json]' value='[api_orgs].[records per response json]' />
+          <map key='[s3path]' value='[underlyingads].[s3path]' />
+          <map key='[scheduledtime]' value='[avails_impressions].[scheduledtime]' />
+          <map key='[segmentid]' value='[campaigns].[segmentid]' />
+          <map key='[segments]' value='[campaigns].[segments]' />
+          <map key='[startdatetime]' value='[campaigns].[startdatetime]' />
+          <map key='[starttime]' value='[avails_impressions].[starttime]' />
+          <map key='[starttime_formatted]' value='[avails_impressions].[starttime_formatted]' />
+          <map key='[status]' value='[underlyingads].[status]' />
+          <map key='[submittedforindexingby]' value='[underlyingads].[submittedforindexingby]' />
+          <map key='[submittedforindexingtimestamp]' value='[underlyingads].[submittedforindexingtimestamp]' />
+          <map key='[sudid]' value='[avails_impressions].[sudid]' />
+          <map key='[tempfilename]' value='[underlyingads].[tempfilename]' />
+          <map key='[title]' value='[avails_impressions].[title]' />
+          <map key='[type]' value='[avails_impressions].[type]' />
+          <map key='[uaid (custom_sql_query)]' value='[underlyingads].[uaid]' />
+          <map key='[uaid]' value='[avails_impressions].[uaid]' />
+          <map key='[uniqueEvent_id]' value='[avails_impressions].[uniqueEvent_id]' />
+          <map key='[updated]' value='[avails_impressions].[updated]' />
+          <map key='[updatedby]' value='[campaigns].[updatedby]' />
+          <map key='[uploadtimestamp]' value='[underlyingads].[uploadtimestamp]' />
+          <map key='[usernames]' value='[tableau_users].[usernames]' />
+          <map key='[videolocation]' value='[underlyingads].[videolocation]' />
+        </cols>
+        <refresh increment-key='' incremental-updates='false' />
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>advertiser</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[advertiser]</local-name>
+            <parent-name>[avails_impressions]</parent-name>
+            <remote-alias>advertiser</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>houseid</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[houseid]</local-name>
+            <parent-name>[avails_impressions]</parent-name>
+            <remote-alias>houseid</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>breakcode</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[breakcode]</local-name>
+            <parent-name>[avails_impressions]</parent-name>
+            <remote-alias>breakcode</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>prgsvcid</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[prgsvcid]</local-name>
+            <parent-name>[avails_impressions]</parent-name>
+            <remote-alias>prgsvcid</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>orderid</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[orderid]</local-name>
+            <parent-name>[avails_impressions]</parent-name>
+            <remote-alias>orderid</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>19</precision>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>created</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[created]</local-name>
+            <parent-name>[avails_impressions]</parent-name>
+            <remote-alias>created</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>channel</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[channel]</local-name>
+            <parent-name>[avails_impressions]</parent-name>
+            <remote-alias>channel</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>title</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[title]</local-name>
+            <parent-name>[avails_impressions]</parent-name>
+            <remote-alias>title</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>recordid</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[recordid]</local-name>
+            <parent-name>[avails_impressions]</parent-name>
+            <remote-alias>recordid</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>duration</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[duration]</local-name>
+            <parent-name>[avails_impressions]</parent-name>
+            <remote-alias>duration</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>19</precision>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>industryid</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[industryid]</local-name>
+            <parent-name>[avails_impressions]</parent-name>
+            <remote-alias>industryid</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>coverable</remote-name>
+            <remote-type>11</remote-type>
+            <local-name>[coverable]</local-name>
+            <parent-name>[avails_impressions]</parent-name>
+            <remote-alias>coverable</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>boolean</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>checksum</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[checksum]</local-name>
+            <parent-name>[avails_impressions]</parent-name>
+            <remote-alias>checksum</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>logscheduleid</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[logscheduleid]</local-name>
+            <parent-name>[avails_impressions]</parent-name>
+            <remote-alias>logscheduleid</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>starttime</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[starttime]</local-name>
+            <parent-name>[avails_impressions]</parent-name>
+            <remote-alias>starttime</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>endtime</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[endtime]</local-name>
+            <parent-name>[avails_impressions]</parent-name>
+            <remote-alias>endtime</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>brand</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[brand]</local-name>
+            <parent-name>[avails_impressions]</parent-name>
+            <remote-alias>brand</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>updated</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[updated]</local-name>
+            <parent-name>[avails_impressions]</parent-name>
+            <remote-alias>updated</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>starttime_formatted</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[starttime_formatted]</local-name>
+            <parent-name>[avails_impressions]</parent-name>
+            <remote-alias>starttime_formatted</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>sudid</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[sudid]</local-name>
+            <parent-name>[avails_impressions]</parent-name>
+            <remote-alias>sudid</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>type</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[type]</local-name>
+            <parent-name>[avails_impressions]</parent-name>
+            <remote-alias>type</remote-alias>
+            <ordinal>21</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ingested</remote-name>
+            <remote-type>135</remote-type>
+            <local-name>[ingested]</local-name>
+            <parent-name>[avails_impressions]</parent-name>
+            <remote-alias>ingested</remote-alias>
+            <ordinal>22</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>acrid</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[acrid]</local-name>
+            <parent-name>[avails_impressions]</parent-name>
+            <remote-alias>acrid</remote-alias>
+            <ordinal>23</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>adtechclientversion</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[adtechclientversion]</local-name>
+            <parent-name>[avails_impressions]</parent-name>
+            <remote-alias>adtechclientversion</remote-alias>
+            <ordinal>24</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>campaign_event_id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[campaign_event_id]</local-name>
+            <parent-name>[avails_impressions]</parent-name>
+            <remote-alias>campaign_event_id</remote-alias>
+            <ordinal>25</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>firmwareversion</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[firmwareversion]</local-name>
+            <parent-name>[avails_impressions]</parent-name>
+            <remote-alias>firmwareversion</remote-alias>
+            <ordinal>26</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>model</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[model]</local-name>
+            <parent-name>[avails_impressions]</parent-name>
+            <remote-alias>model</remote-alias>
+            <ordinal>27</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>platformid</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[platformid]</local-name>
+            <parent-name>[avails_impressions]</parent-name>
+            <remote-alias>platformid</remote-alias>
+            <ordinal>28</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>networkid</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[networkid]</local-name>
+            <parent-name>[avails_impressions]</parent-name>
+            <remote-alias>networkid</remote-alias>
+            <ordinal>29</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>scheduledtime</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[scheduledtime]</local-name>
+            <parent-name>[avails_impressions]</parent-name>
+            <remote-alias>scheduledtime</remote-alias>
+            <ordinal>30</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>uaid</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[uaid]</local-name>
+            <parent-name>[avails_impressions]</parent-name>
+            <remote-alias>uaid</remote-alias>
+            <ordinal>31</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>campaignid</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[campaignid]</local-name>
+            <parent-name>[avails_impressions]</parent-name>
+            <remote-alias>campaignid</remote-alias>
+            <ordinal>32</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>quartile</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[quartile]</local-name>
+            <parent-name>[avails_impressions]</parent-name>
+            <remote-alias>quartile</remote-alias>
+            <ordinal>33</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>reason</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[reason]</local-name>
+            <parent-name>[avails_impressions]</parent-name>
+            <remote-alias>reason</remote-alias>
+            <ordinal>34</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>category</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[category]</local-name>
+            <parent-name>[avails_impressions]</parent-name>
+            <remote-alias>category</remote-alias>
+            <ordinal>35</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>uniqueEvent_id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[uniqueEvent_id]</local-name>
+            <parent-name>[avails_impressions]</parent-name>
+            <remote-alias>uniqueEvent_id</remote-alias>
+            <ordinal>36</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[name]</local-name>
+            <parent-name>[campaigns]</parent-name>
+            <remote-alias>name</remote-alias>
+            <ordinal>38</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>creativeurl</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[creativeurl]</local-name>
+            <parent-name>[campaigns]</parent-name>
+            <remote-alias>creativeurl</remote-alias>
+            <ordinal>39</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>creativedurationinmilliseconds</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[creativedurationinmilliseconds]</local-name>
+            <parent-name>[campaigns]</parent-name>
+            <remote-alias>creativedurationinmilliseconds</remote-alias>
+            <ordinal>40</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>53</precision>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>createdby</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[createdby]</local-name>
+            <parent-name>[campaigns]</parent-name>
+            <remote-alias>createdby</remote-alias>
+            <ordinal>41</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>createdbytimestamp</remote-name>
+            <remote-type>135</remote-type>
+            <local-name>[createdbytimestamp]</local-name>
+            <parent-name>[campaigns]</parent-name>
+            <remote-alias>createdbytimestamp</remote-alias>
+            <ordinal>42</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>organizationid</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[organizationid]</local-name>
+            <parent-name>[campaigns]</parent-name>
+            <remote-alias>organizationid</remote-alias>
+            <ordinal>43</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>budget</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[budget]</local-name>
+            <parent-name>[campaigns]</parent-name>
+            <remote-alias>budget</remote-alias>
+            <ordinal>44</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>53</precision>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>cpm</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[cpm]</local-name>
+            <parent-name>[campaigns]</parent-name>
+            <remote-alias>cpm</remote-alias>
+            <ordinal>45</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>53</precision>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>startdatetime</remote-name>
+            <remote-type>135</remote-type>
+            <local-name>[startdatetime]</local-name>
+            <parent-name>[campaigns]</parent-name>
+            <remote-alias>startdatetime</remote-alias>
+            <ordinal>46</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>enddatetime</remote-name>
+            <remote-type>135</remote-type>
+            <local-name>[enddatetime]</local-name>
+            <parent-name>[campaigns]</parent-name>
+            <remote-alias>enddatetime</remote-alias>
+            <ordinal>47</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>pacing</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[pacing]</local-name>
+            <parent-name>[campaigns]</parent-name>
+            <remote-alias>pacing</remote-alias>
+            <ordinal>48</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>segments</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[segments]</local-name>
+            <parent-name>[campaigns]</parent-name>
+            <remote-alias>segments</remote-alias>
+            <ordinal>49</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>campaignid</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[campaignid (custom_sql_query)]</local-name>
+            <parent-name>[campaigns]</parent-name>
+            <remote-alias>campaignid</remote-alias>
+            <ordinal>50</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>active</remote-name>
+            <remote-type>11</remote-type>
+            <local-name>[active]</local-name>
+            <parent-name>[campaigns]</parent-name>
+            <remote-alias>active</remote-alias>
+            <ordinal>51</ordinal>
+            <local-type>boolean</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>lastupdated</remote-name>
+            <remote-type>135</remote-type>
+            <local-name>[lastupdated]</local-name>
+            <parent-name>[campaigns]</parent-name>
+            <remote-alias>lastupdated</remote-alias>
+            <ordinal>52</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>__v</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[__v]</local-name>
+            <parent-name>[campaigns]</parent-name>
+            <remote-alias>__v</remote-alias>
+            <ordinal>53</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>19</precision>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>networks</remote-name>
+            <remote-type>1</remote-type>
+            <local-name>[networks (campaigns)]</local-name>
+            <parent-name>[campaigns]</parent-name>
+            <remote-alias>networks</remote-alias>
+            <ordinal>54</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>4294967292</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>segmentid</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[segmentid]</local-name>
+            <parent-name>[campaigns]</parent-name>
+            <remote-alias>segmentid</remote-alias>
+            <ordinal>55</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>creativedurationinseconds</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[creativedurationinseconds]</local-name>
+            <parent-name>[campaigns]</parent-name>
+            <remote-alias>creativedurationinseconds</remote-alias>
+            <ordinal>56</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>53</precision>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>budgetspent</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[budgetspent]</local-name>
+            <parent-name>[campaigns]</parent-name>
+            <remote-alias>budgetspent</remote-alias>
+            <ordinal>57</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>53</precision>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>agency</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[agency]</local-name>
+            <parent-name>[campaigns]</parent-name>
+            <remote-alias>agency</remote-alias>
+            <ordinal>58</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>advertiser</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[advertiser (custom_sql_query)]</local-name>
+            <parent-name>[campaigns]</parent-name>
+            <remote-alias>advertiser</remote-alias>
+            <ordinal>59</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>53</precision>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>updatedby</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[updatedby]</local-name>
+            <parent-name>[campaigns]</parent-name>
+            <remote-alias>updatedby</remote-alias>
+            <ordinal>60</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>creativeuploaddetails</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[creativeuploaddetails]</local-name>
+            <parent-name>[campaigns]</parent-name>
+            <remote-alias>creativeuploaddetails</remote-alias>
+            <ordinal>61</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>allnetworksinorgflag</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[allnetworksinorgflag]</local-name>
+            <parent-name>[campaigns]</parent-name>
+            <remote-alias>allnetworksinorgflag</remote-alias>
+            <ordinal>62</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>partition_0</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[partition_0]</local-name>
+            <parent-name>[campaigns]</parent-name>
+            <remote-alias>partition_0</remote-alias>
+            <ordinal>63</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>partition_1</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[partition_1]</local-name>
+            <parent-name>[campaigns]</parent-name>
+            <remote-alias>partition_1</remote-alias>
+            <ordinal>64</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>partition_2</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[partition_2]</local-name>
+            <parent-name>[campaigns]</parent-name>
+            <remote-alias>partition_2</remote-alias>
+            <ordinal>65</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>partition2</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[partition2]</local-name>
+            <parent-name>[campaigns]</parent-name>
+            <remote-alias>partition2</remote-alias>
+            <ordinal>66</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>partition1</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[partition1]</local-name>
+            <parent-name>[campaigns]</parent-name>
+            <remote-alias>partition1</remote-alias>
+            <ordinal>67</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>__index_level_0__</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[__index_level_0__]</local-name>
+            <parent-name>[underlyingads]</parent-name>
+            <remote-alias>__index_level_0__</remote-alias>
+            <ordinal>69</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>_id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[_id (custom_sql_query)]</local-name>
+            <parent-name>[underlyingads]</parent-name>
+            <remote-alias>_id</remote-alias>
+            <ordinal>70</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>originatoremail</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[originatoremail]</local-name>
+            <parent-name>[underlyingads]</parent-name>
+            <remote-alias>originatoremail</remote-alias>
+            <ordinal>71</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>organizationid</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[organizationid (custom_sql_query)]</local-name>
+            <parent-name>[underlyingads]</parent-name>
+            <remote-alias>organizationid</remote-alias>
+            <ordinal>72</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>networks</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[networks]</local-name>
+            <parent-name>[underlyingads]</parent-name>
+            <remote-alias>networks</remote-alias>
+            <ordinal>73</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>status</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[status]</local-name>
+            <parent-name>[underlyingads]</parent-name>
+            <remote-alias>status</remote-alias>
+            <ordinal>74</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>originalfilename</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[originalfilename]</local-name>
+            <parent-name>[underlyingads]</parent-name>
+            <remote-alias>originalfilename</remote-alias>
+            <ordinal>75</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>tempfilename</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[tempfilename]</local-name>
+            <parent-name>[underlyingads]</parent-name>
+            <remote-alias>tempfilename</remote-alias>
+            <ordinal>76</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>uploadtimestamp</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[uploadtimestamp]</local-name>
+            <parent-name>[underlyingads]</parent-name>
+            <remote-alias>uploadtimestamp</remote-alias>
+            <ordinal>77</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>uaid</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[uaid (custom_sql_query)]</local-name>
+            <parent-name>[underlyingads]</parent-name>
+            <remote-alias>uaid</remote-alias>
+            <ordinal>78</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>active</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[active (custom_sql_query)]</local-name>
+            <parent-name>[underlyingads]</parent-name>
+            <remote-alias>active</remote-alias>
+            <ordinal>79</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>__v</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[__v (custom_sql_query)]</local-name>
+            <parent-name>[underlyingads]</parent-name>
+            <remote-alias>__v</remote-alias>
+            <ordinal>80</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>durationinmilliseconds</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[durationinmilliseconds]</local-name>
+            <parent-name>[underlyingads]</parent-name>
+            <remote-alias>durationinmilliseconds</remote-alias>
+            <ordinal>81</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>s3path</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[s3path]</local-name>
+            <parent-name>[underlyingads]</parent-name>
+            <remote-alias>s3path</remote-alias>
+            <ordinal>82</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>videolocation</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[videolocation]</local-name>
+            <parent-name>[underlyingads]</parent-name>
+            <remote-alias>videolocation</remote-alias>
+            <ordinal>83</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>adtype</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[adtype]</local-name>
+            <parent-name>[underlyingads]</parent-name>
+            <remote-alias>adtype</remote-alias>
+            <ordinal>84</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>brand</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[brand (custom_sql_query)]</local-name>
+            <parent-name>[underlyingads]</parent-name>
+            <remote-alias>brand</remote-alias>
+            <ordinal>85</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>category</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[category (custom_sql_query)]</local-name>
+            <parent-name>[underlyingads]</parent-name>
+            <remote-alias>category</remote-alias>
+            <ordinal>86</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>houseid</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[houseid (custom_sql_query)]</local-name>
+            <parent-name>[underlyingads]</parent-name>
+            <remote-alias>houseid</remote-alias>
+            <ordinal>87</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>product</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[product]</local-name>
+            <parent-name>[underlyingads]</parent-name>
+            <remote-alias>product</remote-alias>
+            <ordinal>88</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>submittedforindexingby</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[submittedforindexingby]</local-name>
+            <parent-name>[underlyingads]</parent-name>
+            <remote-alias>submittedforindexingby</remote-alias>
+            <ordinal>89</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>submittedforindexingtimestamp</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[submittedforindexingtimestamp]</local-name>
+            <parent-name>[underlyingads]</parent-name>
+            <remote-alias>submittedforindexingtimestamp</remote-alias>
+            <ordinal>90</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>acrid</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[acrid (custom_sql_query)]</local-name>
+            <parent-name>[underlyingads]</parent-name>
+            <remote-alias>acrid</remote-alias>
+            <ordinal>91</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>isci</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[isci]</local-name>
+            <parent-name>[underlyingads]</parent-name>
+            <remote-alias>isci</remote-alias>
+            <ordinal>92</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>advertiser</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[advertiser (custom_sql_query) #1]</local-name>
+            <parent-name>[underlyingads]</parent-name>
+            <remote-alias>advertiser</remote-alias>
+            <ordinal>93</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>cpm</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[cpm (custom_sql_query)]</local-name>
+            <parent-name>[underlyingads]</parent-name>
+            <remote-alias>cpm</remote-alias>
+            <ordinal>94</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>failuredetails</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[failuredetails]</local-name>
+            <parent-name>[underlyingads]</parent-name>
+            <remote-alias>failuredetails</remote-alias>
+            <ordinal>95</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>durationinseconds</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[durationinseconds]</local-name>
+            <parent-name>[underlyingads]</parent-name>
+            <remote-alias>durationinseconds</remote-alias>
+            <ordinal>96</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>partition_0</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[partition_0 (custom_sql_query)]</local-name>
+            <parent-name>[underlyingads]</parent-name>
+            <remote-alias>partition_0</remote-alias>
+            <ordinal>97</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>partition_1</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[partition_1 (custom_sql_query)]</local-name>
+            <parent-name>[underlyingads]</parent-name>
+            <remote-alias>partition_1</remote-alias>
+            <ordinal>98</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>partition_2</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[partition_2 (custom_sql_query)]</local-name>
+            <parent-name>[underlyingads]</parent-name>
+            <remote-alias>partition_2</remote-alias>
+            <ordinal>99</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>partition2</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[partition2 (custom_sql_query)]</local-name>
+            <parent-name>[underlyingads]</parent-name>
+            <remote-alias>partition2</remote-alias>
+            <ordinal>100</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>partition1</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[partition1 (custom_sql_query)]</local-name>
+            <parent-name>[underlyingads]</parent-name>
+            <remote-alias>partition1</remote-alias>
+            <ordinal>101</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>document index (generated)</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[document index (generated)]</local-name>
+            <parent-name>[api_orgs]</parent-name>
+            <remote-alias>document index (generated)</remote-alias>
+            <ordinal>103</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>19</precision>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>records per response json</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[records per response json]</local-name>
+            <parent-name>[api_orgs]</parent-name>
+            <remote-alias>records per response json</remote-alias>
+            <ordinal>104</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>19</precision>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>number of records</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[number of records]</local-name>
+            <parent-name>[api_orgs]</parent-name>
+            <remote-alias>number of records</remote-alias>
+            <ordinal>105</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>19</precision>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>name (networks)</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[name (networks)]</local-name>
+            <parent-name>[api_orgs]</parent-name>
+            <remote-alias>name (networks)</remote-alias>
+            <ordinal>106</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[name (api_orgs1)]</local-name>
+            <parent-name>[api_orgs]</parent-name>
+            <remote-alias>name</remote-alias>
+            <ordinal>107</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>network id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[network id]</local-name>
+            <parent-name>[api_orgs]</parent-name>
+            <remote-alias>network id</remote-alias>
+            <ordinal>108</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>19</precision>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>networks index (generated)</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[networks index (generated)]</local-name>
+            <parent-name>[api_orgs]</parent-name>
+            <remote-alias>networks index (generated)</remote-alias>
+            <ordinal>109</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>19</precision>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>organization id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[organization id]</local-name>
+            <parent-name>[api_orgs]</parent-name>
+            <remote-alias>organization id</remote-alias>
+            <ordinal>110</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>channel_users</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[channel_users]</local-name>
+            <parent-name>[tableau_users]</parent-name>
+            <remote-alias>channel_users</remote-alias>
+            <ordinal>112</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>networkid</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[networkid (tableau_users1)]</local-name>
+            <parent-name>[tableau_users]</parent-name>
+            <remote-alias>networkid</remote-alias>
+            <ordinal>113</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>19</precision>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>usernames</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[usernames]</local-name>
+            <parent-name>[tableau_users]</parent-name>
+            <remote-alias>usernames</remote-alias>
+            <ordinal>114</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Publish Empty' datatype='boolean' name='[Calculation_4057039611727417344]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='[Parameters].[Parameter 1]' />
+      </column>
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <extract count='-1' enabled='true' units='records'>
+        <connection access_mode='readonly' authentication='auth-none' author-locale='en_GB' class='hyper' dbname='/Users/loru9001/Documents/My Tableau Repository/Datasources/ETETE Avails_Impressions.hyper' default-settings='yes' schema='Extract' sslmode='' tablename='Extract' update-time='05/04/2020 09:39:43 AM' username='tableau_internal_user'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <cols>
+            <map key='[__index_level_0__]' value='[Extract].[__index_level_0__]' />
+            <map key='[__v (custom_sql_query)]' value='[Extract].[__v]' />
+            <map key='[__v]' value='[Extract].[__v1]' />
+            <map key='[_id (custom_sql_query)]' value='[Extract].[_id]' />
+            <map key='[acrid (custom_sql_query)]' value='[Extract].[acrid]' />
+            <map key='[acrid]' value='[Extract].[acrid1]' />
+            <map key='[active (custom_sql_query)]' value='[Extract].[active]' />
+            <map key='[active]' value='[Extract].[active1]' />
+            <map key='[adtechclientversion]' value='[Extract].[adtechclientversion]' />
+            <map key='[adtype]' value='[Extract].[adtype]' />
+            <map key='[advertiser (custom_sql_query) #1]' value='[Extract].[advertiser]' />
+            <map key='[advertiser (custom_sql_query)]' value='[Extract].[advertiser1]' />
+            <map key='[advertiser]' value='[Extract].[advertiser2]' />
+            <map key='[agency]' value='[Extract].[agency]' />
+            <map key='[allnetworksinorgflag]' value='[Extract].[allnetworksinorgflag]' />
+            <map key='[brand (custom_sql_query)]' value='[Extract].[brand]' />
+            <map key='[brand]' value='[Extract].[brand1]' />
+            <map key='[breakcode]' value='[Extract].[breakcode]' />
+            <map key='[budget]' value='[Extract].[budget]' />
+            <map key='[budgetspent]' value='[Extract].[budgetspent]' />
+            <map key='[campaign_event_id]' value='[Extract].[campaign_event_id]' />
+            <map key='[campaignid (custom_sql_query)]' value='[Extract].[campaignid]' />
+            <map key='[campaignid]' value='[Extract].[campaignid1]' />
+            <map key='[category (custom_sql_query)]' value='[Extract].[category]' />
+            <map key='[category]' value='[Extract].[category1]' />
+            <map key='[channel]' value='[Extract].[channel]' />
+            <map key='[channel_users]' value='[Extract].[channel_users]' />
+            <map key='[checksum]' value='[Extract].[checksum]' />
+            <map key='[coverable]' value='[Extract].[coverable]' />
+            <map key='[cpm (custom_sql_query)]' value='[Extract].[cpm]' />
+            <map key='[cpm]' value='[Extract].[cpm1]' />
+            <map key='[created]' value='[Extract].[created]' />
+            <map key='[createdby]' value='[Extract].[createdby]' />
+            <map key='[createdbytimestamp]' value='[Extract].[createdbytimestamp]' />
+            <map key='[creativedurationinmilliseconds]' value='[Extract].[creativedurationinmilliseconds]' />
+            <map key='[creativedurationinseconds]' value='[Extract].[creativedurationinseconds]' />
+            <map key='[creativeuploaddetails]' value='[Extract].[creativeuploaddetails]' />
+            <map key='[creativeurl]' value='[Extract].[creativeurl]' />
+            <map key='[document index (generated)]' value='[Extract].[document index (generated)]' />
+            <map key='[duration]' value='[Extract].[duration]' />
+            <map key='[durationinmilliseconds]' value='[Extract].[durationinmilliseconds]' />
+            <map key='[durationinseconds]' value='[Extract].[durationinseconds]' />
+            <map key='[enddatetime]' value='[Extract].[enddatetime]' />
+            <map key='[endtime]' value='[Extract].[endtime]' />
+            <map key='[failuredetails]' value='[Extract].[failuredetails]' />
+            <map key='[firmwareversion]' value='[Extract].[firmwareversion]' />
+            <map key='[houseid (custom_sql_query)]' value='[Extract].[houseid]' />
+            <map key='[houseid]' value='[Extract].[houseid1]' />
+            <map key='[industryid]' value='[Extract].[industryid]' />
+            <map key='[ingested]' value='[Extract].[ingested]' />
+            <map key='[isci]' value='[Extract].[isci]' />
+            <map key='[lastupdated]' value='[Extract].[lastupdated]' />
+            <map key='[logscheduleid]' value='[Extract].[logscheduleid]' />
+            <map key='[model]' value='[Extract].[model]' />
+            <map key='[name (api_orgs1)]' value='[Extract].[name]' />
+            <map key='[name (networks)]' value='[Extract].[name (networks)]' />
+            <map key='[name]' value='[Extract].[name1]' />
+            <map key='[network id]' value='[Extract].[network id]' />
+            <map key='[networkid (tableau_users1)]' value='[Extract].[networkid]' />
+            <map key='[networkid]' value='[Extract].[networkid1]' />
+            <map key='[networks (campaigns)]' value='[Extract].[networks]' />
+            <map key='[networks index (generated)]' value='[Extract].[networks index (generated)]' />
+            <map key='[networks]' value='[Extract].[networks1]' />
+            <map key='[number of records]' value='[Extract].[number of records]' />
+            <map key='[orderid]' value='[Extract].[orderid]' />
+            <map key='[organization id]' value='[Extract].[organization id]' />
+            <map key='[organizationid (custom_sql_query)]' value='[Extract].[organizationid]' />
+            <map key='[organizationid]' value='[Extract].[organizationid1]' />
+            <map key='[originalfilename]' value='[Extract].[originalfilename]' />
+            <map key='[originatoremail]' value='[Extract].[originatoremail]' />
+            <map key='[pacing]' value='[Extract].[pacing]' />
+            <map key='[partition1 (custom_sql_query)]' value='[Extract].[partition1]' />
+            <map key='[partition1]' value='[Extract].[partition11]' />
+            <map key='[partition2 (custom_sql_query)]' value='[Extract].[partition2]' />
+            <map key='[partition2]' value='[Extract].[partition21]' />
+            <map key='[partition_0 (custom_sql_query)]' value='[Extract].[partition_0]' />
+            <map key='[partition_0]' value='[Extract].[partition_01]' />
+            <map key='[partition_1 (custom_sql_query)]' value='[Extract].[partition_1]' />
+            <map key='[partition_1]' value='[Extract].[partition_11]' />
+            <map key='[partition_2 (custom_sql_query)]' value='[Extract].[partition_2]' />
+            <map key='[partition_2]' value='[Extract].[partition_21]' />
+            <map key='[platformid]' value='[Extract].[platformid]' />
+            <map key='[prgsvcid]' value='[Extract].[prgsvcid]' />
+            <map key='[product]' value='[Extract].[product]' />
+            <map key='[quartile]' value='[Extract].[quartile]' />
+            <map key='[reason]' value='[Extract].[reason]' />
+            <map key='[recordid]' value='[Extract].[recordid]' />
+            <map key='[records per response json]' value='[Extract].[records per response json]' />
+            <map key='[s3path]' value='[Extract].[s3path]' />
+            <map key='[scheduledtime]' value='[Extract].[scheduledtime]' />
+            <map key='[segmentid]' value='[Extract].[segmentid]' />
+            <map key='[segments]' value='[Extract].[segments]' />
+            <map key='[startdatetime]' value='[Extract].[startdatetime]' />
+            <map key='[starttime]' value='[Extract].[starttime]' />
+            <map key='[starttime_formatted]' value='[Extract].[starttime_formatted]' />
+            <map key='[status]' value='[Extract].[status]' />
+            <map key='[submittedforindexingby]' value='[Extract].[submittedforindexingby]' />
+            <map key='[submittedforindexingtimestamp]' value='[Extract].[submittedforindexingtimestamp]' />
+            <map key='[sudid]' value='[Extract].[sudid]' />
+            <map key='[tempfilename]' value='[Extract].[tempfilename]' />
+            <map key='[title]' value='[Extract].[title]' />
+            <map key='[type]' value='[Extract].[type]' />
+            <map key='[uaid (custom_sql_query)]' value='[Extract].[uaid]' />
+            <map key='[uaid]' value='[Extract].[uaid1]' />
+            <map key='[uniqueEvent_id]' value='[Extract].[uniqueEvent_id]' />
+            <map key='[updated]' value='[Extract].[updated]' />
+            <map key='[updatedby]' value='[Extract].[updatedby]' />
+            <map key='[uploadtimestamp]' value='[Extract].[uploadtimestamp]' />
+            <map key='[usernames]' value='[Extract].[usernames]' />
+            <map key='[videolocation]' value='[Extract].[videolocation]' />
+          </cols>
+          <refresh increment-key='' incremental-updates='false'>
+            <refresh-event add-from-file-path='ETETE Avails_Impressions' increment-value='%null%' refresh-type='create' rows-inserted='0' timestamp-start='2020-05-04 09:39:43.235' />
+          </refresh>
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>advertiser2</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[advertiser]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>advertiser2</remote-alias>
+              <ordinal>0</ordinal>
+              <family>avails_impressions</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>houseid1</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[houseid]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>houseid1</remote-alias>
+              <ordinal>1</ordinal>
+              <family>avails_impressions</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>breakcode</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[breakcode]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>breakcode</remote-alias>
+              <ordinal>2</ordinal>
+              <family>avails_impressions</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>prgsvcid</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[prgsvcid]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>prgsvcid</remote-alias>
+              <ordinal>3</ordinal>
+              <family>avails_impressions</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>orderid</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[orderid]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>orderid</remote-alias>
+              <ordinal>4</ordinal>
+              <family>avails_impressions</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>created</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[created]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>created</remote-alias>
+              <ordinal>5</ordinal>
+              <family>avails_impressions</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>channel</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[channel]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>channel</remote-alias>
+              <ordinal>6</ordinal>
+              <family>avails_impressions</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>title</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[title]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>title</remote-alias>
+              <ordinal>7</ordinal>
+              <family>avails_impressions</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>recordid</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[recordid]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>recordid</remote-alias>
+              <ordinal>8</ordinal>
+              <family>avails_impressions</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>duration</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[duration]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>duration</remote-alias>
+              <ordinal>9</ordinal>
+              <family>avails_impressions</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>industryid</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[industryid]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>industryid</remote-alias>
+              <ordinal>10</ordinal>
+              <family>avails_impressions</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>coverable</remote-name>
+              <remote-type>11</remote-type>
+              <local-name>[coverable]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>coverable</remote-alias>
+              <ordinal>11</ordinal>
+              <family>avails_impressions</family>
+              <local-type>boolean</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>checksum</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[checksum]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>checksum</remote-alias>
+              <ordinal>12</ordinal>
+              <family>avails_impressions</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>logscheduleid</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[logscheduleid]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>logscheduleid</remote-alias>
+              <ordinal>13</ordinal>
+              <family>avails_impressions</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>starttime</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[starttime]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>starttime</remote-alias>
+              <ordinal>14</ordinal>
+              <family>avails_impressions</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>endtime</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[endtime]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>endtime</remote-alias>
+              <ordinal>15</ordinal>
+              <family>avails_impressions</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>brand1</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[brand]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>brand1</remote-alias>
+              <ordinal>16</ordinal>
+              <family>avails_impressions</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>updated</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[updated]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>updated</remote-alias>
+              <ordinal>17</ordinal>
+              <family>avails_impressions</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>starttime_formatted</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[starttime_formatted]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>starttime_formatted</remote-alias>
+              <ordinal>18</ordinal>
+              <family>avails_impressions</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>sudid</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[sudid]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>sudid</remote-alias>
+              <ordinal>19</ordinal>
+              <family>avails_impressions</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>type</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[type]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>type</remote-alias>
+              <ordinal>20</ordinal>
+              <family>avails_impressions</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>ingested</remote-name>
+              <remote-type>135</remote-type>
+              <local-name>[ingested]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>ingested</remote-alias>
+              <ordinal>21</ordinal>
+              <family>avails_impressions</family>
+              <local-type>datetime</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>acrid1</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[acrid]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>acrid1</remote-alias>
+              <ordinal>22</ordinal>
+              <family>avails_impressions</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>adtechclientversion</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[adtechclientversion]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>adtechclientversion</remote-alias>
+              <ordinal>23</ordinal>
+              <family>avails_impressions</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>campaign_event_id</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[campaign_event_id]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>campaign_event_id</remote-alias>
+              <ordinal>24</ordinal>
+              <family>avails_impressions</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>firmwareversion</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[firmwareversion]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>firmwareversion</remote-alias>
+              <ordinal>25</ordinal>
+              <family>avails_impressions</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>model</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[model]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>model</remote-alias>
+              <ordinal>26</ordinal>
+              <family>avails_impressions</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>platformid</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[platformid]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>platformid</remote-alias>
+              <ordinal>27</ordinal>
+              <family>avails_impressions</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>networkid1</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[networkid]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>networkid1</remote-alias>
+              <ordinal>28</ordinal>
+              <family>avails_impressions</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>scheduledtime</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[scheduledtime]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>scheduledtime</remote-alias>
+              <ordinal>29</ordinal>
+              <family>avails_impressions</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>uaid1</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[uaid]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>uaid1</remote-alias>
+              <ordinal>30</ordinal>
+              <family>avails_impressions</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>campaignid1</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[campaignid]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>campaignid1</remote-alias>
+              <ordinal>31</ordinal>
+              <family>avails_impressions</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>quartile</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[quartile]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>quartile</remote-alias>
+              <ordinal>32</ordinal>
+              <family>avails_impressions</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>reason</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[reason]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>reason</remote-alias>
+              <ordinal>33</ordinal>
+              <family>avails_impressions</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>category1</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[category]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>category1</remote-alias>
+              <ordinal>34</ordinal>
+              <family>avails_impressions</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>uniqueEvent_id</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[uniqueEvent_id]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>uniqueEvent_id</remote-alias>
+              <ordinal>35</ordinal>
+              <family>avails_impressions</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>name1</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[name]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>name1</remote-alias>
+              <ordinal>36</ordinal>
+              <family>campaigns</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>creativeurl</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[creativeurl]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>creativeurl</remote-alias>
+              <ordinal>37</ordinal>
+              <family>campaigns</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>creativedurationinmilliseconds</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[creativedurationinmilliseconds]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>creativedurationinmilliseconds</remote-alias>
+              <ordinal>38</ordinal>
+              <family>campaigns</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>createdby</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[createdby]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>createdby</remote-alias>
+              <ordinal>39</ordinal>
+              <family>campaigns</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>createdbytimestamp</remote-name>
+              <remote-type>135</remote-type>
+              <local-name>[createdbytimestamp]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>createdbytimestamp</remote-alias>
+              <ordinal>40</ordinal>
+              <family>campaigns</family>
+              <local-type>datetime</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>organizationid1</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[organizationid]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>organizationid1</remote-alias>
+              <ordinal>41</ordinal>
+              <family>campaigns</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>budget</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[budget]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>budget</remote-alias>
+              <ordinal>42</ordinal>
+              <family>campaigns</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>cpm1</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[cpm]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>cpm1</remote-alias>
+              <ordinal>43</ordinal>
+              <family>campaigns</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>startdatetime</remote-name>
+              <remote-type>135</remote-type>
+              <local-name>[startdatetime]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>startdatetime</remote-alias>
+              <ordinal>44</ordinal>
+              <family>campaigns</family>
+              <local-type>datetime</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>enddatetime</remote-name>
+              <remote-type>135</remote-type>
+              <local-name>[enddatetime]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>enddatetime</remote-alias>
+              <ordinal>45</ordinal>
+              <family>campaigns</family>
+              <local-type>datetime</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>pacing</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[pacing]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>pacing</remote-alias>
+              <ordinal>46</ordinal>
+              <family>campaigns</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>segments</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[segments]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>segments</remote-alias>
+              <ordinal>47</ordinal>
+              <family>campaigns</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>campaignid</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[campaignid (custom_sql_query)]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>campaignid</remote-alias>
+              <ordinal>48</ordinal>
+              <family>campaigns</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>active1</remote-name>
+              <remote-type>11</remote-type>
+              <local-name>[active]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>active1</remote-alias>
+              <ordinal>49</ordinal>
+              <family>campaigns</family>
+              <local-type>boolean</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>lastupdated</remote-name>
+              <remote-type>135</remote-type>
+              <local-name>[lastupdated]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>lastupdated</remote-alias>
+              <ordinal>50</ordinal>
+              <family>campaigns</family>
+              <local-type>datetime</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>__v1</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[__v]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>__v1</remote-alias>
+              <ordinal>51</ordinal>
+              <family>campaigns</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>networks</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[networks (campaigns)]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>networks</remote-alias>
+              <ordinal>52</ordinal>
+              <family>campaigns</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>segmentid</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[segmentid]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>segmentid</remote-alias>
+              <ordinal>53</ordinal>
+              <family>campaigns</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>creativedurationinseconds</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[creativedurationinseconds]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>creativedurationinseconds</remote-alias>
+              <ordinal>54</ordinal>
+              <family>campaigns</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>budgetspent</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[budgetspent]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>budgetspent</remote-alias>
+              <ordinal>55</ordinal>
+              <family>campaigns</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>agency</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[agency]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>agency</remote-alias>
+              <ordinal>56</ordinal>
+              <family>campaigns</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>advertiser1</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[advertiser (custom_sql_query)]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>advertiser1</remote-alias>
+              <ordinal>57</ordinal>
+              <family>campaigns</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>updatedby</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[updatedby]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>updatedby</remote-alias>
+              <ordinal>58</ordinal>
+              <family>campaigns</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>creativeuploaddetails</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[creativeuploaddetails]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>creativeuploaddetails</remote-alias>
+              <ordinal>59</ordinal>
+              <family>campaigns</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>allnetworksinorgflag</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[allnetworksinorgflag]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>allnetworksinorgflag</remote-alias>
+              <ordinal>60</ordinal>
+              <family>campaigns</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>partition_01</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[partition_0]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>partition_01</remote-alias>
+              <ordinal>61</ordinal>
+              <family>campaigns</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>partition_11</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[partition_1]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>partition_11</remote-alias>
+              <ordinal>62</ordinal>
+              <family>campaigns</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>partition_21</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[partition_2]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>partition_21</remote-alias>
+              <ordinal>63</ordinal>
+              <family>campaigns</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>partition21</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[partition2]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>partition21</remote-alias>
+              <ordinal>64</ordinal>
+              <family>campaigns</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>partition11</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[partition1]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>partition11</remote-alias>
+              <ordinal>65</ordinal>
+              <family>campaigns</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>__index_level_0__</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[__index_level_0__]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>__index_level_0__</remote-alias>
+              <ordinal>66</ordinal>
+              <family>underlyingads</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>_id</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[_id (custom_sql_query)]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>_id</remote-alias>
+              <ordinal>67</ordinal>
+              <family>underlyingads</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>originatoremail</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[originatoremail]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>originatoremail</remote-alias>
+              <ordinal>68</ordinal>
+              <family>underlyingads</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>organizationid</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[organizationid (custom_sql_query)]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>organizationid</remote-alias>
+              <ordinal>69</ordinal>
+              <family>underlyingads</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>networks1</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[networks]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>networks1</remote-alias>
+              <ordinal>70</ordinal>
+              <family>underlyingads</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>status</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[status]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>status</remote-alias>
+              <ordinal>71</ordinal>
+              <family>underlyingads</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>originalfilename</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[originalfilename]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>originalfilename</remote-alias>
+              <ordinal>72</ordinal>
+              <family>underlyingads</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>tempfilename</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[tempfilename]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>tempfilename</remote-alias>
+              <ordinal>73</ordinal>
+              <family>underlyingads</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>uploadtimestamp</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[uploadtimestamp]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>uploadtimestamp</remote-alias>
+              <ordinal>74</ordinal>
+              <family>underlyingads</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>uaid</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[uaid (custom_sql_query)]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>uaid</remote-alias>
+              <ordinal>75</ordinal>
+              <family>underlyingads</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>active</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[active (custom_sql_query)]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>active</remote-alias>
+              <ordinal>76</ordinal>
+              <family>underlyingads</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>__v</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[__v (custom_sql_query)]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>__v</remote-alias>
+              <ordinal>77</ordinal>
+              <family>underlyingads</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>durationinmilliseconds</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[durationinmilliseconds]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>durationinmilliseconds</remote-alias>
+              <ordinal>78</ordinal>
+              <family>underlyingads</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>s3path</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[s3path]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>s3path</remote-alias>
+              <ordinal>79</ordinal>
+              <family>underlyingads</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>videolocation</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[videolocation]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>videolocation</remote-alias>
+              <ordinal>80</ordinal>
+              <family>underlyingads</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>adtype</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[adtype]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>adtype</remote-alias>
+              <ordinal>81</ordinal>
+              <family>underlyingads</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>brand</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[brand (custom_sql_query)]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>brand</remote-alias>
+              <ordinal>82</ordinal>
+              <family>underlyingads</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>category</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[category (custom_sql_query)]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>category</remote-alias>
+              <ordinal>83</ordinal>
+              <family>underlyingads</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>houseid</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[houseid (custom_sql_query)]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>houseid</remote-alias>
+              <ordinal>84</ordinal>
+              <family>underlyingads</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>product</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[product]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>product</remote-alias>
+              <ordinal>85</ordinal>
+              <family>underlyingads</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>submittedforindexingby</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[submittedforindexingby]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>submittedforindexingby</remote-alias>
+              <ordinal>86</ordinal>
+              <family>underlyingads</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>submittedforindexingtimestamp</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[submittedforindexingtimestamp]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>submittedforindexingtimestamp</remote-alias>
+              <ordinal>87</ordinal>
+              <family>underlyingads</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>acrid</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[acrid (custom_sql_query)]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>acrid</remote-alias>
+              <ordinal>88</ordinal>
+              <family>underlyingads</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>isci</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[isci]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>isci</remote-alias>
+              <ordinal>89</ordinal>
+              <family>underlyingads</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>advertiser</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[advertiser (custom_sql_query) #1]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>advertiser</remote-alias>
+              <ordinal>90</ordinal>
+              <family>underlyingads</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>cpm</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[cpm (custom_sql_query)]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>cpm</remote-alias>
+              <ordinal>91</ordinal>
+              <family>underlyingads</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>failuredetails</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[failuredetails]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>failuredetails</remote-alias>
+              <ordinal>92</ordinal>
+              <family>underlyingads</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>durationinseconds</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[durationinseconds]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>durationinseconds</remote-alias>
+              <ordinal>93</ordinal>
+              <family>underlyingads</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>partition_0</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[partition_0 (custom_sql_query)]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>partition_0</remote-alias>
+              <ordinal>94</ordinal>
+              <family>underlyingads</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>partition_1</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[partition_1 (custom_sql_query)]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>partition_1</remote-alias>
+              <ordinal>95</ordinal>
+              <family>underlyingads</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>partition_2</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[partition_2 (custom_sql_query)]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>partition_2</remote-alias>
+              <ordinal>96</ordinal>
+              <family>underlyingads</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>partition2</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[partition2 (custom_sql_query)]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>partition2</remote-alias>
+              <ordinal>97</ordinal>
+              <family>underlyingads</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>partition1</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[partition1 (custom_sql_query)]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>partition1</remote-alias>
+              <ordinal>98</ordinal>
+              <family>underlyingads</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>document index (generated)</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[document index (generated)]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>document index (generated)</remote-alias>
+              <ordinal>99</ordinal>
+              <family>api_orgs</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>records per response json</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[records per response json]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>records per response json</remote-alias>
+              <ordinal>100</ordinal>
+              <family>api_orgs</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>number of records</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[number of records]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>number of records</remote-alias>
+              <ordinal>101</ordinal>
+              <family>api_orgs</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>name (networks)</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[name (networks)]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>name (networks)</remote-alias>
+              <ordinal>102</ordinal>
+              <family>api_orgs</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>name</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[name (api_orgs1)]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>name</remote-alias>
+              <ordinal>103</ordinal>
+              <family>api_orgs</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>network id</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[network id]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>network id</remote-alias>
+              <ordinal>104</ordinal>
+              <family>api_orgs</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>networks index (generated)</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[networks index (generated)]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>networks index (generated)</remote-alias>
+              <ordinal>105</ordinal>
+              <family>api_orgs</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>organization id</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[organization id]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>organization id</remote-alias>
+              <ordinal>106</ordinal>
+              <family>api_orgs</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>channel_users</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[channel_users]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>channel_users</remote-alias>
+              <ordinal>107</ordinal>
+              <family>tableau_users</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>networkid</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[networkid (tableau_users1)]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>networkid</remote-alias>
+              <ordinal>108</ordinal>
+              <family>tableau_users</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>usernames</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[usernames]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>usernames</remote-alias>
+              <ordinal>109</ordinal>
+              <family>tableau_users</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>0</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+          </metadata-records>
+        </connection>
+        <filter class='categorical' column='[Calculation_4057039611727417344]' filter-group='2'>
+          <groupfilter function='except' user:ui-domain='database' user:ui-enumeration='exclusive' user:ui-marker='enumerate'>
+            <groupfilter function='level-members' level='[Calculation_4057039611727417344]' />
+            <groupfilter function='member' level='[Calculation_4057039611727417344]' member='true' />
+          </groupfilter>
+        </filter>
+      </extract>
+      <layout dim-ordering='alphabetic' dim-percentage='0.363184' measure-ordering='alphabetic' measure-percentage='0.600746' parameter-percentage='0.0360697' show-structure='true' user-set-layout='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United Kingdom&quot;' />
+      </semantic-values>
+      <date-options start-of-week='monday' />
+      <field-sort-info field-sort-order-type='alphabetical-order' />
+      <datasource-dependencies datasource='Parameters'>
+        <column caption='Publish Empty' datatype='boolean' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='false'>
+          <calculation class='tableau' formula='false' />
+        </column>
+      </datasource-dependencies>
+      <filter class='categorical' column='[Calculation_4057039611727417344]' filter-group='2'>
+        <groupfilter function='except' user:ui-domain='database' user:ui-enumeration='exclusive' user:ui-marker='enumerate'>
+          <groupfilter function='level-members' level='[Calculation_4057039611727417344]' />
+          <groupfilter function='member' level='[Calculation_4057039611727417344]' member='true' />
+        </groupfilter>
+      </filter>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Sheet 1'>
+      <table>
+        <view>
+          <datasources />
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{029841E9-5E2B-4432-A70F-849741537F6F}' />
+    </worksheet>
+  </worksheets>
+  <windows source-height='30'>
+    <window class='worksheet' maximized='true' name='Sheet 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card mode='compact' param='[Parameters].[Parameter 1]' type='parameter' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{2BF229D6-4003-485E-A85D-2BD790AFAA0E}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='384' name='Sheet 1' width='384'>
+      iVBORw0KGgoAAAANSUhEUgAAAYAAAAGACAYAAACkx7W/AAAACXBIWXMAAA7DAAAOwwHHb6hk
+      AAAFXUlEQVR4nO3VMQEAIAzAMMC/5yFjRxMF/XpnZg4AOW87AIAdBgAQZQAAUQYAEGUAAFEG
+      ABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAA
+      UQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBl
+      AABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYA
+      EGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABR
+      BgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUA
+      AFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQ
+      ZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEG
+      ABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAA
+      UQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBl
+      AABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYA
+      EGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABR
+      BgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUA
+      AFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQ
+      ZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEG
+      ABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAA
+      UQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBl
+      AABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYA
+      EGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABR
+      BgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUA
+      AFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQ
+      ZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEG
+      ABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAA
+      UQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBl
+      AABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYA
+      EGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEfFxoG/IiMv0YAAAAASUVORK5CYII=
+    </thumbnail>
+  </thumbnails>
+</workbook>
